@@ -15,6 +15,10 @@
 <meta name="twitter:title" content="iTimeTraveler">
 <meta name="twitter:description" content="Code, Design &amp; Things in Between">
   
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/favicon.png">
   
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
@@ -50,10 +54,22 @@
         <nav id="main-nav">
           <a id="main-nav-toggle" class="nav-icon"></a>
           
+            <a class="main-nav-link" href="/">Home</a>
+          
+            <a class="main-nav-link" href="/archives">Archives</a>
+          
+            <a class="main-nav-link" href="/categories">Categories</a>
+          
+            <a class="main-nav-link" href="/tags">Tags</a>
+          
+            <a class="main-nav-link" href="/about">About</a>
+          
         </nav>
         <nav id="sub-nav">
           
-          <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+            <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          
+          <a id="nav-search-btn" class="nav-icon" title="Search"></a>
         </nav>
         <div id="search-form-wrap">
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://github.com"></form>
@@ -65,7 +81,7 @@
 
 
   
-    <div id="intrologo" class="intro-logo">
+    <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(/css/images/home-bg.jpg); background-size: auto 100%;">
   
 
     <canvas width="100%" height="100%"></canvas>
@@ -88,38 +104,11 @@
       x.globalAlpha = 0.6
 
       
-        function i(){
-            x.clearRect(0,0,w,h)
-            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-            while(q[1].x<w+f) d(q[0], q[1])
-        }
-        function d(i,j){   
-            x.beginPath()
-            x.moveTo(i.x, i.y)
-            x.lineTo(j.x, j.y)
-            var k = j.x + (z()*2-0.25)*f,
-                n = y(j.y)
-            x.lineTo(k, n)
-            x.closePath()
-            r-=u/-50
-            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-            x.fill()
-            q[0] = q[1]
-            q[1] = {x:k,y:n}
-        }
-        function y(p){
-            var t = p + (z()*2-1.1)*f
-            return (t>h||t<0) ? y(p) : t
-        }
-        document.getElementById("intrologo").onclick = i
-        document.getElementById("intrologo").ontouchstart = i
-        i()
-      
     </script>
     
 
     
-      <div id="homelogo" class="homelogo"> 
+      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,.8);"> 
     
 
         
@@ -148,6 +137,16 @@
 
   <div class="intro-navigate">
       <p class="navigater-list">
+        
+          <a id="beautifont" class="main-nav-link" href="/">Home</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/categories">Categories</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/about">About</a>
         
       </p>
   </div>
@@ -194,6 +193,10 @@
 <p><br></p>
 <h3 id="一、布局重用-lt-include-gt"><a href="#一、布局重用-lt-include-gt" class="headerlink" title="一、布局重用&lt;include/&gt;"></a><strong>一、布局重用&lt;include/&gt;</strong></h3><p>&lt;include /&gt;标签能够重用布局文件，简单的使用如下：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>   </div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@color/app_bg"</span>  </div><div class="line">    <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span>&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">layout</span>=<span class="string">"@layout/titlebar"</span>/&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span> <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">              <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">              <span class="attr">android:text</span>=<span class="string">"@string/hello"</span>  </div><div class="line">              <span class="attr">android:padding</span>=<span class="string">"10dp"</span> /&gt;</span>  </div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -250,6 +253,10 @@
 <li>节省创建时间，提高性能</li>
 </ul>
         
+          <p class="article-more-link">
+            <a href="/2016/09/08/【Java】设计模式：深入理解单例模式/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -303,6 +310,10 @@
 <p>乍一看条件 3 是多余的， c 和 c++ 都不提供 swap 。 c 的 qsort 的用法： <code>qsort(data, n, sizeof(int), cmp_int);</code>  data 是起始地址， n 是元素个数， sizeof(int) 是每个元素的大小， cmp_int 是一个比较两个 int 的函数。</p>
 <p>c++ 的 sort 的用法： <code>sort(data, data+n, cmp_int);</code> data 是第一个元素的位置， data+n 是最后一个元素的下一个位置， cmp_int 是比较函数。</p>
         
+          <p class="article-more-link">
+            <a href="/2016/09/07/【Go语言】基本类型排序和 slice 排序/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -348,6 +359,10 @@
 </blockquote>
 <p><br></p>
 <h3 id="一、需求效果"><a href="#一、需求效果" class="headerlink" title="一、需求效果"></a><strong>一、需求效果</strong></h3><p><img src="http://img.blog.csdn.net/20160907144428202" alt="比如这个"></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/07/【Android 】TextView 局部文字变色/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -395,6 +410,10 @@
 <h3 id="使用DrawingCache"><a href="#使用DrawingCache" class="headerlink" title="使用DrawingCache"></a><strong>使用DrawingCache</strong></h3><p>如果使用DrawingCache，则对要截图的View有一个要求：View本身已经显示在界面上。如果View没有添加到界面上或者没有显示（绘制）过，则buildDrawingCache会失败。这种方式比较适合对应用界面或者某一部分的截图。步骤很简单：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">view.setDrawingCacheEnabled(<span class="keyword">true</span>);  </div><div class="line">view.buildDrawingCache();  		<span class="comment">//启用DrawingCache并创建位图  </span></div><div class="line"></div><div class="line"><span class="comment">//创建一个DrawingCache的拷贝，因为DrawingCache得到的位图在禁用后会被回收  </span></div><div class="line">Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache()); </div><div class="line">view.setDrawingCacheEnabled(<span class="keyword">false</span>);  	<span class="comment">//禁用DrawingCahce否则会影响性能</span></div></pre></td></tr></table></figure>
         
+          <p class="article-more-link">
+            <a href="/2016/08/30/【Android】获取View的截图/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -440,6 +459,10 @@
 <p><br></p>
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h3><p>首先，保证项目使用的Gradle是最新的，我这里用的是2.10版本。因为Gradle 2.4之后在编译效率上面有了一个非常大的提高，看下图官方的速度对比。</p>
 <p><img src="http://img.blog.csdn.net/20160826151929475" alt="这是官方的速度对比，下一代编译速度更快"></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -493,6 +516,10 @@
 <p>上面的代码声明了 <code>x</code> 变量，并且其类型为 <code>int</code>——即，表达式 <code>x</code> 为 <code>int</code> 类型。一般而言，为了指明新变量的类型，我们得写出一个表达式，其中含有我们要声明的变量，这个表达式运算的结果值属于某种基本类型，我们把这种基本类型写到表达式的左边。所以，下述声明：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *p;</div><div class="line"><span class="keyword">int</span> a[<span class="number">3</span>];</div></pre></td></tr></table></figure>
         
+          <p class="article-more-link">
+            <a href="/2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -539,6 +566,10 @@
 <p>在听到人们谈论机器学习的时候，你是不是对它的涵义只有几个模糊的认识呢？你是不是已经厌倦了在和同事交谈时只能一直点头？让我们改变一下吧！</p>
 <p>本指南的读者对象是所有对机器学习有求知欲但却不知道如何开头的朋友。我猜很多人已经读过了<a href="https://en.wikipedia.org/wiki/Machine_learning">“机器学习” ——维基百科词条</a>，倍感挫折，以为没人能给出一个高层次的解释。本文就是你们想要的东西。</p>
 <p>本文目标在于平易近人，这意味着文中有大量的概括。但是谁在乎这些呢？只要能让读者对于ML更感兴趣，任务也就完成了。<br><br></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/14/【Machine Learning】机器学习：简明入门指南/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -865,6 +896,10 @@
 </table>
 <p><br><br>
         
+          <p class="article-more-link">
+            <a href="/2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -914,6 +949,10 @@
 <p>为第一个灰色按钮自定义背景如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">shape</span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"@color/gray"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">corners</span></div><div class="line">        <span class="attr">android:radius</span>=<span class="string">"60dip"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">stroke</span></div><div class="line">        <span class="attr">android:width</span>=<span class="string">"0dp"</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">solid</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>然后，如果再为每个颜色的按钮都写一个shape背景也太麻烦，重用性太差。</p>
         
+          <p class="article-more-link">
+            <a href="/2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -932,7 +971,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Siguiente &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -946,8 +985,8 @@
 
   <div class="container">
       <div class="row">
-	      <p> Construido por <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2015 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
 	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
 	</div>
   </div>
@@ -955,11 +994,24 @@
     </div>
     <!-- <nav id="mobile-nav">
   
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
 </nav> -->
     
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 <script src="/js/script.js"></script>

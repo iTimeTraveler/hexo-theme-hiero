@@ -15,6 +15,10 @@
 <meta name="twitter:title" content="iTimeTraveler">
 <meta name="twitter:description" content="Code, Design &amp; Things in Between">
   
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/favicon.png">
   
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
@@ -50,10 +54,22 @@
         <nav id="main-nav">
           <a id="main-nav-toggle" class="nav-icon"></a>
           
+            <a class="main-nav-link" href="/">Home</a>
+          
+            <a class="main-nav-link" href="/archives">Archives</a>
+          
+            <a class="main-nav-link" href="/categories">Categories</a>
+          
+            <a class="main-nav-link" href="/tags">Tags</a>
+          
+            <a class="main-nav-link" href="/about">About</a>
+          
         </nav>
         <nav id="sub-nav">
           
-          <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+            <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          
+          <a id="nav-search-btn" class="nav-icon" title="Search"></a>
         </nav>
         <div id="search-form-wrap">
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://github.com"></form>
@@ -65,7 +81,7 @@
 
 
   
-    <div id="intrologo" class="intro-logo">
+    <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(/css/images/home-bg.jpg); background-size: auto 100%;">
   
 
     <canvas width="100%" height="100%"></canvas>
@@ -88,38 +104,11 @@
       x.globalAlpha = 0.6
 
       
-        function i(){
-            x.clearRect(0,0,w,h)
-            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-            while(q[1].x<w+f) d(q[0], q[1])
-        }
-        function d(i,j){   
-            x.beginPath()
-            x.moveTo(i.x, i.y)
-            x.lineTo(j.x, j.y)
-            var k = j.x + (z()*2-0.25)*f,
-                n = y(j.y)
-            x.lineTo(k, n)
-            x.closePath()
-            r-=u/-50
-            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-            x.fill()
-            q[0] = q[1]
-            q[1] = {x:k,y:n}
-        }
-        function y(p){
-            var t = p + (z()*2-1.1)*f
-            return (t>h||t<0) ? y(p) : t
-        }
-        document.getElementById("intrologo").onclick = i
-        document.getElementById("intrologo").ontouchstart = i
-        i()
-      
     </script>
     
 
     
-      <div id="homelogo" class="homelogo"> 
+      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,.8);"> 
     
 
         
@@ -148,6 +137,16 @@
 
   <div class="intro-navigate">
       <p class="navigater-list">
+        
+          <a id="beautifont" class="main-nav-link" href="/">Home</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/categories">Categories</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/about">About</a>
         
       </p>
   </div>
@@ -239,6 +238,10 @@
 <p><img src="http://img.blog.csdn.net/20151125142250638" alt="这里写图片描述"></p>
 <hr>
         
+          <p class="article-more-link">
+            <a href="/2015/11/25/【Android】Activity与Fragment的生命周期的关系/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -283,6 +286,10 @@
 <p>作为Android开发的基础知识，大家可能都了解Activity的生命周期，但是Fragment的生命周期和Activity生命周期之间的关系到底是怎么样的呢？相互调用机制又如何呢？</p>
 </blockquote>
 <p>一、我们首先观察一下Activity的生命周期：<br><img src="http://img.blog.csdn.net/20151125113335794" alt="这里写图片描述"></p>
+        
+          <p class="article-more-link">
+            <a href="/2015/11/25/【Android】Fragment的生命周期详解/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -333,6 +340,10 @@
 <li>大致原理是,如果手指按在view上，则使用ScheduledExecutorService对象执行scheduleWithFixedDelay()方法，每隔一个间隔不停地向Handler发送Message，此处Message里的信息是View id，然后由Handler在handlemessage的时候处理需要触发的事件。</li>
 </ul>
         
+          <p class="article-more-link">
+            <a href="/2015/11/19/【Android】长按连续触发事件的实现方法/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -381,6 +392,10 @@
 <p>而HashMap继承的抽象类AbstractMap实现了Map接口：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Map</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; </span>&#123;...&#125;</div></pre></td></tr></table></figure>
 <p> <br></p>
+        
+          <p class="article-more-link">
+            <a href="/2015/11/10/【Java】HashMap 和 HashTable 的区别到底是什么？/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -492,6 +507,10 @@
 </li>
 </ol>
         
+          <p class="article-more-link">
+            <a href="/2015/11/02/【Java】函数中的参数传递是“引用传递”还是“值传递”？/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -566,6 +585,10 @@
     }
 </code></pre>
         
+          <p class="article-more-link">
+            <a href="/2015/09/18/【Android】onActivityResult()和onResume()的调用顺序问题/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -609,6 +632,10 @@
         <p>最近项目正在将原系统拆分为小型App，所以需要在原Project中启动另一个新的App中的Activity。这样的话启动要用到ComponentName ，它就是用来打开其他应用程序中的Activity或服务的。</p>
 <p>用法其实很简单，像下面这样：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一个参数是Activity所在的package包名，第二个参数是完整的Class类名（包括包路径）</span></div><div class="line">ComponentName componetName = <span class="keyword">new</span> ComponentName(<span class="string">"com.cybo3d.cybox.miya"</span>, 			  </div><div class="line">								<span class="string">"com.cybo3d.cybox.miya.MainActivity"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line">intent.setComponent(componetName);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2015/09/15/【Android】如何启动调用其他app中的Activity/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -661,6 +688,10 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> File <span class="title">saveImage</span><span class="params">(Bitmap bmp)</span> </span>&#123;</div><div class="line">    File appDir = <span class="keyword">new</span> File(Environment.getExternalStorageDirectory(), <span class="string">"Boohee"</span>);</div><div class="line">    <span class="keyword">if</span> (!appDir.exists()) &#123;</div><div class="line">        appDir.mkdir();</div><div class="line">    &#125;</div><div class="line">    String fileName = System.currentTimeMillis() + <span class="string">".jpg"</span>;</div><div class="line">    File file = <span class="keyword">new</span> File(appDir, fileName);</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(file);</div><div class="line">        bmp.compress(CompressFormat.JPEG, <span class="number">100</span>, fos);</div><div class="line">        fos.flush();</div><div class="line">        fos.close();</div><div class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         
+          <p class="article-more-link">
+            <a href="/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -679,7 +710,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Siguiente &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -693,8 +724,8 @@
 
   <div class="container">
       <div class="row">
-	      <p> Construido por <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2015 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
 	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
 	</div>
   </div>
@@ -702,11 +733,24 @@
     </div>
     <!-- <nav id="mobile-nav">
   
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
 </nav> -->
     
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 <script src="/js/script.js"></script>

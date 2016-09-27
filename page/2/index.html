@@ -15,6 +15,10 @@
 <meta name="twitter:title" content="iTimeTraveler">
 <meta name="twitter:description" content="Code, Design &amp; Things in Between">
   
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/favicon.png">
   
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
@@ -50,10 +54,22 @@
         <nav id="main-nav">
           <a id="main-nav-toggle" class="nav-icon"></a>
           
+            <a class="main-nav-link" href="/">Home</a>
+          
+            <a class="main-nav-link" href="/archives">Archives</a>
+          
+            <a class="main-nav-link" href="/categories">Categories</a>
+          
+            <a class="main-nav-link" href="/tags">Tags</a>
+          
+            <a class="main-nav-link" href="/about">About</a>
+          
         </nav>
         <nav id="sub-nav">
           
-          <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+            <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          
+          <a id="nav-search-btn" class="nav-icon" title="Search"></a>
         </nav>
         <div id="search-form-wrap">
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://github.com"></form>
@@ -65,7 +81,7 @@
 
 
   
-    <div id="intrologo" class="intro-logo">
+    <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(/css/images/home-bg.jpg); background-size: auto 100%;">
   
 
     <canvas width="100%" height="100%"></canvas>
@@ -88,38 +104,11 @@
       x.globalAlpha = 0.6
 
       
-        function i(){
-            x.clearRect(0,0,w,h)
-            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-            while(q[1].x<w+f) d(q[0], q[1])
-        }
-        function d(i,j){   
-            x.beginPath()
-            x.moveTo(i.x, i.y)
-            x.lineTo(j.x, j.y)
-            var k = j.x + (z()*2-0.25)*f,
-                n = y(j.y)
-            x.lineTo(k, n)
-            x.closePath()
-            r-=u/-50
-            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-            x.fill()
-            q[0] = q[1]
-            q[1] = {x:k,y:n}
-        }
-        function y(p){
-            var t = p + (z()*2-1.1)*f
-            return (t>h||t<0) ? y(p) : t
-        }
-        document.getElementById("intrologo").onclick = i
-        document.getElementById("intrologo").ontouchstart = i
-        i()
-      
     </script>
     
 
     
-      <div id="homelogo" class="homelogo"> 
+      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,.8);"> 
     
 
         
@@ -148,6 +137,16 @@
 
   <div class="intro-navigate">
       <p class="navigater-list">
+        
+          <a id="beautifont" class="main-nav-link" href="/">Home</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/categories">Categories</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/about">About</a>
         
       </p>
   </div>
@@ -193,6 +192,10 @@
         <blockquote>
 <p>互联网圈有这么一句话：百度的技术，阿里的运营，腾讯的产品。那么代表互联网三座大山的BAT，内部人才体系有什么区别呢？可以先看看这个话题<a href="https://www.zhihu.com/question/27108669">百度、腾讯和阿里内部的级别和薪资待遇是什么样的？</a></p>
 </blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -247,6 +250,10 @@
 <li><p><strong>sp</strong> = Scale-independent pixels，它是安卓的字体单位</p>
 </li>
 </ol>
+        
+          <p class="article-more-link">
+            <a href="/2016/07/22/【Android】dip和px之间到底如何转换/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -306,6 +313,10 @@
 </blockquote>
 <p>具体的命令解释可以看这里：<a href="http://www.jb51.net/article/48557.htm">android 压力测试命令monkey详解</a></p>
         
+          <p class="article-more-link">
+            <a href="/2016/07/19/【Android】Monkey压力测试与停止/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -352,6 +363,10 @@
 </blockquote>
 <p><br><br>这篇教程我们将学到如何自动处理Exception，并且了解在App Crash以后如何自动重启。</p>
 <p>其实方法很简单，这里我们需要用到 <strong>Thread.setDefaultUncaughtExceptionHandler()</strong>，当应用崩溃的时候代码就会自动调用 <strong>uncaughtException()</strong> 这个方法。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/07/14/【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -401,6 +416,10 @@
 <p> <br></p>
 <h4 id="二、svn回滚"><a href="#二、svn回滚" class="headerlink" title="二、svn回滚"></a><strong>二、svn回滚</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">svn revert FILE 				// 单个文件回滚</div><div class="line">svn revert DIR --depth=infinity // 整个目录进行递归回滚</div><div class="line">svn revert . --depth=infinity 	// 当前目录进行递归回滚</div></pre></td></tr></table></figure>
         
+          <p class="article-more-link">
+            <a href="/2016/06/12/【SVN】使用patch命令保存更改/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -447,6 +466,10 @@
 <p><br><br>首先，敲定每个boolean值存储的位置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> mBroadcastCustomValue = <span class="number">0</span>;   <span class="comment">//用来存储的int值</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_BASE = <span class="number">1</span>;				<span class="comment">//基础类播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_TRAFFIC = <span class="number">1</span> &lt;&lt; <span class="number">1</span>;		<span class="comment">//实时路况</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_CAMERA = <span class="number">1</span> &lt;&lt; <span class="number">2</span>;		<span class="comment">//摄像头限速播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_SAFE = <span class="number">1</span> &lt;&lt; <span class="number">3</span>;		<span class="comment">//安全提醒类</span></div></pre></td></tr></table></figure></p>
 <p><br><br><strong>一、添加Add</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue |= level;    <span class="comment">//add</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">addLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/02/【Java】按位存储：使用int存储boolean数组/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -495,6 +518,10 @@
 <p>使用android自带的adb shell，里面自带一个input工具，使用方法如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb shell <span class="comment">#进入系统</span></div><div class="line">input keyevent KEYCODE_BACK  <span class="comment">#模拟按返回键</span></div><div class="line">input keyevent KEYCODE_HOME  <span class="comment">#模拟按Home键</span></div></pre></td></tr></table></figure>
         
+          <p class="article-more-link">
+            <a href="/2016/06/02/【Android】技术调研：用代码模拟屏幕点击、触摸事件/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -539,6 +566,10 @@
 <p>select * from table_name where id in ()的时候，MySQL会自动按主键自增排序，要是按IN中给定的顺序来取，如何实现呢？</p>
 </blockquote>
 <p>比如下面这个查询结果，mysql会默认使用主键id的ASC自增排序结果集：<br><img src="http://img.blog.csdn.net/20160429152929904" alt="这里写图片描述"></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/29/【MySQL】查询保持IN中的顺序/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -589,6 +620,10 @@
 <p><br><br><strong>二、解决</strong></p>
 <p>1）在windows下转换：<br>利用一些编辑器如UltraEdit或EditPlus等工具先将脚本编码转换，再放到Linux中执行。转换方式如下（UltraEdit）：File–&gt;Conversions–&gt;DOS-&gt;UNIX即可。 </p>
         
+          <p class="article-more-link">
+            <a href="/2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -635,6 +670,10 @@
 <p><br><br><strong>1、二分查找</strong></p>
 <p>二分查找（binary search），也称作折半查找（half-interval search），每次划分一半进行下一步搜索，所以时间复杂度无非就是while循环的次数！</p>
         
+          <p class="article-more-link">
+            <a href="/2016/04/06/”二分查找“算法的时间复杂度/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -653,7 +692,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Previo</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Siguiente &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -667,8 +706,8 @@
 
   <div class="container">
       <div class="row">
-	      <p> Construido por <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2015 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
 	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
 	</div>
   </div>
@@ -676,11 +715,24 @@
     </div>
     <!-- <nav id="mobile-nav">
   
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
 </nav> -->
     
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 <script src="/js/script.js"></script>

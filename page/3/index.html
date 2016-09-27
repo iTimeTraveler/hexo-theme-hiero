@@ -15,6 +15,10 @@
 <meta name="twitter:title" content="iTimeTraveler">
 <meta name="twitter:description" content="Code, Design &amp; Things in Between">
   
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/favicon.png">
   
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
@@ -50,10 +54,22 @@
         <nav id="main-nav">
           <a id="main-nav-toggle" class="nav-icon"></a>
           
+            <a class="main-nav-link" href="/">Home</a>
+          
+            <a class="main-nav-link" href="/archives">Archives</a>
+          
+            <a class="main-nav-link" href="/categories">Categories</a>
+          
+            <a class="main-nav-link" href="/tags">Tags</a>
+          
+            <a class="main-nav-link" href="/about">About</a>
+          
         </nav>
         <nav id="sub-nav">
           
-          <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+            <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          
+          <a id="nav-search-btn" class="nav-icon" title="Search"></a>
         </nav>
         <div id="search-form-wrap">
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://github.com"></form>
@@ -65,7 +81,7 @@
 
 
   
-    <div id="intrologo" class="intro-logo">
+    <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(/css/images/home-bg.jpg); background-size: auto 100%;">
   
 
     <canvas width="100%" height="100%"></canvas>
@@ -88,38 +104,11 @@
       x.globalAlpha = 0.6
 
       
-        function i(){
-            x.clearRect(0,0,w,h)
-            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-            while(q[1].x<w+f) d(q[0], q[1])
-        }
-        function d(i,j){   
-            x.beginPath()
-            x.moveTo(i.x, i.y)
-            x.lineTo(j.x, j.y)
-            var k = j.x + (z()*2-0.25)*f,
-                n = y(j.y)
-            x.lineTo(k, n)
-            x.closePath()
-            r-=u/-50
-            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-            x.fill()
-            q[0] = q[1]
-            q[1] = {x:k,y:n}
-        }
-        function y(p){
-            var t = p + (z()*2-1.1)*f
-            return (t>h||t<0) ? y(p) : t
-        }
-        document.getElementById("intrologo").onclick = i
-        document.getElementById("intrologo").ontouchstart = i
-        i()
-      
     </script>
     
 
     
-      <div id="homelogo" class="homelogo"> 
+      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,.8);"> 
     
 
         
@@ -148,6 +137,16 @@
 
   <div class="intro-navigate">
       <p class="navigater-list">
+        
+          <a id="beautifont" class="main-nav-link" href="/">Home</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/categories">Categories</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/about">About</a>
         
       </p>
   </div>
@@ -191,6 +190,10 @@
         <p>先给大家看一下这个主题的颜值：</p>
 <p><img src="http://img.blog.csdn.net/20160330165335855" alt="这里写图片描述"></p>
 <p><img src="http://img.blog.csdn.net/20160330164049417" alt="这里写图片描述"></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/30/给大家推荐一款Sublime Text的主题”brogrammer-theme“/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -245,6 +248,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Picasso.with(getContext()).load(data.get(pos).getFeed_thumb_image()).memoryPolicy(MemoryPolicy.NO_CACHE).into(image);</div></pre></td></tr></table></figure>
 <p>注意其中的<em>.memoryPolicy(MemoryPolicy.NO_CACHE)</em>即是关键代码。</p>
         
+          <p class="article-more-link">
+            <a href="/2016/03/08/【Android】Picasso加载本地图片如何清理缓存cache？/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -294,6 +301,10 @@
 <p>(3) 把取出的这个数从上面的集合中删除.</p>
 <p>(4) 循环 (2),(3) 步骤,直到int数组取满为止.</p>
         
+          <p class="article-more-link">
+            <a href="/2016/01/22/如何生成100个1-100以内的不重复的随机数/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -342,6 +353,10 @@
 <p>在cmd命令行里或者Android Studio中的Terminal里敲入如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell dumpsys activity</div></pre></td></tr></table></figure></p>
 <p>然后会出现很长一段详细信息，滚到中间的地方，会看到Task栈的状态如下：<br><img src="http://img.blog.csdn.net/20160119120838863" alt="这里写图片描述"></p>
         
+          <p class="article-more-link">
+            <a href="/2016/01/19/【Android】如何查看Activity Task栈的情况/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -388,6 +403,10 @@
 <p><br><br><strong>一、封装：</strong></p>
 <p>　　封装是实现面向对象程序设计的第一步，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。 </p>
 <p> 封装的意义：<br>　　封装的意义在于保护或者防止代码（数据）被我们无意中破坏。在面向对象程序设计中数据被看作是一个中心的元素并且和使用它的函数结合的很密切，从而保护它不被其它的函数意外的修改。封装提供了一个有效的途径来保护数据不被意外的破坏。相比我们将数据（用域来实现）在程序中定义为公用的（public）我们将它们(fields)定义为私有的（privat）在很多方面会更好。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/15/Java中的封装、继承与多态/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -437,6 +456,10 @@
 <li><strong>public：</strong> Java语言中访问限制最宽的修饰符，一般称之为“公共的”。被其修饰的类、属性以及方法不仅可以跨类访问，而且允许跨包（package）访问。</li>
 </ol>
         
+          <p class="article-more-link">
+            <a href="/2016/01/15/Java访问权限修饰符的区别/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -485,6 +508,10 @@
 <p><br><br><strong>二、斐波那契数列法</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> s = <span class="number">100</span>; <span class="comment">//自定义的台阶数</span></div><div class="line">   </div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">compute</span><span class="params">(<span class="keyword">int</span> stair)</span></span>&#123;</div><div class="line">    	<span class="keyword">if</span> ( stair &lt;= <span class="number">0</span>)&#123;</div><div class="line">    		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">if</span> (stair == <span class="number">1</span>)&#123;</div><div class="line">    		<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">if</span> (stair == <span class="number">2</span>)&#123;</div><div class="line">    		<span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">return</span> compute(stair-<span class="number">1</span>) + compute(stair-<span class="number">2</span>);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"共有"</span> + compute(s) + <span class="string">"种走法"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         
+          <p class="article-more-link">
+            <a href="/2016/01/05/【面试题】N级台阶（比如100级），每次可走1步或者2步，求总共有多少种走法？/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -532,6 +559,10 @@
 <p>下面给出静态成员类（Static Member Class）和普通成员类（Member Class）使用的方式。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cuc;</div><div class="line"><span class="keyword">import</span> cuc.TestClass.Inner1;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">		<span class="comment">//静态的内部类</span></div><div class="line">		TestClass.Inner1 inner1 = <span class="keyword">new</span> Inner1();   <span class="comment">//和普通的顶层类new的方法一样</span></div><div class="line">		inner1.report();</div><div class="line">		</div><div class="line">		<span class="comment">//普通内部成员类</span></div><div class="line">		TestClass tc = <span class="keyword">new</span> TestClass();</div><div class="line">		TestClass.Inner2 inner2 = tc.new Inner2();    <span class="comment">//注意这里的使用方式</span></div><div class="line">		inner2.report();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         
+          <p class="article-more-link">
+            <a href="/2016/01/02/【Java】内部类（Inner Class）如何创建（new）/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -575,6 +606,10 @@
         <p><strong>1、HMAC算法</strong></p>
 <p>&nbsp;&nbsp; HMAC是密钥相关的哈希运算消息认证码（Hash-based Message Authentication Code）,HMAC运算利用哈希算法，以一个密钥和一个消息为输入，生成一个消息摘要作为输出。</p>
 <p>&nbsp;&nbsp;简而言之，HMAC就是含有密钥散列函数算法，兼容了MD和SHA算法的特性，并在此基础上加上了密钥。因此MAC算法也经常被称作HMAC算法。关于hmac算法的详情可以参看RFC 2104(<a href="http://www.ietf.org/rfc/rfc2104.txt)，这里包含了HmacMD5算法的C语言实现。">http://www.ietf.org/rfc/rfc2104.txt)，这里包含了HmacMD5算法的C语言实现。</a><br><br></p>
+        
+          <p class="article-more-link">
+            <a href="/2015/12/31/【Android】 加解密算法 HMAC 的使用/#more">Read More</a>
+          </p>
         
       
     </div>
@@ -624,6 +659,10 @@
 <p>&nbsp;&nbsp;这里我们可以使用<strong>aapt工具</strong>来查看。aapt.exe工具即Android Asset Packaging Tool，在SDK的build-tools目录下。</p>
 <p>&nbsp;&nbsp;该工具可以查看，创建， 更新ZIP格式的文档附件(zip, jar, apk)。也可将资源文件编译成二进制文件，尽管你可能没有直接使用过aapt工具，但是build scripts和IDE插件会使用这个工具打包apk文件构成一个Android 应用程序。在使用aapt之前需要在环境变量里面配置SDK-tools路径，或者是路径+aapt的方式进入aapt。</p>
         
+          <p class="article-more-link">
+            <a href="/2015/12/25/【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -642,7 +681,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Previo</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Siguiente &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -656,8 +695,8 @@
 
   <div class="container">
       <div class="row">
-	      <p> Construido por <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2015 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
 	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
 	</div>
   </div>
@@ -665,11 +704,24 @@
     </div>
     <!-- <nav id="mobile-nav">
   
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
 </nav> -->
     
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 <script src="/js/script.js"></script>
