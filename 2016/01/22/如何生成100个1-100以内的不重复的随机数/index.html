@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何生成100个1-100以内的不重复的随机数 | iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是个经典的面试题目：生成长度为100的数组，插入1-100以内的但均不重复的随机数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何生成100个1-100以内的不重复的随机数">
+<meta property="og:url" content="http://github.com/2016/01/22/如何生成100个1-100以内的不重复的随机数/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="这是个经典的面试题目：生成长度为100的数组，插入1-100以内的但均不重复的随机数">
+<meta property="og:updated_time" content="2016-08-30T03:16:25.843Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何生成100个1-100以内的不重复的随机数">
+<meta name="twitter:description" content="这是个经典的面试题目：生成长度为100的数组，插入1-100以内的但均不重复的随机数">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" > 
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" href="#" data-toggle="modal" data-target="#myModal"><img width="100%" alt="Hike News" src="/css/images/logo.jpg"></a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-如何生成100个1-100以内的不重复的随机数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      如何生成100个1-100以内的不重复的随机数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/01/22/如何生成100个1-100以内的不重复的随机数/" class="article-date">
+	  <time datetime="2016-01-22T03:55:00.000Z" itemprop="datePublished">2016-01-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这是个经典的面试题目：生成长度为100的数组，插入1-100以内的但均不重复的随机数</p>
+</blockquote>
+<p><br><br><strong>一、简单实现思路:</strong></p>
+<p>(1) 把N个数放入Hashtable 或者arrayList 中.</p>
+<p>(2) 从上面的集合中随机抽取一个数放入int数组中.</p>
+<p>(3) 把取出的这个数从上面的集合中删除.</p>
+<p>(4) 循环 (2),(3) 步骤,直到int数组取满为止.</p>
+<a id="more"></a>
+<p><br><br>这是一种比较简单的实现思路，实现代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">import java.util.ArrayList;</div><div class="line">import java.util.Collections;</div><div class="line">import java.util.Random;</div><div class="line"></div><div class="line">public class Main &#123;</div><div class="line">	private static int range = 100;</div><div class="line">	private static ArrayList&lt;Integer&gt; originalList = new ArrayList&lt;Integer&gt;();</div><div class="line">	private static ArrayList&lt;Integer&gt; result = new ArrayList&lt;Integer&gt;();</div><div class="line"></div><div class="line">	static &#123;</div><div class="line">		for (int i = 1; i &lt;= range; i++) &#123;</div><div class="line">			originalList.add(i);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public static void main(String args[]) &#123;</div><div class="line">		for (int i = 0; i &lt; range; i++) &#123;</div><div class="line">			int j = range - i;</div><div class="line">			int r = (int) (new Random().nextInt(j));</div><div class="line"></div><div class="line">			result.add(originalList.get(r));</div><div class="line"></div><div class="line">			System.out.print(originalList.get(r) + &quot;, &quot;);</div><div class="line">			originalList.remove(r);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		Collections.sort(result);</div><div class="line">		System.out.println(&quot;\n\n生成的数组大小是：&quot; + result.size() + &quot;------以下是排序结果，看是否有重复的随机数&quot;);</div><div class="line">		for (Integer i : result) &#123;</div><div class="line">			System.out.print(i + &quot;, &quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>执行结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">74, 75, 47, 76, 59, 94, 2, 33, 23, 66, 60, 13, 44, 34, 7, 92, 11, 86, 4, 38, 26, 55, 64, 99, 1, 54, 30, 72, 80, 87, 15, 24, 25, 37, 83, 49, 28, 81, 79, 35, 18, 68, 61, 46, 98, 58, 85, 29, 39, 48, 53, 14, 8, 91, 42, 36, 65, 62, 6, 52, 21, 78, 63, 73, 16, 88, 5, 69, 19, 51, 50, 43, 40, 70, 89, 10, 12, 71, 96, 45, 93, 9, 31, 22, 95, 20, 17, 3, 67, 90, 41, 82, 57, 84, 100, 32, 77, 27, 97, 56, </div><div class="line"></div><div class="line">生成的数组大小是：100------以下是排序结果，看是否有重复的随机数</div><div class="line">1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100,</div></pre></td></tr></table></figure>
+<p><br><br><strong>二、改进算法</strong></p>
+<p>我们一般都会想到这种做法,但是当Hashtable或者ArrayList中放几千万,几亿数据时,这时从集合中删除元素将严重影响性能,如果突破此瓶颈? 网上找到一种更好的方法.</p>
+<p>(1) 把N个数放到容器A(int数组)中.<br>(2) 从N个数中随机取出1个数放入容器B(int数组)中.<br>(3) 把容器A中最后一个数与随机抽取的数<strong>对调</strong> 或者 把容器A中最后一个数覆盖随机抽取出来的数.<br>(4) 这时从容器A(假设N个数,索引0 到 索引N-2)之间随机取一个数.再放入容器B中,重复此步骤.</p>
+<p>说明：也就是第二次是从容器A中 第一个元素到倒数第二个元素 中随机取一个数.<br>这种好处是,随机数所取范围逐步缩小,而且杜绝了大数据时集合执行删除操作时产生的瓶颈.</p>
+<p>所以，向下面这样实现会更好：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class Main &#123;</div><div class="line">	private static int range = 100;</div><div class="line">	private static int[] result;</div><div class="line"></div><div class="line">	public static void main(String args[]) &#123;</div><div class="line">		result = getNumber(range);</div><div class="line">		for (int i = 0; i &lt; range; i++) &#123;</div><div class="line">			System.out.print(result[i] + &quot;, &quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public static int[] getNumber(int total)&#123;</div><div class="line">		int[] NumberBox = new int[total];			//容器A</div><div class="line">		int[] rtnNumber = new int[total];			//容器B</div><div class="line"></div><div class="line">		for (int i = 0; i &lt; total; i++)&#123;</div><div class="line">		  NumberBox[i] = i;		//先把N个数放入容器A中</div><div class="line">		&#125;</div><div class="line">		int end = total - 1;</div><div class="line">		</div><div class="line">		for (int j = 0; j &lt; total; j++)&#123;</div><div class="line">		  int num = new Random().nextInt(end + 1);	//取随机数</div><div class="line">		  rtnNumber[j] = NumberBox[num];			//把随机数放入容器B</div><div class="line">		  NumberBox[num] = NumberBox[end];			//把容器A中最后一个数覆盖所取的随机数</div><div class="line">		  end--;									//缩小随机数所取范围</div><div class="line">		&#125;</div><div class="line">		return rtnNumber;							//返回int型数组</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>执行结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">80, 9, 70, 22, 3, 63, 12, 81, 73, 41, 90, 83, 27, 71, 88, 5, 40, 18, 25, 37, 55, 60, 93, 87, 17, 89, 99, 84, 32, 96, 62, 98, 77, 30, 23, 35, 47, 24, 21, 53, 95, 7, 85, 2, 65, 1, 39, 43, 76, 46, 42, 91, 4, 26, 52, 86, 34, 54, 38, 78, 31, 11, 66, 36, 50, 75, 16, 68, 56, 33, 48, 15, 74, 69, 49, 6, 58, 10, 29, 92, 64, 59, 28, 61, 45, 19, 14, 13, 44, 72, 94, 20, 97, 51, 67, 79, 0, 82, 8, 57,</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/08/【Android】Picasso加载本地图片如何清理缓存cache？/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          【Android】Picasso加载本地图片如何清理缓存cache？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/19/【Android】如何查看Activity Task栈的情况/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">【Android】如何查看Activity Task栈的情况</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Construido por <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2015 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/home.js"></script>
+<script src="/js/dialog.js"></script>
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
