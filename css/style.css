@@ -127,6 +127,10 @@ body {
   font: 15px "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-s;
   -webkit-text-size-adjust: 100%;
 }
+::selection {
+  background: #00aced;
+  color: #fff;
+}
 .outer {
   max-width: 1040px;
   margin: 0 auto;
@@ -359,7 +363,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #fb6d19;
+  color: #00aced;
   text-decoration: none;
 }
 .article-entry {
@@ -401,7 +405,8 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  text-decoration: underline;
+  color: #00aced;
+  text-decoration: none;
 }
 .article-entry ul,
 .article-entry ol,
@@ -437,7 +442,7 @@ a.article-title:hover {
   font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-s;
   font-size: 1.1em;
   margin: 1.6em 0px;
-  border-left: 5px solid #fb6d19;
+  border-left: 5px solid #00aced;
   background: rgba(200,200,200,0.15);
 }
 .article-entry blockquote p {
@@ -497,9 +502,14 @@ a.article-title:hover {
   background: #333;
   color: #fff;
   text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .article-more-link a:hover {
-  background: #fb6d19;
+  background: #00aced;
   color: #fff;
   text-decoration: none;
 }
@@ -808,7 +818,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #fb6d19;
+  color: #00aced;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -848,7 +858,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #fb6d19;
+  background: #00aced;
   color: #fff;
 }
 #page-nav .prev {
@@ -886,7 +896,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #footer a:hover {
-  color: #fb6d19;
+  color: #00aced;
   text-decoration: none;
 }
 #footer-info {
@@ -1195,7 +1205,7 @@ pre .xml .cdata {
   text-decoration: none;
 }
 .widget a:hover {
-  color: #fb6d19;
+  color: #00aced;
   text-decoration: none;
 }
 .widget ul ul,
