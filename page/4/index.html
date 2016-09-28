@@ -58,8 +58,6 @@
           
             <a class="main-nav-link" href="/archives">Archives</a>
           
-            <a class="main-nav-link" href="/categories">Categories</a>
-          
             <a class="main-nav-link" href="/tags">Tags</a>
           
             <a class="main-nav-link" href="/about">About</a>
@@ -142,8 +140,6 @@
         
           <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
         
-          <a id="beautifont" class="main-nav-link" href="/categories">Categories</a>
-        
           <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
         
           <a id="beautifont" class="main-nav-link" href="/about">About</a>
@@ -162,6 +158,58 @@
       <div id="content" class="outer">
         
           <section id="main" style="float:none;">
+  
+    <article id="post-【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2015/12/25/【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息/">【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2015/12/25/【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息/" class="article-date">
+	  <time datetime="2015-12-25T02:57:55.000Z" itemprop="datePublished">2015-12-25</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Android App打包成Apk后，其实是一个压缩文件，可以将后缀名apk改为zip然后用winrar打开也能看到里面的文件结构。还能看到AndroidManifest.xml。但是里面的内容经过编码显示为乱码，不方便查看。</p>
+</blockquote>
+<p><br></p>
+<p><strong>— aapt工具：</strong></p>
+<p>&nbsp;&nbsp;这里我们可以使用<strong>aapt工具</strong>来查看。aapt.exe工具即Android Asset Packaging Tool，在SDK的build-tools目录下。</p>
+<p>&nbsp;&nbsp;该工具可以查看，创建， 更新ZIP格式的文档附件(zip, jar, apk)。也可将资源文件编译成二进制文件，尽管你可能没有直接使用过aapt工具，但是build scripts和IDE插件会使用这个工具打包apk文件构成一个Android 应用程序。在使用aapt之前需要在环境变量里面配置SDK-tools路径，或者是路径+aapt的方式进入aapt。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/12/25/【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-【Java】不用循环语句如何输入打印数组元素" class="article article-type-post" itemscope itemprop="blogPost">
   <div id="articleInner" class="article-inner">
@@ -651,61 +699,6 @@
 
 
   
-    <article id="post-【Android】保存图片到系统图库, 并立即显示在图库中" class="article article-type-post" itemscope itemprop="blogPost">
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/">【Android】保存图片到系统图库, 并立即显示在图库中</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/" class="article-date">
-	  <time datetime="2014-09-12T03:55:00.000Z" itemprop="datePublished">2014-09-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>搬运原链接：<a href="http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery">http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery</a></p>
-</blockquote>
-<p><br></p>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a><strong>正文</strong></h3><p>最近有些用户反映保存图片之后在系统图库找不到保存的图片，遂决定彻底查看并解决下。</p>
-<p>Android中保存图片的方法可能有如下两种：</p>
-<ul>
-<li>第一种是自己写方法，如下代码：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> File <span class="title">saveImage</span><span class="params">(Bitmap bmp)</span> </span>&#123;</div><div class="line">    File appDir = <span class="keyword">new</span> File(Environment.getExternalStorageDirectory(), <span class="string">"Boohee"</span>);</div><div class="line">    <span class="keyword">if</span> (!appDir.exists()) &#123;</div><div class="line">        appDir.mkdir();</div><div class="line">    &#125;</div><div class="line">    String fileName = System.currentTimeMillis() + <span class="string">".jpg"</span>;</div><div class="line">    File file = <span class="keyword">new</span> File(appDir, fileName);</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(file);</div><div class="line">        bmp.compress(CompressFormat.JPEG, <span class="number">100</span>, fos);</div><div class="line">        fos.flush();</div><div class="line">        fos.close();</div><div class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -736,8 +729,6 @@
     <a href="/" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/categories" class="mobile-nav-link">Categories</a>
   
     <a href="/tags" class="mobile-nav-link">Tags</a>
   
