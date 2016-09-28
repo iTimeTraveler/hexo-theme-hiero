@@ -516,7 +516,7 @@ a.article-title:hover {
 .article-footer {
   font-size: 0.85em;
   line-height: 1.6em;
-  border-top: 1px solid #e7e7eb;
+  border-top: 1px solid rgba(0,0,0,0.1);
   padding-top: 1.6em;
   margin: 0 20px 20px;
 }
