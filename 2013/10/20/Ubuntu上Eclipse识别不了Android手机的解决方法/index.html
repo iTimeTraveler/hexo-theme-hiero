@@ -15,7 +15,7 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
 <meta property="og:description" content="转载链接：    http://www.cnblogs.com/AndroidManifest/archive/2011/12/09/2281635.html
 
 google官方开发向导里对Android手机已经设置了允许安装非market程序，并且处于usb调试模式，但是仍然在usb连接电脑后无法被识别的问题作了解释。官方网址：http://developer.android.com/guid">
-<meta property="og:updated_time" content="2016-08-30T03:15:53.332Z">
+<meta property="og:updated_time" content="2016-09-29T04:05:41.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu上Eclipse识别不了Android手机的解决方法">
 <meta name="twitter:description" content="转载链接：    http://www.cnblogs.com/AndroidManifest/archive/2011/12/09/2281635.html
@@ -126,11 +126,11 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
 <p><br></p>
 <h4 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a><strong>操作步骤：</strong></h4><p>如果是windows平台下，需要安装一个为adb准备的usb驱动。如果是Ubuntu Linux需要添加一个rules文件，里面包含了每一个想要调试的设备的usb配置信息。以HTC手机为例实现步骤如下：</p>
 <p>1、在终端输入 :</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>2、在打开的文件里加入   <strong><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0bb4&quot;, MODE=&quot;0666&quot;</code></strong></p>
 <p>3、保存退出后在终端执行 :</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod a+r /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod a+r /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
 <p>重新将手机连接到电脑后HTC手机就可以被正常识别了。注意：如果按步骤操作仍不能识别的，检查 <strong><code>ATTR{idVendor}</code></strong> 值里的字母是否是<strong>小写</strong>。</p>
 <p>如果是别的厂家的手机，需要在步骤2更改<strong><code>ATTR{idVendor}</code></strong>的值。如果要添加多个厂家的手机，重复步骤2。其他usb供应商的ID如下：</p>
 <table>
