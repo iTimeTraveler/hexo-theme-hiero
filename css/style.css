@@ -128,7 +128,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 ::selection {
-  background: #ff5537;
+  background: #dd4b39;
   color: #fff;
 }
 .outer {
@@ -363,7 +363,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #ff5537;
+  color: #dd4b39;
   text-decoration: none;
 }
 .article-entry {
@@ -405,7 +405,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  color: #ff5537;
+  color: #dd4b39;
   text-decoration: none;
 }
 .article-entry ul,
@@ -442,8 +442,8 @@ a.article-title:hover {
   font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-s;
   font-size: 1.1em;
   margin: 1.6em 0px;
-  border-left: 5px solid #ff5537;
-  background: rgba(200,200,200,0.15);
+  border-left: 5px solid #dd4b39;
+  background: rgba(206,207,210,0.15);
 }
 .article-entry blockquote p {
   font-size: 15px;
@@ -509,7 +509,7 @@ a.article-title:hover {
   transition: all 0.2s ease-in-out;
 }
 .article-more-link a:hover {
-  background: #ff5537;
+  background: #dd4b39;
   color: #fff;
   text-decoration: none;
 }
@@ -818,7 +818,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #ff5537;
+  color: #dd4b39;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -858,7 +858,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #ff5537;
+  background: #dd4b39;
   color: #fff;
 }
 #page-nav .prev {
@@ -896,7 +896,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #footer a:hover {
-  color: #ff5537;
+  color: #dd4b39;
   text-decoration: none;
 }
 #footer-info {
@@ -1205,7 +1205,7 @@ pre .xml .cdata {
   text-decoration: none;
 }
 .widget a:hover {
-  color: #ff5537;
+  color: #dd4b39;
   text-decoration: none;
 }
 .widget ul ul,
