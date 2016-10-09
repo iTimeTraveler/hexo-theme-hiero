@@ -123,7 +123,7 @@
 <ul>
 <li><strong>Picasso如何清理缓存</strong></li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Picasso.with(getContext()).load(data.get(pos).getFeed_thumb_image()).memoryPolicy(MemoryPolicy.NO_CACHE).into(image);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Picasso.with(getContext()).load(data.get(pos).getFeed_thumb_image()).memoryPolicy(MemoryPolicy.NO_CACHE).into(image);</div></pre></td></tr></table></figure>
 <p>注意其中的<em>.memoryPolicy(MemoryPolicy.NO_CACHE)</em>即是关键代码。</p>
 <a id="more"></a>
 <p><br><br>网上有几种错误的方法如下，经验证均不起效：</p>

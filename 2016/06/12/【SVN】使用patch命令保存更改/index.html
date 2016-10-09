@@ -115,12 +115,12 @@
 <p>使用svn管理工程代码时，有些时候的更改尚未整理好，需要暂时搁置，转而进行下一个任务，此时就需要将当前的更改（diff）暂时保存下来，忙完其他的任务之后再继续进行。但是如果不进行commit，怎么保存当前的更改呢？答案是使用 patch 命令！</p>
 </blockquote>
 <p> <br></p>
-<h4 id="一、生成patch文件"><a href="#一、生成patch文件" class="headerlink" title="一、生成patch文件"></a><strong>一、生成patch文件</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">svn diff &gt; patchFile 			// 整个工程的变动生成patch</div><div class="line">svn diff FILE_NAME &gt; patchFile 	// 某个文件单独变动的patch</div></pre></td></tr></table></figure>
+<h4 id="一、生成patch文件"><a href="#一、生成patch文件" class="headerlink" title="一、生成patch文件"></a><strong>一、生成patch文件</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn diff &gt; patchFile 			// 整个工程的变动生成patch</div><div class="line">svn diff FILE_NAME &gt; patchFile 	// 某个文件单独变动的patch</div></pre></td></tr></table></figure>
 <p> <br></p>
-<h4 id="二、svn回滚"><a href="#二、svn回滚" class="headerlink" title="二、svn回滚"></a><strong>二、svn回滚</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">svn revert FILE 				// 单个文件回滚</div><div class="line">svn revert DIR --depth=infinity // 整个目录进行递归回滚</div><div class="line">svn revert . --depth=infinity 	// 当前目录进行递归回滚</div></pre></td></tr></table></figure>
+<h4 id="二、svn回滚"><a href="#二、svn回滚" class="headerlink" title="二、svn回滚"></a><strong>二、svn回滚</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">svn revert FILE 				// 单个文件回滚</div><div class="line">svn revert DIR --depth=infinity // 整个目录进行递归回滚</div><div class="line">svn revert . --depth=infinity 	// 当前目录进行递归回滚</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>  <br></p>
-<h4 id="三、打patch"><a href="#三、打patch" class="headerlink" title="三、打patch"></a><strong>三、打patch</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">patch -p0 &lt; test.patch 	// -p0 选项要从当前目录查找目的文件（夹）</div><div class="line">patch -p1 &lt; test.patch 	// -p1 选项要从当前目录查找目的文件，不包含patch中的最上级目录（夹）</div></pre></td></tr></table></figure>
+<h4 id="三、打patch"><a href="#三、打patch" class="headerlink" title="三、打patch"></a><strong>三、打patch</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">patch -p0 &lt; test.patch 	// -p0 选项要从当前目录查找目的文件（夹）</div><div class="line">patch -p1 &lt; test.patch 	// -p1 选项要从当前目录查找目的文件，不包含patch中的最上级目录（夹）</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">

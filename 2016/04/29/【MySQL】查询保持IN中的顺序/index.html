@@ -120,7 +120,7 @@
 <p>比如下面这个查询结果，mysql会默认使用主键id的ASC自增排序结果集：<br><img src="http://img.blog.csdn.net/20160429152929904" alt=""></p>
 <a id="more"></a>
 <p><br><br>那么，如果我们想维持查询语句中IN(26613,26612,26611,26610,26609,26608,26607)的顺序可以么？当然可以，像下面这样，使用Order by field()：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">SELECT * from `models` where `id` in (26612,26611,26610) order by field(id,26612,26611,26610);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * from `models` where `id` in (26612,26611,26610) order by field(id,26612,26611,26610);</div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160429153535569" alt=""><br>这样读取出来的顺序就是IN（）语句中的顺序。</p>
 
       
