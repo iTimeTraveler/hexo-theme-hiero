@@ -128,7 +128,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 ::selection {
-  background: #dd4b39;
+  background: #ff5537;
   color: #fff;
 }
 .outer {
@@ -363,7 +363,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #dd4b39;
+  color: #ff5537;
   text-decoration: none;
 }
 .article-entry {
@@ -405,7 +405,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  color: #dd4b39;
+  color: #ff5537;
   text-decoration: none;
 }
 .article-entry ul,
@@ -442,7 +442,7 @@ a.article-title:hover {
   font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-s;
   font-size: 1.1em;
   margin: 1.6em 0px;
-  border-left: 5px solid #dd4b39;
+  border-left: 5px solid #ff5537;
   background: rgba(206,207,210,0.15);
 }
 .article-entry blockquote p {
@@ -509,7 +509,7 @@ a.article-title:hover {
   transition: all 0.2s ease-in-out;
 }
 .article-more-link a:hover {
-  background: #dd4b39;
+  background: #ff5537;
   color: #fff;
   text-decoration: none;
 }
@@ -714,25 +714,25 @@ a.article-title:hover {
   content: "\f099";
 }
 .article-share-twitter:hover {
-  background: #00aced;
+  background: color-twitter;
 }
 .article-share-facebook:before {
   content: "\f09a";
 }
 .article-share-facebook:hover {
-  background: #3b5998;
+  background: color-facebook;
 }
 .article-share-pinterest:before {
   content: "\f0d2";
 }
 .article-share-pinterest:hover {
-  background: #cb2027;
+  background: color-pinterest;
 }
 .article-share-google:before {
   content: "\f0d5";
 }
 .article-share-google:hover {
-  background: #dd4b39;
+  background: color-google;
 }
 .article-gallery {
   background: #000;
@@ -818,7 +818,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #dd4b39;
+  color: #ff5537;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -858,7 +858,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #dd4b39;
+  background: #ff5537;
   color: #fff;
 }
 #page-nav .prev {
@@ -896,7 +896,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #footer a:hover {
-  color: #dd4b39;
+  color: #ff5537;
   text-decoration: none;
 }
 #footer-info {
@@ -1205,7 +1205,7 @@ pre .xml .cdata {
   text-decoration: none;
 }
 .widget a:hover {
-  color: #dd4b39;
+  color: #ff5537;
   text-decoration: none;
 }
 .widget ul ul,
