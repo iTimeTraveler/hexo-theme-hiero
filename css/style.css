@@ -131,6 +131,17 @@ body {
   background: #ff5537;
   color: #fff;
 }
+.article-entry h2:before,
+.article-entry h3:before,
+.article-entry h4:before,
+.article-entry h5:before,
+.article-entry h6:before {
+  content: "# ";
+  color: #ff5537;
+  left: -1.7em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
 .outer {
   max-width: 1040px;
   margin: 0 auto;
@@ -443,7 +454,7 @@ a.article-title:hover {
   font-size: 1.1em;
   margin: 1.6em 0px;
   border-left: 5px solid #ff5537;
-  background: rgba(206,207,210,0.15);
+  background: rgba(208,211,218,0.15);
 }
 .article-entry blockquote p {
   font-size: 15px;
@@ -499,8 +510,8 @@ a.article-title:hover {
   line-height: 1em;
   padding: 6px 15px;
   border-radius: 15px;
-  background: #555;
-  color: #fff;
+  background: #eef1f8;
+  color: #555;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
