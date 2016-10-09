@@ -26,14 +26,14 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -65,13 +65,13 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -103,12 +103,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2016-08-08T10:10:00.000Z" itemprop="datePublished">2016-08-08</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -119,11 +119,11 @@
 <p><br></p>
 <h4 id="一、问题"><a href="#一、问题" class="headerlink" title="一、问题"></a><strong>一、问题</strong></h4><p>比如以下这三个按钮：</p>
 <p><img src="http://img.blog.csdn.net/20160808175543250" alt="三个样式相同的按钮"></p>
-<p>为第一个灰色按钮自定义背景如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">shape</span></span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"@color/gray"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">corners</span></span></div><div class="line">        <span class="attr">android:radius</span>=<span class="string">"60dip"</span>/&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">stroke</span></span></div><div class="line">        <span class="attr">android:width</span>=<span class="string">"0dp"</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">solid</span></span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>为第一个灰色按钮自定义背景如下：<br><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">shape</span></span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"@color/gray"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">corners</span></span></div><div class="line">        <span class="attr">android:radius</span>=<span class="string">"60dip"</span>/&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">stroke</span></span></div><div class="line">        <span class="attr">android:width</span>=<span class="string">"0dp"</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">solid</span></span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>然后，如果再为每个颜色的按钮都写一个shape背景也太麻烦，重用性太差。</p>
 <a id="more"></a>
 <p><br></p>
-<h4 id="二、解决方法"><a href="#二、解决方法" class="headerlink" title="二、解决方法"></a><strong>二、解决方法</strong></h4><p>参考 <a href="http://stackoverflow.com/questions/16775891/how-to-change-solid-color-from-the-code" target="_blank" rel="external">stackoverflow 这里</a>， 在java代码里使用 GradientDrawable 动态设置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">GradientDrawable myGrad = (GradientDrawable)rectangle.getBackground();</div><div class="line">myGrad.setColor(Color.BLACK);</div></pre></td></tr></table></figure></p>
+<h4 id="二、解决方法"><a href="#二、解决方法" class="headerlink" title="二、解决方法"></a><strong>二、解决方法</strong></h4><p>参考 <a href="http://stackoverflow.com/questions/16775891/how-to-change-solid-color-from-the-code" target="_blank" rel="external">stackoverflow 这里</a>， 在java代码里使用 GradientDrawable 动态设置<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GradientDrawable myGrad = (GradientDrawable)rectangle.getBackground();</div><div class="line">myGrad.setColor(Color.BLACK);</div></pre></td></tr></table></figure></p>
 <p><br></p>
 <p>【参考资料】<br>1、<a href="http://stackoverflow.com/questions/16775891/how-to-change-solid-color-from-the-code" target="_blank" rel="external">How to change <code>solid color</code> from the code?</a></p>
 
@@ -156,7 +156,7 @@
 
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -164,7 +164,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../12/【Machine Learning】Github上关注最多的53个深度学习项目/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -174,7 +174,7 @@
     </a>
   
   
-    <a href="/2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../02/BAT人才体系的职位层级、薪酬、晋升标准大全/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">BAT人才体系的职位层级、薪酬、晋升标准</div>
     </a>
@@ -202,13 +202,13 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -216,15 +216,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 

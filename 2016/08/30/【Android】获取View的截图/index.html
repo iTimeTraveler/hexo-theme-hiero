@@ -33,14 +33,14 @@ Android中对View的截图也有以下两种方式，值得注意的是两个方
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -72,13 +72,13 @@ Android中对View的截图也有以下两种方式，值得注意的是两个方
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -110,12 +110,12 @@ Android中对View的截图也有以下两种方式，值得注意的是两个方
     
     <div class="article-meta">
       
-	<a href="/2016/08/30/【Android】获取View的截图/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2016-08-30T02:32:00.000Z" itemprop="datePublished">2016-08-30</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -124,15 +124,15 @@ Android中对View的截图也有以下两种方式，值得注意的是两个方
 <p>Android中对View的截图也有以下两种方式，值得注意的是<strong>两个方法都不适用于<code>SurfaceView</code></strong>：</p>
 <p><br></p>
 <h3 id="使用DrawingCache"><a href="#使用DrawingCache" class="headerlink" title="使用DrawingCache"></a><strong>使用DrawingCache</strong></h3><p>如果使用DrawingCache，则对要截图的View有一个要求：View本身已经显示在界面上。如果View没有添加到界面上或者没有显示（绘制）过，则buildDrawingCache会失败。这种方式比较适合对应用界面或者某一部分的截图。步骤很简单：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">view.setDrawingCacheEnabled(<span class="keyword">true</span>);  </div><div class="line">view.buildDrawingCache();  		<span class="comment">//启用DrawingCache并创建位图  </span></div><div class="line"></div><div class="line"><span class="comment">//创建一个DrawingCache的拷贝，因为DrawingCache得到的位图在禁用后会被回收  </span></div><div class="line">Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache()); </div><div class="line">view.setDrawingCacheEnabled(<span class="keyword">false</span>);  	<span class="comment">//禁用DrawingCahce否则会影响性能</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">view.setDrawingCacheEnabled(<span class="keyword">true</span>);  </div><div class="line">view.buildDrawingCache();  		<span class="comment">//启用DrawingCache并创建位图  </span></div><div class="line"></div><div class="line"><span class="comment">//创建一个DrawingCache的拷贝，因为DrawingCache得到的位图在禁用后会被回收  </span></div><div class="line">Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache()); </div><div class="line">view.setDrawingCacheEnabled(<span class="keyword">false</span>);  	<span class="comment">//禁用DrawingCahce否则会影响性能</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>完整的截图功能函数如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * 获取一个 View 的缓存视图</div><div class="line">  *</div><div class="line">  * <span class="doctag">@param</span> view</div><div class="line">  * <span class="doctag">@return</span></div><div class="line">  */</div><div class="line"> <span class="function"><span class="keyword">private</span> Bitmap <span class="title">getCacheBitmapFromView</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">     <span class="keyword">final</span> <span class="keyword">boolean</span> drawingCacheEnabled = <span class="keyword">true</span>;</div><div class="line">     view.setDrawingCacheEnabled(drawingCacheEnabled);</div><div class="line">     view.buildDrawingCache(drawingCacheEnabled);</div><div class="line">     <span class="keyword">final</span> Bitmap drawingCache = view.getDrawingCache();</div><div class="line">     Bitmap bitmap;</div><div class="line">     <span class="keyword">if</span> (drawingCache != <span class="keyword">null</span>) &#123;</div><div class="line">         bitmap = Bitmap.createBitmap(drawingCache);</div><div class="line">         view.setDrawingCacheEnabled(<span class="keyword">false</span>);</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">         bitmap = <span class="keyword">null</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> bitmap;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * 获取一个 View 的缓存视图</div><div class="line">  *</div><div class="line">  * <span class="doctag">@param</span> view</div><div class="line">  * <span class="doctag">@return</span></div><div class="line">  */</div><div class="line"> <span class="function"><span class="keyword">private</span> Bitmap <span class="title">getCacheBitmapFromView</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">     <span class="keyword">final</span> <span class="keyword">boolean</span> drawingCacheEnabled = <span class="keyword">true</span>;</div><div class="line">     view.setDrawingCacheEnabled(drawingCacheEnabled);</div><div class="line">     view.buildDrawingCache(drawingCacheEnabled);</div><div class="line">     <span class="keyword">final</span> Bitmap drawingCache = view.getDrawingCache();</div><div class="line">     Bitmap bitmap;</div><div class="line">     <span class="keyword">if</span> (drawingCache != <span class="keyword">null</span>) &#123;</div><div class="line">         bitmap = Bitmap.createBitmap(drawingCache);</div><div class="line">         view.setDrawingCacheEnabled(<span class="keyword">false</span>);</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">         bitmap = <span class="keyword">null</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> bitmap;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 <p><br></p>
 <h3 id="直接调用View-draw"><a href="#直接调用View-draw" class="headerlink" title="直接调用View.draw"></a><strong>直接调用View.draw</strong></h3><p>如果需要截图的View并没有添加到界面上，可能是通过java代码创建的或者inflate创建的，此时调用DrawingCache方法是获取不到位图的。因为View在添加到容器中之前并没有得到实际的大小（如果LayoutWidth是MatchParent，它还没有Parent…），所以首先需要指定View的大小：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">layoutView</span><span class="params">(View v, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;  </div><div class="line">    <span class="comment">// validate view.width and view.height  </span></div><div class="line">    v.layout(<span class="number">0</span>, <span class="number">0</span>, width, height);  </div><div class="line">    <span class="keyword">int</span> measuredWidth = View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY);  </div><div class="line">    <span class="keyword">int</span> measuredHeight = View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY);  </div><div class="line">    </div><div class="line">    <span class="comment">// validate view.measurewidth and view.measureheight  </span></div><div class="line">    v.measure(measuredWidth, measuredHeight);  </div><div class="line">    v.layout(<span class="number">0</span>, <span class="number">0</span>, v.getMeasuredWidth(), v.getMeasuredHeight());i  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">layoutView</span><span class="params">(View v, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;  </div><div class="line">    <span class="comment">// validate view.width and view.height  </span></div><div class="line">    v.layout(<span class="number">0</span>, <span class="number">0</span>, width, height);  </div><div class="line">    <span class="keyword">int</span> measuredWidth = View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY);  </div><div class="line">    <span class="keyword">int</span> measuredHeight = View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY);  </div><div class="line">    </div><div class="line">    <span class="comment">// validate view.measurewidth and view.measureheight  </span></div><div class="line">    v.measure(measuredWidth, measuredHeight);  </div><div class="line">    v.layout(<span class="number">0</span>, <span class="number">0</span>, v.getMeasuredWidth(), v.getMeasuredHeight());i  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>使用方式如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> viewWidth = webView.getMeasuredWidth();  </div><div class="line"><span class="keyword">int</span> viewHeight = webView.getMeasuredHeight();  </div><div class="line"><span class="keyword">if</span> (viewWidth &gt; <span class="number">0</span> &amp;&amp; viewHeight &gt; <span class="number">0</span>) &#123;  </div><div class="line">    b = Bitmap.createBitmap(viewWidth, viewHeight, Config.ARGB_8888);  </div><div class="line">    Canvas cvs = <span class="keyword">new</span> Canvas(b);  </div><div class="line">    webView.draw(cvs);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">int</span> viewWidth = webView.getMeasuredWidth();  </div><div class="line"><span class="keyword">int</span> viewHeight = webView.getMeasuredHeight();  </div><div class="line"><span class="keyword">if</span> (viewWidth &gt; <span class="number">0</span> &amp;&amp; viewHeight &gt; <span class="number">0</span>) &#123;  </div><div class="line">    b = Bitmap.createBitmap(viewWidth, viewHeight, Config.ARGB_8888);  </div><div class="line">    Canvas cvs = <span class="keyword">new</span> Canvas(b);  </div><div class="line">    webView.draw(cvs);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>对于WebView的截图有一点特殊，网页内容并不能在布局完成后立即渲染出来，大概需要300ms的时间（对于不同性能的设备、网页复杂程度和Webkit版本可能不同）。</p>
 <p>如果创建后台的WebView需要截图的话，应该在创建时就对其进行布局操作，这样加载完成后大部分就已经渲染完毕了（除非有异步的js处理）。</p>
 <p><br><br>【参考资料】：</p>
@@ -167,7 +167,7 @@ Android中对View的截图也有以下两种方式，值得注意的是两个方
 
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -175,7 +175,7 @@ Android中对View的截图也有以下两种方式，值得注意的是两个方
     
 <nav id="article-nav">
   
-    <a href="/2016/09/07/【Android 】TextView 局部文字变色/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../../09/07/【Android 】TextView 局部文字变色/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -185,7 +185,7 @@ Android中对View的截图也有以下两种方式，值得注意的是两个方
     </a>
   
   
-    <a href="/2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../26/【Android】如何加速 AndroidStudio 的编译效率/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">【Android】如何加速 AndroidStudio 的编译效率</div>
     </a>
@@ -213,13 +213,13 @@ Android中对View的截图也有以下两种方式，值得注意的是两个方
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -227,15 +227,15 @@ Android中对View的截图也有以下两种方式，值得注意的是两个方
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 

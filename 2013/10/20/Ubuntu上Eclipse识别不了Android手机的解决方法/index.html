@@ -30,14 +30,14 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -69,13 +69,13 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -107,12 +107,12 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
     
     <div class="article-meta">
       
-	<a href="/2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2013-10-20T08:46:00.000Z" itemprop="datePublished">2013-10-20</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -124,11 +124,11 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
 <p><br></p>
 <h4 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a><strong>操作步骤：</strong></h4><p>如果是windows平台下，需要安装一个为adb准备的usb驱动。如果是Ubuntu Linux需要添加一个rules文件，里面包含了每一个想要调试的设备的usb配置信息。以HTC手机为例实现步骤如下：</p>
 <p>1、在终端输入 :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">sudo gedit /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>2、在打开的文件里加入   <strong><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0bb4&quot;, MODE=&quot;0666&quot;</code></strong></p>
 <p>3、保存退出后在终端执行 :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod a+r /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">sudo chmod a+r /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
 <p>重新将手机连接到电脑后HTC手机就可以被正常识别了。注意：如果按步骤操作仍不能识别的，检查 <strong><code>ATTR{idVendor}</code></strong> 值里的字母是否是<strong>小写</strong>。</p>
 <p>如果是别的厂家的手机，需要在步骤2更改<strong><code>ATTR{idVendor}</code></strong>的值。如果要添加多个厂家的手机，重复步骤2。其他usb供应商的ID如下：</p>
 <table>
@@ -288,7 +288,7 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
 
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -296,7 +296,7 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
     
 <nav id="article-nav">
   
-    <a href="/2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../../../2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -306,7 +306,7 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
     </a>
   
   
-    <a href="/2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../../08/01/【Java】操作excel表，包括创建、读取、以及修改/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">【Java】操作excel表，包括创建、读取、以及修改</div>
     </a>
@@ -334,13 +334,13 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -348,15 +348,15 @@ google官方开发向导里对Android手机已经设置了允许安装非market�
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 

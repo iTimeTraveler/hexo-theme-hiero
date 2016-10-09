@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、问题描述：问答区有个问题是这样问的：如何在eclipse中删除多行首字母？
 题主的问题是代码中每行都有序号，这些序号一行一行地删太麻烦，如何进行批量删除？我们在进行代码重用的时候时常会出现行号同时被复制的情况，比如下面的这点代码：
-12345678910111213141516171819202122232425262728155.     @Override  156.     public">
+155.     @Override  156.     public boolean onKeyDown(int keyCode, KeyEvent event)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何删除多行首字母，Sublime Text多行编辑运用">
 <meta property="og:url" content="http://github.com/2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/index.html">
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="一、问题描述：问答区有个问题是这样问的：如何在eclipse中删除多行首字母？
 题主的问题是代码中每行都有序号，这些序号一行一行地删太麻烦，如何进行批量删除？我们在进行代码重用的时候时常会出现行号同时被复制的情况，比如下面的这点代码：
-12345678910111213141516171819202122232425262728155.     @Override  156.     public">
+155.     @Override  156.     public boolean onKeyDown(int keyCode, KeyEvent event)">
 <meta property="og:updated_time" content="2016-09-29T04:17:06.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何删除多行首字母，Sublime Text多行编辑运用">
 <meta name="twitter:description" content="一、问题描述：问答区有个问题是这样问的：如何在eclipse中删除多行首字母？
 题主的问题是代码中每行都有序号，这些序号一行一行地删太麻烦，如何进行批量删除？我们在进行代码重用的时候时常会出现行号同时被复制的情况，比如下面的这点代码：
-12345678910111213141516171819202122232425262728155.     @Override  156.     public">
+155.     @Override  156.     public boolean onKeyDown(int keyCode, KeyEvent event)">
   
     <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
   
@@ -30,14 +30,14 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -69,13 +69,13 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -107,7 +107,7 @@
     
     <div class="article-meta">
       
-	<a href="/2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2014-05-15T03:55:00.000Z" itemprop="datePublished">2014-05-15</time>
 	</a>
 
@@ -117,7 +117,7 @@
       
         <h4 id="一、问题描述："><a href="#一、问题描述：" class="headerlink" title="一、问题描述："></a><strong>一、问题描述：</strong></h4><p>问答区有个问题是这样问的：<a href="http://ask.csdn.net/questions/29687" target="_blank" rel="external"><strong>如何在eclipse中删除多行首字母？</strong></a></p>
 <p>题主的问题是代码中每行都有序号，这些序号一行一行地删太麻烦，如何进行批量删除？我们在进行代码重用的时候时常会出现行号同时被复制的情况，比如下面的这点代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="number">155</span>.     <span class="meta">@Override</span>  </div><div class="line"><span class="number">156</span>.     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKeyDown</span><span class="params">(<span class="keyword">int</span> keyCode, KeyEvent event)</span>   </span></div><div class="line">157.     &#123;   </div><div class="line"><span class="number">158</span>.         Log.d(<span class="string">"onKeyDown:"</span>, <span class="string">" keyCode="</span> + keyCode + <span class="string">" KeyEvent="</span> + event);   </div><div class="line"><span class="number">159</span>.         <span class="keyword">switch</span> (keyCode)   </div><div class="line"><span class="number">160</span>.         &#123;   </div><div class="line"><span class="number">161</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_UP:   </div><div class="line"><span class="number">162</span>.   </div><div class="line"><span class="number">163</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">164</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_DOWN:   </div><div class="line"><span class="number">165</span>.   </div><div class="line"><span class="number">166</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">167</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_LEFT:   </div><div class="line"><span class="number">168</span>.                 <span class="comment">//右左按键可以控制第一进度的增减   </span></div><div class="line"><span class="number">169</span>.                 pb.setProgress( pb.getProgress()-<span class="number">5</span> );   </div><div class="line"><span class="number">170</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">171</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_RIGHT:   </div><div class="line"><span class="number">172</span>.                 pb.setProgress( pb.getProgress()+<span class="number">5</span> );   </div><div class="line"><span class="number">173</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">174</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_CENTER:   </div><div class="line"><span class="number">175</span>.   </div><div class="line"><span class="number">176</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">177</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_0:   </div><div class="line"><span class="number">178</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">179</span>.         &#125;   </div><div class="line"><span class="number">180</span>.         <span class="keyword">return</span> <span class="keyword">super</span>.onKeyDown(keyCode, event);   </div><div class="line"><span class="number">181</span>.     &#125;   </div><div class="line"><span class="number">182</span>. &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="number">155</span>.     <span class="meta">@Override</span>  </div><div class="line"><span class="number">156</span>.     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKeyDown</span><span class="params">(<span class="keyword">int</span> keyCode, KeyEvent event)</span>   </span></div><div class="line">157.     &#123;   </div><div class="line"><span class="number">158</span>.         Log.d(<span class="string">"onKeyDown:"</span>, <span class="string">" keyCode="</span> + keyCode + <span class="string">" KeyEvent="</span> + event);   </div><div class="line"><span class="number">159</span>.         <span class="keyword">switch</span> (keyCode)   </div><div class="line"><span class="number">160</span>.         &#123;   </div><div class="line"><span class="number">161</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_UP:   </div><div class="line"><span class="number">162</span>.   </div><div class="line"><span class="number">163</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">164</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_DOWN:   </div><div class="line"><span class="number">165</span>.   </div><div class="line"><span class="number">166</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">167</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_LEFT:   </div><div class="line"><span class="number">168</span>.                 <span class="comment">//右左按键可以控制第一进度的增减   </span></div><div class="line"><span class="number">169</span>.                 pb.setProgress( pb.getProgress()-<span class="number">5</span> );   </div><div class="line"><span class="number">170</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">171</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_RIGHT:   </div><div class="line"><span class="number">172</span>.                 pb.setProgress( pb.getProgress()+<span class="number">5</span> );   </div><div class="line"><span class="number">173</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">174</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_CENTER:   </div><div class="line"><span class="number">175</span>.   </div><div class="line"><span class="number">176</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">177</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_0:   </div><div class="line"><span class="number">178</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">179</span>.         &#125;   </div><div class="line"><span class="number">180</span>.         <span class="keyword">return</span> <span class="keyword">super</span>.onKeyDown(keyCode, event);   </div><div class="line"><span class="number">181</span>.     &#125;   </div><div class="line"><span class="number">182</span>. &#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p> 这是博主从别处摘来的代码粘贴在Eclipse中的，很明显行号也被复制了进来。<br> 对于这样的问题，如果代码行数真的多到可以用来数绵羊了，还用Delete键一行一行地解决可真就轻而易举地抑郁了哭  #其实我有特别的患抑郁症技巧#</p>
 <p><br></p>
@@ -163,7 +163,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../../09/12/【Android】保存图片到系统图库, 并立即显示在图库中/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -173,7 +173,7 @@
     </a>
   
   
-    <a href="/2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../../../2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Ubuntu上Eclipse识别不了Android手机的解决方法</div>
     </a>
@@ -201,13 +201,13 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -215,15 +215,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 

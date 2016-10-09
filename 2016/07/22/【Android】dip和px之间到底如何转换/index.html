@@ -11,12 +11,13 @@
 <meta property="og:url" content="http://github.com/2016/07/22/【Android】dip和px之间到底如何转换/index.html">
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="在Android xml布局文件中，我们既可以设置px，也可以设置dp（或者dip）。一般情况下，我们都会选择使用dp，这样可以保证不同屏幕分辨率的机器上布局一致。">
+<meta property="og:image" content="http://github.com/2016/07/22/【Android】dip和px之间到底如何转换/01.jpg">
 <meta property="og:image" content="http://img.blog.csdn.net/20160722113144430">
 <meta property="og:updated_time" content="2016-08-30T03:13:16.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android】dip和px之间到底如何转换">
 <meta name="twitter:description" content="在Android xml布局文件中，我们既可以设置px，也可以设置dp（或者dip）。一般情况下，我们都会选择使用dp，这样可以保证不同屏幕分辨率的机器上布局一致。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20160722113144430">
+<meta name="twitter:image" content="http://github.com/2016/07/22/【Android】dip和px之间到底如何转换/01.jpg">
   
     <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
   
@@ -26,14 +27,14 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -65,13 +66,13 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -103,17 +104,17 @@
     
     <div class="article-meta">
       
-	<a href="/2016/07/22/【Android】dip和px之间到底如何转换/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2016-07-22T04:02:00.000Z" itemprop="datePublished">2016-07-22</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <img src="/2016/07/22/【Android】dip和px之间到底如何转换/01.jpg" alt="01.jpg" title="">
 <blockquote>
 <p>在Android xml布局文件中，我们既可以设置px，也可以设置dp（或者dip）。一般情况下，我们都会选择使用dp，这样可以保证不同屏幕分辨率的机器上布局一致。</p>
 <p>但是在代码中，如何处理呢？很多控件的方法中都只提供了设置px的方法，例如setPadding，并没有提供设置dp的方法。这个时候，如果需要设置dp的话，就要将dp转换成px了。</p>
@@ -143,7 +144,7 @@
 <p>dp = sp? </p>
 <p><br></p>
 <h4 id="四、转换代码"><a href="#四、转换代码" class="headerlink" title="四、转换代码"></a><strong>四、转换代码</strong></h4><p> 为了方便进行px和dp之间的转换，可以使用以下代码。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.content.Context;  </div><div class="line">  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DensityUtil</span> </span>&#123;  </div><div class="line">  </div><div class="line">    <span class="comment">/** </span></div><div class="line">     * 根据手机的分辨率从 dp 的单位 转成为 px(像素) </div><div class="line">     */  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">dip2px</span><span class="params">(Context context, <span class="keyword">float</span> dpValue)</span> </span>&#123;  </div><div class="line">        <span class="keyword">final</span> <span class="keyword">float</span> scale = context.getResources().getDisplayMetrics().density;  </div><div class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) (dpValue * scale + <span class="number">0.5f</span>);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="comment">/** </span></div><div class="line">     * 根据手机的分辨率从 px(像素) 的单位 转成为 dp </div><div class="line">     */  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">px2dip</span><span class="params">(Context context, <span class="keyword">float</span> pxValue)</span> </span>&#123;  </div><div class="line">        <span class="keyword">final</span> <span class="keyword">float</span> scale = context.getResources().getDisplayMetrics().density;  </div><div class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) (pxValue / scale + <span class="number">0.5f</span>);  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> android.content.Context;  </div><div class="line">  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DensityUtil</span> </span>&#123;  </div><div class="line">  </div><div class="line">    <span class="comment">/** </span></div><div class="line">     * 根据手机的分辨率从 dp 的单位 转成为 px(像素) </div><div class="line">     */  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">dip2px</span><span class="params">(Context context, <span class="keyword">float</span> dpValue)</span> </span>&#123;  </div><div class="line">        <span class="keyword">final</span> <span class="keyword">float</span> scale = context.getResources().getDisplayMetrics().density;  </div><div class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) (dpValue * scale + <span class="number">0.5f</span>);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="comment">/** </span></div><div class="line">     * 根据手机的分辨率从 px(像素) 的单位 转成为 dp </div><div class="line">     */  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">px2dip</span><span class="params">(Context context, <span class="keyword">float</span> pxValue)</span> </span>&#123;  </div><div class="line">        <span class="keyword">final</span> <span class="keyword">float</span> scale = context.getResources().getDisplayMetrics().density;  </div><div class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) (pxValue / scale + <span class="number">0.5f</span>);  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><br></p>
 <h4 id="【参考资料】"><a href="#【参考资料】" class="headerlink" title="【参考资料】"></a>【参考资料】</h4><p>1、<a href="http://www.cnblogs.com/bluestorm/p/3640786.html" target="_blank" rel="external">px 与 dp, sp换算公式</a><br>2、<a href="https://zhuanlan.zhihu.com/p/19565895" target="_blank" rel="external">dp、sp、px傻傻分不清楚[完整]</a></p>
 
@@ -176,7 +177,7 @@
 
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -184,7 +185,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../../08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -194,7 +195,7 @@
     </a>
   
   
-    <a href="/2016/07/19/【Android】Monkey压力测试与停止/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../19/【Android】Monkey压力测试与停止/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">【Android】Monkey压力测试与停止</div>
     </a>
@@ -222,13 +223,13 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -236,15 +237,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 

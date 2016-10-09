@@ -23,7 +23,7 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
@@ -44,7 +44,7 @@
     <div id="header-outer" class="outer">
       <div id="header-title" class="inner">
         <h1 id="logo-wrap">
-          <a href="/" id="logo">iTimeTraveler</a>
+          <a href="../../index.html" id="logo">iTimeTraveler</a>
         </h1>
         
       </div>
@@ -52,13 +52,13 @@
         <nav id="main-nav">
           <a id="main-nav-toggle" class="nav-icon"></a>
           
-            <a class="main-nav-link" href="/">Home</a>
+            <a class="main-nav-link" href="../../index.html">Home</a>
           
-            <a class="main-nav-link" href="/archives">Archives</a>
+            <a class="main-nav-link" href="../../archives">Archives</a>
           
-            <a class="main-nav-link" href="/tags">Tags</a>
+            <a class="main-nav-link" href="../../tags">Tags</a>
           
-            <a class="main-nav-link" href="/about">About</a>
+            <a class="main-nav-link" href="../../about">About</a>
           
         </nav>
         <nav id="sub-nav">
@@ -164,13 +164,13 @@
   <div class="intro-navigate">
       <p class="navigater-list">
         
-          <a id="beautifont" class="main-nav-link" href="/">Home</a>
+          <a id="beautifont" class="main-nav-link" href="../../index.html">Home</a>
         
-          <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
+          <a id="beautifont" class="main-nav-link" href="../../archives">Archives</a>
         
-          <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
+          <a id="beautifont" class="main-nav-link" href="../../tags">Tags</a>
         
-          <a id="beautifont" class="main-nav-link" href="/about">About</a>
+          <a id="beautifont" class="main-nav-link" href="../../about">About</a>
         
       </p>
   </div>
@@ -193,7 +193,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/">【Android】使用shape的同时，动态替换shape的颜色属性</a>
+      <a class="article-title" href="../../2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/">【Android】使用shape的同时，动态替换shape的颜色属性</a>
     </h1>
   
 
@@ -201,12 +201,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/" class="article-date">
+	<a href="../../2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/" class="article-date">
 	  <time datetime="2016-08-08T10:10:00.000Z" itemprop="datePublished">2016-08-08</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -217,11 +217,11 @@
 <p><br></p>
 <h4 id="一、问题"><a href="#一、问题" class="headerlink" title="一、问题"></a><strong>一、问题</strong></h4><p>比如以下这三个按钮：</p>
 <p><img src="http://img.blog.csdn.net/20160808175543250" alt="三个样式相同的按钮"></p>
-<p>为第一个灰色按钮自定义背景如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">shape</span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"@color/gray"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">corners</span></div><div class="line">        <span class="attr">android:radius</span>=<span class="string">"60dip"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">stroke</span></div><div class="line">        <span class="attr">android:width</span>=<span class="string">"0dp"</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">solid</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>为第一个灰色按钮自定义背景如下：<br><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">shape</span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"@color/gray"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">corners</span></div><div class="line">        <span class="attr">android:radius</span>=<span class="string">"60dip"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">stroke</span></div><div class="line">        <span class="attr">android:width</span>=<span class="string">"0dp"</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">solid</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>然后，如果再为每个颜色的按钮都写一个shape背景也太麻烦，重用性太差。</p>
         
           <p class="article-more-link">
-            <a href="/2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/#more">Read More</a>
+            <a href="../../2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/#more">Read More</a>
           </p>
         
       
@@ -229,7 +229,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -246,7 +246,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/">BAT人才体系的职位层级、薪酬、晋升标准</a>
+      <a class="article-title" href="../../2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/">BAT人才体系的职位层级、薪酬、晋升标准</a>
     </h1>
   
 
@@ -254,17 +254,17 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/" class="article-date">
+	<a href="../../2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/" class="article-date">
 	  <time datetime="2016-08-02T03:06:00.000Z" itemprop="datePublished">2016-08-02</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/BAT/">BAT</a>
+    <a class="article-category-link" href="../../categories/BAT/">BAT</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="asset_img 01.jpg" alt=""></p>
+        <img src="/2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/01.jpg" alt="01.jpg" title="">
 <blockquote>
 <p>互联网圈有这么一句话：百度的技术，阿里的运营，腾讯的产品。那么代表互联网三座大山的BAT，内部人才体系有什么区别呢？可以先看看这个话题<a href="https://www.zhihu.com/question/27108669">百度、腾讯和阿里内部的级别和薪资待遇是什么样的？</a></p>
 </blockquote>
@@ -289,7 +289,7 @@
 </ul>
         
           <p class="article-more-link">
-            <a href="/2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/#more">Read More</a>
+            <a href="../../2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/#more">Read More</a>
           </p>
         
       
@@ -297,7 +297,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BAT/">BAT</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/BAT/">BAT</a></li></ul>
 
     </footer>
   </div>
@@ -314,7 +314,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/22/【Android】dip和px之间到底如何转换/">【Android】dip和px之间到底如何转换</a>
+      <a class="article-title" href="../../2016/07/22/【Android】dip和px之间到底如何转换/">【Android】dip和px之间到底如何转换</a>
     </h1>
   
 
@@ -322,17 +322,18 @@
     
     <div class="article-meta">
       
-	<a href="/2016/07/22/【Android】dip和px之间到底如何转换/" class="article-date">
+	<a href="../../2016/07/22/【Android】dip和px之间到底如何转换/" class="article-date">
 	  <time datetime="2016-07-22T04:02:00.000Z" itemprop="datePublished">2016-07-22</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
+        <img src="/2016/07/22/【Android】dip和px之间到底如何转换/01.jpg" alt="01.jpg" title="">
+<blockquote>
 <p>在Android xml布局文件中，我们既可以设置px，也可以设置dp（或者dip）。一般情况下，我们都会选择使用dp，这样可以保证不同屏幕分辨率的机器上布局一致。</p>
 <p>但是在代码中，如何处理呢？很多控件的方法中都只提供了设置px的方法，例如setPadding，并没有提供设置dp的方法。这个时候，如果需要设置dp的话，就要将dp转换成px了。</p>
 </blockquote>
@@ -347,7 +348,7 @@
 </ol>
         
           <p class="article-more-link">
-            <a href="/2016/07/22/【Android】dip和px之间到底如何转换/#more">Read More</a>
+            <a href="../../2016/07/22/【Android】dip和px之间到底如何转换/#more">Read More</a>
           </p>
         
       
@@ -355,7 +356,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -372,7 +373,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/19/【Android】Monkey压力测试与停止/">【Android】Monkey压力测试与停止</a>
+      <a class="article-title" href="../../2016/07/19/【Android】Monkey压力测试与停止/">【Android】Monkey压力测试与停止</a>
     </h1>
   
 
@@ -380,12 +381,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/07/19/【Android】Monkey压力测试与停止/" class="article-date">
+	<a href="../../2016/07/19/【Android】Monkey压力测试与停止/" class="article-date">
 	  <time datetime="2016-07-19T03:09:00.000Z" itemprop="datePublished">2016-07-19</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -409,7 +410,7 @@
 <p>具体的命令解释可以看这里：<a href="http://www.jb51.net/article/48557.htm">android 压力测试命令monkey详解</a></p>
         
           <p class="article-more-link">
-            <a href="/2016/07/19/【Android】Monkey压力测试与停止/#more">Read More</a>
+            <a href="../../2016/07/19/【Android】Monkey压力测试与停止/#more">Read More</a>
           </p>
         
       
@@ -417,7 +418,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -434,7 +435,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/14/【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？/">【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？</a>
+      <a class="article-title" href="../../2016/07/14/【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？/">【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？</a>
     </h1>
   
 
@@ -442,12 +443,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/07/14/【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？/" class="article-date">
+	<a href="../../2016/07/14/【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？/" class="article-date">
 	  <time datetime="2016-07-14T08:27:00.000Z" itemprop="datePublished">2016-07-14</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -460,7 +461,7 @@
 <p>其实方法很简单，这里我们需要用到 <strong>Thread.setDefaultUncaughtExceptionHandler()</strong>，当应用崩溃的时候代码就会自动调用 <strong>uncaughtException()</strong> 这个方法。</p>
         
           <p class="article-more-link">
-            <a href="/2016/07/14/【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？/#more">Read More</a>
+            <a href="../../2016/07/14/【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？/#more">Read More</a>
           </p>
         
       
@@ -468,7 +469,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -485,7 +486,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/12/【SVN】使用patch命令保存更改/">【SVN】使用patch命令保存更改</a>
+      <a class="article-title" href="../../2016/06/12/【SVN】使用patch命令保存更改/">【SVN】使用patch命令保存更改</a>
     </h1>
   
 
@@ -493,12 +494,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/06/12/【SVN】使用patch命令保存更改/" class="article-date">
+	<a href="../../2016/06/12/【SVN】使用patch命令保存更改/" class="article-date">
 	  <time datetime="2016-06-12T03:06:00.000Z" itemprop="datePublished">2016-06-12</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/SVN/">SVN</a>
+    <a class="article-category-link" href="../../categories/SVN/">SVN</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -507,12 +508,12 @@
 <p>使用svn管理工程代码时，有些时候的更改尚未整理好，需要暂时搁置，转而进行下一个任务，此时就需要将当前的更改（diff）暂时保存下来，忙完其他的任务之后再继续进行。但是如果不进行commit，怎么保存当前的更改呢？答案是使用 patch 命令！</p>
 </blockquote>
 <p> <br></p>
-<h4 id="一、生成patch文件"><a href="#一、生成patch文件" class="headerlink" title="一、生成patch文件"></a><strong>一、生成patch文件</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">svn diff &gt; patchFile 			// 整个工程的变动生成patch</div><div class="line">svn diff FILE_NAME &gt; patchFile 	// 某个文件单独变动的patch</div></pre></td></tr></table></figure>
+<h4 id="一、生成patch文件"><a href="#一、生成patch文件" class="headerlink" title="一、生成patch文件"></a><strong>一、生成patch文件</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">svn diff &gt; patchFile 			// 整个工程的变动生成patch</div><div class="line">svn diff FILE_NAME &gt; patchFile 	// 某个文件单独变动的patch</div></pre></td></tr></table></figure>
 <p> <br></p>
-<h4 id="二、svn回滚"><a href="#二、svn回滚" class="headerlink" title="二、svn回滚"></a><strong>二、svn回滚</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">svn revert FILE 				// 单个文件回滚</div><div class="line">svn revert DIR --depth=infinity // 整个目录进行递归回滚</div><div class="line">svn revert . --depth=infinity 	// 当前目录进行递归回滚</div></pre></td></tr></table></figure>
+<h4 id="二、svn回滚"><a href="#二、svn回滚" class="headerlink" title="二、svn回滚"></a><strong>二、svn回滚</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">svn revert FILE 				// 单个文件回滚</div><div class="line">svn revert DIR --depth=infinity // 整个目录进行递归回滚</div><div class="line">svn revert . --depth=infinity 	// 当前目录进行递归回滚</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2016/06/12/【SVN】使用patch命令保存更改/#more">Read More</a>
+            <a href="../../2016/06/12/【SVN】使用patch命令保存更改/#more">Read More</a>
           </p>
         
       
@@ -520,58 +521,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SVN/">SVN</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-【Android】技术调研：用代码模拟屏幕点击、触摸事件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/02/【Android】技术调研：用代码模拟屏幕点击、触摸事件/">【Android】技术调研：用代码模拟屏幕点击、触摸事件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/06/02/【Android】技术调研：用代码模拟屏幕点击、触摸事件/" class="article-date">
-	  <time datetime="2016-06-02T03:55:00.000Z" itemprop="datePublished">2016-06-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>在Android中，有些场景需要使用代码来模拟人的操作，比如微信自动抢红包、UI测试等都需要模拟实现点击事件（Click）、触摸事件（Touch）、键盘事件（KeyBoard）等。那么，有没有现成的方案可以实现呢？答案当然是肯定的啦，往下看。</p>
-</blockquote>
-<p><br><br>经过调研发现，给系统模拟注入输入事件有如下几种方式：<br><br><br><br><br><strong>一、使用shell命令</strong></p>
-<p>使用android自带的adb shell，里面自带一个input工具，使用方法如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb shell <span class="comment">#进入系统</span></div><div class="line">input keyevent KEYCODE_BACK  <span class="comment">#模拟按返回键</span></div><div class="line">input keyevent KEYCODE_HOME  <span class="comment">#模拟按Home键</span></div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/02/【Android】技术调研：用代码模拟屏幕点击、触摸事件/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/SVN/">SVN</a></li></ul>
 
     </footer>
   </div>
@@ -588,7 +538,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/02/【Java】按位存储：使用int存储boolean数组/">【Java】按位存储：使用int存储boolean数组</a>
+      <a class="article-title" href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/">【Java】按位存储：使用int存储boolean数组</a>
     </h1>
   
 
@@ -596,12 +546,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/06/02/【Java】按位存储：使用int存储boolean数组/" class="article-date">
+	<a href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/" class="article-date">
 	  <time datetime="2016-06-02T03:55:00.000Z" itemprop="datePublished">2016-06-02</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Java/">Java</a>
+    <a class="article-category-link" href="../../categories/Java/">Java</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -609,12 +559,12 @@
         <blockquote>
 <p>有一种场景，比如App设置页中会有一组开关选项，这个时候保存这些开关的状态，如果每个按钮都对应一个boolean值的话，太大材小用显得鸡肋，频繁读取SharedPreferences 存取效率自然快不过一次读取。</p>
 </blockquote>
-<p><br><br>首先，敲定每个boolean值存储的位置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> mBroadcastCustomValue = <span class="number">0</span>;   <span class="comment">//用来存储的int值</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_BASE = <span class="number">1</span>;				<span class="comment">//基础类播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_TRAFFIC = <span class="number">1</span> &lt;&lt; <span class="number">1</span>;		<span class="comment">//实时路况</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_CAMERA = <span class="number">1</span> &lt;&lt; <span class="number">2</span>;		<span class="comment">//摄像头限速播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_SAFE = <span class="number">1</span> &lt;&lt; <span class="number">3</span>;		<span class="comment">//安全提醒类</span></div></pre></td></tr></table></figure></p>
+<p><br><br>首先，敲定每个boolean值存储的位置<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> mBroadcastCustomValue = <span class="number">0</span>;   <span class="comment">//用来存储的int值</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_BASE = <span class="number">1</span>;				<span class="comment">//基础类播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_TRAFFIC = <span class="number">1</span> &lt;&lt; <span class="number">1</span>;		<span class="comment">//实时路况</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_CAMERA = <span class="number">1</span> &lt;&lt; <span class="number">2</span>;		<span class="comment">//摄像头限速播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_SAFE = <span class="number">1</span> &lt;&lt; <span class="number">3</span>;		<span class="comment">//安全提醒类</span></div></pre></td></tr></table></figure></p>
 <p><br><br><strong>一、添加Add</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue |= level;    <span class="comment">//add</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">addLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue |= level;    <span class="comment">//add</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">addLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2016/06/02/【Java】按位存储：使用int存储boolean数组/#more">Read More</a>
+            <a href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/#more">Read More</a>
           </p>
         
       
@@ -622,7 +572,58 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-【Android】技术调研：用代码模拟屏幕点击、触摸事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2016/06/02/【Android】技术调研：用代码模拟屏幕点击、触摸事件/">【Android】技术调研：用代码模拟屏幕点击、触摸事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2016/06/02/【Android】技术调研：用代码模拟屏幕点击、触摸事件/" class="article-date">
+	  <time datetime="2016-06-02T03:55:00.000Z" itemprop="datePublished">2016-06-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>在Android中，有些场景需要使用代码来模拟人的操作，比如微信自动抢红包、UI测试等都需要模拟实现点击事件（Click）、触摸事件（Touch）、键盘事件（KeyBoard）等。那么，有没有现成的方案可以实现呢？答案当然是肯定的啦，往下看。</p>
+</blockquote>
+<p><br><br>经过调研发现，给系统模拟注入输入事件有如下几种方式：<br><br><br><br><br><strong>一、使用shell命令</strong></p>
+<p>使用android自带的adb shell，里面自带一个input工具，使用方法如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">adb shell <span class="comment">#进入系统</span></div><div class="line">input keyevent KEYCODE_BACK  <span class="comment">#模拟按返回键</span></div><div class="line">input keyevent KEYCODE_HOME  <span class="comment">#模拟按Home键</span></div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="../../2016/06/02/【Android】技术调研：用代码模拟屏幕点击、触摸事件/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -639,7 +640,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/04/29/【MySQL】查询保持IN中的顺序/">【MySQL】查询保持IN中的顺序</a>
+      <a class="article-title" href="../../2016/04/29/【MySQL】查询保持IN中的顺序/">【MySQL】查询保持IN中的顺序</a>
     </h1>
   
 
@@ -647,12 +648,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/04/29/【MySQL】查询保持IN中的顺序/" class="article-date">
+	<a href="../../2016/04/29/【MySQL】查询保持IN中的顺序/" class="article-date">
 	  <time datetime="2016-04-29T07:36:00.000Z" itemprop="datePublished">2016-04-29</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+    <a class="article-category-link" href="../../categories/MySQL/">MySQL</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -663,7 +664,7 @@
 <p>比如下面这个查询结果，mysql会默认使用主键id的ASC自增排序结果集：<br><img src="http://img.blog.csdn.net/20160429152929904" alt="这里写图片描述"></p>
         
           <p class="article-more-link">
-            <a href="/2016/04/29/【MySQL】查询保持IN中的顺序/#more">Read More</a>
+            <a href="../../2016/04/29/【MySQL】查询保持IN中的顺序/#more">Read More</a>
           </p>
         
       
@@ -671,7 +672,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/MySQL/">MySQL</a></li></ul>
 
     </footer>
   </div>
@@ -688,7 +689,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/">【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决</a>
+      <a class="article-title" href="../../2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/">【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决</a>
     </h1>
   
 
@@ -696,12 +697,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/" class="article-date">
+	<a href="../../2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/" class="article-date">
 	  <time datetime="2016-04-29T03:37:09.000Z" itemprop="datePublished">2016-04-29</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="../../categories/Linux/">Linux</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -716,7 +717,7 @@
 <p>1）在windows下转换：<br>利用一些编辑器如UltraEdit或EditPlus等工具先将脚本编码转换，再放到Linux中执行。转换方式如下（UltraEdit）：File–&gt;Conversions–&gt;DOS-&gt;UNIX即可。 </p>
         
           <p class="article-more-link">
-            <a href="/2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/#more">Read More</a>
+            <a href="../../2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/#more">Read More</a>
           </p>
         
       
@@ -724,7 +725,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -737,7 +738,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="../../index.html">&laquo; Prev</a><a class="page-number" href="../../index.html">1</a><span class="page-number current">2</span><a class="page-number" href="../3/">3</a><a class="page-number" href="../4/">4</a><a class="page-number" href="../5/">5</a><a class="extend next" rel="next" href="../3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -760,13 +761,13 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -774,15 +775,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../fancybox/jquery.fancybox.css">
+  <script src="../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../js/script.js"></script>
+<script src="../../js/bootstrap.js"></script>
 
 
-  <script src="/js/home.js"></script>
+  <script src="../../js/home.js"></script>
 
 
 

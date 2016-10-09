@@ -44,14 +44,14 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -83,13 +83,13 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -121,7 +121,7 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
     
     <div class="article-meta">
       
-	<a href="/2016/09/28/Chrome自带的开发者工具进阶技巧/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2016-09-28T10:50:00.000Z" itemprop="datePublished">2016-09-28</time>
 	</a>
 
@@ -147,7 +147,7 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
 <p><br></p>
 <h3 id="2-一秒钟让Chrome变成所见即所得的编辑器"><a href="#2-一秒钟让Chrome变成所见即所得的编辑器" class="headerlink" title="2.一秒钟让Chrome变成所见即所得的编辑器"></a><strong>2.一秒钟让Chrome变成所见即所得的编辑器</strong></h3><p>你可能经常会困惑你到底能不能直接在浏览器里更改网页的文本内容。答案是肯定的，你可以只通过一行简单的指令把Chrome变成所见即所得的编辑器，直接在网页上随心所欲地删改文字。</p>
 <p>你不需要再傻傻地右键审查元素，编辑源代码了。打开Chrome的开发者控制台，输入</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.body.contentEditable=<span class="literal">true</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.body.contentEditable=<span class="literal">true</span></div></pre></td></tr></table></figure>
 <p>然后奇迹就发生啦，你竟然可以在网页里直接编辑，或者随意拖动图片的位置了！要是你正在用Chrome现在就可以试试！</p>
 <p><img src="http://img.blog.csdn.net/20160928183416388" alt=""></p>
 <p><br></p>
@@ -155,9 +155,9 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
 <p>getEventListeners($(‘selector’)) 方法以数组对象的格式返回某个元素绑定的所有事件。你可以在控制台里展开对象查看详细的内容。</p>
 <p><img src="http://img.blog.csdn.net/20160928183613844" alt=""></p>
 <p>要是你需要选择其中的某个事件，可以通过下面的方法来访问：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getEventListeners($(<span class="string">'selector'</span>)).eventName[<span class="number">0</span>].listener</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">getEventListeners($(<span class="string">'selector'</span>)).eventName[<span class="number">0</span>].listener</div></pre></td></tr></table></figure>
 <p>这里的 eventName 表示某种事件类型，例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getEventListeners($(<span class="string">'#firstName'</span>)).click[<span class="number">0</span>].listener</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">getEventListeners($(<span class="string">'#firstName'</span>)).click[<span class="number">0</span>].listener</div></pre></td></tr></table></figure>
 <p>上面的例子会返回ID为 firstName 元素绑定的click事件。</p>
 <p><br></p>
 <h3 id="4-监测事件"><a href="#4-监测事件" class="headerlink" title="4.监测事件"></a><strong>4.监测事件</strong></h3><p>当你需要监视某个DOM触发的事件时，也可以用到控制台。例如下面这些方法：</p>
@@ -173,12 +173,12 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
 </ul>
 <p><br></p>
 <h3 id="5-用计时器来获取某段代码块的运行时间"><a href="#5-用计时器来获取某段代码块的运行时间" class="headerlink" title="5.用计时器来获取某段代码块的运行时间"></a><strong>5.用计时器来获取某段代码块的运行时间</strong></h3><p>通过 console.time(‘labelName’) 来设定一个计时器，其中的 labelName 是计时器的名称。通过console.timeEnd(‘labelName’) 方法来停止并输出某个计时器的时间。例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.time(<span class="string">'myTime'</span>); <span class="comment">//设定计时器开始 - myTime</span></div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'mytime'</span>); <span class="comment">//结束并输出计时时长 - myTime</span></div><div class="line"></div><div class="line"><span class="comment">//输出: myTime:123.00 ms</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.time(<span class="string">'myTime'</span>); <span class="comment">//设定计时器开始 - myTime</span></div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'mytime'</span>); <span class="comment">//结束并输出计时时长 - myTime</span></div><div class="line"></div><div class="line"><span class="comment">//输出: myTime:123.00 ms</span></div></pre></td></tr></table></figure>
 <p>再举一个通过计时器来计算代码块运行时间的例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.time(<span class="string">'myTime'</span>); <span class="comment">//开始计时 - myTime</span></div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)&#123;</div><div class="line">  <span class="number">2</span>+<span class="number">4</span>+<span class="number">5</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'mytime'</span>); <span class="comment">//结束并输出计时时长 - myTime</span></div><div class="line"></div><div class="line"><span class="comment">//输出 - myTime:12345.00 ms</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.time(<span class="string">'myTime'</span>); <span class="comment">//开始计时 - myTime</span></div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)&#123;</div><div class="line">  <span class="number">2</span>+<span class="number">4</span>+<span class="number">5</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'mytime'</span>); <span class="comment">//结束并输出计时时长 - myTime</span></div><div class="line"></div><div class="line"><span class="comment">//输出 - myTime:12345.00 ms</span></div></pre></td></tr></table></figure>
 <p><br></p>
 <h3 id="6-以表格的形式输出数组"><a href="#6-以表格的形式输出数组" class="headerlink" title="6.以表格的形式输出数组"></a><strong>6.以表格的形式输出数组</strong></h3><p>假设我们有一个像下面这样的数组：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray=[&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>&#125;,&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>,<span class="attr">d</span>:<span class="number">4</span>&#125;,&#123;<span class="attr">k</span>:<span class="number">11</span>,<span class="attr">f</span>:<span class="number">22</span>&#125;,&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>&#125;]</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray=[&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>&#125;,&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>,<span class="attr">d</span>:<span class="number">4</span>&#125;,&#123;<span class="attr">k</span>:<span class="number">11</span>,<span class="attr">f</span>:<span class="number">22</span>&#125;,&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>&#125;]</div></pre></td></tr></table></figure>
 <p>要是你直接在控制台里输入数组的名称，Chrome会以文本的形式返回一个数组对象。但你完全可以通过<code>console.table(variableName)</code> 方法来以表格的形式输出每个元素的值。例如下图：</p>
 <p><img src="http://img.blog.csdn.net/20160928184410011" alt=""></p>
 <p><br></p>
@@ -196,7 +196,7 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
 <p><img src="http://img.blog.csdn.net/20160928184731077" alt=""></p>
 <p><br></p>
 <h3 id="9-获取最后计算结果的值"><a href="#9-获取最后计算结果的值" class="headerlink" title="9.获取最后计算结果的值"></a><strong>9.获取最后计算结果的值</strong></h3><p>你可以把控制台当作计算器使用。当你在Chrome控制台里进行计算时，可以通过$_来获取最后的计算结果值，还是直接看例子吧：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span>+<span class="number">3</span>+<span class="number">4</span></div><div class="line"><span class="number">9</span> <span class="comment">//- The Answer of the SUM is 9</span></div><div class="line"></div><div class="line">$_</div><div class="line"><span class="number">9</span> <span class="comment">// Gives the last Result</span></div><div class="line"></div><div class="line">$_ * $_</div><div class="line"><span class="number">81</span>  <span class="comment">// As the last Result was 9</span></div><div class="line"></div><div class="line"><span class="built_in">Math</span>.sqrt($_)</div><div class="line"><span class="number">9</span> <span class="comment">// As the last Result was 81</span></div><div class="line"></div><div class="line">$_</div><div class="line"><span class="number">9</span> <span class="comment">// As the Last Result is 9</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="number">2</span>+<span class="number">3</span>+<span class="number">4</span></div><div class="line"><span class="number">9</span> <span class="comment">//- The Answer of the SUM is 9</span></div><div class="line"></div><div class="line">$_</div><div class="line"><span class="number">9</span> <span class="comment">// Gives the last Result</span></div><div class="line"></div><div class="line">$_ * $_</div><div class="line"><span class="number">81</span>  <span class="comment">// As the last Result was 9</span></div><div class="line"></div><div class="line"><span class="built_in">Math</span>.sqrt($_)</div><div class="line"><span class="number">9</span> <span class="comment">// As the last Result was 81</span></div><div class="line"></div><div class="line">$_</div><div class="line"><span class="number">9</span> <span class="comment">// As the Last Result is 9</span></div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160928184825129" alt=""></p>
 <p><br></p>
 <h3 id="10-清空控制台输出"><a href="#10-清空控制台输出" class="headerlink" title="10.清空控制台输出"></a><strong>10.清空控制台输出</strong></h3><p>当你需要这么做的时候，只需要输入 <code>clear()</code> 然后回车就好啦！</p>
@@ -231,7 +231,7 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
 
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebDevelopment/">WebDevelopment</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/WebDevelopment/">WebDevelopment</a></li></ul>
 
     </footer>
   </div>
@@ -240,7 +240,7 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
 <nav id="article-nav">
   
   
-    <a href="/2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../19/【Android】抽象布局 — include、merge 、ViewStub/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">【Android】抽象布局 — include、merge 、ViewStub</div>
     </a>
@@ -268,13 +268,13 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -282,15 +282,15 @@ Chrome自带开发者工具。它的功能十分丰富，包括元素、网络�
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 

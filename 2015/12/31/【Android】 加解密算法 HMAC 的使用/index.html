@@ -24,14 +24,14 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -63,13 +63,13 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -101,12 +101,12 @@
     
     <div class="article-meta">
       
-	<a href="/2015/12/31/【Android】 加解密算法 HMAC 的使用/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2015-12-31T07:30:00.000Z" itemprop="datePublished">2015-12-31</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -115,7 +115,7 @@
 <p>&nbsp;&nbsp; HMAC是密钥相关的哈希运算消息认证码（Hash-based Message Authentication Code）,HMAC运算利用哈希算法，以一个密钥和一个消息为输入，生成一个消息摘要作为输出。</p>
 <p>&nbsp;&nbsp;简而言之，HMAC就是含有密钥散列函数算法，兼容了MD和SHA算法的特性，并在此基础上加上了密钥。因此MAC算法也经常被称作HMAC算法。关于hmac算法的详情可以参看RFC 2104(<a href="http://www.ietf.org/rfc/rfc2104.txt)，这里包含了HmacMD5算法的C语言实现。" target="_blank" rel="external">http://www.ietf.org/rfc/rfc2104.txt)，这里包含了HmacMD5算法的C语言实现。</a><br><br></p>
 <a id="more"></a>
-<p><strong>2、代码实现（Android）</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//这是HMAC的Android代码</span></div><div class="line"><span class="comment">//之所以不是Java是因为代码中的Base64使用的是android.util包下的Base64类，而不是Java自带的Base64类。</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HMACTest</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOG_TAG = <span class="string">"HMACTest"</span>;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String REGISTER_HMAC_KEY = <span class="string">"12a9cc3f-1fd9-48a3-1fd9-1fd9d027ac2"</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">private</span> String <span class="title">stringToSign</span><span class="params">(String data)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Mac mac = Mac.getInstance(<span class="string">"HmacSHA1"</span>);</div><div class="line">            SecretKeySpec secret = <span class="keyword">new</span> SecretKeySpec(</div><div class="line">                    REGISTER_HMAC_KEY.getBytes(<span class="string">"UTF-8"</span>), mac.getAlgorithm());</div><div class="line">            mac.init(secret);</div><div class="line">            <span class="keyword">return</span> Base64.encodeToString(mac.doFinal(data.getBytes()), Base64.NO_WRAP);</div><div class="line">        &#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</div><div class="line">            Log.e(LOG_TAG, <span class="string">"Hash algorithm SHA-1 is not supported"</span>, e);</div><div class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</div><div class="line">            Log.e(LOG_TAG, <span class="string">"Encoding UTF-8 is not supported"</span>, e);</div><div class="line">        &#125; <span class="keyword">catch</span> (InvalidKeyException e) &#123;</div><div class="line">            Log.e(LOG_TAG, <span class="string">"Invalid key"</span>, e);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">	<span class="comment">/*</span></div><div class="line">	 * 测试函数</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</div><div class="line">		HMACTest hmac = <span class="keyword">new</span> HMACTest();</div><div class="line">		String str = <span class="string">"Bello, Miss.Seven"</span>;</div><div class="line">		System.out.println(<span class="string">"加密前："</span> + str);</div><div class="line">		System.out.println(<span class="string">"加密后："</span> + hmac.stringToSign(str));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>2、代码实现（Android）</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="comment">//这是HMAC的Android代码</span></div><div class="line"><span class="comment">//之所以不是Java是因为代码中的Base64使用的是android.util包下的Base64类，而不是Java自带的Base64类。</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HMACTest</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOG_TAG = <span class="string">"HMACTest"</span>;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String REGISTER_HMAC_KEY = <span class="string">"12a9cc3f-1fd9-48a3-1fd9-1fd9d027ac2"</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">private</span> String <span class="title">stringToSign</span><span class="params">(String data)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Mac mac = Mac.getInstance(<span class="string">"HmacSHA1"</span>);</div><div class="line">            SecretKeySpec secret = <span class="keyword">new</span> SecretKeySpec(</div><div class="line">                    REGISTER_HMAC_KEY.getBytes(<span class="string">"UTF-8"</span>), mac.getAlgorithm());</div><div class="line">            mac.init(secret);</div><div class="line">            <span class="keyword">return</span> Base64.encodeToString(mac.doFinal(data.getBytes()), Base64.NO_WRAP);</div><div class="line">        &#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</div><div class="line">            Log.e(LOG_TAG, <span class="string">"Hash algorithm SHA-1 is not supported"</span>, e);</div><div class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</div><div class="line">            Log.e(LOG_TAG, <span class="string">"Encoding UTF-8 is not supported"</span>, e);</div><div class="line">        &#125; <span class="keyword">catch</span> (InvalidKeyException e) &#123;</div><div class="line">            Log.e(LOG_TAG, <span class="string">"Invalid key"</span>, e);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">	<span class="comment">/*</span></div><div class="line">	 * 测试函数</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</div><div class="line">		HMACTest hmac = <span class="keyword">new</span> HMACTest();</div><div class="line">		String str = <span class="string">"Bello, Miss.Seven"</span>;</div><div class="line">		System.out.println(<span class="string">"加密前："</span> + str);</div><div class="line">		System.out.println(<span class="string">"加密后："</span> + hmac.stringToSign(str));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><br><br>【参考资料】：<br>1、<a href="http://blog.csdn.net/feiyangxiaomi/article/details/34445005" target="_blank" rel="external">消息摘要算法-HMAC算法</a><br>2、<a href="http://blog.csdn.net/happylee6688/article/details/43968549" target="_blank" rel="external">Java 加解密技术系列之 HMAC</a></p>
 
       
@@ -147,7 +147,7 @@
 
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -155,7 +155,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/02/【Java】内部类（Inner Class）如何创建（new）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../../../2016/01/02/【Java】内部类（Inner Class）如何创建（new）/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -165,7 +165,7 @@
     </a>
   
   
-    <a href="/2015/12/25/【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../25/【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息</div>
     </a>
@@ -193,13 +193,13 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -207,15 +207,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 

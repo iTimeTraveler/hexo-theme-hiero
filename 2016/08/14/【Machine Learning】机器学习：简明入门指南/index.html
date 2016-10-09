@@ -45,14 +45,14 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -84,13 +84,13 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -122,12 +122,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/14/【Machine Learning】机器学习：简明入门指南/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2016-08-14T09:32:55.000Z" itemprop="datePublished">2016-08-14</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+    <a class="article-category-link" href="../../../../categories/Machine-Learning/">Machine Learning</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -168,17 +168,17 @@
 <p>当然，要是你是在50年之后来读这篇文章，那时我们已经得出了强人工智能算法，而本文看起来就像个老古董。未来的人类，你还是别读了，叫你的机器仆人给你做份三明治吧。<br><br></p>
 <h3 id="让我们写代码吧"><a href="#让我们写代码吧" class="headerlink" title="让我们写代码吧!"></a><strong>让我们写代码吧!</strong></h3><p>前面例子中评估房价的程序，你打算怎么写呢？往下看之前，先思考一下吧。</p>
 <p>如果你对机器学习一无所知，很有可能你会尝试写出一些基本规则来评估房价，如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">estimate_house_sales_price</span><span class="params">(num_of_bedrooms, sqft, neighborhood)</span>:</span></div><div class="line">  price = <span class="number">0</span></div><div class="line"> </div><div class="line">  <span class="comment"># In my area, the average house costs $200 per sqft</span></div><div class="line">  price_per_sqft = <span class="number">200</span></div><div class="line"> </div><div class="line">  <span class="keyword">if</span> neighborhood == <span class="string">"hipsterton"</span>:</div><div class="line">    <span class="comment"># but some areas cost a bit more</span></div><div class="line">    price_per_sqft = <span class="number">400</span></div><div class="line"> </div><div class="line">  <span class="keyword">elif</span> neighborhood == <span class="string">"skid row"</span>:</div><div class="line">    <span class="comment"># and some areas cost less</span></div><div class="line">    price_per_sqft = <span class="number">100</span></div><div class="line"> </div><div class="line">  <span class="comment"># start with a base price estimate based on how big the place is</span></div><div class="line">  price = price_per_sqft * sqft</div><div class="line"> </div><div class="line">  <span class="comment"># now adjust our estimate based on the number of bedrooms</span></div><div class="line">  <span class="keyword">if</span> num_of_bedrooms == <span class="number">0</span>:</div><div class="line">    <span class="comment"># Studio apartments are cheap</span></div><div class="line">    price = price — <span class="number">20000</span></div><div class="line">  <span class="keyword">else</span>:</div><div class="line">    <span class="comment"># places with more bedrooms are usually</span></div><div class="line">    <span class="comment"># more valuable</span></div><div class="line">    price = price + (num_of_bedrooms * <span class="number">1000</span>)</div><div class="line"> </div><div class="line"> <span class="keyword">return</span> price</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">estimate_house_sales_price</span><span class="params">(num_of_bedrooms, sqft, neighborhood)</span>:</span></div><div class="line">  price = <span class="number">0</span></div><div class="line"> </div><div class="line">  <span class="comment"># In my area, the average house costs $200 per sqft</span></div><div class="line">  price_per_sqft = <span class="number">200</span></div><div class="line"> </div><div class="line">  <span class="keyword">if</span> neighborhood == <span class="string">"hipsterton"</span>:</div><div class="line">    <span class="comment"># but some areas cost a bit more</span></div><div class="line">    price_per_sqft = <span class="number">400</span></div><div class="line"> </div><div class="line">  <span class="keyword">elif</span> neighborhood == <span class="string">"skid row"</span>:</div><div class="line">    <span class="comment"># and some areas cost less</span></div><div class="line">    price_per_sqft = <span class="number">100</span></div><div class="line"> </div><div class="line">  <span class="comment"># start with a base price estimate based on how big the place is</span></div><div class="line">  price = price_per_sqft * sqft</div><div class="line"> </div><div class="line">  <span class="comment"># now adjust our estimate based on the number of bedrooms</span></div><div class="line">  <span class="keyword">if</span> num_of_bedrooms == <span class="number">0</span>:</div><div class="line">    <span class="comment"># Studio apartments are cheap</span></div><div class="line">    price = price — <span class="number">20000</span></div><div class="line">  <span class="keyword">else</span>:</div><div class="line">    <span class="comment"># places with more bedrooms are usually</span></div><div class="line">    <span class="comment"># more valuable</span></div><div class="line">    price = price + (num_of_bedrooms * <span class="number">1000</span>)</div><div class="line"> </div><div class="line"> <span class="keyword">return</span> price</div></pre></td></tr></table></figure>
 <p>假如你像这样瞎忙几个小时，也许会取得一点成效，但是你的程序永不会完美，而且当价格变化时很难维护。</p>
 <p>如果能让计算机找出实现上述函数功能的办法，这样岂不更好？只要返回的房价数字正确，谁会在乎函数具体干了些什么呢？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">estimate_house_sales_price</span><span class="params">(num_of_bedrooms, sqft, neighborhood)</span>:</span></div><div class="line">  price = &lt;computer, plz do some math <span class="keyword">for</span> me&gt;</div><div class="line"> </div><div class="line">  <span class="keyword">return</span> price</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">estimate_house_sales_price</span><span class="params">(num_of_bedrooms, sqft, neighborhood)</span>:</span></div><div class="line">  price = &lt;computer, plz do some math <span class="keyword">for</span> me&gt;</div><div class="line"> </div><div class="line">  <span class="keyword">return</span> price</div></pre></td></tr></table></figure>
 <p>考虑这个问题的一种角度是将房价看做一碗美味的汤，而汤中成分就是卧室数、面积和地段。如果你能算出每种成分对最终的价格有多大影响，也许就能得到各种成分混合起来形成最终价格的具体比例。</p>
 <p>这样可以将你最初的程序（全是疯狂的if else语句）简化成类似如下的样子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">estimate_house_sales_price</span><span class="params">(num_of_bedrooms, sqft, neighborhood)</span>:</span></div><div class="line"> price = <span class="number">0</span></div><div class="line"> </div><div class="line"> <span class="comment"># a little pinch of this</span></div><div class="line"> price += num_of_bedrooms * <span class="number">.841231951398213</span></div><div class="line"> </div><div class="line"> <span class="comment"># and a big pinch of that</span></div><div class="line"> price += sqft * <span class="number">1231.1231231</span></div><div class="line"> </div><div class="line"> <span class="comment"># maybe a handful of this</span></div><div class="line"> price += neighborhood * <span class="number">2.3242341421</span></div><div class="line"> </div><div class="line"> <span class="comment"># and finally, just a little extra salt for good measure</span></div><div class="line"> price += <span class="number">201.23432095</span></div><div class="line"> </div><div class="line"> <span class="keyword">return</span> price</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">estimate_house_sales_price</span><span class="params">(num_of_bedrooms, sqft, neighborhood)</span>:</span></div><div class="line"> price = <span class="number">0</span></div><div class="line"> </div><div class="line"> <span class="comment"># a little pinch of this</span></div><div class="line"> price += num_of_bedrooms * <span class="number">.841231951398213</span></div><div class="line"> </div><div class="line"> <span class="comment"># and a big pinch of that</span></div><div class="line"> price += sqft * <span class="number">1231.1231231</span></div><div class="line"> </div><div class="line"> <span class="comment"># maybe a handful of this</span></div><div class="line"> price += neighborhood * <span class="number">2.3242341421</span></div><div class="line"> </div><div class="line"> <span class="comment"># and finally, just a little extra salt for good measure</span></div><div class="line"> price += <span class="number">201.23432095</span></div><div class="line"> </div><div class="line"> <span class="keyword">return</span> price</div></pre></td></tr></table></figure>
 <p>请注意那些用粗体标注的神奇数字——<strong>.841231951398213</strong>, <strong>1231.1231231</strong>,<strong>2.3242341421</strong>, 和<strong>201.23432095</strong>。它们称为权重。如果我们能找出对每栋房子都适用的完美权重，我们的函数就能预测所有的房价！</p>
 <p>找出最佳权重的一种笨办法如下所示：</p>
 <h4 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a><strong>步骤1：</strong></h4><p>首先，将每个权重都设为1.0：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">estimate_house_sales_price</span><span class="params">(num_of_bedrooms, sqft, neighborhood)</span>:</span></div><div class="line">  price = <span class="number">0</span></div><div class="line"> </div><div class="line">  <span class="comment"># a little pinch of this</span></div><div class="line">  price += num_of_bedrooms * <span class="number">1.0</span></div><div class="line"> </div><div class="line">  <span class="comment"># and a big pinch of that</span></div><div class="line">  price += sqft * <span class="number">1.0</span></div><div class="line"> </div><div class="line">  <span class="comment"># maybe a handful of this</span></div><div class="line">  price += neighborhood * <span class="number">1.0</span></div><div class="line"> </div><div class="line">  <span class="comment"># and finally, just a little extra salt for good measure</span></div><div class="line">  price += <span class="number">1.0</span></div><div class="line"> </div><div class="line">  <span class="keyword">return</span> price</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">estimate_house_sales_price</span><span class="params">(num_of_bedrooms, sqft, neighborhood)</span>:</span></div><div class="line">  price = <span class="number">0</span></div><div class="line"> </div><div class="line">  <span class="comment"># a little pinch of this</span></div><div class="line">  price += num_of_bedrooms * <span class="number">1.0</span></div><div class="line"> </div><div class="line">  <span class="comment"># and a big pinch of that</span></div><div class="line">  price += sqft * <span class="number">1.0</span></div><div class="line"> </div><div class="line">  <span class="comment"># maybe a handful of this</span></div><div class="line">  price += neighborhood * <span class="number">1.0</span></div><div class="line"> </div><div class="line">  <span class="comment"># and finally, just a little extra salt for good measure</span></div><div class="line">  price += <span class="number">1.0</span></div><div class="line"> </div><div class="line">  <span class="keyword">return</span> price</div></pre></td></tr></table></figure>
 <h4 id="步骤2："><a href="#步骤2：" class="headerlink" title="步骤2："></a><strong>步骤2：</strong></h4><p>将每栋房产带入你的函数运算，检验估算值与正确价格的偏离程度：</p>
 <p><img src="http://img.blog.csdn.net/20160814172040052" alt="运用你的程序预测房屋价格。"><br><em>运用你的程序预测房屋价格。</em></p>
 <p>例如：上表中第一套房产实际成交价为25万美元，你的函数估价为17.8万，这一套房产你就差了7.2万。</p>
@@ -254,7 +254,7 @@
 
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Machine-Learning/">Machine Learning</a></li></ul>
 
     </footer>
   </div>
@@ -262,7 +262,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../18/【Go】为什么 Go 语言把类型声明放在后面？/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -272,7 +272,7 @@
     </a>
   
   
-    <a href="/2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../12/【Machine Learning】Github上关注最多的53个深度学习项目/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">【Machine Learning】Github上关注最多的53个深度学习项目</div>
     </a>
@@ -300,13 +300,13 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -314,15 +314,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 

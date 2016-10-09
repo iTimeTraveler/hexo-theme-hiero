@@ -23,7 +23,7 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
@@ -44,7 +44,7 @@
     <div id="header-outer" class="outer">
       <div id="header-title" class="inner">
         <h1 id="logo-wrap">
-          <a href="/" id="logo">iTimeTraveler</a>
+          <a href="../../index.html" id="logo">iTimeTraveler</a>
         </h1>
         
       </div>
@@ -52,13 +52,13 @@
         <nav id="main-nav">
           <a id="main-nav-toggle" class="nav-icon"></a>
           
-            <a class="main-nav-link" href="/">Home</a>
+            <a class="main-nav-link" href="../../index.html">Home</a>
           
-            <a class="main-nav-link" href="/archives">Archives</a>
+            <a class="main-nav-link" href="../../archives">Archives</a>
           
-            <a class="main-nav-link" href="/tags">Tags</a>
+            <a class="main-nav-link" href="../../tags">Tags</a>
           
-            <a class="main-nav-link" href="/about">About</a>
+            <a class="main-nav-link" href="../../about">About</a>
           
         </nav>
         <nav id="sub-nav">
@@ -164,13 +164,13 @@
   <div class="intro-navigate">
       <p class="navigater-list">
         
-          <a id="beautifont" class="main-nav-link" href="/">Home</a>
+          <a id="beautifont" class="main-nav-link" href="../../index.html">Home</a>
         
-          <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
+          <a id="beautifont" class="main-nav-link" href="../../archives">Archives</a>
         
-          <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
+          <a id="beautifont" class="main-nav-link" href="../../tags">Tags</a>
         
-          <a id="beautifont" class="main-nav-link" href="/about">About</a>
+          <a id="beautifont" class="main-nav-link" href="../../about">About</a>
         
       </p>
   </div>
@@ -193,7 +193,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/">【Android】保存图片到系统图库, 并立即显示在图库中</a>
+      <a class="article-title" href="../../2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/">【Android】保存图片到系统图库, 并立即显示在图库中</a>
     </h1>
   
 
@@ -201,12 +201,12 @@
     
     <div class="article-meta">
       
-	<a href="/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/" class="article-date">
+	<a href="../../2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/" class="article-date">
 	  <time datetime="2014-09-12T03:55:00.000Z" itemprop="datePublished">2014-09-12</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -220,10 +220,10 @@
 <ul>
 <li>第一种是自己写方法，如下代码：</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> File <span class="title">saveImage</span><span class="params">(Bitmap bmp)</span> </span>&#123;</div><div class="line">    File appDir = <span class="keyword">new</span> File(Environment.getExternalStorageDirectory(), <span class="string">"Boohee"</span>);</div><div class="line">    <span class="keyword">if</span> (!appDir.exists()) &#123;</div><div class="line">        appDir.mkdir();</div><div class="line">    &#125;</div><div class="line">    String fileName = System.currentTimeMillis() + <span class="string">".jpg"</span>;</div><div class="line">    File file = <span class="keyword">new</span> File(appDir, fileName);</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(file);</div><div class="line">        bmp.compress(CompressFormat.JPEG, <span class="number">100</span>, fos);</div><div class="line">        fos.flush();</div><div class="line">        fos.close();</div><div class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> File <span class="title">saveImage</span><span class="params">(Bitmap bmp)</span> </span>&#123;</div><div class="line">    File appDir = <span class="keyword">new</span> File(Environment.getExternalStorageDirectory(), <span class="string">"Boohee"</span>);</div><div class="line">    <span class="keyword">if</span> (!appDir.exists()) &#123;</div><div class="line">        appDir.mkdir();</div><div class="line">    &#125;</div><div class="line">    String fileName = System.currentTimeMillis() + <span class="string">".jpg"</span>;</div><div class="line">    File file = <span class="keyword">new</span> File(appDir, fileName);</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(file);</div><div class="line">        bmp.compress(CompressFormat.JPEG, <span class="number">100</span>, fos);</div><div class="line">        fos.flush();</div><div class="line">        fos.close();</div><div class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/#more">Read More</a>
+            <a href="../../2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/#more">Read More</a>
           </p>
         
       
@@ -231,7 +231,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -248,7 +248,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/">如何删除多行首字母，Sublime Text多行编辑运用</a>
+      <a class="article-title" href="../../2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/">如何删除多行首字母，Sublime Text多行编辑运用</a>
     </h1>
   
 
@@ -256,7 +256,7 @@
     
     <div class="article-meta">
       
-	<a href="/2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/" class="article-date">
+	<a href="../../2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/" class="article-date">
 	  <time datetime="2014-05-15T03:55:00.000Z" itemprop="datePublished">2014-05-15</time>
 	</a>
 
@@ -266,10 +266,10 @@
       
         <h4 id="一、问题描述："><a href="#一、问题描述：" class="headerlink" title="一、问题描述："></a><strong>一、问题描述：</strong></h4><p>问答区有个问题是这样问的：<a href="http://ask.csdn.net/questions/29687"><strong>如何在eclipse中删除多行首字母？</strong></a></p>
 <p>题主的问题是代码中每行都有序号，这些序号一行一行地删太麻烦，如何进行批量删除？我们在进行代码重用的时候时常会出现行号同时被复制的情况，比如下面的这点代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="number">155</span>.     <span class="meta">@Override</span>  </div><div class="line"><span class="number">156</span>.     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKeyDown</span><span class="params">(<span class="keyword">int</span> keyCode, KeyEvent event)</span>   </div><div class="line">157.     </span>&#123;   </div><div class="line"><span class="number">158</span>.         Log.d(<span class="string">"onKeyDown:"</span>, <span class="string">" keyCode="</span> + keyCode + <span class="string">" KeyEvent="</span> + event);   </div><div class="line"><span class="number">159</span>.         <span class="keyword">switch</span> (keyCode)   </div><div class="line"><span class="number">160</span>.         &#123;   </div><div class="line"><span class="number">161</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_UP:   </div><div class="line"><span class="number">162</span>.   </div><div class="line"><span class="number">163</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">164</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_DOWN:   </div><div class="line"><span class="number">165</span>.   </div><div class="line"><span class="number">166</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">167</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_LEFT:   </div><div class="line"><span class="number">168</span>.                 <span class="comment">//右左按键可以控制第一进度的增减   </span></div><div class="line"><span class="number">169</span>.                 pb.setProgress( pb.getProgress()-<span class="number">5</span> );   </div><div class="line"><span class="number">170</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">171</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_RIGHT:   </div><div class="line"><span class="number">172</span>.                 pb.setProgress( pb.getProgress()+<span class="number">5</span> );   </div><div class="line"><span class="number">173</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">174</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_CENTER:   </div><div class="line"><span class="number">175</span>.   </div><div class="line"><span class="number">176</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">177</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_0:   </div><div class="line"><span class="number">178</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">179</span>.         &#125;   </div><div class="line"><span class="number">180</span>.         <span class="keyword">return</span> <span class="keyword">super</span>.onKeyDown(keyCode, event);   </div><div class="line"><span class="number">181</span>.     &#125;   </div><div class="line"><span class="number">182</span>. &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="number">155</span>.     <span class="meta">@Override</span>  </div><div class="line"><span class="number">156</span>.     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKeyDown</span><span class="params">(<span class="keyword">int</span> keyCode, KeyEvent event)</span>   </div><div class="line">157.     </span>&#123;   </div><div class="line"><span class="number">158</span>.         Log.d(<span class="string">"onKeyDown:"</span>, <span class="string">" keyCode="</span> + keyCode + <span class="string">" KeyEvent="</span> + event);   </div><div class="line"><span class="number">159</span>.         <span class="keyword">switch</span> (keyCode)   </div><div class="line"><span class="number">160</span>.         &#123;   </div><div class="line"><span class="number">161</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_UP:   </div><div class="line"><span class="number">162</span>.   </div><div class="line"><span class="number">163</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">164</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_DOWN:   </div><div class="line"><span class="number">165</span>.   </div><div class="line"><span class="number">166</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">167</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_LEFT:   </div><div class="line"><span class="number">168</span>.                 <span class="comment">//右左按键可以控制第一进度的增减   </span></div><div class="line"><span class="number">169</span>.                 pb.setProgress( pb.getProgress()-<span class="number">5</span> );   </div><div class="line"><span class="number">170</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">171</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_RIGHT:   </div><div class="line"><span class="number">172</span>.                 pb.setProgress( pb.getProgress()+<span class="number">5</span> );   </div><div class="line"><span class="number">173</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">174</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_CENTER:   </div><div class="line"><span class="number">175</span>.   </div><div class="line"><span class="number">176</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">177</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_0:   </div><div class="line"><span class="number">178</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">179</span>.         &#125;   </div><div class="line"><span class="number">180</span>.         <span class="keyword">return</span> <span class="keyword">super</span>.onKeyDown(keyCode, event);   </div><div class="line"><span class="number">181</span>.     &#125;   </div><div class="line"><span class="number">182</span>. &#125;</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/#more">Read More</a>
+            <a href="../../2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/#more">Read More</a>
           </p>
         
       
@@ -292,7 +292,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/">Ubuntu上Eclipse识别不了Android手机的解决方法</a>
+      <a class="article-title" href="../../2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/">Ubuntu上Eclipse识别不了Android手机的解决方法</a>
     </h1>
   
 
@@ -300,12 +300,12 @@
     
     <div class="article-meta">
       
-	<a href="/2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/" class="article-date">
+	<a href="../../2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/" class="article-date">
 	  <time datetime="2013-10-20T08:46:00.000Z" itemprop="datePublished">2013-10-20</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -317,10 +317,10 @@
 <p><br></p>
 <h4 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a><strong>操作步骤：</strong></h4><p>如果是windows平台下，需要安装一个为adb准备的usb驱动。如果是Ubuntu Linux需要添加一个rules文件，里面包含了每一个想要调试的设备的usb配置信息。以HTC手机为例实现步骤如下：</p>
 <p>1、在终端输入 :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">sudo gedit /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/#more">Read More</a>
+            <a href="../../2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/#more">Read More</a>
           </p>
         
       
@@ -328,7 +328,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -345,7 +345,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/">【Java】操作excel表，包括创建、读取、以及修改</a>
+      <a class="article-title" href="../../2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/">【Java】操作excel表，包括创建、读取、以及修改</a>
     </h1>
   
 
@@ -353,12 +353,12 @@
     
     <div class="article-meta">
       
-	<a href="/2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/" class="article-date">
+	<a href="../../2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/" class="article-date">
 	  <time datetime="2013-08-01T04:31:20.000Z" itemprop="datePublished">2013-08-01</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Java/">Java</a>
+    <a class="article-category-link" href="../../categories/Java/">Java</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -376,7 +376,7 @@
 <h3 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a><strong>搭建环境</strong></h3><p>下载jxl.jar（可以点击<a href="http://download.csdn.net/detail/bonlog/5774137"><strong>这里进行下载</strong></a>），放入classpath，安装就完成了。 </p>
         
           <p class="article-more-link">
-            <a href="/2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/#more">Read More</a>
+            <a href="../../2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/#more">Read More</a>
           </p>
         
       
@@ -384,7 +384,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Java/">Java</a></li></ul>
 
     </footer>
   </div>
@@ -397,7 +397,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="../4/">&laquo; Prev</a><a class="page-number" href="../../index.html">1</a><span class="space">&hellip;</span><a class="page-number" href="../3/">3</a><a class="page-number" href="../4/">4</a><span class="page-number current">5</span>
   </nav>
 
 </section>
@@ -420,13 +420,13 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -434,15 +434,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../fancybox/jquery.fancybox.css">
+  <script src="../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../js/script.js"></script>
+<script src="../../js/bootstrap.js"></script>
 
 
-  <script src="/js/home.js"></script>
+  <script src="../../js/home.js"></script>
 
 
 

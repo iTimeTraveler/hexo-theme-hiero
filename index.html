@@ -23,7 +23,7 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
@@ -44,7 +44,7 @@
     <div id="header-outer" class="outer">
       <div id="header-title" class="inner">
         <h1 id="logo-wrap">
-          <a href="/" id="logo">iTimeTraveler</a>
+          <a href="index.html" id="logo">iTimeTraveler</a>
         </h1>
         
       </div>
@@ -52,7 +52,7 @@
         <nav id="main-nav">
           <a id="main-nav-toggle" class="nav-icon"></a>
           
-            <a class="main-nav-link" href="/">Home</a>
+            <a class="main-nav-link" href="index.html">Home</a>
           
             <a class="main-nav-link" href="/archives">Archives</a>
           
@@ -164,7 +164,7 @@
   <div class="intro-navigate">
       <p class="navigater-list">
         
-          <a id="beautifont" class="main-nav-link" href="/">Home</a>
+          <a id="beautifont" class="main-nav-link" href="index.html">Home</a>
         
           <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
         
@@ -193,7 +193,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/09/28/Chrome自带的开发者工具进阶技巧/">Chrome自带的开发者工具进阶技巧</a>
+      <a class="article-title" href="2016/09/28/Chrome自带的开发者工具进阶技巧/">Chrome自带的开发者工具进阶技巧</a>
     </h1>
   
 
@@ -201,7 +201,7 @@
     
     <div class="article-meta">
       
-	<a href="/2016/09/28/Chrome自带的开发者工具进阶技巧/" class="article-date">
+	<a href="2016/09/28/Chrome自带的开发者工具进阶技巧/" class="article-date">
 	  <time datetime="2016-09-28T10:50:00.000Z" itemprop="datePublished">2016-09-28</time>
 	</a>
 
@@ -225,7 +225,7 @@
 <p><img src="http://img.blog.csdn.net/20160928183251857" alt=""></p>
         
           <p class="article-more-link">
-            <a href="/2016/09/28/Chrome自带的开发者工具进阶技巧/#more">Read More</a>
+            <a href="2016/09/28/Chrome自带的开发者工具进阶技巧/#more">Read More</a>
           </p>
         
       
@@ -233,7 +233,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebDevelopment/">WebDevelopment</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/WebDevelopment/">WebDevelopment</a></li></ul>
 
     </footer>
   </div>
@@ -250,7 +250,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/">【Android】抽象布局 — include、merge 、ViewStub</a>
+      <a class="article-title" href="2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/">【Android】抽象布局 — include、merge 、ViewStub</a>
     </h1>
   
 
@@ -258,12 +258,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/" class="article-date">
+	<a href="2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/" class="article-date">
 	  <time datetime="2016-09-19T03:47:00.000Z" itemprop="datePublished">2016-09-19</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -271,10 +271,10 @@
         <p>在布局优化中，Androi的官方提到了这三种布局<code>&lt;include/&gt;</code>、<code>&lt;merge /&gt;</code>、<code>&lt;ViewStub /&gt;</code>，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。</p>
 <p><br></p>
 <h3 id="一、布局重用-lt-include-gt"><a href="#一、布局重用-lt-include-gt" class="headerlink" title="一、布局重用&lt;include/&gt;"></a><strong>一、布局重用&lt;include/&gt;</strong></h3><p>&lt;include /&gt;标签能够重用布局文件，简单的使用如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>   </div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@color/app_bg"</span>  </div><div class="line">    <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span>&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">layout</span>=<span class="string">"@layout/titlebar"</span>/&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span> <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">              <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">              <span class="attr">android:text</span>=<span class="string">"@string/hello"</span>  </div><div class="line">              <span class="attr">android:padding</span>=<span class="string">"10dp"</span> /&gt;</span>  </div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>   </div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@color/app_bg"</span>  </div><div class="line">    <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span>&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">layout</span>=<span class="string">"@layout/titlebar"</span>/&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span> <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">              <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">              <span class="attr">android:text</span>=<span class="string">"@string/hello"</span>  </div><div class="line">              <span class="attr">android:padding</span>=<span class="string">"10dp"</span> /&gt;</span>  </div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/#more">Read More</a>
+            <a href="2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/#more">Read More</a>
           </p>
         
       
@@ -282,7 +282,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -299,7 +299,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/09/08/【Java】设计模式：深入理解单例模式/">【Java】设计模式：深入理解单例模式</a>
+      <a class="article-title" href="2016/09/08/【Java】设计模式：深入理解单例模式/">【Java】设计模式：深入理解单例模式</a>
     </h1>
   
 
@@ -307,12 +307,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/09/08/【Java】设计模式：深入理解单例模式/" class="article-date">
+	<a href="2016/09/08/【Java】设计模式：深入理解单例模式/" class="article-date">
 	  <time datetime="2016-09-08T06:18:20.000Z" itemprop="datePublished">2016-09-08</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Design-Pattern/">Design Pattern</a>
+    <a class="article-category-link" href="categories/Design-Pattern/">Design Pattern</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -333,7 +333,7 @@
 </ul>
         
           <p class="article-more-link">
-            <a href="/2016/09/08/【Java】设计模式：深入理解单例模式/#more">Read More</a>
+            <a href="2016/09/08/【Java】设计模式：深入理解单例模式/#more">Read More</a>
           </p>
         
       
@@ -341,7 +341,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Java/">Java</a></li></ul>
 
     </footer>
   </div>
@@ -358,7 +358,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/09/07/【Go语言】基本类型排序和 slice 排序/">【Go语言】基本类型排序和 slice 排序</a>
+      <a class="article-title" href="2016/09/07/【Go语言】基本类型排序和 slice 排序/">【Go语言】基本类型排序和 slice 排序</a>
     </h1>
   
 
@@ -366,12 +366,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/09/07/【Go语言】基本类型排序和 slice 排序/" class="article-date">
+	<a href="2016/09/07/【Go语言】基本类型排序和 slice 排序/" class="article-date">
 	  <time datetime="2016-09-07T08:36:00.000Z" itemprop="datePublished">2016-09-07</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Go语言/">Go语言</a>
+    <a class="article-category-link" href="categories/Go语言/">Go语言</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -390,7 +390,7 @@
 <p>c++ 的 sort 的用法： <code>sort(data, data+n, cmp_int);</code> data 是第一个元素的位置， data+n 是最后一个元素的下一个位置， cmp_int 是比较函数。</p>
         
           <p class="article-more-link">
-            <a href="/2016/09/07/【Go语言】基本类型排序和 slice 排序/#more">Read More</a>
+            <a href="2016/09/07/【Go语言】基本类型排序和 slice 排序/#more">Read More</a>
           </p>
         
       
@@ -398,7 +398,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Go语言/">Go语言</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Go语言/">Go语言</a></li></ul>
 
     </footer>
   </div>
@@ -415,7 +415,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/09/07/【Android 】TextView 局部文字变色/">【Android 】TextView 局部文字变色</a>
+      <a class="article-title" href="2016/09/07/【Android 】TextView 局部文字变色/">【Android 】TextView 局部文字变色</a>
     </h1>
   
 
@@ -423,12 +423,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/09/07/【Android 】TextView 局部文字变色/" class="article-date">
+	<a href="2016/09/07/【Android 】TextView 局部文字变色/" class="article-date">
 	  <time datetime="2016-09-07T07:02:45.000Z" itemprop="datePublished">2016-09-07</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -440,7 +440,7 @@
 <h3 id="一、需求效果"><a href="#一、需求效果" class="headerlink" title="一、需求效果"></a><strong>一、需求效果</strong></h3><p><img src="http://img.blog.csdn.net/20161009150647271" alt="比如这个"></p>
         
           <p class="article-more-link">
-            <a href="/2016/09/07/【Android 】TextView 局部文字变色/#more">Read More</a>
+            <a href="2016/09/07/【Android 】TextView 局部文字变色/#more">Read More</a>
           </p>
         
       
@@ -448,7 +448,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -465,7 +465,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/30/【Android】获取View的截图/">【Android】获取View的截图</a>
+      <a class="article-title" href="2016/08/30/【Android】获取View的截图/">【Android】获取View的截图</a>
     </h1>
   
 
@@ -473,12 +473,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/30/【Android】获取View的截图/" class="article-date">
+	<a href="2016/08/30/【Android】获取View的截图/" class="article-date">
 	  <time datetime="2016-08-30T02:32:00.000Z" itemprop="datePublished">2016-08-30</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -487,10 +487,10 @@
 <p>Android中对View的截图也有以下两种方式，值得注意的是<strong>两个方法都不适用于<code>SurfaceView</code></strong>：</p>
 <p><br></p>
 <h3 id="使用DrawingCache"><a href="#使用DrawingCache" class="headerlink" title="使用DrawingCache"></a><strong>使用DrawingCache</strong></h3><p>如果使用DrawingCache，则对要截图的View有一个要求：View本身已经显示在界面上。如果View没有添加到界面上或者没有显示（绘制）过，则buildDrawingCache会失败。这种方式比较适合对应用界面或者某一部分的截图。步骤很简单：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">view.setDrawingCacheEnabled(<span class="keyword">true</span>);  </div><div class="line">view.buildDrawingCache();  		<span class="comment">//启用DrawingCache并创建位图  </span></div><div class="line"></div><div class="line"><span class="comment">//创建一个DrawingCache的拷贝，因为DrawingCache得到的位图在禁用后会被回收  </span></div><div class="line">Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache()); </div><div class="line">view.setDrawingCacheEnabled(<span class="keyword">false</span>);  	<span class="comment">//禁用DrawingCahce否则会影响性能</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">view.setDrawingCacheEnabled(<span class="keyword">true</span>);  </div><div class="line">view.buildDrawingCache();  		<span class="comment">//启用DrawingCache并创建位图  </span></div><div class="line"></div><div class="line"><span class="comment">//创建一个DrawingCache的拷贝，因为DrawingCache得到的位图在禁用后会被回收  </span></div><div class="line">Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache()); </div><div class="line">view.setDrawingCacheEnabled(<span class="keyword">false</span>);  	<span class="comment">//禁用DrawingCahce否则会影响性能</span></div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2016/08/30/【Android】获取View的截图/#more">Read More</a>
+            <a href="2016/08/30/【Android】获取View的截图/#more">Read More</a>
           </p>
         
       
@@ -498,7 +498,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -515,7 +515,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/">【Android】如何加速 AndroidStudio 的编译效率</a>
+      <a class="article-title" href="2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/">【Android】如何加速 AndroidStudio 的编译效率</a>
     </h1>
   
 
@@ -523,12 +523,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/" class="article-date">
+	<a href="2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/" class="article-date">
 	  <time datetime="2016-08-26T07:20:00.000Z" itemprop="datePublished">2016-08-26</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -540,7 +540,7 @@
 <p><img src="http://img.blog.csdn.net/20160826151929475" alt="这是官方的速度对比，下一代编译速度更快"></p>
         
           <p class="article-more-link">
-            <a href="/2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/#more">Read More</a>
+            <a href="2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/#more">Read More</a>
           </p>
         
       
@@ -548,7 +548,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -565,7 +565,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/">【Go】为什么 Go 语言把类型声明放在后面？</a>
+      <a class="article-title" href="2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/">【Go】为什么 Go 语言把类型声明放在后面？</a>
     </h1>
   
 
@@ -573,12 +573,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/" class="article-date">
+	<a href="2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/" class="article-date">
 	  <time datetime="2016-08-18T08:36:00.000Z" itemprop="datePublished">2016-08-18</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Go语言/">Go语言</a>
+    <a class="article-category-link" href="categories/Go语言/">Go语言</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -591,12 +591,12 @@
 <h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h4><p>Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会和传统的C家族语言不同。在这篇博文里，我们会进行一个比较，并做出解答。</p>
 <p><br></p>
 <h4 id="C-的语法"><a href="#C-的语法" class="headerlink" title="C 的语法"></a><strong>C 的语法</strong></h4><p>首先，先看看 C 的语法。C 采用了一种聪明而不同寻常的声明语法。声明变量时，只需写出一个带有目标变量名的表达式，然后在表达式里指明该表达式本身的类型即可。比如：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> x;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="keyword">int</span> x;</div></pre></td></tr></table></figure>
 <p>上面的代码声明了 <code>x</code> 变量，并且其类型为 <code>int</code>——即，表达式 <code>x</code> 为 <code>int</code> 类型。一般而言，为了指明新变量的类型，我们得写出一个表达式，其中含有我们要声明的变量，这个表达式运算的结果值属于某种基本类型，我们把这种基本类型写到表达式的左边。所以，下述声明：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *p;</div><div class="line"><span class="keyword">int</span> a[<span class="number">3</span>];</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="keyword">int</span> *p;</div><div class="line"><span class="keyword">int</span> a[<span class="number">3</span>];</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/#more">Read More</a>
+            <a href="2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/#more">Read More</a>
           </p>
         
       
@@ -604,7 +604,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Go语言/">Go语言</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Go语言/">Go语言</a></li></ul>
 
     </footer>
   </div>
@@ -621,7 +621,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/14/【Machine Learning】机器学习：简明入门指南/">【Machine Learning】机器学习：简明入门指南</a>
+      <a class="article-title" href="2016/08/14/【Machine Learning】机器学习：简明入门指南/">【Machine Learning】机器学习：简明入门指南</a>
     </h1>
   
 
@@ -629,12 +629,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/14/【Machine Learning】机器学习：简明入门指南/" class="article-date">
+	<a href="2016/08/14/【Machine Learning】机器学习：简明入门指南/" class="article-date">
 	  <time datetime="2016-08-14T09:32:55.000Z" itemprop="datePublished">2016-08-14</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+    <a class="article-category-link" href="categories/Machine-Learning/">Machine Learning</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -647,7 +647,7 @@
 <p>本文目标在于平易近人，这意味着文中有大量的概括。但是谁在乎这些呢？只要能让读者对于ML更感兴趣，任务也就完成了。<br><br></p>
         
           <p class="article-more-link">
-            <a href="/2016/08/14/【Machine Learning】机器学习：简明入门指南/#more">Read More</a>
+            <a href="2016/08/14/【Machine Learning】机器学习：简明入门指南/#more">Read More</a>
           </p>
         
       
@@ -655,7 +655,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Machine-Learning/">Machine Learning</a></li></ul>
 
     </footer>
   </div>
@@ -672,7 +672,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/">【Machine Learning】Github上关注最多的53个深度学习项目</a>
+      <a class="article-title" href="2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/">【Machine Learning】Github上关注最多的53个深度学习项目</a>
     </h1>
   
 
@@ -680,12 +680,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/" class="article-date">
+	<a href="2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/" class="article-date">
 	  <time datetime="2016-08-12T07:22:00.000Z" itemprop="datePublished">2016-08-12</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+    <a class="article-category-link" href="categories/Machine-Learning/">Machine Learning</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -694,7 +694,7 @@
 <p>Last Update: 2016.08.09</p>
         
           <p class="article-more-link">
-            <a href="/2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/#more">Read More</a>
+            <a href="2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/#more">Read More</a>
           </p>
         
       
@@ -702,7 +702,7 @@
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Machine-Learning/">Machine Learning</a></li></ul>
 
     </footer>
   </div>
@@ -715,7 +715,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="page/5/">5</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -738,7 +738,7 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="index.html" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
@@ -752,15 +752,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
+  <script src="fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="js/script.js"></script>
+<script src="js/bootstrap.js"></script>
 
 
-  <script src="/js/home.js"></script>
+  <script src="js/home.js"></script>
 
 
 

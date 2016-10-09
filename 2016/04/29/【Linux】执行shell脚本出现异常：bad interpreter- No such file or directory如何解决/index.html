@@ -44,14 +44,14 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -83,13 +83,13 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -121,12 +121,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2016-04-29T03:37:09.000Z" itemprop="datePublished">2016-04-29</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="../../../../categories/Linux/">Linux</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -142,19 +142,19 @@
 <a id="more"></a>
 <p>2）直接在Linux中转换（<strong>推荐做法</strong>）：</p>
 <p>首先要确保文件有可执行权限 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#sh&gt; chmod a+x filename</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#sh&gt; chmod a+x filename</div></pre></td></tr></table></figure>
 <p>然后修改文件格式 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#sh&gt; vi filename</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#sh&gt; vi filename</div></pre></td></tr></table></figure>
 <p>利用如下命令查看文件格式 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:set ff 或 :set fileformat</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">:set ff 或 :set fileformat</div></pre></td></tr></table></figure>
 <p>可以看到如下信息 </p>
 <blockquote>
 <p>fileformat=dos 或 fileformat=unix</p>
 </blockquote>
 <p>利用如下命令修改文件格式 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:set ff=unix 或 :set fileformat=unix </div><div class="line">:wq (存盘退出)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">:set ff=unix 或 :set fileformat=unix </div><div class="line">:wq (存盘退出)</div></pre></td></tr></table></figure>
 <p>最后再执行文件 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#sh&gt;./filename</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#sh&gt;./filename</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -184,7 +184,7 @@
 
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -192,7 +192,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/29/【MySQL】查询保持IN中的顺序/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../【MySQL】查询保持IN中的顺序/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -202,7 +202,7 @@
     </a>
   
   
-    <a href="/2016/04/06/”二分查找“算法的时间复杂度/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../06/”二分查找“算法的时间复杂度/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">”二分查找“算法的时间复杂度</div>
     </a>
@@ -230,13 +230,13 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -244,15 +244,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 

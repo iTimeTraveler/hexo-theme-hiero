@@ -24,14 +24,14 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -63,13 +63,13 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -101,12 +101,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/07/19/【Android】Monkey压力测试与停止/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2016-07-19T03:09:00.000Z" itemprop="datePublished">2016-07-19</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -134,9 +134,9 @@
 <p>adb shell monkey -p com.example.xystudy -s 500 -v 10000</p>
 </blockquote>
 <p>工作中为了保证测试数量的完整进行，我们一般不会在发生错误时立刻退出压力测试。monkey 测试命令如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * monkey 作用的包：com.ckt.android.junit</div><div class="line"> * 产生时间序列的种子值：500</div><div class="line"> * 忽略程序崩溃、 忽略超时、 监视本地程序崩溃、 详细信息级别为2， 产生10000个事件 。</div><div class="line"> */</div><div class="line">adb shell monkey -p com.xy.android.junit <span class="_">-s</span> 500 --ignore-crashes</div><div class="line">--ignore-timeouts --monitor-native-crashes -v -v 10000 &gt; E:\monkey_log\java_monkey_log.txt</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">/**</div><div class="line"> * monkey 作用的包：com.ckt.android.junit</div><div class="line"> * 产生时间序列的种子值：500</div><div class="line"> * 忽略程序崩溃、 忽略超时、 监视本地程序崩溃、 详细信息级别为2， 产生10000个事件 。</div><div class="line"> */</div><div class="line">adb shell monkey -p com.xy.android.junit <span class="_">-s</span> 500 --ignore-crashes</div><div class="line">--ignore-timeouts --monitor-native-crashes -v -v 10000 &gt; E:\monkey_log\java_monkey_log.txt</div></pre></td></tr></table></figure>
 <p><br></p>
-<h4 id="三、强制停止Monkey测试"><a href="#三、强制停止Monkey测试" class="headerlink" title="三、强制停止Monkey测试"></a><strong>三、强制停止Monkey测试</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell ps | awk <span class="string">'/com\.android\.commands\.monkey/ &#123; system("adb shell kill " $2) &#125;'</span></div></pre></td></tr></table></figure>
+<h4 id="三、强制停止Monkey测试"><a href="#三、强制停止Monkey测试" class="headerlink" title="三、强制停止Monkey测试"></a><strong>三、强制停止Monkey测试</strong></h4><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">adb shell ps | awk <span class="string">'/com\.android\.commands\.monkey/ &#123; system("adb shell kill " $2) &#125;'</span></div></pre></td></tr></table></figure>
 <p><br><br><br><br><br></p>
 <p>####【参考资料】</p>
 <p>1、<a href="http://www.jb51.net/article/48557.htm" target="_blank" rel="external">android 压力测试命令monkey详解</a><br>2、<a href="http://www.testwo.com/article/402" target="_blank" rel="external">Monkey 的专项测试浅谈</a></p>
@@ -170,7 +170,7 @@
 
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -178,7 +178,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/07/22/【Android】dip和px之间到底如何转换/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../22/【Android】dip和px之间到底如何转换/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -188,7 +188,7 @@
     </a>
   
   
-    <a href="/2016/07/14/【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../14/【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">【Android】App应用崩溃(Crash-Force Close)之后如何让它自动重启？</div>
     </a>
@@ -216,13 +216,13 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -230,15 +230,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 

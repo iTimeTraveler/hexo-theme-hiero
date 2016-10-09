@@ -30,14 +30,14 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" > 
 
   
     <link rel="stylesheet" href="/css/header-post.css" > 
-    <link rel="stylesheet" href="/css/dialog.css">
+    <link rel="stylesheet" href="../../../../css/dialog.css">
   
 
   
@@ -69,13 +69,13 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
                 
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
                 
             </div>
           </div>
@@ -107,12 +107,12 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/" class="article-date">
+	<a href="" class="article-date">
 	  <time datetime="2016-08-26T07:20:00.000Z" itemprop="datePublished">2016-08-26</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -126,21 +126,21 @@
 <p><br><br>然后先在你的项目build.gradle文件内(不是app里面的gradle文件), 就是这里：</p>
 <p><img src="http://img.blog.csdn.net/20160826151521755" alt="配置文件在项目中的位置"></p>
 <p>添加一个task， 代码如下:</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">task</span> wrapper(type: Wrapper) &#123;</div><div class="line">    gradleVersion = <span class="string">'2.10'</span>  <span class="comment">//你安装的最新Gradle版本</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">task</span> wrapper(type: Wrapper) &#123;</div><div class="line">    gradleVersion = <span class="string">'2.10'</span>  <span class="comment">//你安装的最新Gradle版本</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>加进去以后是这个样子：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Top-level build file where you can add configuration options common to all sub-projects/modules.</span></div><div class="line"></div><div class="line"><span class="comment">// Running 'gradle wrapper' will generate gradlew - Getting gradle wrapper working and using it will save you a lot of pain.</span></div><div class="line"></div><div class="line"><span class="keyword">task</span> wrapper(type: Wrapper) &#123;</div><div class="line">    gradleVersion = <span class="string">'2.10'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">buildscript</span> &#123;</div><div class="line">    <span class="keyword">repositories</span> &#123;</div><div class="line">        jcenter()</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">dependencies</span> &#123;</div><div class="line">        <span class="keyword">classpath</span> <span class="string">'com.android.tools.build:gradle:2.1.0'</span></div><div class="line">    &#125;</div><div class="line">    ext &#123;</div><div class="line">        compileSdkVersion = <span class="number">21</span></div><div class="line">        buildToolsVersion =<span class="string">"23.0.2"</span></div><div class="line">        minSdkVersion = <span class="number">18</span></div><div class="line">        targetSdkVersion = <span class="number">21</span></div><div class="line"></div><div class="line">        <span class="keyword">sourceCompatibility</span> = JavaVersion.VERSION_1_7</div><div class="line">        <span class="keyword">targetCompatibility</span> = JavaVersion.VERSION_1_7</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Top-level build file where you can add configuration options common to all sub-projects/modules.</span></div><div class="line"></div><div class="line"><span class="comment">// Running 'gradle wrapper' will generate gradlew - Getting gradle wrapper working and using it will save you a lot of pain.</span></div><div class="line"></div><div class="line"><span class="keyword">task</span> wrapper(type: Wrapper) &#123;</div><div class="line">    gradleVersion = <span class="string">'2.10'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">buildscript</span> &#123;</div><div class="line">    <span class="keyword">repositories</span> &#123;</div><div class="line">        jcenter()</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">dependencies</span> &#123;</div><div class="line">        <span class="keyword">classpath</span> <span class="string">'com.android.tools.build:gradle:2.1.0'</span></div><div class="line">    &#125;</div><div class="line">    ext &#123;</div><div class="line">        compileSdkVersion = <span class="number">21</span></div><div class="line">        buildToolsVersion =<span class="string">"23.0.2"</span></div><div class="line">        minSdkVersion = <span class="number">18</span></div><div class="line">        targetSdkVersion = <span class="number">21</span></div><div class="line"></div><div class="line">        <span class="keyword">sourceCompatibility</span> = JavaVersion.VERSION_1_7</div><div class="line">        <span class="keyword">targetCompatibility</span> = JavaVersion.VERSION_1_7</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>然后打开terminal, 输入<code>./gradlew wrapper</code>，Windows 下输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gradlew wrapper</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">gradlew wrapper</div></pre></td></tr></table></figure>
 <p>然后gradle就会自动去下载2.4版本,这也是官方推荐的<a href="http://gradle.org/docs/current/userguide/gradle_wrapper.html" target="_blank" rel="external"><strong>手动设置gradle的方法</strong></a></p>
 <p><br></p>
 <h3 id="守护进程，并行编译"><a href="#守护进程，并行编译" class="headerlink" title="守护进程，并行编译"></a><strong>守护进程，并行编译</strong></h3><p>通过以上步骤,我们设置好了 Android Studio 使用最新的 Gradle 版本，下一步就是正式开启优化之路了。我们需要将gradle作为守护进程一直在后台运行，这样当我们需要编译的时候，gradle就会立即跑过来然后 吭哧吭哧的开始干活。除了设置gradle一直开启之外，当你的工作空间存在多个project的时候，还需要设置gradle对这些projects并行编译，而不是单线的依次进行编译操作。</p>
 <p>说了那么多， 那么怎么设置守护进程和并行编译呢？其实非常简单，gradle本身已经有了相关的配置选项，在你电脑的GRADLE_HOME这个环境变量所指的那个文件夹内，有一个.gradle/gradle.properties文件。 在这个文件里，放入下面两句话就OK了:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">org.gradle.daemon=true</div><div class="line">org.gradle.parallel=true</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">org.gradle.daemon=true</div><div class="line">org.gradle.parallel=true</div></pre></td></tr></table></figure>
 <p>有一个地方需要注意的是,android studio 本身在编译的时候,已经是使用守护进程中的gradle了,那么这里加上了org.gradle.daemon=true就是保证了你在使用命令行编译apk的时候也是使用的守护进程.</p>
 <p>你也可以将上述的配置文件放到你project中的根目录下,以绝对确保在任何情况下,这个project都会使用守护进程进行编译.不过有些特殊的情况下也许你应该注意守护进程的使用,具体的细节参考官网<a href="http://gradle.org/docs/current/userguide/gradle_daemon.html#when_should_i_not_use_the_gradle_daemon" target="_blank" rel="external"><strong>When should I not use the Gradle Daemon?</strong></a></p>
 <p>在使用并行编译的时候必须要注意的就是,你的各个project之间不要有依赖关系,否则的话,很可能因为你的Project A 依赖Project B, 而Project B还没有编译出来的时候,gradle就开始编译Project A 了.最终 导致编译失败.具体可以参考官网<a href="http://gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects" target="_blank" rel="external"><strong>Multi-Project Building and Testing</strong></a>。</p>
 <p>还有一些额外的gradle设置也许会引起你的兴趣,例如你想增加堆内存的空间,或者指定使用哪个jvm虚拟机等等(代码如下)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">org.gradle.jvmargs=-Xmx768m</div><div class="line">org.gradle.java.home=/path/to/jvm</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">org.gradle.jvmargs=-Xmx768m</div><div class="line">org.gradle.java.home=/path/to/jvm</div></pre></td></tr></table></figure>
 <p>如果你想详细的了解gradle的配置,请猛戳官网 <a href="http://gradle.org/docs/current/userguide/userguide_single.html#sec:gradle_configuration_properties" target="_blank" rel="external"><strong>Gradle User Guide</strong></a>。</p>
 <p><br><br><br></p>
 <h4 id="【参考资料】："><a href="#【参考资料】：" class="headerlink" title="【参考资料】："></a>【参考资料】：</h4><p>1、<a href="https://medium.com/@erikhellman/boosting-the-performance-for-gradle-in-your-android-projects-6d5f9e4580b6#.xkvoyii8g" target="_blank" rel="external">Boosting the performance for Gradle in your Android projects</a><br>2、<a href="http://www.devtf.cn/?p=585" target="_blank" rel="external">译文：优化android studio编译效率的方法</a><br>3、<a href="http://stackoverflow.com/questions/25769536/how-when-to-generate-gradle-wrapper-files" target="_blank" rel="external">How/when to generate Gradle wrapper files?</a></p>
@@ -174,7 +174,7 @@
 
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -182,7 +182,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/30/【Android】获取View的截图/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../30/【Android】获取View的截图/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -192,7 +192,7 @@
     </a>
   
   
-    <a href="/2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../18/【Go】为什么 Go 语言把类型声明放在后面？/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">【Go】为什么 Go 语言把类型声明放在后面？</div>
     </a>
@@ -220,13 +220,13 @@
     </div>
     <!-- <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
   
-    <a href="/tags" class="mobile-nav-link">Tags</a>
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
   
-    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="../../../../about" class="mobile-nav-link">About</a>
   
 </nav> -->
     
@@ -234,15 +234,15 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
 
 
-  <script src="/js/dialog.js"></script>
+  <script src="../../../../js/dialog.js"></script>
 
 
 
