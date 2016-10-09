@@ -13,7 +13,7 @@
 <meta property="og:description" content="select * from table_name where id in ()的时候，MySQL会自动按主键自增排序，要是按IN中给定的顺序来取，如何实现呢？">
 <meta property="og:image" content="http://img.blog.csdn.net/20160429152929904">
 <meta property="og:image" content="http://img.blog.csdn.net/20160429153535569">
-<meta property="og:updated_time" content="2016-08-30T03:16:38.453Z">
+<meta property="og:updated_time" content="2016-10-09T07:42:11.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【MySQL】查询保持IN中的顺序">
 <meta name="twitter:description" content="select * from table_name where id in ()的时候，MySQL会自动按主键自增排序，要是按IN中给定的顺序来取，如何实现呢？">
@@ -117,11 +117,11 @@
         <blockquote>
 <p>select * from table_name where id in ()的时候，MySQL会自动按主键自增排序，要是按IN中给定的顺序来取，如何实现呢？</p>
 </blockquote>
-<p>比如下面这个查询结果，mysql会默认使用主键id的ASC自增排序结果集：<br><img src="http://img.blog.csdn.net/20160429152929904" alt="这里写图片描述"></p>
+<p>比如下面这个查询结果，mysql会默认使用主键id的ASC自增排序结果集：<br><img src="http://img.blog.csdn.net/20160429152929904" alt=""></p>
 <a id="more"></a>
 <p><br><br>那么，如果我们想维持查询语句中IN(26613,26612,26611,26610,26609,26608,26607)的顺序可以么？当然可以，像下面这样，使用Order by field()：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">SELECT * from `models` where `id` in (26612,26611,26610) order by field(id,26612,26611,26610);</div></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20160429153535569" alt="这里写图片描述"><br>这样读取出来的顺序就是IN（）语句中的顺序。</p>
+<p><img src="http://img.blog.csdn.net/20160429153535569" alt=""><br>这样读取出来的顺序就是IN（）语句中的顺序。</p>
 
       
     </div>
@@ -160,11 +160,11 @@
     
 <nav id="article-nav">
   
-    <a href="../../../06/02/【Android】技术调研：用代码模拟屏幕点击、触摸事件/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../../06/02/【Java】按位存储：使用int存储boolean数组/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          【Android】技术调研：用代码模拟屏幕点击、触摸事件
+          【Java】按位存储：使用int存储boolean数组
         
       </div>
     </a>

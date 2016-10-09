@@ -19,7 +19,7 @@
 一、需求效果">
 <meta property="og:image" content="http://img.blog.csdn.net/20161009150647271">
 <meta property="og:image" content="http://img.blog.csdn.net/20160907145042302">
-<meta property="og:updated_time" content="2016-10-09T07:07:31.762Z">
+<meta property="og:updated_time" content="2016-10-09T07:39:04.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android 】TextView 局部文字变色">
 <meta name="twitter:description" content="TextView 对于富文本效果的实现支持不支持呢？比如“局部文字颜色的变动”，“局部字体的变动”
@@ -151,7 +151,7 @@
 </ul>
 <p><br></p>
 <h3 id="三、动手试试"><a href="#三、动手试试" class="headerlink" title="三、动手试试"></a><strong>三、动手试试</strong></h3><p>比如实现下图中TextView的样式</p>
-<p><img src="http://img.blog.csdn.net/20160907145042302" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20160907145042302" alt=""></p>
 <p>然后代码如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">TextView tv = (TextView)view.findViewById(R.id.toast_text);</div><div class="line"></div><div class="line">String str1 = <span class="string">"提交成功！\n积分"</span>;</div><div class="line">String str2 = <span class="string">"+"</span> + score1;</div><div class="line">String str3 = <span class="string">"！审核通过后再"</span>;</div><div class="line">String str4 = <span class="string">"+"</span> + score2;</div><div class="line"></div><div class="line">SpannableStringBuilder builder = <span class="keyword">new</span> SpannableStringBuilder(str1 + str2 + str3 + str4 + <span class="string">"！"</span>);</div><div class="line">builder.setSpan(<span class="keyword">new</span> ForegroundColorSpan(Color.parseColor(<span class="string">"#ffffa200"</span>)),</div><div class="line">		str1.length(), (str1 + str2).length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);</div><div class="line">builder.setSpan(<span class="keyword">new</span> ForegroundColorSpan(Color.parseColor(<span class="string">"#ffffa200"</span>)),</div><div class="line">		(str1 + str2 + str3).length(), (str1 + str2 + str3 + str4).length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);</div><div class="line"></div><div class="line">tv.setText(builder);</div></pre></td></tr></table></figure>
 <p><br></p>

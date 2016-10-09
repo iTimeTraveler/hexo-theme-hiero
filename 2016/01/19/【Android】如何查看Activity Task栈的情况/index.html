@@ -13,7 +13,7 @@
 <meta property="og:description" content="我们都知道，每个Activity都有taskAffinity属性，这个属性指出了它希望进入的Task。">
 <meta property="og:image" content="http://img.blog.csdn.net/20160119120838863">
 <meta property="og:image" content="http://img.blog.csdn.net/20160119114801794">
-<meta property="og:updated_time" content="2016-08-30T03:13:39.947Z">
+<meta property="og:updated_time" content="2016-10-09T07:40:42.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android】如何查看Activity Task栈的情况">
 <meta name="twitter:description" content="我们都知道，每个Activity都有taskAffinity属性，这个属性指出了它希望进入的Task。">
@@ -120,9 +120,9 @@
 <p>如果一个Activity没有显式的指明该 Activity的taskAffinity，那么它的这个属性就等于Application指明的taskAffinity，如果 Application也没有指明，那么该taskAffinity的值就等于包名。而Task也有自己的affinity属性，它的值等于它的根 Activity的taskAffinity的值。 </p>
 <p><br><br><strong>一、查看task栈情况</strong></p>
 <p>在cmd命令行里或者Android Studio中的Terminal里敲入如下命令：<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">adb shell dumpsys activity</div></pre></td></tr></table></figure></p>
-<p>然后会出现很长一段详细信息，滚到中间的地方，会看到Task栈的状态如下：<br><img src="http://img.blog.csdn.net/20160119120838863" alt="这里写图片描述"></p>
+<p>然后会出现很长一段详细信息，滚到中间的地方，会看到Task栈的状态如下：<br><img src="http://img.blog.csdn.net/20160119120838863" alt=""></p>
 <a id="more"></a>
-<p><br><br>此外，这些信息的最底部还可以看到当前显示在前台的Activity是哪一个，还有使用设备的分辨率等信息<br><img src="http://img.blog.csdn.net/20160119114801794" alt="这里写图片描述"></p>
+<p><br><br>此外，这些信息的最底部还可以看到当前显示在前台的Activity是哪一个，还有使用设备的分辨率等信息<br><img src="http://img.blog.csdn.net/20160119114801794" alt=""></p>
 
       
     </div>
