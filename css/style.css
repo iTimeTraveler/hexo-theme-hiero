@@ -347,7 +347,7 @@ body {
   font-weight: normal;
 }
 .article-date:hover {
-  color: #ff5537;
+  color: #fb6d19;
 }
 .article-category {
   text-align: center;
@@ -363,7 +363,7 @@ body {
   font-weight: normal;
 }
 .article-category-link:hover {
-  color: #ff5537;
+  color: #fb6d19;
 }
 .article-header {
   text-align: center;
@@ -425,7 +425,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  color: #ff5537;
+  color: #fb6d19;
   text-decoration: none;
 }
 .article-entry ul,
@@ -462,7 +462,7 @@ a.article-title:hover {
   font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-s;
   font-size: 1.1em;
   margin: 1.6em 0px;
-  border-left: 5px solid #ff5537;
+  border-left: 5px solid #fb6d19;
   background: rgba(208,211,248,0.15);
 }
 .article-entry blockquote p {
@@ -520,7 +520,7 @@ a.article-title:hover {
   padding: 6px 15px;
   border-radius: 15px;
   background: rgba(208,211,248,0.25);
-  color: #ff5537;
+  color: #fb6d19;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
@@ -529,7 +529,7 @@ a.article-title:hover {
   transition: all 0.2s ease-in-out;
 }
 .article-more-link a:hover {
-  background: #ff5537;
+  background: #fb6d19;
   color: #fff;
   text-decoration: none;
 }
@@ -803,10 +803,10 @@ a.article-title:hover {
   margin-bottom: 1em;
 }
 .archive-year {
-  color: #ff5537;
+  color: #fb6d19;
 }
 .archive-year:hover {
-  color: #ff5537;
+  color: #fb6d19;
 }
 .archives {
   -webkit-column-gap: 10px;
@@ -862,7 +862,7 @@ a.article-title:hover {
   display: block;
 }
 .archive-article-date:hover {
-  color: #ff5537;
+  color: #fb6d19;
 }
 #page-nav {
   margin: 50px auto;
@@ -890,7 +890,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #ff5537;
+  background: #fb6d19;
   color: #fff;
 }
 #page-nav .prev {
@@ -928,7 +928,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #footer a:hover {
-  color: #ff5537;
+  color: #fb6d19;
   text-decoration: none;
 }
 #footer-info {
@@ -958,7 +958,7 @@ a.article-title:hover {
 }
 .article-entry code {
   background: rgba(208,211,248,0.25);
-  color: #ff5537;
+  color: #fb6d19;
   padding: 0 0.3em;
 }
 .article-entry pre code {
