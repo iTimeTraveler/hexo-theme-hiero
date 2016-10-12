@@ -51,6 +51,11 @@ html{
 	text-align: center;
 	border-bottom: 1px solid #eef1f8;
 	background: rgba(255,255,255,.85);
+	-moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
 }
 .intro-navigate>p{
 	text-align: center;
