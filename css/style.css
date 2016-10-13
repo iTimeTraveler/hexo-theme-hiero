@@ -128,7 +128,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 ::selection {
-  background: #fb6d19;
+  background: #42b983;
   color: #fff;
 }
 .article-entry h2:before,
@@ -136,11 +136,9 @@ body {
 .article-entry h4:before,
 .article-entry h5:before,
 .article-entry h6:before {
-  content: "# ";
-  color: #fb6d19;
-  left: -1.7em;
-  font-size: 1.2em;
-  font-weight: bold;
+  content: "#";
+  color: #42b983;
+  padding-right: 0.2em;
 }
 .outer {
   max-width: 1040px;
@@ -320,6 +318,7 @@ body {
   font-weight: bold;
 }
 .article {
+  color: #555;
   margin: 50px 0;
 }
 .article-inner {
@@ -346,8 +345,12 @@ body {
   text-align: center;
   font-weight: normal;
 }
+.article-date:before {
+  font-family: "FontAwesome";
+  content: "\f073";
+}
 .article-date:hover {
-  color: #fb6d19;
+  color: #42b983;
 }
 .article-category {
   text-align: center;
@@ -362,8 +365,13 @@ body {
   margin: 0 12px 1em;
   font-weight: normal;
 }
+.article-category-link:before {
+  font-family: "FontAwesome";
+  content: "\f07c";
+  padding-right: 0.3em;
+}
 .article-category-link:hover {
-  color: #fb6d19;
+  color: #42b983;
 }
 .article-header {
   text-align: center;
@@ -375,7 +383,7 @@ body {
 .article-title {
   text-decoration: none;
   font-weight: bold;
-  color: #404040;
+  color: #555;
   line-height: 1.1em;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -383,11 +391,11 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #fb6d19;
+  color: #42b983;
   text-decoration: none;
 }
 .article-entry {
-  color: #404040;
+  color: #444;
   padding: 0 20px;
 }
 .article-entry:before,
@@ -425,7 +433,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  color: #fb6d19;
+  color: #42b983;
   text-decoration: none;
 }
 .article-entry ul,
@@ -462,7 +470,7 @@ a.article-title:hover {
   font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-s;
   font-size: 1.1em;
   margin: 1.6em 0px;
-  border-left: 5px solid #fb6d19;
+  border-left: 5px solid #42b983;
   background: rgba(208,211,248,0.15);
 }
 .article-entry blockquote p {
@@ -521,7 +529,7 @@ a.article-title:hover {
   border-radius: 15px;
   background: #f9fbfd;
   border: 1px solid #eef1f8;
-  color: #fb6d19;
+  color: #42b983;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
@@ -530,7 +538,7 @@ a.article-title:hover {
   transition: all 0.2s ease-in-out;
 }
 .article-more-link a:hover {
-  background: #fb6d19;
+  background: #42b983;
   color: #fff;
   text-decoration: none;
 }
@@ -554,14 +562,16 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-footer a:hover {
-  color: #404040;
+  color: #444;
 }
 .article-tag-list-item {
   float: left;
   margin-right: 10px;
 }
 .article-tag-list-link:before {
-  content: "#";
+  font-family: "FontAwesome";
+  content: "\f02c";
+  padding-right: 0.3em;
 }
 .article-comment-link {
   float: right;
@@ -622,7 +632,7 @@ a.article-title:hover {
   display: block;
 }
 .article-nav-link-wrap:hover {
-  color: #404040;
+  color: #444;
 }
 @media screen and (min-width: 768px) {
   .article-nav-link-wrap {
@@ -681,7 +691,7 @@ a.article-title:hover {
   box-sizing: border-box;
   font: 14px -apple-system, "Arial", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   padding: 0 15px;
-  color: #404040;
+  color: #444;
   outline: none;
   border: 1px solid #eef1f8;
   border-radius: 3px 3px 0 0;
@@ -804,10 +814,10 @@ a.article-title:hover {
   margin-bottom: 1em;
 }
 .archive-year {
-  color: #fb6d19;
+  color: #42b983;
 }
 .archive-year:hover {
-  color: #fb6d19;
+  color: #42b983;
 }
 .archives {
   -webkit-column-gap: 10px;
@@ -840,7 +850,7 @@ a.article-title:hover {
 }
 .archive-article-title {
   text-decoration: none;
-  color: #404040;
+  color: #444;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
@@ -848,7 +858,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #fb6d19;
+  color: #42b983;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -859,11 +869,11 @@ a.article-title:hover {
   color: #7f8c8d;
   text-decoration: none;
   line-height: 1.6em;
-  margin-right: 30px;
+  margin-right: 15px;
   display: block;
 }
 .archive-article-date:hover {
-  color: #fb6d19;
+  color: #42b983;
 }
 #page-nav {
   margin: 50px auto;
@@ -891,7 +901,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #fb6d19;
+  background: #42b983;
   color: #fff;
 }
 #page-nav .prev {
@@ -909,7 +919,7 @@ a.article-title:hover {
   }
 }
 #page-nav .current {
-  color: #404040;
+  color: #444;
   font-weight: bold;
 }
 #page-nav .space {
@@ -929,7 +939,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #footer a:hover {
-  color: #fb6d19;
+  color: #42b983;
   text-decoration: none;
 }
 #footer-info {
@@ -939,7 +949,7 @@ a.article-title:hover {
 .article-entry pre,
 .article-entry .highlight {
   background: #f8f8f8;
-  margin: 0 -20px;
+  margin: 0 0px;
   padding: 15px 20px;
   border-style: solid;
   border-color: #eef1f8;
@@ -959,7 +969,7 @@ a.article-title:hover {
 }
 .article-entry code {
   background: rgba(208,211,248,0.2);
-  color: #fb6d19;
+  color: #42b983;
   padding: 0 0.3em;
 }
 .article-entry pre code {
@@ -1229,8 +1239,8 @@ pre .xml .cdata {
 }
 .widget {
   color: #777;
-  background: #fcfcfc;
-  border: 1px solid #e7e7eb;
+  background: transparent;
+  border: 1px solid rgba(58,61,98,0.1);
   padding: 15px;
   border-radius: 3px;
 }
@@ -1239,7 +1249,7 @@ pre .xml .cdata {
   text-decoration: none;
 }
 .widget a:hover {
-  color: #fb6d19;
+  color: #42b983;
   text-decoration: none;
 }
 .widget ul ul,
