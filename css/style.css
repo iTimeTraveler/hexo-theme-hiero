@@ -128,7 +128,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 ::selection {
-  background: #00aced;
+  background: #42b983;
   color: #fff;
 }
 .article-entry h2:before,
@@ -137,8 +137,81 @@ body {
 .article-entry h5:before,
 .article-entry h6:before {
   content: "#";
-  color: #00aced;
+  color: #42b983;
   padding-right: 0.2em;
+}
+#rocket {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  display: block;
+  visibility: hidden;
+  width: 26px;
+  height: 48px;
+  background: url("images/rocket.png") no-repeat 50% 0;
+  opacity: 0;
+  -webkit-transition: visibility 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -webkit-transform 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  -moz-transition: visibility 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -moz-transform 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  -webkit-transition: visibility 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -webkit-transform 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  -moz-transition: visibility 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -moz-transform 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  -ms-transition: visibility 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -ms-transform 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: visibility 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), transform 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+#rocket i {
+  display: block;
+  margin-top: 48px;
+  height: 14px;
+  background: url("images/rocket.png") no-repeat 50% -48px;
+  opacity: 0.5;
+  -webkit-transition: -webkit-transform 0.2s;
+  -moz-transition: -moz-transform 0.2s;
+  -webkit-transition: -webkit-transform 0.2s;
+  -moz-transition: -moz-transform 0.2s;
+  -ms-transition: -ms-transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+#rocket:hover {
+  background-position: 50% -62px;
+}
+#rocket:hover i {
+  background-position: 50% 100%;
+  -webkit-animation: flaming 0.7s infinite;
+  -moz-animation: flaming 0.7s infinite;
+  -webkit-animation: flaming 0.7s infinite;
+  -moz-animation: flaming 0.7s infinite;
+  -ms-animation: flaming 0.7s infinite;
+  animation: flaming 0.7s infinite;
+}
+#rocket.show {
+  visibility: visible;
+  opacity: 1;
+}
+#rocket.launch {
+  background-position: 50% -62px;
+  opacity: 0;
+  -webkit-transform: translateY(-500px);
+  -moz-transform: translateY(-500px);
+  -ms-transform: translateY(-500px);
+  -webkit-transform: translateY(-500px);
+  -moz-transform: translateY(-500px);
+  -ms-transform: translateY(-500px);
+  transform: translateY(-500px);
+  pointer-events: none;
+}
+#rocket.launch i {
+  background-position: 50% 100%;
+  -webkit-transform: scale(1.4, 3.2);
+  -moz-transform: scale(1.4, 3.2);
+  -webkit-transform: scale(1.4, 3.2);
+  -moz-transform: scale(1.4, 3.2);
+  -ms-transform: scale(1.4, 3.2);
+  transform: scale(1.4, 3.2);
 }
 .outer {
   max-width: 1040px;
@@ -350,7 +423,7 @@ body {
   content: "\f073";
 }
 .article-date:hover {
-  color: #00aced;
+  color: #42b983;
 }
 .article-category {
   text-align: center;
@@ -371,7 +444,7 @@ body {
   padding-right: 0.3em;
 }
 .article-category-link:hover {
-  color: #00aced;
+  color: #42b983;
 }
 .article-header {
   text-align: center;
@@ -391,7 +464,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #00aced;
+  color: #42b983;
   text-decoration: none;
 }
 .article-entry {
@@ -433,7 +506,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  color: #00aced;
+  color: #42b983;
   text-decoration: none;
 }
 .article-entry ul,
@@ -470,7 +543,7 @@ a.article-title:hover {
   font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-s;
   font-size: 1.1em;
   margin: 1.6em 0px;
-  border-left: 5px solid #00aced;
+  border-left: 5px solid #42b983;
   background: rgba(208,211,248,0.15);
 }
 .article-entry blockquote p {
@@ -529,7 +602,7 @@ a.article-title:hover {
   border-radius: 15px;
   background: #f9fbfd;
   border: 1px solid #eef1f8;
-  color: #00aced;
+  color: #42b983;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
@@ -538,7 +611,7 @@ a.article-title:hover {
   transition: all 0.2s ease-in-out;
 }
 .article-more-link a:hover {
-  background: #00aced;
+  background: #42b983;
   color: #fff;
   text-decoration: none;
 }
@@ -814,10 +887,10 @@ a.article-title:hover {
   margin-bottom: 1em;
 }
 .archive-year {
-  color: #00aced;
+  color: #42b983;
 }
 .archive-year:hover {
-  color: #00aced;
+  color: #42b983;
 }
 .archives {
   -webkit-column-gap: 10px;
@@ -858,7 +931,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #00aced;
+  color: #42b983;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -873,7 +946,7 @@ a.article-title:hover {
   display: block;
 }
 .archive-article-date:hover {
-  color: #00aced;
+  color: #42b983;
 }
 #page-nav {
   margin: 50px auto;
@@ -901,7 +974,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #00aced;
+  background: #42b983;
   color: #fff;
 }
 #page-nav .prev {
@@ -939,7 +1012,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #footer a:hover {
-  color: #00aced;
+  color: #42b983;
   text-decoration: none;
 }
 #footer-info {
@@ -969,7 +1042,7 @@ a.article-title:hover {
 }
 .article-entry code {
   background: rgba(208,211,248,0.2);
-  color: #00aced;
+  color: #42b983;
   padding: 0 0.3em;
 }
 .article-entry pre code {
@@ -1254,7 +1327,7 @@ pre .xml .cdata {
   text-decoration: none;
 }
 .widget a:hover {
-  color: #00aced;
+  color: #42b983;
   text-decoration: none;
 }
 .widget ul ul,

@@ -518,57 +518,6 @@
 
 
   
-    <article id="post-【Java】按位存储：使用int存储boolean数组" class="article article-type-post" itemscope itemprop="blogPost">
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/">【Java】按位存储：使用int存储boolean数组</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/" class="article-date">
-	  <time datetime="2016-06-02T03:55:00.000Z" itemprop="datePublished">2016-06-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="../../categories/Java/">Java</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>有一种场景，比如App设置页中会有一组开关选项，这个时候保存这些开关的状态，如果每个按钮都对应一个boolean值的话，太大材小用显得鸡肋，频繁读取SharedPreferences 存取效率自然快不过一次读取。</p>
-</blockquote>
-<p><br><br>首先，敲定每个boolean值存储的位置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> mBroadcastCustomValue = <span class="number">0</span>;   <span class="comment">//用来存储的int值</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_BASE = <span class="number">1</span>;				<span class="comment">//基础类播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_TRAFFIC = <span class="number">1</span> &lt;&lt; <span class="number">1</span>;		<span class="comment">//实时路况</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_CAMERA = <span class="number">1</span> &lt;&lt; <span class="number">2</span>;		<span class="comment">//摄像头限速播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_SAFE = <span class="number">1</span> &lt;&lt; <span class="number">3</span>;		<span class="comment">//安全提醒类</span></div></pre></td></tr></table></figure></p>
-<p><br><br><strong>一、添加Add</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue |= level;    <span class="comment">//add</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">addLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Java/">Java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-【Android】技术调研：用代码模拟屏幕点击、触摸事件" class="article article-type-post" itemscope itemprop="blogPost">
   <div id="articleInner" class="article-inner">
     
@@ -612,6 +561,57 @@
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-【Java】按位存储：使用int存储boolean数组" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/">【Java】按位存储：使用int存储boolean数组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/" class="article-date">
+	  <time datetime="2016-06-02T03:55:00.000Z" itemprop="datePublished">2016-06-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Java/">Java</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>有一种场景，比如App设置页中会有一组开关选项，这个时候保存这些开关的状态，如果每个按钮都对应一个boolean值的话，太大材小用显得鸡肋，频繁读取SharedPreferences 存取效率自然快不过一次读取。</p>
+</blockquote>
+<p><br><br>首先，敲定每个boolean值存储的位置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> mBroadcastCustomValue = <span class="number">0</span>;   <span class="comment">//用来存储的int值</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_BASE = <span class="number">1</span>;				<span class="comment">//基础类播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_TRAFFIC = <span class="number">1</span> &lt;&lt; <span class="number">1</span>;		<span class="comment">//实时路况</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_CAMERA = <span class="number">1</span> &lt;&lt; <span class="number">2</span>;		<span class="comment">//摄像头限速播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_SAFE = <span class="number">1</span> &lt;&lt; <span class="number">3</span>;		<span class="comment">//安全提醒类</span></div></pre></td></tr></table></figure></p>
+<p><br><br><strong>一、添加Add</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue |= level;    <span class="comment">//add</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">addLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Java/">Java</a></li></ul>
 
     </footer>
   </div>
@@ -837,5 +837,7 @@
     </div>
   </div>
 </div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
 </body>
 </html>
