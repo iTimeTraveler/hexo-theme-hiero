@@ -128,7 +128,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 ::selection {
-  background: #fb6d19;
+  background: #39aa56;
   color: #fff;
 }
 .article-entry h2,
@@ -136,7 +136,7 @@ body {
 .article-entry h4,
 .article-entry h5,
 .article-entry h6 {
-  color: #fb6d19;
+  color: #39aa56;
 }
 #rocket {
   position: fixed;
@@ -395,13 +395,13 @@ body {
   font-weight: bold;
 }
 .navigater-list>a:hover {
-  color: #fb6d19;
-  border-bottom: 5px solid #fb6d19;
+  color: #39aa56;
+  border-bottom: 5px solid #39aa56;
   text-decoration: none;
 }
 .navbar-nav>li>a:hover,
 .navbar-nav>li>a:focus {
-  border-bottom: 5px solid #fb6d19;
+  border-bottom: 5px solid #39aa56;
 }
 .navbar-inner {
   min-height: 90px;
@@ -451,7 +451,7 @@ body {
   content: "\f073";
 }
 .article-date:hover {
-  color: #fb6d19;
+  color: #39aa56;
 }
 .article-category {
   text-align: center;
@@ -472,7 +472,7 @@ body {
   padding-right: 0.3em;
 }
 .article-category-link:hover {
-  color: #fb6d19;
+  color: #39aa56;
 }
 .article-header {
   text-align: center;
@@ -492,7 +492,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #fb6d19;
+  color: #39aa56;
   text-decoration: none;
 }
 .article-entry {
@@ -534,7 +534,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  color: #fb6d19;
+  color: #39aa56;
   text-decoration: none;
 }
 .article-entry ul,
@@ -572,7 +572,7 @@ a.article-title:hover {
   font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-s;
   font-size: 1.1em;
   margin: 1.6em 0px;
-  border-left: 5px solid #fb6d19;
+  border-left: 5px solid #39aa56;
   background: rgba(208,211,248,0.15);
 }
 .article-entry blockquote p {
@@ -631,7 +631,7 @@ a.article-title:hover {
   border-radius: 15px;
   background: #f9fbfd;
   border: 1px solid #eef1f8;
-  color: #fb6d19;
+  color: #39aa56;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
@@ -640,7 +640,7 @@ a.article-title:hover {
   transition: all 0.2s ease-in-out;
 }
 .article-more-link a:hover {
-  background: #fb6d19;
+  background: #39aa56;
   color: #fff;
   text-decoration: none;
 }
@@ -916,10 +916,10 @@ a.article-title:hover {
   margin-bottom: 1em;
 }
 .archive-year {
-  color: #fb6d19;
+  color: #39aa56;
 }
 .archive-year:hover {
-  color: #fb6d19;
+  color: #39aa56;
 }
 .archives {
   -webkit-column-gap: 10px;
@@ -960,7 +960,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #fb6d19;
+  color: #39aa56;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -975,7 +975,7 @@ a.article-title:hover {
   display: block;
 }
 .archive-article-date:hover {
-  color: #fb6d19;
+  color: #39aa56;
 }
 #page-nav {
   margin: 50px auto;
@@ -1003,7 +1003,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #fb6d19;
+  background: #39aa56;
   color: #fff;
 }
 #page-nav .prev {
@@ -1041,7 +1041,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #footer a:hover {
-  color: #fb6d19;
+  color: #39aa56;
   text-decoration: none;
 }
 #footer-info {
@@ -1221,6 +1221,90 @@ pre .keyword,
 pre .javascript .function {
   color: $highlight-purple;
 }
+pre {
+  color: #525252;
+}
+pre .function .keyword,
+pre .constant {
+  color: #0092db;
+}
+pre .keyword,
+pre .attribute {
+  color: #e96900;
+}
+pre .number,
+pre .literal {
+  color: #ae81ff;
+}
+pre .tag,
+pre .tag .title,
+pre .change,
+pre .winutils,
+pre .flow,
+pre .lisp .title,
+pre .clojure .built_in,
+pre .nginx .title,
+pre .tex .special {
+  color: #2973b7;
+}
+pre .symbol,
+pre .symbol .string,
+pre .value,
+pre .regexp {
+  color: #42b983;
+}
+pre .title {
+  color: #83b917;
+}
+pre .tag .value,
+pre .string,
+pre .subst,
+pre .haskell .type,
+pre .preprocessor,
+pre .ruby .class .parent,
+pre .built_in,
+pre .sql .aggregate,
+pre .django .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .javadoc,
+pre .django .filter .argument,
+pre .smalltalk .localvars,
+pre .smalltalk .array,
+pre .attr_selector,
+pre .pseudo,
+pre .addition,
+pre .stream,
+pre .envvar,
+pre .apache .tag,
+pre .apache .cbracket,
+pre .tex .command,
+pre .prompt {
+  color: #42b983;
+}
+pre .comment,
+pre .java .annotation,
+pre .python .decorator,
+pre .template_comment,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .apache .sqbracket,
+pre .tex .formula {
+  color: #b3b3b3;
+}
+pre .deletion {
+  color: #ba4545;
+}
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .tex .formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata {
+  opacity: 0.5;
+}
 @media screen and (max-width: 479px) {
   #mobile-nav {
     position: absolute;
@@ -1272,7 +1356,7 @@ pre .javascript .function {
   text-decoration: none;
 }
 .widget a:hover {
-  color: #fb6d19;
+  color: #39aa56;
   text-decoration: none;
 }
 .widget ul ul,
