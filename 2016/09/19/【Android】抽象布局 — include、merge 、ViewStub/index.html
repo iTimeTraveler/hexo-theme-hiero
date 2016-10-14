@@ -6,26 +6,23 @@
   <title>【Android】抽象布局 — include、merge 、ViewStub | iTimeTraveler</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在布局优化中，Androi的官方提到了这三种布局&amp;lt;include/&amp;gt;、&amp;lt;merge /&amp;gt;、&amp;lt;ViewStub /&amp;gt;，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。
-
 一、布局重用&amp;lt;include/&amp;gt;&amp;lt;include /&amp;gt;标签能够重用布局文件，简单的使用如下：
-12345678910111213">
+123456789101112131">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Android】抽象布局 — include、merge 、ViewStub">
 <meta property="og:url" content="http://github.com/2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/index.html">
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="在布局优化中，Androi的官方提到了这三种布局&amp;lt;include/&amp;gt;、&amp;lt;merge /&amp;gt;、&amp;lt;ViewStub /&amp;gt;，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。
-
 一、布局重用&amp;lt;include/&amp;gt;&amp;lt;include /&amp;gt;标签能够重用布局文件，简单的使用如下：
-12345678910111213">
+123456789101112131">
 <meta property="og:image" content="http://img.blog.csdn.net/20160919112652311">
 <meta property="og:image" content="http://img.blog.csdn.net/20160919112911484">
-<meta property="og:updated_time" content="2016-09-20T08:25:05.575Z">
+<meta property="og:updated_time" content="2016-10-14T03:38:27.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android】抽象布局 — include、merge 、ViewStub">
 <meta name="twitter:description" content="在布局优化中，Androi的官方提到了这三种布局&amp;lt;include/&amp;gt;、&amp;lt;merge /&amp;gt;、&amp;lt;ViewStub /&amp;gt;，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。
-
 一、布局重用&amp;lt;include/&amp;gt;&amp;lt;include /&amp;gt;标签能够重用布局文件，简单的使用如下：
-12345678910111213">
+123456789101112131">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20160919112652311">
   
     <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
@@ -125,7 +122,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在布局优化中，Androi的官方提到了这三种布局<code>&lt;include/&gt;</code>、<code>&lt;merge /&gt;</code>、<code>&lt;ViewStub /&gt;</code>，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。</p>
-<p><br></p>
 <h3 id="一、布局重用-lt-include-gt"><a href="#一、布局重用-lt-include-gt" class="headerlink" title="一、布局重用&lt;include/&gt;"></a><strong>一、布局重用&lt;include/&gt;</strong></h3><p>&lt;include /&gt;标签能够重用布局文件，简单的使用如下：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>   </div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@color/app_bg"</span>  </div><div class="line">    <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span>&gt;  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">layout</span>=<span class="string">"@layout/titlebar"</span>/&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span> <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </span></div><div class="line">              <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">              <span class="attr">android:text</span>=<span class="string">"@string/hello"</span>  </div><div class="line">              <span class="attr">android:padding</span>=<span class="string">"10dp"</span> /&gt;  </div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -146,7 +142,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LinearLayout fav_bookmarks = findViewById(R.id.bookmarks_list); 	<span class="comment">// WRONG!!!!</span></div></pre></td></tr></table></figure>
 <p>正确的方法是这样：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">View bookmarks_container_2 = findViewById(R.id.bookmarks_favourite); </div><div class="line"></div><div class="line">bookmarks_container_2.findViewById(R.id.bookmarks_list);</div></pre></td></tr></table></figure>
-<p><br></p>
 <h3 id="二、减少视图层级-lt-merge-gt"><a href="#二、减少视图层级-lt-merge-gt" class="headerlink" title="二、减少视图层级&lt;merge/&gt;"></a><strong>二、减少视图层级&lt;merge/&gt;</strong></h3><p>&lt;merge /&gt;标签用于减少View树的层次来优化Android的布局。先来用个例子演示一下：</p>
 <p>首先主需要一个配置文件activity_main.xml</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">  <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> &gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:text</span>=<span class="string">"merge标签使用"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -163,7 +158,7 @@
 <ul>
 <li>merge 使用后<br><img src="http://img.blog.csdn.net/20160919112911484" alt="merge使用后"></li>
 </ul>
-<p>可以看到，<code>FrameLayout</code>下面直接就是<code>TextView</code>，与之前的相比<strong>少了一层 RelativeLayout </strong>而实现的效果相同。<br><br></p>
+<p>可以看到，<code>FrameLayout</code>下面直接就是<code>TextView</code>，与之前的相比<strong>少了一层 RelativeLayout </strong>而实现的效果相同。</p>
 <ul>
 <li><p>那么，什么情况考虑使用<code>&lt;merge /&gt;</code>标签？</p>
 <ul>
@@ -180,7 +175,6 @@
 </ul>
 </li>
 </ul>
-<p><br></p>
 <h3 id="三、需要时使用-lt-ViewStub-gt"><a href="#三、需要时使用-lt-ViewStub-gt" class="headerlink" title="三、需要时使用&lt;ViewStub /&gt;"></a><strong>三、需要时使用&lt;ViewStub /&gt;</strong></h3><p>限于篇幅，这里只大概总结一下<code>ViewStub</code>的使用方法，详细介绍和使用写到后面的文章中。</p>
 <p>&lt;ViewStub /&gt;标签最大的优点是当你需要时才会加载，使用他并不会影响UI初始化时的性能。各种不常用的布局想进度条、显示错误消息等可以使用&lt;ViewStub /&gt;标签，以减少内存使用量，加快渲染速度。&lt;ViewStub /&gt;是一个不可见的，大小为0的View。&lt;ViewStub /&gt;标签使用如下：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ViewStub</span>  </span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/stub_import"</span>  </div><div class="line">    <span class="attr">android:inflatedId</span>=<span class="string">"@+id/panel_import"</span>  </div><div class="line">    <span class="attr">android:layout</span>=<span class="string">"@layout/progress_overlay"</span>  </div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">    <span class="attr">android:layout_gravity</span>=<span class="string">"bottom"</span> /&gt;</div></pre></td></tr></table></figure>
@@ -191,7 +185,7 @@
 <p>当调用inflate()函数的时候，ViewStub被引用的资源替代，并且返回引用的view。 这样程序可以直接得到引用的view而不用再次调用函数findViewById()来查找了。</p>
 <p><strong>注：ViewStub 目前有个缺陷就是还不支持 <code>&lt;merge /&gt;</code> 标签。</strong></p>
 <p>更多<code>&lt;ViewStub /&gt;</code>标签介绍可以参考官网教程《<a href="http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-with.html" target="_blank" rel="external">Android Layout Tricks #3: Optimize with stubs</a>》</p>
-<p><br><br><br><br>【参考资料】：</p>
+<p>【参考资料】：</p>
 <p>1、<a href="http://blog.csdn.net/xyz_lmn/article/details/14524567" target="_blank" rel="external">Android抽象布局 — include、merge 、ViewStub</a><br>2、<a href="http://www.coboltforge.com/2012/05/tech-stuff-layout/" target="_blank" rel="external">Tech Stuff: Android &lt;include/&gt; layout pitfalls</a><br>3、<a href="http://www.tuicool.com/articles/jyyUV33" target="_blank" rel="external">Android 性能优化 四 布局优化merge标签的使用</a><br>4、<a href="http://www.cnblogs.com/travelfromandroid/articles/2133206.html" target="_blank" rel="external">Android之merge布局</a><br>5、 <a href="http://blog.csdn.net/hitlion2008/article/details/6737537/" target="_blank" rel="external">Android实战技巧：ViewStub的应用</a></p>
 
       
