@@ -187,6 +187,59 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/">【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/" class="article-date">
+	  <time datetime="2016-04-29T03:37:09.000Z" itemprop="datePublished">2016-04-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Linux/">Linux</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>在Linux中执行.sh脚本，异常/bin/bash^M: bad interpreter: No such file or directory.<br><img src="http://img.blog.csdn.net/20160429114707846" alt=""></p>
+</blockquote>
+<p><br></p>
+<p><strong>一、分析</strong></p>
+<p>这是不同系统编码格式引起的：在windows系统中编辑的.sh文件可能有不可见字符，所以在Linux系统下执行会报以上异常信息。 </p>
+<p><br><br><strong>二、解决</strong></p>
+<p>1）在windows下转换：<br>利用一些编辑器如UltraEdit或EditPlus等工具先将脚本编码转换，再放到Linux中执行。转换方式如下（UltraEdit）：File–&gt;Conversions–&gt;DOS-&gt;UNIX即可。 </p>
+        
+          <p class="article-more-link">
+            <a href="../../2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-”二分查找“算法的时间复杂度" class="article article-type-post" itemscope itemprop="blogPost">
   <div id="articleInner" class="article-inner">
     
@@ -643,54 +696,6 @@
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Java/">Java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-【Android】 加解密算法 HMAC 的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="../../2015/12/31/【Android】 加解密算法 HMAC 的使用/">【Android】 加解密算法 HMAC 的使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="../../2015/12/31/【Android】 加解密算法 HMAC 的使用/" class="article-date">
-	  <time datetime="2015-12-31T07:30:00.000Z" itemprop="datePublished">2015-12-31</time>
-	</a>
-
-      
-    <a class="article-category-link" href="../../categories/Android/">Android</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>1、HMAC算法</strong></p>
-<p>&nbsp;&nbsp; HMAC是密钥相关的哈希运算消息认证码（Hash-based Message Authentication Code）,HMAC运算利用哈希算法，以一个密钥和一个消息为输入，生成一个消息摘要作为输出。</p>
-<p>&nbsp;&nbsp;简而言之，HMAC就是含有密钥散列函数算法，兼容了MD和SHA算法的特性，并在此基础上加上了密钥。因此MAC算法也经常被称作HMAC算法。关于hmac算法的详情可以参看RFC 2104(<a href="http://www.ietf.org/rfc/rfc2104.txt)，这里包含了HmacMD5算法的C语言实现。">http://www.ietf.org/rfc/rfc2104.txt)，这里包含了HmacMD5算法的C语言实现。</a><br><br></p>
-        
-          <p class="article-more-link">
-            <a href="../../2015/12/31/【Android】 加解密算法 HMAC 的使用/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>

@@ -187,6 +187,54 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-【Android】如何启动调用其他app中的Activity" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2015/09/15/【Android】如何启动调用其他app中的Activity/">【Android】如何启动调用其他app中的Activity</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2015/09/15/【Android】如何启动调用其他app中的Activity/" class="article-date">
+	  <time datetime="2015-09-15T03:06:00.000Z" itemprop="datePublished">2015-09-15</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近项目正在将原系统拆分为小型App，所以需要在原Project中启动另一个新的App中的Activity。这样的话启动要用到ComponentName ，它就是用来打开其他应用程序中的Activity或服务的。</p>
+<p>用法其实很简单，像下面这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一个参数是Activity所在的package包名，第二个参数是完整的Class类名（包括包路径）</span></div><div class="line">ComponentName componetName = <span class="keyword">new</span> ComponentName(<span class="string">"com.cybo3d.cybox.miya"</span>, 			  </div><div class="line">								<span class="string">"com.cybo3d.cybox.miya.MainActivity"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line">intent.setComponent(componetName);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="../../2015/09/15/【Android】如何启动调用其他app中的Activity/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-【Android】保存图片到系统图库, 并立即显示在图库中" class="article article-type-post" itemscope itemprop="blogPost">
   <div id="articleInner" class="article-inner">
     

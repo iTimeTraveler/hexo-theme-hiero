@@ -187,6 +187,109 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-Hiker中文使用教程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="2016/10/17/Hiker中文使用教程/">Hiker中文使用教程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="2016/10/17/Hiker中文使用教程/" class="article-date">
+	  <time datetime="2016-10-17T07:47:20.000Z" itemprop="datePublished">2016-10-17</time>
+	</a>
+
+      
+    <a class="article-category-link" href="categories/Hexo/">Hexo</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hiker"><a href="#Hiker" class="headerlink" title="Hiker"></a>Hiker</h1><p><a href="https://travis-ci.org/iTimeTraveler/hexo-theme-hiker" target="_blank" rel="external"><img src="https://travis-ci.org/iTimeTraveler/hexo-theme-hiker.svg?branch=master" alt="Build Status"></a>        <a href="https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a></p>
+<p>An attractive theme for <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>. I call it “Hiker”, short for “HikerNews”.</p>
+<p><a href="https://itimetraveler.github.io/" target="_blank" rel="external"><strong>Live Preview</strong></a> | <a href="README.cn.md"><strong>Hiker 中文版使用文档</strong></a></p>
+<p><img src="source/preview/preview-pc.png" alt="Desktop Preview"><br><img src="source/preview/preview-mobile.png" alt="Mobile Preview"></p>
+<blockquote>
+<p><strong>Hiker requires Hexo 2.4 and above.</strong></p>
+</blockquote>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><ol>
+<li><p>Get it from GitHub</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/iTimeTraveler/hexo-theme-hiker.git themes/hiker</div></pre></td></tr></table></figure>
+</li>
+<li><p>Enable</p>
+<p>Modify <code>theme</code> setting in <code>_config.yml</code> to <code>hiker</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Extensions</div><div class="line">## Plugins: http://hexo.io/plugins/</div><div class="line">## Themes: http://hexo.io/themes/</div><div class="line">theme: hiker</div></pre></td></tr></table></figure>
+</li>
+<li><p>Update</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd themes/Hiker</div><div class="line">$ git pull</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ---------------------------------------------------------------</span></div><div class="line"><span class="comment"># Site Information Settings</span></div><div class="line"><span class="comment"># ---------------------------------------------------------------</span></div><div class="line"></div><div class="line"><span class="comment"># Header Menu</span></div><div class="line"><span class="attr">menu:</span></div><div class="line"><span class="attr">  Home:</span> /</div><div class="line"><span class="attr">  Archives:</span> /archives</div><div class="line"><span class="attr">  Tags:</span> /tags</div><div class="line"><span class="attr">  About:</span> /about</div><div class="line"><span class="attr">rss:</span> /atom.xml</div><div class="line"></div><div class="line"><span class="attr">since:</span> <span class="number">2013</span></div><div class="line"></div><div class="line"><span class="comment"># Put your favicon.ico into `hexo-site/themes/hiker/source/` directory.</span></div><div class="line"><span class="attr">avatar:</span> css/images/mylogo.jpg</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Homepage</span></div><div class="line"><span class="comment"># eg. home_background_image: css/images/home-bg.jpg</span></div><div class="line"><span class="attr">home_background_image:</span> css/images/home-bg.jpg</div><div class="line"><span class="attr">home_logo_image:</span> </div><div class="line"><span class="attr">  enable:</span> <span class="literal">false</span></div><div class="line"><span class="attr">  border:</span> <span class="literal">false</span></div><div class="line"><span class="attr">  url:</span> css/images/homelogo.jpg</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># AboutPage background</span></div><div class="line"><span class="attr">about_big_image:</span> css/images/pose.jpg</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Content</span></div><div class="line"><span class="attr">excerpt_link:</span> Read More</div><div class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Sidebar</span></div><div class="line"><span class="attr">sidebar:</span> right</div><div class="line"><span class="attr">widgets:</span></div><div class="line"><span class="bullet">-</span> category</div><div class="line"><span class="bullet">-</span> tag</div><div class="line"><span class="bullet">-</span> tagcloud</div><div class="line"><span class="bullet">-</span> archive</div><div class="line"><span class="bullet">-</span> recent_posts</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># comment ShortName, you can choose only ONE to display.</span></div><div class="line"><span class="attr">duoshuo_shortname:</span> </div><div class="line"><span class="attr">disqus_shortname:</span> iTimeTraveler</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Code Highlight theme</span></div><div class="line"><span class="comment"># Available value:</span></div><div class="line"><span class="comment">#    default | normal | night | night eighties | night blue | night bright</span></div><div class="line"><span class="comment"># https://github.com/chriskempson/tomorrow-theme</span></div><div class="line"><span class="attr">highlight_theme:</span> default</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Article theme color</span></div><div class="line"><span class="comment"># Available value:</span></div><div class="line"><span class="comment">#    random | orange | blue | red | green | black</span></div><div class="line"><span class="attr">theme_color:</span> green</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># display widgets at the bottom of index pages (pagination == 2)</span></div><div class="line"><span class="attr">index_widgets:</span></div><div class="line"><span class="comment"># - category</span></div><div class="line"><span class="comment"># - tagcloud</span></div><div class="line"><span class="comment"># - archive</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># widget behavior</span></div><div class="line"><span class="attr">archive_type:</span> <span class="string">'monthly'</span></div><div class="line"><span class="attr">show_count:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Miscellaneous</span></div><div class="line"><span class="attr">google_analytics:</span></div><div class="line"><span class="attr">gauges_analytics:</span></div><div class="line"><span class="attr">twitter:</span></div><div class="line"><span class="attr">google_plus:</span></div><div class="line"><span class="attr">fb_admins:</span></div><div class="line"><span class="attr">fb_app_id:</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>menu</strong> - Navigation menu</li>
+<li><strong>rss</strong> - RSS link</li>
+<li><strong>excerpt_link</strong> - “Read More” link at the bottom of excerpted articles. <code>false</code> to hide the link.</li>
+<li><strong>fancybox</strong> - Enable <a href="http://fancyapps.com/fancybox/" target="_blank" rel="external">Fancybox</a></li>
+<li><strong>sidebar</strong> - Sidebar style. You can choose <code>left</code>, <code>right</code>, <code>bottom</code> or <code>false</code>.</li>
+<li><strong>widgets</strong> - Widgets displaying in sidebar</li>
+<li><strong>google_analytics</strong> - Google Analytics ID</li>
+<li><strong>favicon</strong> - Favicon path</li>
+<li><strong>twitter</strong> - Twiiter ID</li>
+<li><strong>google_plus</strong> - Google+ ID</li>
+</ul>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><h3 id="Code-Highlight-Theme"><a href="#Code-Highlight-Theme" class="headerlink" title="Code Highlight Theme"></a>Code Highlight Theme</h3><p>Hiker use <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Theme</a> for your code block. We have six options in total: <code>default</code>, <code>normal</code>, <code>night</code>, <code>night blue</code>, <code>night bright</code>, <code>night eighties</code></p>
+<p><img src="source/preview/code-theme.jpg" alt="code themes"></p>
+<p>Modify <code>highlight_theme</code> in hiker/_config.yml.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Code Highlight theme</span></div><div class="line"><span class="comment"># Available value:</span></div><div class="line"><span class="comment">#    default | normal | night | night eighties | night blue | night bright</span></div><div class="line"><span class="comment"># https://github.com/chriskempson/tomorrow-theme</span></div><div class="line"><span class="attr">highlight_theme:</span> default</div></pre></td></tr></table></figure>
+<h3 id="Blog-Theme-Color"><a href="#Blog-Theme-Color" class="headerlink" title="Blog Theme Color"></a>Blog Theme Color</h3><p>Hiker provide five color themes for your blog.</p>
+<p><img src="source/preview/theme-color.png" alt="theme colors"></p>
+<ul>
+<li><span style="display: inline-block; width: 18px; height: 18px; margin: 0 4px; background-color: #fb6d19; border-radius: 3px; vertical-align: middle;"></span> orange</li>
+<li><span style="display: inline-block; width: 18px; height: 18px; margin: 0 4px; background-color: #00aced; border-radius: 3px; vertical-align: middle;"></span> blue</li>
+<li><span style="display: inline-block; width: 18px; height: 18px; margin: 0 4px; background-color: #f03838; border-radius: 3px; vertical-align: middle;"></span> red</li>
+<li><span style="display: inline-block; width: 18px; height: 18px; margin: 0 4px; background-color: #39aa56; border-radius: 3px; vertical-align: middle;"></span> green</li>
+<li><span style="display: inline-block; width: 18px; height: 18px; margin: 0 4px; background-color: #404040; border-radius: 3px; vertical-align: middle;"></span> black</li>
+</ul>
+<p>You can modify <code>theme_color</code> in hiker/_config.yml.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Article theme color</span></div><div class="line"><span class="comment"># Available value:</span></div><div class="line"><span class="comment">#    random | orange | blue | red | green | black</span></div><div class="line"><span class="attr">theme_color:</span> random</div></pre></td></tr></table></figure>
+<h3 id="Fancybox"><a href="#Fancybox" class="headerlink" title="Fancybox"></a>Fancybox</h3><p>Hiker uses <a href="http://fancyapps.com/fancybox/" target="_blank" rel="external">Fancybox</a> to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">![img caption](img url)</div><div class="line"></div><div class="line">&#123;% fancybox img_url [img_thumbnail] [img_caption] %&#125;</div></pre></td></tr></table></figure>
+<h3 id="Sidebar"><a href="#Sidebar" class="headerlink" title="Sidebar"></a>Sidebar</h3><p>You can put your sidebar in left side, right side or bottom of your site by editing <code>sidebar</code> setting.<br>Hiker provides 5 built-in widgets:</p>
+<ul>
+<li>category</li>
+<li>tag</li>
+<li>tagcloud</li>
+<li>archives</li>
+<li>recent_posts</li>
+</ul>
+<p>All of them are enabled by default. You can edit them in <code>widget</code> setting.</p>
+<h3 id="Comment-support"><a href="#Comment-support" class="headerlink" title="Comment support"></a>Comment support</h3><p>Hiker has native support for DuoShuo &amp; Disqus comment systems. Modify the following snippets to hiker <code>hiker/_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># comment ShortName, you can choose only ONE to display.</span></div><div class="line"><span class="attr">duoshuo_shortname:</span> iTimeTraveler</div><div class="line"><span class="attr">disqus_shortname:</span></div></pre></td></tr></table></figure>
+<h2 id="Contributing"><a href="#Contributing" class="headerlink" title="Contributing"></a>Contributing</h2><p>All kinds of contributions (enhancements, new features, documentation &amp; code improvements, issues &amp; bugs reporting) are welcome.</p>
+<p>Looking forward to your pull request.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Chrome自带的开发者工具进阶技巧" class="article article-type-post" itemscope itemprop="blogPost">
   <div id="articleInner" class="article-inner">
     
@@ -647,53 +750,6 @@
         
           <p class="article-more-link">
             <a href="2016/08/14/【Machine Learning】机器学习：简明入门指南/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Machine-Learning/">Machine Learning</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-【Machine Learning】Github上关注最多的53个深度学习项目" class="article article-type-post" itemscope itemprop="blogPost">
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/">【Machine Learning】Github上关注最多的53个深度学习项目</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/" class="article-date">
-	  <time datetime="2016-08-12T07:22:00.000Z" itemprop="datePublished">2016-08-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="categories/Machine-Learning/">Machine Learning</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Top-Deep-Learning-Projects"><a href="#Top-Deep-Learning-Projects" class="headerlink" title="Top Deep Learning Projects"></a>Top Deep Learning Projects</h2><p>A list of popular github projects related to deep learning (ranked by stars).</p>
-<p>Last Update: 2016.08.09</p>
-        
-          <p class="article-more-link">
-            <a href="2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/#more">Read More</a>
           </p>
         
       
