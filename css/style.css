@@ -406,6 +406,9 @@ body {
 }
 .navbar-inner {
   min-height: 90px;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border-top: 2px solid #00aced;
 }
 .brand {
   float: left;
