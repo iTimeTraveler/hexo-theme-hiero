@@ -434,6 +434,20 @@ body {
   overflow: hidden;
   border: 0px solid #eef1f8;
 }
+.article-inner h1,
+.article-inner h2,
+.article-inner h3,
+.article-inner h4,
+.article-inner h5,
+.article-inner h6,
+.article-inner .h1,
+.article-inner .h2,
+.article-inner .h3,
+.article-inner .h4,
+.article-inner .h5,
+.article-inner .h6 {
+  font-family: "futura-pt", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei, WenQuanYi Micro Hei, "Microsoft YaHei", sans-serif;
+}
 .article-meta {
   text-align: center;
   margin-bottom: 1em;
@@ -484,6 +498,7 @@ body {
 }
 .article-header h1 {
   font-weight: bold;
+  font-family: "futura-pt", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei, WenQuanYi Micro Hei, "Microsoft YaHei", sans-serif;
 }
 .article-title {
   text-decoration: none;
