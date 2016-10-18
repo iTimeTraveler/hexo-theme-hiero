@@ -15,7 +15,7 @@
 所以 这点就让人很痛苦， 然而问题">
 <meta property="og:image" content="http://img.blog.csdn.net/20160826151929475">
 <meta property="og:image" content="http://img.blog.csdn.net/20160826151521755">
-<meta property="og:updated_time" content="2016-08-30T03:13:43.228Z">
+<meta property="og:updated_time" content="2016-10-18T04:55:51.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android】如何加速 AndroidStudio 的编译效率">
 <meta name="twitter:description" content="引言如果你之前用eclipse开发过Android app的话，转到android studio的第一反应也许就是：”编译速度有点慢“，表现的最明显的一点就是，每次android studio使用gradle编译，即便是更改的代码量很少，也会按照预先设置的task的顺序，依次走完编译的各项流程。这时候如果电脑CPU配置不高的时候，就会超级卡界面，更别说改代码了。
@@ -120,11 +120,10 @@
       
         <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h3><p>如果你之前用eclipse开发过Android app的话，转到android studio的第一反应也许就是：”<strong>编译速度有点慢</strong>“，表现的最明显的一点就是，每次android studio使用gradle编译，即便是更改的代码量很少，也会按照预先设置的task的顺序，依次走完编译的各项流程。这时候如果电脑CPU配置不高的时候，就会超级卡界面，更别说改代码了。</p>
 <p>所以 这点就让人很痛苦， 然而问题总还是要被解决的，作者曾经亲眼看到过使用android studio仅仅用了2.5秒就编译完毕(在代码更改很少的情况下)。 现在把如何优化gradle编译速度的方法记录在此，希望可以 帮助到广大的同行们。</p>
-<p><br></p>
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h3><p>首先，保证项目使用的Gradle是最新的，我这里用的是2.10版本。因为Gradle 2.4之后在编译效率上面有了一个非常大的提高，看下图官方的速度对比。</p>
 <p><img src="http://img.blog.csdn.net/20160826151929475" alt="这是官方的速度对比，下一代编译速度更快"></p>
 <a id="more"></a>
-<p><br><br>然后先在你的项目build.gradle文件内(不是app里面的gradle文件), 就是这里：</p>
+<p>然后先在你的项目build.gradle文件内(不是app里面的gradle文件), 就是这里：</p>
 <p><img src="http://img.blog.csdn.net/20160826151521755" alt="配置文件在项目中的位置"></p>
 <p>添加一个task， 代码如下:</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">task</span> wrapper(type: Wrapper) &#123;</div><div class="line">    gradleVersion = <span class="string">'2.10'</span>  <span class="comment">//你安装的最新Gradle版本</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -133,7 +132,6 @@
 <p>然后打开terminal, 输入<code>./gradlew wrapper</code>，Windows 下输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gradlew wrapper</div></pre></td></tr></table></figure>
 <p>然后gradle就会自动去下载2.4版本,这也是官方推荐的<a href="http://gradle.org/docs/current/userguide/gradle_wrapper.html" target="_blank" rel="external"><strong>手动设置gradle的方法</strong></a></p>
-<p><br></p>
 <h3 id="守护进程，并行编译"><a href="#守护进程，并行编译" class="headerlink" title="守护进程，并行编译"></a><strong>守护进程，并行编译</strong></h3><p>通过以上步骤,我们设置好了 Android Studio 使用最新的 Gradle 版本，下一步就是正式开启优化之路了。我们需要将gradle作为守护进程一直在后台运行，这样当我们需要编译的时候，gradle就会立即跑过来然后 吭哧吭哧的开始干活。除了设置gradle一直开启之外，当你的工作空间存在多个project的时候，还需要设置gradle对这些projects并行编译，而不是单线的依次进行编译操作。</p>
 <p>说了那么多， 那么怎么设置守护进程和并行编译呢？其实非常简单，gradle本身已经有了相关的配置选项，在你电脑的GRADLE_HOME这个环境变量所指的那个文件夹内，有一个.gradle/gradle.properties文件。 在这个文件里，放入下面两句话就OK了:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">org.gradle.daemon=true</div><div class="line">org.gradle.parallel=true</div></pre></td></tr></table></figure>
@@ -143,7 +141,6 @@
 <p>还有一些额外的gradle设置也许会引起你的兴趣,例如你想增加堆内存的空间,或者指定使用哪个jvm虚拟机等等(代码如下)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">org.gradle.jvmargs=-Xmx768m</div><div class="line">org.gradle.java.home=/path/to/jvm</div></pre></td></tr></table></figure>
 <p>如果你想详细的了解gradle的配置,请猛戳官网 <a href="http://gradle.org/docs/current/userguide/userguide_single.html#sec:gradle_configuration_properties" target="_blank" rel="external"><strong>Gradle User Guide</strong></a>。</p>
-<p><br><br><br></p>
 <h4 id="【参考资料】："><a href="#【参考资料】：" class="headerlink" title="【参考资料】："></a>【参考资料】：</h4><p>1、<a href="https://medium.com/@erikhellman/boosting-the-performance-for-gradle-in-your-android-projects-6d5f9e4580b6#.xkvoyii8g" target="_blank" rel="external">Boosting the performance for Gradle in your Android projects</a><br>2、<a href="http://www.devtf.cn/?p=585" target="_blank" rel="external">译文：优化android studio编译效率的方法</a><br>3、<a href="http://stackoverflow.com/questions/25769536/how-when-to-generate-gradle-wrapper-files" target="_blank" rel="external">How/when to generate Gradle wrapper files?</a></p>
 
       

@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="在实现布局的时候，有些按钮形状相同，只是颜色有差异，如果使用自定义shape实现了其中一种按钮，有没有可能不需要再为其他每个颜色都写一个shape文件呢？">
 <meta property="og:image" content="http://img.blog.csdn.net/20160808175543250">
-<meta property="og:updated_time" content="2016-08-30T03:14:04.252Z">
+<meta property="og:updated_time" content="2016-10-18T04:55:58.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android】使用shape的同时，动态替换shape的颜色属性">
 <meta name="twitter:description" content="在实现布局的时候，有些按钮形状相同，只是颜色有差异，如果使用自定义shape实现了其中一种按钮，有没有可能不需要再为其他每个颜色都写一个shape文件呢？">
@@ -117,15 +117,12 @@
         <blockquote>
 <p>在实现布局的时候，有些按钮形状相同，只是颜色有差异，如果使用自定义shape实现了其中一种按钮，有没有可能不需要再为其他每个颜色都写一个shape文件呢？</p>
 </blockquote>
-<p><br></p>
 <h4 id="一、问题"><a href="#一、问题" class="headerlink" title="一、问题"></a><strong>一、问题</strong></h4><p>比如以下这三个按钮：</p>
 <p><img src="http://img.blog.csdn.net/20160808175543250" alt="三个样式相同的按钮"></p>
 <p>为第一个灰色按钮自定义背景如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">shape</span></span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"@color/gray"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">corners</span></span></div><div class="line">        <span class="attr">android:radius</span>=<span class="string">"60dip"</span>/&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">stroke</span></span></div><div class="line">        <span class="attr">android:width</span>=<span class="string">"0dp"</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">solid</span></span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>然后，如果再为每个颜色的按钮都写一个shape背景也太麻烦，重用性太差。</p>
 <a id="more"></a>
-<p><br></p>
 <h4 id="二、解决方法"><a href="#二、解决方法" class="headerlink" title="二、解决方法"></a><strong>二、解决方法</strong></h4><p>参考 <a href="http://stackoverflow.com/questions/16775891/how-to-change-solid-color-from-the-code" target="_blank" rel="external">stackoverflow 这里</a>， 在java代码里使用 GradientDrawable 动态设置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">GradientDrawable myGrad = (GradientDrawable)rectangle.getBackground();</div><div class="line">myGrad.setColor(Color.BLACK);</div></pre></td></tr></table></figure></p>
-<p><br></p>
 <p>【参考资料】<br>1、<a href="http://stackoverflow.com/questions/16775891/how-to-change-solid-color-from-the-code" target="_blank" rel="external">How to change <code>solid color</code> from the code?</a></p>
 
       

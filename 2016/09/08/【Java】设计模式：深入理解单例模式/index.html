@@ -17,7 +17,7 @@
 引言对于单例模式，有工作经验的人基本上都使用过。面试的时候提到设计模式基本上都会提到单例模式，但是很多人对单例模式也是">
 <meta property="og:image" content="http://img.blog.csdn.net/20160908131425758">
 <meta property="og:image" content="http://img.blog.csdn.net/20160909190409989">
-<meta property="og:updated_time" content="2016-10-09T07:41:49.532Z">
+<meta property="og:updated_time" content="2016-10-18T04:56:48.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Java】设计模式：深入理解单例模式">
 <meta name="twitter:description" content="什么是设计模式？简单的理解就是前人留下来的一些经验总结而已，然后把这些经验起了个名字叫Design Pattern，翻译过来就是设计模式，通过使用设计模式可以让我们的代码复用性更高，可维护性更高，让你的代码写的更优雅。设计模式理论上有23种，今天就先来分享下最常用的单例模式。
@@ -125,7 +125,6 @@
 <p>什么是设计模式？简单的理解就是前人留下来的一些经验总结而已，然后把这些经验起了个名字叫Design Pattern，翻译过来就是设计模式，通过使用设计模式可以让我们的代码复用性更高，可维护性更高，让你的代码写的更优雅。设计模式理论上有23种，今天就先来分享下最常用的单例模式。</p>
 </blockquote>
 <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h3><p>对于单例模式，有工作经验的人基本上都使用过。面试的时候提到设计模式基本上都会提到单例模式，但是很多人对单例模式也是一知半解，当然也包括我哈哈哈=_=。所以我们有必要深入理解一下所谓的「单例模式」。</p>
-<p><br></p>
 <h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a><strong>单例模式</strong></h3><p>定义：<strong><code>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</code></strong></p>
 <p>单例模式结构图： </p>
 <p><img src="http://img.blog.csdn.net/20160908131425758" alt=""></p>
@@ -136,7 +135,6 @@
 <li>节省创建时间，提高性能</li>
 </ul>
 <a id="more"></a>
-<p><br></p>
 <h3 id="它的七种写法"><a href="#它的七种写法" class="headerlink" title="它的七种写法"></a><strong>它的七种写法</strong></h3><p>单例模式有多种写法各有利弊，现在我们来看看各种模式写法。</p>
 <h4 id="1、饿汉式"><a href="#1、饿汉式" class="headerlink" title="1、饿汉式"></a><strong>1、饿汉式</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;  </div><div class="line">     <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();  </div><div class="line">     <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span> <span class="params">()</span></span>&#123;</div><div class="line">     &#125;</div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;  </div><div class="line">	     <span class="keyword">return</span> instance;  </div><div class="line">     &#125;  </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 <p>这种方式和名字很贴切，饥不择食，在类装载的时候就创建，不管你用不用，先创建了再说，如果一直没有被使用，便浪费了空间，典型的空间换时间，每次调用的时候，就不需要再判断，节省了运行时间。</p>
@@ -177,10 +175,8 @@
 <p>枚举单例的优点就是简单，但是大部分应用开发很少用枚举，可读性并不是很高，不建议用。</p>
 <h4 id="7-使用容器"><a href="#7-使用容器" class="headerlink" title="7. 使用容器"></a><strong>7. 使用容器</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonManager</span> </span>&#123; </div><div class="line">　　<span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, Object&gt; objMap = <span class="keyword">new</span> HashMap&lt;String,Object&gt;();</div><div class="line">　　<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123; </div><div class="line">　　&#125;</div><div class="line">　　<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">registerService</span><span class="params">(String key, Objectinstance)</span> </span>&#123;</div><div class="line">　　　　<span class="keyword">if</span> (!objMap.containsKey(key) ) &#123;</div><div class="line">　　　　　　objMap.put(key, instance) ;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div><div class="line">　　<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="title">ObjectgetService</span><span class="params">(String key)</span> </span>&#123;</div><div class="line">　　　　<span class="keyword">return</span> objMap.get(key) ;</div><div class="line">　　&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这种事用SingletonManager 将<strong>多种单例类统一管理</strong>，在使用时根据key获取对象对应类型的对象。这种方式使得我们可以管理多种类型的单例，并且在使用时可以通过统一的接口进行获取操作，降低了用户的使用成本，也对用户隐藏了具体实现，降低了耦合度。</p>
-<p><br></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>对于以上七种单例，分别是「饿汉式」、「懒汉式(非线程安全)」、「懒汉式(线程安全)」、「双重校验锁」、「静态内部类」、「枚举」和「容器类管理」。很多时候取决人个人的喜好，虽然双重检查有一定的弊端和问题，但我就是钟爱双重检查，觉得这种方式可读性高、安全、优雅（个人观点）。所以代码里常常默写这样的单例，写的时候真感觉自己是个<strong>伟大的建筑师</strong>哈哈哈哈（真不要脸(￢_￢)（逃。</p>
 <p><img src="http://img.blog.csdn.net/20160909190409989" alt="嘻嘻嘻"></p>
-<p><br><br><br></p>
 <h4 id="【参考资料】："><a href="#【参考资料】：" class="headerlink" title="【参考资料】："></a>【参考资料】：</h4><p>1、<a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=403126596&amp;idx=1&amp;sn=101c6d4e363213bcdbe1879edeb08736&amp;scene=0#wechat_redirect" target="_blank" rel="external">Android设计模式之单例模式</a><br>2、<a href="http://blog.csdn.net/pangpang123654/article/details/51829431" target="_blank" rel="external">十分钟认识单例模式的多种姿势</a><br>3、<a href="http://blog.csdn.net/itachi85/article/details/50510124" target="_blank" rel="external">设计模式（二）单例模式的七种写法</a><br>4、<a href="http://devbean.blog.51cto.com/448512/203501" target="_blank" rel="external">深入Java单例模式</a><br>5、<a href="http://www.cnblogs.com/aigongsi/archive/2012/04/01/2429166.html" target="_blank" rel="external">java中volatile关键字的含义</a></p>
 
       

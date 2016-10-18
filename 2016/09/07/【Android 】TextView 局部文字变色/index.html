@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="TextView 对于富文本效果的实现支持不支持呢？比如“局部文字颜色的变动”，“局部字体的变动”
 
-
 一、需求效果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Android 】TextView 局部文字变色">
@@ -15,15 +14,13 @@
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="TextView 对于富文本效果的实现支持不支持呢？比如“局部文字颜色的变动”，“局部字体的变动”
 
-
 一、需求效果">
 <meta property="og:image" content="http://img.blog.csdn.net/20161009150647271">
 <meta property="og:image" content="http://img.blog.csdn.net/20160907145042302">
-<meta property="og:updated_time" content="2016-10-09T07:39:04.117Z">
+<meta property="og:updated_time" content="2016-10-18T04:54:41.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android 】TextView 局部文字变色">
 <meta name="twitter:description" content="TextView 对于富文本效果的实现支持不支持呢？比如“局部文字颜色的变动”，“局部字体的变动”
-
 
 一、需求效果">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20161009150647271">
@@ -127,10 +124,8 @@
         <blockquote>
 <p>TextView 对于富文本效果的实现支持不支持呢？比如“局部文字颜色的变动”，“局部字体的变动”</p>
 </blockquote>
-<p><br></p>
 <h3 id="一、需求效果"><a href="#一、需求效果" class="headerlink" title="一、需求效果"></a><strong>一、需求效果</strong></h3><p><img src="http://img.blog.csdn.net/20161009150647271" alt="比如这个"></p>
 <a id="more"></a>
-<p><br></p>
 <h3 id="二、解决方案"><a href="#二、解决方案" class="headerlink" title="二、解决方案"></a><strong>二、解决方案</strong></h3><p>针对这类问题，Android提供了 <a href="https://developer.android.com/reference/android/text/SpannableStringBuilder.html" target="_blank" rel="external"><strong><code>SpannableStringBuilder</code></strong></a>，方便我们自定义富文本的实现。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">textView = (TextView) findViewById(R.id.textview);</div><div class="line">SpannableStringBuilder builder = <span class="keyword">new</span> SpannableStringBuilder(textView.getText().toString());</div><div class="line"></div><div class="line"><span class="comment">//ForegroundColorSpan 为文字前景色，BackgroundColorSpan为文字背景色</span></div><div class="line">ForegroundColorSpan redSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.RED);</div><div class="line">ForegroundColorSpan whiteSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.WHITE);</div><div class="line">ForegroundColorSpan blueSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.BLUE);</div><div class="line">ForegroundColorSpan greenSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.GREEN);</div><div class="line">ForegroundColorSpan yellowSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.YELLOW);</div><div class="line"> </div><div class="line"> </div><div class="line">builder.setSpan(redSpan, <span class="number">0</span>, <span class="number">1</span>, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line">builder.setSpan(whiteSpan, <span class="number">1</span>, <span class="number">2</span>, Spannable.SPAN_INCLUSIVE_INCLUSIVE);</div><div class="line">builder.setSpan(blueSpan, <span class="number">2</span>, <span class="number">3</span>, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line">builder.setSpan(greenSpan, <span class="number">3</span>, <span class="number">4</span>, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line">builder.setSpan(yellowSpan, <span class="number">4</span>,<span class="number">5</span>, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line"></div><div class="line">textView.setText(builder);</div></pre></td></tr></table></figure>
 <p>除了上述代码中使用的 <code>ForegroundColorSpan</code> 和 <code>BackgroundColorSpan</code>之外，还有以下这些Span可以使用：</p>
@@ -150,12 +145,10 @@
 <li><p><strong>StyleSpan(Typeface style)</strong> —— 字体风格，比如粗体，斜体，参数是android.graphics.Typeface里面定义的常量，如Typeface.BOLD，Typeface.ITALIC等等。StrikethroughSpan—-如果设置了此风格，会有一条线从中间穿过所有的字，就像被划掉一样</p>
 </li>
 </ul>
-<p><br></p>
 <h3 id="三、动手试试"><a href="#三、动手试试" class="headerlink" title="三、动手试试"></a><strong>三、动手试试</strong></h3><p>比如实现下图中TextView的样式</p>
 <p><img src="http://img.blog.csdn.net/20160907145042302" alt=""></p>
 <p>然后代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">TextView tv = (TextView)view.findViewById(R.id.toast_text);</div><div class="line"></div><div class="line">String str1 = <span class="string">"提交成功！\n积分"</span>;</div><div class="line">String str2 = <span class="string">"+"</span> + score1;</div><div class="line">String str3 = <span class="string">"！审核通过后再"</span>;</div><div class="line">String str4 = <span class="string">"+"</span> + score2;</div><div class="line"></div><div class="line">SpannableStringBuilder builder = <span class="keyword">new</span> SpannableStringBuilder(str1 + str2 + str3 + str4 + <span class="string">"！"</span>);</div><div class="line">builder.setSpan(<span class="keyword">new</span> ForegroundColorSpan(Color.parseColor(<span class="string">"#ffffa200"</span>)),</div><div class="line">		str1.length(), (str1 + str2).length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);</div><div class="line">builder.setSpan(<span class="keyword">new</span> ForegroundColorSpan(Color.parseColor(<span class="string">"#ffffa200"</span>)),</div><div class="line">		(str1 + str2 + str3).length(), (str1 + str2 + str3 + str4).length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);</div><div class="line"></div><div class="line">tv.setText(builder);</div></pre></td></tr></table></figure>
-<p><br></p>
 <h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a><strong>参考资料：</strong></h4><p>1、<a href="http://blog.csdn.net/centralperk/article/details/8674599" target="_blank" rel="external">Android-修改TextView中部分文字的颜色</a><br>2、<a href="http://www.cnblogs.com/kingsam/p/5643598.html" target="_blank" rel="external">Android TextView 设置部分文字背景色和文字颜色</a></p>
 
       

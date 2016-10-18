@@ -8,8 +8,7 @@
   <meta name="description" content="关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。
 
 也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：Go’s Declaration Syntax），简略翻译如下（水平有限翻译的不对的地方见谅）：
-
-引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会">
+引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Go】为什么 Go 语言把类型声明放在后面？">
 <meta property="og:url" content="http://github.com/2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/index.html">
@@ -17,17 +16,15 @@
 <meta property="og:description" content="关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。
 
 也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：Go’s Declaration Syntax），简略翻译如下（水平有限翻译的不对的地方见谅）：
-
-引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会">
+引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会和">
 <meta property="og:image" content="http://img.blog.csdn.net/20160829141600402">
-<meta property="og:updated_time" content="2016-08-30T03:16:46.659Z">
+<meta property="og:updated_time" content="2016-10-18T04:56:04.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Go】为什么 Go 语言把类型声明放在后面？">
 <meta name="twitter:description" content="关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。
 
 也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：Go’s Declaration Syntax），简略翻译如下（水平有限翻译的不对的地方见谅）：
-
-引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会">
+引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会和">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20160829141600402">
   
     <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
@@ -130,9 +127,7 @@
 <p>关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。</p>
 </blockquote>
 <p>也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：<a href="http://blog.golang.org/gos-declaration-syntax" target="_blank" rel="external"><strong>Go’s Declaration Syntax</strong></a>），简略翻译如下（水平有限翻译的不对的地方见谅）：</p>
-<p><br></p>
 <h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h4><p>Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会和传统的C家族语言不同。在这篇博文里，我们会进行一个比较，并做出解答。</p>
-<p><br></p>
 <h4 id="C-的语法"><a href="#C-的语法" class="headerlink" title="C 的语法"></a><strong>C 的语法</strong></h4><p>首先，先看看 C 的语法。C 采用了一种聪明而不同寻常的声明语法。声明变量时，只需写出一个带有目标变量名的表达式，然后在表达式里指明该表达式本身的类型即可。比如：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> x;</div></pre></td></tr></table></figure>
 <p>上面的代码声明了 <code>x</code> 变量，并且其类型为 <code>int</code>——即，表达式 <code>x</code> 为 <code>int</code> 类型。一般而言，为了指明新变量的类型，我们得写出一个表达式，其中含有我们要声明的变量，这个表达式运算的结果值属于某种基本类型，我们把这种基本类型写到表达式的左边。所以，下述声明：</p>
@@ -164,7 +159,6 @@
 <p>这已经很难看出是关于 <code>fp</code> 的声明了。</p>
 <p>你自己还可以构建出比这更复杂的例子，但这已经足以解释 C 的声明语法引入的某些复杂性了。<br>还有一点需要指出，由于类型语法和声明语法是一样的，要解析中间带有类型的表达式可能会有些难度。这也就是为什么，C 在做类型转换的时候总是要把类型用括号括起来的原因，像这样</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(<span class="keyword">int</span>)M_PI</div></pre></td></tr></table></figure>
-<p><br></p>
 <h4 id="Go-的语法"><a href="#Go-的语法" class="headerlink" title="Go 的语法"></a><strong>Go 的语法</strong></h4><p>非C家族的语言通常在声明时使用一种不同的类型语法。一般是名字先出现，然后常常跟着一个冒号。按照这样来写，我们上面所举的例子就会变成下面这样：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x: <span class="keyword">int</span></div><div class="line">p: pointer to <span class="keyword">int</span></div><div class="line">a: array[<span class="number">3</span>] of <span class="keyword">int</span></div></pre></td></tr></table></figure>
 <p>这样的声明即便有些冗长，当至少是清晰的——你只需从左向右读就行。Go 语言所采用的方案就是以此为基础的，但为了追求简洁性，Go 语言丢掉了冒号并去掉了部分关键词，成了下面这样：</p>
@@ -180,7 +174,6 @@
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">func</span>(<span class="keyword">int</span>,<span class="keyword">int</span>)</span> <span class="title">int</span>, <span class="title">int</span>) <span class="title">func</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span> <span class="title">int</span></span></div></pre></td></tr></table></figure>
 <p>上面的声明读起来还是很清晰，自左向右，而且究竟哪一个变量名是当前被声明的也容易看懂——因为变量名永远在首位。<br>类型语法和表达式语法带来的差别使得在 Go 语言里调用闭包也变得更简单：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sum := <span class="function"><span class="keyword">func</span><span class="params">(a, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123; <span class="keyword">return</span> a+b &#125; (<span class="number">3</span>, <span class="number">4</span>)</div></pre></td></tr></table></figure>
-<p><br></p>
 <h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a><strong>指针</strong></h4><p>指针有些例外。注意在数组 (array )和切片 (slice) 中，Go 的类型语法把方括号放在了类型的左边，但是在表达式语法中却又把方括号放到了右边：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a []<span class="keyword">int</span></div><div class="line">x = a[<span class="number">1</span>]</div></pre></td></tr></table></figure>
 <p>类似的，Go 的指针沿用了 C 的 <code>*</code> 记法，但是我们写的时候也是声明时 <em> 在变量名右边，但在表达式中却又得把 </em> 放到左左边：</p>

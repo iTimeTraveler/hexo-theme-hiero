@@ -7,38 +7,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="搬运原链接：http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery
 
-
 正文最近有些用户反映保存图片之后在系统图库找不到保存的图片，遂决定彻底查看并解决下。
 Android中保存图片的方法可能有如下两种：
 
 第一种是自己写方法，如下代码：
 
-123456789101112131415161718pu">
+123456789101112131415161718pub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Android】保存图片到系统图库, 并立即显示在图库中">
 <meta property="og:url" content="http://github.com/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/index.html">
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="搬运原链接：http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery
 
-
 正文最近有些用户反映保存图片之后在系统图库找不到保存的图片，遂决定彻底查看并解决下。
 Android中保存图片的方法可能有如下两种：
 
 第一种是自己写方法，如下代码：
 
-123456789101112131415161718pu">
-<meta property="og:updated_time" content="2016-08-30T03:13:28.155Z">
+123456789101112131415161718pub">
+<meta property="og:updated_time" content="2016-10-18T04:55:26.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android】保存图片到系统图库, 并立即显示在图库中">
 <meta name="twitter:description" content="搬运原链接：http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery
 
-
 正文最近有些用户反映保存图片之后在系统图库找不到保存的图片，遂决定彻底查看并解决下。
 Android中保存图片的方法可能有如下两种：
 
 第一种是自己写方法，如下代码：
 
-123456789101112131415161718pu">
+123456789101112131415161718pub">
   
     <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
   
@@ -139,7 +136,6 @@ Android中保存图片的方法可能有如下两种：
         <blockquote>
 <p>搬运原链接：<a href="http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery" target="_blank" rel="external">http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery</a></p>
 </blockquote>
-<p><br></p>
 <h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a><strong>正文</strong></h3><p>最近有些用户反映保存图片之后在系统图库找不到保存的图片，遂决定彻底查看并解决下。</p>
 <p>Android中保存图片的方法可能有如下两种：</p>
 <ul>
@@ -154,14 +150,12 @@ Android中保存图片的方法可能有如下两种：
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, <span class="string">"title"</span>, <span class="string">"description"</span>);</div></pre></td></tr></table></figure>
 <p>调用以上系统自带的方法会把bitmap对象保存到系统图库中，但是这种方法无法指定保存的路径和名称，上述方法的title、description参数只是插入数据库中的字段，真实的图片名称系统会自动分配。</p>
 <p>看似上述第二种方法就是我们要用到的方法，但是可惜的调用上述第二种插入图库的方法图片并没有立刻显示在图库中，而我们需要立刻更新系统图库以便让用户可以立刻查看到这张图片。</p>
-<p><br></p>
 <h3 id="更新系统图库的方法"><a href="#更新系统图库的方法" class="headerlink" title="更新系统图库的方法"></a><strong>更新系统图库的方法</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sendBroadcast(<span class="keyword">new</span> Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse(<span class="string">"file://"</span>+ Environment.getExternalStorageDirectory())));</div></pre></td></tr></table></figure>
 <p>上面那条广播是扫描整个sd卡的广播，如果你sd卡里面东西很多会扫描很久，在扫描当中我们是不能访问sd卡，所以这样子用户体现很不好，所以下面我们还有如下的方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sendBroadcast(<span class="keyword">new</span> Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(<span class="keyword">new</span> File(<span class="string">"/sdcard/Boohee/image.jpg"</span>))););</div></pre></td></tr></table></figure>
 <p>或者还有如下方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> MediaScannerConnection msc = <span class="keyword">new</span> MediaScannerConnection(mContext, <span class="keyword">new</span> MediaScannerConnectionClient() &#123;     </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMediaScannerConnected</span><span class="params">()</span> </span>&#123;     </div><div class="line">        msc.scanFile(<span class="string">"/sdcard/Boohee/image.jpg"</span>, <span class="string">"image/jpeg"</span>);     </div><div class="line">    &#125;     </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScanCompleted</span><span class="params">(String path, Uri uri)</span> </span>&#123;     </div><div class="line">        Log.v(TAG, <span class="string">"scan completed"</span>);     </div><div class="line">        msc.disconnect();     </div><div class="line">    &#125;     </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>上面代码的图片路径不管是通过自己写方法还是系统插入图库的方法都可以很容易的获取到。</p>
-<p><br></p>
 <h3 id="终极完美解决方案"><a href="#终极完美解决方案" class="headerlink" title="终极完美解决方案"></a><strong>终极完美解决方案</strong></h3><p>那么到这里可能有人又会问了，如果我想把图片保存到指定的文件夹，同时又需要图片出现在图库里呢？答案是可以的，sdk还提供了这样一个方法:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MediaStore.Images.Media.insertImage(getContentResolver(), <span class="string">"image path"</span>, <span class="string">"title"</span>, <span class="string">"description"</span>);</div></pre></td></tr></table></figure>
 <p>上述方法的第二个参数是image path，这样的话就有思路了，首先自己写方法把图片指定到指定的文件夹，然后调用上述方法把刚保存的图片路径传入进去，最后通知图库更新。</p>

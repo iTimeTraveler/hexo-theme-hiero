@@ -7,23 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="引言 在Android应用开发过程中，可能会遇到需要对整个界面或者某一部分进行截图的需求。
 Android中对View的截图也有以下两种方式，值得注意的是两个方法都不适用于SurfaceView：
-
-使用DrawingCache如果使用DrawingCache，则对要截图的View有一个要求：View本身已经显示在界面上。如果View没有添加到界面上或者没有显示（绘制）过，则buildDrawin">
+使用DrawingCache如果使用DrawingCache，则对要截图的View有一个要求：View本身已经显示在界面上。如果View没有添加到界面上或者没有显示（绘制）过，则buildDrawing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Android】获取View的截图">
 <meta property="og:url" content="http://github.com/2016/08/30/【Android】获取View的截图/index.html">
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="引言 在Android应用开发过程中，可能会遇到需要对整个界面或者某一部分进行截图的需求。
 Android中对View的截图也有以下两种方式，值得注意的是两个方法都不适用于SurfaceView：
-
-使用DrawingCache如果使用DrawingCache，则对要截图的View有一个要求：View本身已经显示在界面上。如果View没有添加到界面上或者没有显示（绘制）过，则buildDrawin">
-<meta property="og:updated_time" content="2016-09-08T06:58:17.790Z">
+使用DrawingCache如果使用DrawingCache，则对要截图的View有一个要求：View本身已经显示在界面上。如果View没有添加到界面上或者没有显示（绘制）过，则buildDrawing">
+<meta property="og:updated_time" content="2016-10-18T04:55:33.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android】获取View的截图">
 <meta name="twitter:description" content="引言 在Android应用开发过程中，可能会遇到需要对整个界面或者某一部分进行截图的需求。
 Android中对View的截图也有以下两种方式，值得注意的是两个方法都不适用于SurfaceView：
-
-使用DrawingCache如果使用DrawingCache，则对要截图的View有一个要求：View本身已经显示在界面上。如果View没有添加到界面上或者没有显示（绘制）过，则buildDrawin">
+使用DrawingCache如果使用DrawingCache，则对要截图的View有一个要求：View本身已经显示在界面上。如果View没有添加到界面上或者没有显示（绘制）过，则buildDrawing">
   
     <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
   
@@ -123,20 +120,18 @@ Android中对View的截图也有以下两种方式，值得注意的是两个方
       
         <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h3><p> 在Android应用开发过程中，可能会遇到需要对整个界面或者某一部分进行截图的需求。</p>
 <p>Android中对View的截图也有以下两种方式，值得注意的是<strong>两个方法都不适用于<code>SurfaceView</code></strong>：</p>
-<p><br></p>
 <h3 id="使用DrawingCache"><a href="#使用DrawingCache" class="headerlink" title="使用DrawingCache"></a><strong>使用DrawingCache</strong></h3><p>如果使用DrawingCache，则对要截图的View有一个要求：View本身已经显示在界面上。如果View没有添加到界面上或者没有显示（绘制）过，则buildDrawingCache会失败。这种方式比较适合对应用界面或者某一部分的截图。步骤很简单：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">view.setDrawingCacheEnabled(<span class="keyword">true</span>);  </div><div class="line">view.buildDrawingCache();  		<span class="comment">//启用DrawingCache并创建位图  </span></div><div class="line"></div><div class="line"><span class="comment">//创建一个DrawingCache的拷贝，因为DrawingCache得到的位图在禁用后会被回收  </span></div><div class="line">Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache()); </div><div class="line">view.setDrawingCacheEnabled(<span class="keyword">false</span>);  	<span class="comment">//禁用DrawingCahce否则会影响性能</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>完整的截图功能函数如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * 获取一个 View 的缓存视图</div><div class="line">  *</div><div class="line">  * <span class="doctag">@param</span> view</div><div class="line">  * <span class="doctag">@return</span></div><div class="line">  */</div><div class="line"> <span class="function"><span class="keyword">private</span> Bitmap <span class="title">getCacheBitmapFromView</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">     <span class="keyword">final</span> <span class="keyword">boolean</span> drawingCacheEnabled = <span class="keyword">true</span>;</div><div class="line">     view.setDrawingCacheEnabled(drawingCacheEnabled);</div><div class="line">     view.buildDrawingCache(drawingCacheEnabled);</div><div class="line">     <span class="keyword">final</span> Bitmap drawingCache = view.getDrawingCache();</div><div class="line">     Bitmap bitmap;</div><div class="line">     <span class="keyword">if</span> (drawingCache != <span class="keyword">null</span>) &#123;</div><div class="line">         bitmap = Bitmap.createBitmap(drawingCache);</div><div class="line">         view.setDrawingCacheEnabled(<span class="keyword">false</span>);</div><div class="line">     &#125; <span class="keyword">else</span> &#123;</div><div class="line">         bitmap = <span class="keyword">null</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> bitmap;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<p><br></p>
 <h3 id="直接调用View-draw"><a href="#直接调用View-draw" class="headerlink" title="直接调用View.draw"></a><strong>直接调用View.draw</strong></h3><p>如果需要截图的View并没有添加到界面上，可能是通过java代码创建的或者inflate创建的，此时调用DrawingCache方法是获取不到位图的。因为View在添加到容器中之前并没有得到实际的大小（如果LayoutWidth是MatchParent，它还没有Parent…），所以首先需要指定View的大小：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">layoutView</span><span class="params">(View v, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;  </div><div class="line">    <span class="comment">// validate view.width and view.height  </span></div><div class="line">    v.layout(<span class="number">0</span>, <span class="number">0</span>, width, height);  </div><div class="line">    <span class="keyword">int</span> measuredWidth = View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY);  </div><div class="line">    <span class="keyword">int</span> measuredHeight = View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY);  </div><div class="line">    </div><div class="line">    <span class="comment">// validate view.measurewidth and view.measureheight  </span></div><div class="line">    v.measure(measuredWidth, measuredHeight);  </div><div class="line">    v.layout(<span class="number">0</span>, <span class="number">0</span>, v.getMeasuredWidth(), v.getMeasuredHeight());i  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>使用方式如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> viewWidth = webView.getMeasuredWidth();  </div><div class="line"><span class="keyword">int</span> viewHeight = webView.getMeasuredHeight();  </div><div class="line"><span class="keyword">if</span> (viewWidth &gt; <span class="number">0</span> &amp;&amp; viewHeight &gt; <span class="number">0</span>) &#123;  </div><div class="line">    b = Bitmap.createBitmap(viewWidth, viewHeight, Config.ARGB_8888);  </div><div class="line">    Canvas cvs = <span class="keyword">new</span> Canvas(b);  </div><div class="line">    webView.draw(cvs);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>对于WebView的截图有一点特殊，网页内容并不能在布局完成后立即渲染出来，大概需要300ms的时间（对于不同性能的设备、网页复杂程度和Webkit版本可能不同）。</p>
 <p>如果创建后台的WebView需要截图的话，应该在创建时就对其进行布局操作，这样加载完成后大部分就已经渲染完毕了（除非有异步的js处理）。</p>
-<p><br><br>【参考资料】：</p>
+<p>【参考资料】：</p>
 <p>1、<a href="http://blog.csdn.net/jokers_i/article/details/39549633" target="_blank" rel="external">Android应用截图两种方法</a><br>2、<a href="http://geek.csdn.net/news/detail/97777" target="_blank" rel="external">知乎和简书的夜间模式实现套路</a></p>
 
       

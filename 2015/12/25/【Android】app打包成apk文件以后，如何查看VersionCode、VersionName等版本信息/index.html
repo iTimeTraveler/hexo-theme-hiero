@@ -7,27 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Android App打包成Apk后，其实是一个压缩文件，可以将后缀名apk改为zip然后用winrar打开也能看到里面的文件结构。还能看到AndroidManifest.xml。但是里面的内容经过编码显示为乱码，不方便查看。
 
-
 — aapt工具：
-&amp;nbsp;&amp;nbsp;这里我们可以使用aapt工具来查看。aapt.exe工具即Android Asset Packaging Tool，在SD">
+&amp;nbsp;&amp;nbsp;这里我们可以使用aapt工具来查看。aapt.exe工具即Android Asset Packaging Tool，在SDK">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息">
 <meta property="og:url" content="http://github.com/2015/12/25/【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息/index.html">
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="Android App打包成Apk后，其实是一个压缩文件，可以将后缀名apk改为zip然后用winrar打开也能看到里面的文件结构。还能看到AndroidManifest.xml。但是里面的内容经过编码显示为乱码，不方便查看。
 
-
 — aapt工具：
-&amp;nbsp;&amp;nbsp;这里我们可以使用aapt工具来查看。aapt.exe工具即Android Asset Packaging Tool，在SD">
+&amp;nbsp;&amp;nbsp;这里我们可以使用aapt工具来查看。aapt.exe工具即Android Asset Packaging Tool，在SDK">
 <meta property="og:image" content="http://img.blog.csdn.net/20151225105455337">
-<meta property="og:updated_time" content="2016-10-09T07:39:27.541Z">
+<meta property="og:updated_time" content="2016-10-18T04:54:56.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android】app打包成apk文件以后，如何查看VersionCode、VersionName等版本信息">
 <meta name="twitter:description" content="Android App打包成Apk后，其实是一个压缩文件，可以将后缀名apk改为zip然后用winrar打开也能看到里面的文件结构。还能看到AndroidManifest.xml。但是里面的内容经过编码显示为乱码，不方便查看。
 
-
 — aapt工具：
-&amp;nbsp;&amp;nbsp;这里我们可以使用aapt工具来查看。aapt.exe工具即Android Asset Packaging Tool，在SD">
+&amp;nbsp;&amp;nbsp;这里我们可以使用aapt工具来查看。aapt.exe工具即Android Asset Packaging Tool，在SDK">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20151225105455337">
   
     <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
@@ -129,12 +126,11 @@
         <blockquote>
 <p>Android App打包成Apk后，其实是一个压缩文件，可以将后缀名apk改为zip然后用winrar打开也能看到里面的文件结构。还能看到AndroidManifest.xml。但是里面的内容经过编码显示为乱码，不方便查看。</p>
 </blockquote>
-<p><br></p>
 <p><strong>— aapt工具：</strong></p>
 <p>&nbsp;&nbsp;这里我们可以使用<strong>aapt工具</strong>来查看。aapt.exe工具即Android Asset Packaging Tool，在SDK的build-tools目录下。</p>
 <p>&nbsp;&nbsp;该工具可以查看，创建， 更新ZIP格式的文档附件(zip, jar, apk)。也可将资源文件编译成二进制文件，尽管你可能没有直接使用过aapt工具，但是build scripts和IDE插件会使用这个工具打包apk文件构成一个Android 应用程序。在使用aapt之前需要在环境变量里面配置SDK-tools路径，或者是路径+aapt的方式进入aapt。</p>
 <a id="more"></a>
-<p>&nbsp;&nbsp;也就是说平时我们不会用这个东西，但是打包成Apk的时候其实是用到了的，只不过IDE替我们做了这一步，那么我们就用这个工具来查看VersionCode和VersionName。<br><br></p>
+<p>&nbsp;&nbsp;也就是说平时我们不会用这个东西，但是打包成Apk的时候其实是用到了的，只不过IDE替我们做了这一步，那么我们就用这个工具来查看VersionCode和VersionName。</p>
 <p><strong>— 操作流程：</strong></p>
 <p>1、首先找到aapt工具，在Android SDK文件夹下的build-tools包里，如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> D:\Android\SDK\build-tools\23.0.0_rc3</div></pre></td></tr></table></figure>

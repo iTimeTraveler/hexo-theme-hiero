@@ -216,9 +216,7 @@
         <blockquote>
 <p>在Linux中执行.sh脚本，异常/bin/bash^M: bad interpreter: No such file or directory.<br><img src="http://img.blog.csdn.net/20160429114707846" alt=""></p>
 </blockquote>
-<p><br></p>
 <h2 id="一、分析"><a href="#一、分析" class="headerlink" title="一、分析"></a><strong>一、分析</strong></h2><p>这是不同系统编码格式引起的：在windows系统中编辑的.sh文件可能有不可见字符，所以在Linux系统下执行会报以上异常信息。 </p>
-<p><br></p>
 <h2 id="二、解决"><a href="#二、解决" class="headerlink" title="二、解决"></a><strong>二、解决</strong></h2><p>1）在windows下转换：<br>利用一些编辑器如UltraEdit或EditPlus等工具先将脚本编码转换，再放到Linux中执行。转换方式如下（UltraEdit）：File–&gt;Conversions–&gt;DOS-&gt;UNIX即可。 </p>
         
           <p class="article-more-link">
@@ -271,7 +269,6 @@
         <blockquote>
 <p>算法的时间复杂度无非就是for、while等包含起来的基本运算单元的循环次数</p>
 </blockquote>
-<p><br></p>
 <h2 id="1、二分查找"><a href="#1、二分查找" class="headerlink" title="1、二分查找"></a><strong>1、二分查找</strong></h2><p>二分查找（binary search），也称作折半查找（half-interval search），每次划分一半进行下一步搜索，所以时间复杂度无非就是while循环的次数！</p>
         
           <p class="article-more-link">
@@ -481,7 +478,7 @@
 <p>我们都知道，每个Activity都有taskAffinity属性，这个属性指出了它希望进入的Task。</p>
 </blockquote>
 <p>如果一个Activity没有显式的指明该 Activity的taskAffinity，那么它的这个属性就等于Application指明的taskAffinity，如果 Application也没有指明，那么该taskAffinity的值就等于包名。而Task也有自己的affinity属性，它的值等于它的根 Activity的taskAffinity的值。 </p>
-<p><br><br><strong>一、查看task栈情况</strong></p>
+<p><strong>一、查看task栈情况</strong></p>
 <p>在cmd命令行里或者Android Studio中的Terminal里敲入如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell dumpsys activity</div></pre></td></tr></table></figure></p>
 <p>然后会出现很长一段详细信息，滚到中间的地方，会看到Task栈的状态如下：<br><img src="http://img.blog.csdn.net/20160119120838863" alt=""></p>
         
@@ -643,9 +640,7 @@
         <blockquote>
 <p>走台阶算法（本质上是斐波那契数列）在面试中常会遇到，描述就如题目那样：总共100级台阶（任意级都行），小明每次可选择走1步、2步或者3步，问走完这100级台阶总共有多少种走法？</p>
 </blockquote>
-<p><br></p>
 <h3 id="一、-题目分析"><a href="#一、-题目分析" class="headerlink" title="一、 题目分析"></a><strong>一、 题目分析</strong></h3><p>这个问题本质上是斐波那契数列，假设只有一个台阶，那么只有一种跳法，那就是一次跳一级，f(1)=1；如果有两个台阶，那么有两种跳法，第一种跳法是一次跳一级，第二种跳法是一次跳两级,f(2)=2。如果有大于2级的n级台阶，那么假如第一次跳一级台阶，剩下还有n-1级台阶，有f(n-1)种跳法，假如第一次条2级台阶，剩下n-2级台阶，有f(n-2)种跳法。这就表示<strong>f(n)=f(n-1)+f(n-2)</strong>。将上面的斐波那契数列代码稍微改一下就是本题的答案。我们来看一下代码的实现。</p>
-<p><br></p>
 <h3 id="二、斐波那契数列法"><a href="#二、斐波那契数列法" class="headerlink" title="二、斐波那契数列法"></a><strong>二、斐波那契数列法</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> s = <span class="number">100</span>; <span class="comment">//自定义的台阶数</span></div><div class="line">   </div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">compute</span><span class="params">(<span class="keyword">int</span> stair)</span></span>&#123;</div><div class="line">    	<span class="keyword">if</span> ( stair &lt;= <span class="number">0</span>)&#123;</div><div class="line">    		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">if</span> (stair == <span class="number">1</span>)&#123;</div><div class="line">    		<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">if</span> (stair == <span class="number">2</span>)&#123;</div><div class="line">    		<span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">return</span> compute(stair-<span class="number">1</span>) + compute(stair-<span class="number">2</span>);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"共有"</span> + compute(s) + <span class="string">"种走法"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">

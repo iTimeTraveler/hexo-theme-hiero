@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://github.com/2016/07/19/【Android】Monkey压力测试与停止/index.html">
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="Monkey测试是Android自动化测试的一种手段。该工具用于进行压力测试，就是模拟用户的按键输入，触摸屏输入，手势输入等，看设备多长时间会出异常。 然后开发人员结合monkey 打印的日志 和系统打印的日志，结局测试中出现的问题。">
-<meta property="og:updated_time" content="2016-08-30T03:13:21.899Z">
+<meta property="og:updated_time" content="2016-10-18T04:55:14.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android】Monkey压力测试与停止">
 <meta name="twitter:description" content="Monkey测试是Android自动化测试的一种手段。该工具用于进行压力测试，就是模拟用户的按键输入，触摸屏输入，手势输入等，看设备多长时间会出异常。 然后开发人员结合monkey 打印的日志 和系统打印的日志，结局测试中出现的问题。">
@@ -113,7 +113,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="一、Monkey-是什么？"><a href="#一、Monkey-是什么？" class="headerlink" title="一、Monkey 是什么？"></a><strong>一、Monkey 是什么？</strong></h4><p>Monkey测试是Android自动化测试的一种手段。该工具用于进行压力测试，就是模拟用户的按键输入，触摸屏输入，手势输入等，看设备多长时间会出异常。 然后开发人员结合monkey 打印的日志 和系统打印的日志，结局测试中出现的问题。</p>
-<p><br></p>
 <h4 id="二、Monkey命令"><a href="#二、Monkey命令" class="headerlink" title="二、Monkey命令"></a><strong>二、Monkey命令</strong></h4><p>1）. 标准的monkey 命令<br>[adb shell] monkey [options] &lt; eventcount &gt; , 例如：</p>
 <blockquote>
 <p>adb shell monkey -v 500</p>
@@ -136,9 +135,7 @@
 </blockquote>
 <p>工作中为了保证测试数量的完整进行，我们一般不会在发生错误时立刻退出压力测试。monkey 测试命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * monkey 作用的包：com.ckt.android.junit</div><div class="line"> * 产生时间序列的种子值：500</div><div class="line"> * 忽略程序崩溃、 忽略超时、 监视本地程序崩溃、 详细信息级别为2， 产生10000个事件 。</div><div class="line"> */</div><div class="line">adb shell monkey -p com.xy.android.junit <span class="_">-s</span> 500 --ignore-crashes</div><div class="line">--ignore-timeouts --monitor-native-crashes -v -v 10000 &gt; E:\monkey_log\java_monkey_log.txt</div></pre></td></tr></table></figure>
-<p><br></p>
 <h4 id="三、强制停止Monkey测试"><a href="#三、强制停止Monkey测试" class="headerlink" title="三、强制停止Monkey测试"></a><strong>三、强制停止Monkey测试</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell ps | awk <span class="string">'/com\.android\.commands\.monkey/ &#123; system("adb shell kill " $2) &#125;'</span></div></pre></td></tr></table></figure>
-<p><br><br><br><br><br></p>
 <p>####【参考资料】</p>
 <p>1、<a href="http://www.jb51.net/article/48557.htm" target="_blank" rel="external">android 压力测试命令monkey详解</a><br>2、<a href="http://www.testwo.com/article/402" target="_blank" rel="external">Monkey 的专项测试浅谈</a></p>
 
