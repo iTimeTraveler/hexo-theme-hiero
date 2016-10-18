@@ -128,7 +128,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 ::selection {
-  background: #fb6d19;
+  background: #00aced;
   color: #fff;
 }
 .article-entry h2,
@@ -136,7 +136,7 @@ body {
 .article-entry h4,
 .article-entry h5,
 .article-entry h6 {
-  color: #fb6d19;
+  color: #00aced;
 }
 #rocket {
   position: fixed;
@@ -395,23 +395,23 @@ body {
   font-weight: bold;
 }
 .navigater-list>a:hover {
-  color: #fb6d19;
-  border-bottom: 5px solid #fb6d19;
+  color: #00aced;
+  border-bottom: 5px solid #00aced;
   text-decoration: none;
 }
 .hr {
-  background: #fb6d19;
+  background: #00aced;
 }
 .navbar-nav>li>a:hover,
 .navbar-nav>li>a:focus {
-  border-bottom: 5px solid #fb6d19;
-  color: #fb6d19 !important;
+  border-bottom: 5px solid #00aced;
+  color: #00aced !important;
 }
 .navbar-inner {
   min-height: 90px;
   -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.1);
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  border-top: 2px solid #fb6d19;
+  border-top: 2px solid #00aced;
 }
 .brand {
   float: left;
@@ -428,6 +428,13 @@ body {
 .article {
   color: #555;
   margin: 50px 0;
+  float: left;
+  width: 75%;
+}
+@media screen and (max-width: 479px) {
+  .article {
+    width: 100%;
+  }
 }
 .article-inner {
   overflow: hidden;
@@ -472,7 +479,7 @@ body {
   content: "\f073";
 }
 .article-date:hover {
-  color: #fb6d19;
+  color: #00aced;
 }
 .article-category {
   text-align: center;
@@ -493,7 +500,7 @@ body {
   padding-right: 0.3em;
 }
 .article-category-link:hover {
-  color: #fb6d19;
+  color: #00aced;
 }
 .article-header {
   text-align: center;
@@ -514,7 +521,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #fb6d19;
+  color: #00aced;
   text-decoration: none;
 }
 .article-entry {
@@ -556,7 +563,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  color: #fb6d19;
+  color: #00aced;
   text-decoration: none;
 }
 .article-entry ul,
@@ -594,7 +601,7 @@ a.article-title:hover {
   font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-s;
   font-size: 1.1em;
   margin: 1.6em 0px;
-  border-left: 5px solid #fb6d19;
+  border-left: 5px solid #00aced;
   background: rgba(208,211,248,0.15);
 }
 .article-entry blockquote p {
@@ -653,7 +660,7 @@ a.article-title:hover {
   border-radius: 15px;
   background: #f9fbfd;
   border: 1px solid #eef1f8;
-  color: #fb6d19;
+  color: #00aced;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
@@ -662,7 +669,7 @@ a.article-title:hover {
   transition: all 0.2s ease-in-out;
 }
 .article-more-link a:hover {
-  background: #fb6d19;
+  background: #00aced;
   color: #fff;
   text-decoration: none;
 }
@@ -913,6 +920,51 @@ a.article-title:hover {
   max-width: 100%;
   margin: 0 auto;
 }
+.toc-article {
+  position: absolute;
+  border-left: rgba(88,88,88,0.1) 3px solid;
+  margin: 50px 0;
+  padding: 1em;
+}
+.toc-title {
+  font-size: 120%;
+}
+#toc {
+  line-height: 1em;
+  font-size: 0.9em;
+  float: left;
+  overflow: auto;
+}
+@media screen and (max-width: 479px) {
+  #toc {
+    display: none;
+  }
+}
+.toc-fixed {
+  position: fixed;
+  top: 30px;
+  margin-top: 0;
+  max-height: 81%;
+  overflow: auto;
+  z-index: 1;
+}
+.toc {
+  padding: 0;
+  margin: 1em;
+  line-height: 1.8em;
+li
+  list-style-type: none;
+}
+.toc-link {
+  font-family: "futura-pt", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei, WenQuanYi Micro Hei, "Microsoft YaHei", sans-serif;
+  color: #0e83cd;
+}
+.toc-link:hover {
+  color: #00aced;
+}
+.toc-child {
+  margin-left: 1em;
+}
 #comments {
   padding: 20px;
   margin: 50px 0;
@@ -938,10 +990,10 @@ a.article-title:hover {
   margin-bottom: 1em;
 }
 .archive-year {
-  color: #fb6d19;
+  color: #00aced;
 }
 .archive-year:hover {
-  color: #fb6d19;
+  color: #00aced;
 }
 .archives {
   -webkit-column-gap: 10px;
@@ -982,7 +1034,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #fb6d19;
+  color: #00aced;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -997,7 +1049,7 @@ a.article-title:hover {
   display: block;
 }
 .archive-article-date:hover {
-  color: #fb6d19;
+  color: #00aced;
 }
 #page-nav {
   margin: 50px auto;
@@ -1025,7 +1077,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #fb6d19;
+  background: #00aced;
   color: #fff;
 }
 #page-nav .prev {
@@ -1063,7 +1115,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #footer a:hover {
-  color: #fb6d19;
+  color: #00aced;
   text-decoration: none;
 }
 #footer-info {
@@ -1378,7 +1430,7 @@ pre .xml .cdata {
   text-decoration: none;
 }
 .widget a:hover {
-  color: #fb6d19;
+  color: #00aced;
   text-decoration: none;
 }
 .widget ul ul,
