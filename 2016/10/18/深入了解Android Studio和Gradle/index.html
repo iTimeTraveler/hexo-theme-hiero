@@ -15,7 +15,7 @@
 <meta property="og:description" content="原文链接： 重新认识AndroidStudio和Gradle，这些都是我们应该知道的  — by 井方哥
 
 前言主要从AndroidStudio的环境安装升级，Gradle，Eclipse转AS,多渠道配置，Maven私服，Action,Option，快捷键等几个方面出发，讲一些操作技巧以及我对AndroidStudio使用的一些理解与经验。本文较全面的讲述了我们在开发中必须要了解的，比较多而全">
-<meta property="og:updated_time" content="2016-10-18T09:14:37.201Z">
+<meta property="og:updated_time" content="2016-10-18T09:18:07.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入了解Android Studio和Gradle">
 <meta name="twitter:description" content="原文链接： 重新认识AndroidStudio和Gradle，这些都是我们应该知道的  — by 井方哥
@@ -165,18 +165,26 @@
 <li>intermediates//构建打包的资源文件<ul>
 <li>assets//资源文件</li>
 <li>exploded-aar//如果我们依赖了许多的aar或者依赖工程，最终都“copy”到了这个目录下</li>
-<li>mainfests//合并的mainfest<ul>
-<li>outputs</li>
+<li>mainfests//合并的mainfest</li>
+</ul>
+</li>
+<li>outputs<ul>
 <li>apk//输出我们需要的.apk文件</li>
 <li>lint-results.html//lint检查报告</li>
-<li>reports</li>
+</ul>
+</li>
+<li>reports<ul>
 <li>tests//单元测试报告</li>
+</ul>
+</li>
 <li>ivy.xml//moudle的配置（task任务）、依赖关系等</li>
+</ul>
+</li>
 <li>libs    //本地的依赖jar包等</li>
-<li>src    //本moudule所有的代码和资源文件</li>
+<li>src    //本moudule所有的代码和资源文件<ul>
 <li>androidTest    //需要android环境的单元测试，比如UI的单元测试</li>
 <li>Test    //普通的java单元测试</li>
-<li>main    //主渠道</li>
+<li>main    //主渠道<ul>
 <li>java    //java code</li>
 <li>jni //navtive jni so</li>
 <li>gen</li>
@@ -194,8 +202,6 @@
 <li>local.properties //SDK、NDK配置</li>
 <li>config.gradle//自定义的配置文件</li>
 <li>settings.gradle//module管理</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
