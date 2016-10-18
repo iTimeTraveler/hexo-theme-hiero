@@ -187,6 +187,87 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-【Android】onActivityResult()和onResume()的调用顺序问题"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2015/09/18/【Android】onActivityResult()和onResume()的调用顺序问题/">【Android】onActivityResult()和onResume()的调用顺序问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2015/09/18/【Android】onActivityResult()和onResume()的调用顺序问题/" class="article-date">
+	  <time datetime="2015-09-18T09:16:55.000Z" itemprop="datePublished">2015-09-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>在Android生命周期中，如果使用到startActivityForResult()，则在新Activity被finish掉之后，onActivityResult()和onResume()到底是哪一个先调用的呢？</p>
+</blockquote>
+<p>我们来看官方源码：</p>
+<pre><code class="java"><span class="comment">/**
+     * Called when an activity you launched exits, giving you the requestCode
+     * you started it with, the resultCode it returned, and any additional
+     * data from it.  The &lt;var&gt;resultCode&lt;/var&gt; will be
+     * {<span class="doctag">@link</span> #RESULT_CANCELED} if the activity explicitly returned that,
+     * didn't return any result, or crashed during its operation.
+     *
+     * &lt;p&gt;You will receive this call immediately before onResume() when your
+     * activity is re-starting.
+     *
+     * &lt;p&gt;This method is never invoked if your activity sets
+     * {<span class="doctag">@link</span> android.R.styleable#AndroidManifestActivity_noHistory noHistory} to
+     * &lt;code&gt;true&lt;/code&gt;.
+     *
+     * <span class="doctag">@param</span> requestCode The integer request code originally supplied to
+     *                    startActivityForResult(), allowing you to identify who this
+     *                    result came from.
+     * <span class="doctag">@param</span> resultCode The integer result code returned by the child activity
+     *                   through its setResult().
+     * <span class="doctag">@param</span> data An Intent, which can return result data to the caller
+     *               (various data can be attached to Intent "extras").
+     *
+     * <span class="doctag">@see</span> #startActivityForResult
+     * <span class="doctag">@see</span> #createPendingResult
+     * <span class="doctag">@see</span> #setResult(int)
+     */</span>
+    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>{
+    }
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="../../2015/09/18/【Android】onActivityResult()和onResume()的调用顺序问题/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
     <article id="post-【Android】如何启动调用其他app中的Activity"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
