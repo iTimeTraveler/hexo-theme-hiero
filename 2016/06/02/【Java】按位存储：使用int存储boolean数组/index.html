@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://github.com/2016/06/02/【Java】按位存储：使用int存储boolean数组/index.html">
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="有一种场景，比如App设置页中会有一组开关选项，这个时候保存这些开关的状态，如果每个按钮都对应一个boolean值的话，太大材小用显得鸡肋，频繁读取SharedPreferences 存取效率自然快不过一次读取。">
-<meta property="og:updated_time" content="2016-08-30T03:14:28.637Z">
+<meta property="og:updated_time" content="2016-10-18T04:11:40.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Java】按位存储：使用int存储boolean数组">
 <meta name="twitter:description" content="有一种场景，比如App设置页中会有一组开关选项，这个时候保存这些开关的状态，如果每个按钮都对应一个boolean值的话，太大材小用显得鸡肋，频繁读取SharedPreferences 存取效率自然快不过一次读取。">
@@ -116,13 +116,13 @@
 <p>有一种场景，比如App设置页中会有一组开关选项，这个时候保存这些开关的状态，如果每个按钮都对应一个boolean值的话，太大材小用显得鸡肋，频繁读取SharedPreferences 存取效率自然快不过一次读取。</p>
 </blockquote>
 <p><br><br>首先，敲定每个boolean值存储的位置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> mBroadcastCustomValue = <span class="number">0</span>;   <span class="comment">//用来存储的int值</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_BASE = <span class="number">1</span>;				<span class="comment">//基础类播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_TRAFFIC = <span class="number">1</span> &lt;&lt; <span class="number">1</span>;		<span class="comment">//实时路况</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_CAMERA = <span class="number">1</span> &lt;&lt; <span class="number">2</span>;		<span class="comment">//摄像头限速播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_SAFE = <span class="number">1</span> &lt;&lt; <span class="number">3</span>;		<span class="comment">//安全提醒类</span></div></pre></td></tr></table></figure></p>
-<p><br><br><strong>一、添加Add</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue |= level;    <span class="comment">//add</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">addLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="一、添加Add"><a href="#一、添加Add" class="headerlink" title="一、添加Add"></a><strong>一、添加Add</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue |= level;    <span class="comment">//add</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">addLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p><br><br><strong>二、删除Delete</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">deleteLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue ^= mBroadcastCustomValue &amp; level;	    <span class="comment">//delete</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">deleteLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
-<p><br><br><strong>三、读取Read</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 从value中读取level的设置值，level即是某个boolean值的位置</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isLevelAccess</span><span class="params">(<span class="keyword">int</span> value, <span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>((value &amp; level) == level)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line"><span class="keyword">boolean</span> a = isLevelAccess(mBroadcastCustomValue, BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="二、删除Delete"><a href="#二、删除Delete" class="headerlink" title="二、删除Delete"></a><strong>二、删除Delete</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">deleteLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue ^= mBroadcastCustomValue &amp; level;	    <span class="comment">//delete</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">deleteLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="三、读取Read"><a href="#三、读取Read" class="headerlink" title="三、读取Read"></a><strong>三、读取Read</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 从value中读取level的设置值，level即是某个boolean值的位置</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isLevelAccess</span><span class="params">(<span class="keyword">int</span> value, <span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>((value &amp; level) == level)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line"><span class="keyword">boolean</span> a = isLevelAccess(mBroadcastCustomValue, BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -160,19 +160,19 @@
     
 <nav id="article-nav">
   
-    <a href="../../12/【SVN】使用patch命令保存更改/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../【Android】技术调研：用代码模拟屏幕点击、触摸事件/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          【SVN】使用patch命令保存更改
+          【Android】技术调研：用代码模拟屏幕点击、触摸事件
         
       </div>
     </a>
   
   
-    <a href="../【Android】技术调研：用代码模拟屏幕点击、触摸事件/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../../../04/29/【MySQL】查询保持IN中的顺序/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">【Android】技术调研：用代码模拟屏幕点击、触摸事件</div>
+      <div class="article-nav-title">【MySQL】查询保持IN中的顺序</div>
     </a>
   
 </nav>
@@ -187,7 +187,7 @@
   <aside id="sidebar">
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、添加Add"><span class="toc-number">1.</span> <span class="toc-text">一、添加Add</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、删除Delete"><span class="toc-number">2.</span> <span class="toc-text">二、删除Delete</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、读取Read"><span class="toc-number">3.</span> <span class="toc-text">三、读取Read</span></a></li></ol>
     </div>
   </aside>
 </section>

@@ -217,10 +217,9 @@
 <p>在Linux中执行.sh脚本，异常/bin/bash^M: bad interpreter: No such file or directory.<br><img src="http://img.blog.csdn.net/20160429114707846" alt=""></p>
 </blockquote>
 <p><br></p>
-<p><strong>一、分析</strong></p>
-<p>这是不同系统编码格式引起的：在windows系统中编辑的.sh文件可能有不可见字符，所以在Linux系统下执行会报以上异常信息。 </p>
-<p><br><br><strong>二、解决</strong></p>
-<p>1）在windows下转换：<br>利用一些编辑器如UltraEdit或EditPlus等工具先将脚本编码转换，再放到Linux中执行。转换方式如下（UltraEdit）：File–&gt;Conversions–&gt;DOS-&gt;UNIX即可。 </p>
+<h2 id="一、分析"><a href="#一、分析" class="headerlink" title="一、分析"></a><strong>一、分析</strong></h2><p>这是不同系统编码格式引起的：在windows系统中编辑的.sh文件可能有不可见字符，所以在Linux系统下执行会报以上异常信息。 </p>
+<p><br></p>
+<h2 id="二、解决"><a href="#二、解决" class="headerlink" title="二、解决"></a><strong>二、解决</strong></h2><p>1）在windows下转换：<br>利用一些编辑器如UltraEdit或EditPlus等工具先将脚本编码转换，再放到Linux中执行。转换方式如下（UltraEdit）：File–&gt;Conversions–&gt;DOS-&gt;UNIX即可。 </p>
         
           <p class="article-more-link">
             <a href="../../2016/04/29/【Linux】执行shell脚本出现异常：bad interpreter- No such file or directory如何解决/#more">Read More</a>
@@ -272,8 +271,8 @@
         <blockquote>
 <p>算法的时间复杂度无非就是for、while等包含起来的基本运算单元的循环次数</p>
 </blockquote>
-<p><br><br><strong>1、二分查找</strong></p>
-<p>二分查找（binary search），也称作折半查找（half-interval search），每次划分一半进行下一步搜索，所以时间复杂度无非就是while循环的次数！</p>
+<p><br></p>
+<h2 id="1、二分查找"><a href="#1、二分查找" class="headerlink" title="1、二分查找"></a><strong>1、二分查找</strong></h2><p>二分查找（binary search），也称作折半查找（half-interval search），每次划分一半进行下一步搜索，所以时间复杂度无非就是while循环的次数！</p>
         
           <p class="article-more-link">
             <a href="../../2016/04/06/”二分查找“算法的时间复杂度/#more">Read More</a>
@@ -372,16 +371,8 @@
         <blockquote>
 <p>使用Picasso加载SD卡图片的时候，Picasso也会对该图片进行缓存。所以如果该图片即使已经变了，Picasso在加载时会仍然使用缓存，而不更新图片。</p>
 </blockquote>
-<p><br></p>
-<ul>
-<li><strong>Picasso缓存策略</strong></li>
-</ul>
-<p>我们都知道图片缓存使用的是Map键值对存储的，这里的Key就是加载的图片的Url，所以如果我们使用相同的ImageUrl去加载图片的话，如果使用了缓存，Picasso会直接读取缓存的内容，而不是从SD卡、或者网络Http中重新加载。</p>
-<p><br></p>
-<ul>
-<li><strong>Picasso如何清理缓存</strong></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Picasso.with(getContext()).load(data.get(pos).getFeed_thumb_image()).memoryPolicy(MemoryPolicy.NO_CACHE).into(image);</div></pre></td></tr></table></figure>
+<h2 id="Picasso缓存策略"><a href="#Picasso缓存策略" class="headerlink" title="- Picasso缓存策略"></a>- <strong>Picasso缓存策略</strong></h2><p>我们都知道图片缓存使用的是Map键值对存储的，这里的Key就是加载的图片的Url，所以如果我们使用相同的ImageUrl去加载图片的话，如果使用了缓存，Picasso会直接读取缓存的内容，而不是从SD卡、或者网络Http中重新加载。</p>
+<h2 id="Picasso如何清理缓存"><a href="#Picasso如何清理缓存" class="headerlink" title="- Picasso如何清理缓存"></a>- <strong>Picasso如何清理缓存</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Picasso.with(getContext()).load(data.get(pos).getFeed_thumb_image()).memoryPolicy(MemoryPolicy.NO_CACHE).into(image);</div></pre></td></tr></table></figure>
 <p>注意其中的<em>.memoryPolicy(MemoryPolicy.NO_CACHE)</em>即是关键代码。</p>
         
           <p class="article-more-link">
@@ -434,8 +425,7 @@
         <blockquote>
 <p>这是个经典的面试题目：生成长度为100的数组，插入1-100以内的但均不重复的随机数</p>
 </blockquote>
-<p><br><br><strong>一、简单实现思路:</strong></p>
-<p>(1) 把N个数放入Hashtable 或者arrayList 中.</p>
+<h2 id="一、简单实现思路"><a href="#一、简单实现思路" class="headerlink" title="一、简单实现思路:"></a><strong>一、简单实现思路:</strong></h2><p>(1) 把N个数放入Hashtable 或者arrayList 中.</p>
 <p>(2) 从上面的集合中随机抽取一个数放入int数组中.</p>
 <p>(3) 把取出的这个数从上面的集合中删除.</p>
 <p>(4) 循环 (2),(3) 步骤,直到int数组取满为止.</p>
@@ -545,8 +535,7 @@
         <blockquote>
 <p>这次我们来了解一下面向对象的三大基石<strong>封装，继承、多态</strong>，然后大致对比一下继承和多态的区别。</p>
 </blockquote>
-<p><br><br><strong>一、封装：</strong></p>
-<p>　　封装是实现面向对象程序设计的第一步，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。 </p>
+<h2 id="一、封装："><a href="#一、封装：" class="headerlink" title="一、封装："></a><strong>一、封装：</strong></h2><p>　　封装是实现面向对象程序设计的第一步，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。 </p>
 <p> 封装的意义：<br>　　封装的意义在于保护或者防止代码（数据）被我们无意中破坏。在面向对象程序设计中数据被看作是一个中心的元素并且和使用它的函数结合的很密切，从而保护它不被其它的函数意外的修改。封装提供了一个有效的途径来保护数据不被意外的破坏。相比我们将数据（用域来实现）在程序中定义为公用的（public）我们将它们(fields)定义为私有的（privat）在很多方面会更好。</p>
         
           <p class="article-more-link">

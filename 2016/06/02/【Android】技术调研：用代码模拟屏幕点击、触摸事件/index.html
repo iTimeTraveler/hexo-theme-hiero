@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="iTimeTraveler">
 <meta property="og:description" content="在Android中，有些场景需要使用代码来模拟人的操作，比如微信自动抢红包、UI测试等都需要模拟实现点击事件（Click）、触摸事件（Touch）、键盘事件（KeyBoard）等。那么，有没有现成的方案可以实现呢？答案当然是肯定的啦，往下看。">
 <meta property="og:image" content="http://img.blog.csdn.net/20160602113300558">
-<meta property="og:updated_time" content="2016-10-09T07:40:32.777Z">
+<meta property="og:updated_time" content="2016-10-18T04:12:47.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Android】技术调研：用代码模拟屏幕点击、触摸事件">
 <meta name="twitter:description" content="在Android中，有些场景需要使用代码来模拟人的操作，比如微信自动抢红包、UI测试等都需要模拟实现点击事件（Click）、触摸事件（Touch）、键盘事件（KeyBoard）等。那么，有没有现成的方案可以实现呢？答案当然是肯定的啦，往下看。">
@@ -117,8 +117,8 @@
         <blockquote>
 <p>在Android中，有些场景需要使用代码来模拟人的操作，比如微信自动抢红包、UI测试等都需要模拟实现点击事件（Click）、触摸事件（Touch）、键盘事件（KeyBoard）等。那么，有没有现成的方案可以实现呢？答案当然是肯定的啦，往下看。</p>
 </blockquote>
-<p><br><br>经过调研发现，给系统模拟注入输入事件有如下几种方式：<br><br><br><br><br><strong>一、使用shell命令</strong></p>
-<p>使用android自带的adb shell，里面自带一个input工具，使用方法如下：</p>
+<p>经过调研发现，给系统模拟注入输入事件有如下几种方式：</p>
+<h2 id="一、使用shell命令"><a href="#一、使用shell命令" class="headerlink" title="一、使用shell命令"></a><strong>一、使用shell命令</strong></h2><p>使用android自带的adb shell，里面自带一个input工具，使用方法如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb shell <span class="comment">#进入系统</span></div><div class="line">input keyevent KEYCODE_BACK  <span class="comment">#模拟按返回键</span></div><div class="line">input keyevent KEYCODE_HOME  <span class="comment">#模拟按Home键</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>还可以直接输入点击屏幕的事件，模拟点击屏幕：</p>
@@ -127,8 +127,7 @@
 <blockquote>
 <p><img src="http://img.blog.csdn.net/20160602113300558" alt=""></p>
 </blockquote>
-<p><br><br><br><br><strong>二、使用 Instrumentation</strong></p>
-<p>Instrumentation本身是Android用来做测试的工具，可以通过它监测系统与应用程序之间的交互。详情可以参考官方文档<a href="https://developer.android.com/studio/test/index.html" target="_blank" rel="external">[Test Your App]</a>。我们这里只关注怎么使用Instrumentation产生发送按键或者触屏事件。</p>
+<h2 id="二、使用-Instrumentation"><a href="#二、使用-Instrumentation" class="headerlink" title="二、使用 Instrumentation"></a><strong>二、使用 Instrumentation</strong></h2><p>Instrumentation本身是Android用来做测试的工具，可以通过它监测系统与应用程序之间的交互。详情可以参考官方文档<a href="https://developer.android.com/studio/test/index.html" target="_blank" rel="external">[Test Your App]</a>。我们这里只关注怎么使用Instrumentation产生发送按键或者触屏事件。</p>
 <p>它可以发送按键：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Instrumentation mInst = <span class="keyword">new</span> Instrumentation();  </div><div class="line">mInst.sendKeyDownUpSync(KeyEvent.KEYCODE_CAMERA);</div></pre></td></tr></table></figure>
 <p>也可以发送触屏事件：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Instrumentation mInst = <span class="keyword">new</span> Instrumentation();  </div><div class="line">mInst.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),  </div><div class="line">    SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, x, y, <span class="number">0</span>);    <span class="comment">//x,y 即是事件的坐标</span></div><div class="line">mInst.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),  </div><div class="line">    SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, x, y, <span class="number">0</span>);</div></pre></td></tr></table></figure></p>
@@ -136,8 +135,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sendCharacterSync(<span class="keyword">int</span> keyCode)            <span class="comment">//用于发送指定KeyCode的按键</span></div><div class="line">sendKeyDownUpSync(<span class="keyword">int</span> key)                <span class="comment">//用于发送指定KeyCode的按键</span></div><div class="line">sendPointerSync(MotionEvent event)     	  <span class="comment">//用于模拟Touch</span></div><div class="line">sendStringSync(String text)               <span class="comment">//用于发送字符串</span></div></pre></td></tr></table></figure>
 <p>需要注意的是，这些方法均<strong><em>不可以在UI主线程中执行</em></strong>，必须放到子线程中调用，否则就会报错。另外，使用上面的方法，需要在AndroidManifast.xml中申明如下权限：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INJECT_EVENTS"</span>/&gt;</span></div></pre></td></tr></table></figure>
-<p><br><br><br><br><strong>三、使用Android内部API</strong></p>
-<p>在Android系统中，有些内部的API提供注入事件的方法。因为是内部API，在不同版本上可能变化比较大。使用如果想在普通App中使用，可能需要通过反射机制来调用。</p>
+<h2 id="三、使用Android内部API"><a href="#三、使用Android内部API" class="headerlink" title="三、使用Android内部API"></a><strong>三、使用Android内部API</strong></h2><p>在Android系统中，有些内部的API提供注入事件的方法。因为是内部API，在不同版本上可能变化比较大。使用如果想在普通App中使用，可能需要通过反射机制来调用。</p>
 <p>在Android API 16之前，WindownManager有相应的方法提供注入事件的方法，如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">IBinder wmbinder = ServiceManager.getService(<span class="string">"window"</span>);  </div><div class="line">IWindowManager wm = IWindowManager.Stub.asInterface(wmbinder); <span class="comment">//pointer  </span></div><div class="line">wm.injectPointerEvent(myMotionEvent, <span class="keyword">false</span>); <span class="comment">//key  </span></div><div class="line">wm.injectKeyEvent(<span class="keyword">new</span> KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_A), <span class="keyword">false</span>);  </div><div class="line">wm.injectKeyEvent(<span class="keyword">new</span> KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_A), <span class="keyword">false</span>); <span class="comment">//trackball  </span></div><div class="line">wm.injectTrackballEvent(myMotionEvent, <span class="keyword">false</span>);</div></pre></td></tr></table></figure>
 <p>在API 15之后，引入了InputManager，把上面的哪些injectXXXEvent()方法从WindowManager中移除了。使用方法类似：</p>
@@ -145,9 +143,8 @@
 <p>从API 16开始，InputManager就成了一个公开的类了，可以通过如下方法获得InputManager实例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">InputManager im = (InputManager) getSystemService(Context.INPUT_SERVICE);</div></pre></td></tr></table></figure>
 <p>注意，使用injectEvent()同样需要申明<strong>android:name=”android.permission.INJECT_EVENTS”</strong>权限。</p>
-<p><br><br><br><br><strong>四、可以考虑使用Monkey测试框架</strong></p>
-<p>这种方案就是希望能够模拟Android Monkey的测试方法，不过博主并没有来得及对这方面进行深入的研究，可以参考这篇文章<a href="http://blog.csdn.net/xiaodanpeng/article/details/9154003" target="_blank" rel="external">Android Monkey源码解析</a></p>
-<p><br><br><br><br>【参考资料】：<br>1、<a href="http://www.race604.com/android-inject-input-event/" target="_blank" rel="external">Android模拟产生事件</a><br>2、<a href="http://blog.csdn.net/zhou0707/article/details/7325144" target="_blank" rel="external">Android 模拟键盘鼠标事件（Socket+Instrumentation实现）</a><br>3、<a href="https://getpocket.com/a/read/523013957" target="_blank" rel="external">Android Monkey源码解析</a></p>
+<h2 id="四、可以考虑使用Monkey测试框架"><a href="#四、可以考虑使用Monkey测试框架" class="headerlink" title="四、可以考虑使用Monkey测试框架"></a><strong>四、可以考虑使用Monkey测试框架</strong></h2><p>这种方案就是希望能够模拟Android Monkey的测试方法，不过博主并没有来得及对这方面进行深入的研究，可以参考这篇文章<a href="http://blog.csdn.net/xiaodanpeng/article/details/9154003" target="_blank" rel="external">Android Monkey源码解析</a></p>
+<h2 id="【参考资料】："><a href="#【参考资料】：" class="headerlink" title="【参考资料】："></a>【参考资料】：</h2><p>1、<a href="http://www.race604.com/android-inject-input-event/" target="_blank" rel="external">Android模拟产生事件</a><br>2、<a href="http://blog.csdn.net/zhou0707/article/details/7325144" target="_blank" rel="external">Android 模拟键盘鼠标事件（Socket+Instrumentation实现）</a><br>3、<a href="https://getpocket.com/a/read/523013957" target="_blank" rel="external">Android Monkey源码解析</a></p>
 
       
     </div>
@@ -186,19 +183,19 @@
     
 <nav id="article-nav">
   
-    <a href="../【Java】按位存储：使用int存储boolean数组/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../../12/【SVN】使用patch命令保存更改/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          【Java】按位存储：使用int存储boolean数组
+          【SVN】使用patch命令保存更改
         
       </div>
     </a>
   
   
-    <a href="../../../04/29/【MySQL】查询保持IN中的顺序/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="../【Java】按位存储：使用int存储boolean数组/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">【MySQL】查询保持IN中的顺序</div>
+      <div class="article-nav-title">【Java】按位存储：使用int存储boolean数组</div>
     </a>
   
 </nav>
@@ -213,7 +210,7 @@
   <aside id="sidebar">
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、使用shell命令"><span class="toc-number">1.</span> <span class="toc-text">一、使用shell命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、使用-Instrumentation"><span class="toc-number">2.</span> <span class="toc-text">二、使用 Instrumentation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、使用Android内部API"><span class="toc-number">3.</span> <span class="toc-text">三、使用Android内部API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、可以考虑使用Monkey测试框架"><span class="toc-number">4.</span> <span class="toc-text">四、可以考虑使用Monkey测试框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【参考资料】："><span class="toc-number">5.</span> <span class="toc-text">【参考资料】：</span></a></li></ol>
     </div>
   </aside>
 </section>
