@@ -1,9 +1,5 @@
-# iTimeTraveler.github.io
+# hexo-theme-hiker Sample
 
-Hello, Welcome to my blog.
+Hi, this is hexo-theme-hiker sample website.
 
-This is part of my life story, this part is called "coding for me, coding for her, coding for ...... my Miss Seven." 
-
-You can click here(http://itimetraveler.github.io) to look through.
-
-Also, I'm used to updating my learning experiences on http://blog.csdn.net/u010983881, Thanks for your interest.
+You can click here(https://itimetraveler.github.io/hexo-theme-hiker) to visit.
