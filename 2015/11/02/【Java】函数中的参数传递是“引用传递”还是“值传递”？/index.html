@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>【Java】函数中的参数传递是“引用传递”还是“值传递”？ | iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="问题引入：在一个快速排序的函数 private void quickSort(List intList, int left, int right) 中，传进去的参数intList是对象传递还是引用传递呢？
+
+先抛出结论：
+
+将对象（对象的引用）作为参数传递时传递的是引用(相当于指针)。也就是说函数内对参数所做的修改会影响原来的对象。
+
+当将基本类型或基本类型的包装集作为参数传递时，传递的是值。也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Java】函数中的参数传递是“引用传递”还是“值传递”？">
+<meta property="og:url" content="http://github.com/2015/11/02/【Java】函数中的参数传递是“引用传递”还是“值传递”？/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="问题引入：在一个快速排序的函数 private void quickSort(List intList, int left, int right) 中，传进去的参数intList是对象传递还是引用传递呢？
+
+先抛出结论：
+
+将对象（对象的引用）作为参数传递时传递的是引用(相当于指针)。也就是说函数内对参数所做的修改会影响原来的对象。
+
+当将基本类型或基本类型的包装集作为参数传递时，传递的是值。也">
+<meta property="og:updated_time" content="2016-10-18T04:56:41.696Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【Java】函数中的参数传递是“引用传递”还是“值传递”？">
+<meta name="twitter:description" content="问题引入：在一个快速排序的函数 private void quickSort(List intList, int left, int right) 中，传进去的参数intList是对象传递还是引用传递呢？
+
+先抛出结论：
+
+将对象（对象的引用）作为参数传递时传递的是引用(相当于指针)。也就是说函数内对参数所做的修改会影响原来的对象。
+
+当将基本类型或基本类型的包装集作为参数传递时，传递的是值。也">
+  
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="../../../../css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" > 
+    <link rel="stylesheet" href="../../../../css/dialog.css">
+  
+
+  
+
+</head>
+
+<body>
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" href="#" data-toggle="modal" data-target="#myModal"><img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg"></a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
+                
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-【Java】函数中的参数传递是“引用传递”还是“值传递”？" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      【Java】函数中的参数传递是“引用传递”还是“值传递”？
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="" class="article-date">
+	  <time datetime="2015-11-02T07:33:20.000Z" itemprop="datePublished">2015-11-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../../../categories/Java/">Java</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>问题引入：在一个快速排序的函数 private void quickSort(List<integer> intList, int left, int right) 中，传进去的参数intList是对象传递还是引用传递呢？</integer></p>
+</blockquote>
+<p>先抛出结论：</p>
+<ol>
+<li><p>将对象（对象的引用）作为参数传递时传递的是引用(相当于指针)。也就是说函数内对参数所做的修改会影响原来的对象。</p>
+</li>
+<li><p>当将基本类型或基本类型的包装集作为参数传递时，传递的是值。也就是说函数内对参数所做的修改不会影响原来的变量。</p>
+</li>
+<li><p>数组(数组引用)）作为参数传递时传递的是引用(相当于指针)。也就是说函数内对参数所做的修改会影响原来的数组。</p>
+</li>
+<li><p>String类型(引用)作为参数传递时传递的是引用，只是对String做出任何修改时有一个新的String对象会产生，原来的String对象的值不会做任何修改。(但是可以将新的对象的       引用赋给原来的引用,这样给人的表面现象就是原来的对象变了，其实没有变，只是原来指向它的引用指向了新的对象)。</p>
+</li>
+</ol>
+<a id="more"></a>
+<hr>
+<p><strong>举例一：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">public class Mainjava &#123;</div><div class="line">	String str=new String(&quot;good&quot;);</div><div class="line">	char[] ch=&#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&#125;;</div><div class="line">	Integer i = 0;</div><div class="line">	int x = 0;</div><div class="line">	Test t1 = new Test(); </div><div class="line">	Test t2 = new Test(); </div><div class="line">	</div><div class="line">	public static void main(String args[])&#123;</div><div class="line">		Mainjava ex=new Mainjava();</div><div class="line">		ex.change(ex.str,ex.ch, ex.x, ex.i, ex.t1, ex.t2);</div><div class="line">		System.out.print(ex.str + &quot; and &quot;);</div><div class="line">		System.out.print(String.valueOf(ex.ch) + &quot; and &quot;);</div><div class="line">		System.out.print(ex.x + &quot;,&quot; + ex.i + &quot;,&quot; + ex.t1.getA() + &quot;,&quot; + ex.t2.getA());</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public void change(String str, char ch[], int x, Integer i, Test t1, Test t2)&#123;</div><div class="line">		str=&quot;test ok&quot;;</div><div class="line">		ch[0]=&apos;g&apos;;</div><div class="line">		x = 2;</div><div class="line">		i = 5;</div><div class="line">		</div><div class="line">		Test newT = new Test();</div><div class="line">		newT.setA(99);</div><div class="line">		t1 = newT;</div><div class="line">		</div><div class="line">		t2.setA(33);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//Test类</div><div class="line">public class Test &#123;</div><div class="line">	private int a = 0;</div><div class="line">	</div><div class="line">	public void setA(int a)&#123;</div><div class="line">		this.a = a;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public int getA()&#123;</div><div class="line">		return a;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果是多少呢？</p>
+<blockquote>
+<p>good and gbc and 0,0,0,33</p>
+</blockquote>
+<p>为什么不是”test ok and gbc and 2,5,99,33”呢？</p>
+<p>因为str是引用数据类型String,而字符数组是基本数据类型,二者存放在内存中的机制是不一样的!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public void change(String str, char ch[], int x)&#123;</div><div class="line">	str = &quot;test ok&quot;;</div><div class="line">	ch[0] = &apos;g&apos;;</div><div class="line">	x = 2;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>change()方法传入str,虽然把”test ok”强行赋给str,但是这里的str存放在新的栈内存中,和原来的str存放的地址不一样,所以你System.out.print(ex.str+”and”);这里的输出还是调用原来内存中的str;<br>字符数组不一样,你声明一个字符数组之后,那个数组的位置就定死了,你调用change()之后,把原来的字符数组的第1个元素改为了g.这就是引用数据类型和基本数据类型的区别。</p>
+<hr>
+<p><strong>举例二：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">import java.util.ArrayList;</div><div class="line">import java.util.List;</div><div class="line"></div><div class="line">public class Mainjava &#123;</div><div class="line">	public static void main(String args[])&#123;</div><div class="line">		List&lt;Integer&gt; integerList = new ArrayList&lt;Integer&gt;();</div><div class="line">        integerList.add(7);</div><div class="line">        integerList.add(1);</div><div class="line">        integerList.add(3);</div><div class="line">        integerList.add(8);</div><div class="line">        integerList.add(9);</div><div class="line">        integerList.add(2);</div><div class="line">        integerList.add(5);</div><div class="line">        integerList.add(4);</div><div class="line">        integerList.add(10);</div><div class="line">        integerList.add(6);</div><div class="line">        </div><div class="line">        print(integerList);</div><div class="line">        quickSort(integerList, 0, integerList.size()-1);</div><div class="line">        print(integerList);  /*对比排序前后的integerList中的值，如果发生改变，说明是引用传递，即传递的是对象地址值*/</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	private static void quickSort(List&lt;Integer&gt; intList, int left, int right)&#123;</div><div class="line">        if(left &gt;= right) &#123;</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        int i = left;</div><div class="line">        int j = right;</div><div class="line">        int key = intList.get(i);</div><div class="line">        System.out.println(&quot;key:&quot;+&quot;intList.get(&quot;+i+&quot;)=&quot;+key);</div><div class="line"></div><div class="line">        while(i &lt; j)&#123;</div><div class="line">            while(i &lt; j &amp;&amp; intList.get(j) &gt;= key)&#123;</div><div class="line">                j--;</div><div class="line">            &#125;</div><div class="line">            intList.set(i, intList.get(j));</div><div class="line"></div><div class="line">            while(i &lt; j &amp;&amp; intList.get(i) &lt;= key)&#123;</div><div class="line">                i++;</div><div class="line">            &#125;</div><div class="line">            intList.set(j, intList.get(i));</div><div class="line">        &#125;</div><div class="line">        intList.set(i, key);</div><div class="line">        quickSort(intList, left, i - 1);</div><div class="line">        quickSort(intList, i + 1, right);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private static void print(List&lt;Integer&gt; intList)&#123;</div><div class="line">        for (int i = 0; i &lt; intList.size(); i++) &#123;</div><div class="line">            System.out.print(intList.get(i)+&quot;, &quot;);</div><div class="line">        &#125;</div><div class="line">        System.out.println(&quot;&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>运行输出结果如下：</p>
+<blockquote>
+<p>7, 1, 3, 8, 9, 2, 5, 4, 10, 6,<br>key:intList.get(0)=7<br>key:intList.get(0)=6<br>key:intList.get(0)=2<br>key:intList.get(2)=3<br>key:intList.get(3)=4<br>key:intList.get(7)=9<br>1, 2, 3, 4, 5, 6, 7, 8, 9, 10, </p>
+</blockquote>
+<hr>
+<p><strong>结论：</strong></p>
+<p>实验证明，Java中函数传递<strong>对象</strong>时，传递的是<strong><a href="http://blog.csdn.net/yunzhongguwu005/article/details/9737215" target="_blank" rel="external">该对象的地址值</a></strong>，即引用传递。<br>函数传递<strong>基本类型数据</strong>时，传递的是<a href="http://zhidao.baidu.com/link?url=q-nDBrovT4jkLmdEilYuangnxwI23o2rLxW91yJJD9a0wC2LTcjN2ksUEgU2L6NR9cB68gBgj4jjWV3wms6iM_" target="_blank" rel="external"><strong>值</strong></a>，也就是说函数返回之后不会改变这个值。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2015/11/02/【Java】函数中的参数传递是“引用传递”还是“值传递”？/" data-title="【Java】函数中的参数传递是“引用传递”还是“值传递”？" data-url="http://github.com/2015/11/02/【Java】函数中的参数传递是“引用传递”还是“值传递”？/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../../03/各种排序算法时间复杂度和空间复杂度表/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          各种排序算法时间复杂度和空间复杂度表
+        
+      </div>
+    </a>
+  
+  
+    <a href="../../../09/18/【Android】onActivityResult()和onResume()的调用顺序问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【Android】onActivityResult()和onResume()的调用顺序问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="../../../../about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
+
+
+  <script src="../../../../js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+</body>
+</html>

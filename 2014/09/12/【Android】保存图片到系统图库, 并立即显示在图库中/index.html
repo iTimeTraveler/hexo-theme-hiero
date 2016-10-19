@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>【Android】保存图片到系统图库, 并立即显示在图库中 | iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="搬运原链接：http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery
+
+正文最近有些用户反映保存图片之后在系统图库找不到保存的图片，遂决定彻底查看并解决下。
+Android中保存图片的方法可能有如下两种：
+
+第一种是自己写方法，如下代码：
+
+123456789101112131415161718pub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Android】保存图片到系统图库, 并立即显示在图库中">
+<meta property="og:url" content="http://github.com/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="搬运原链接：http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery
+
+正文最近有些用户反映保存图片之后在系统图库找不到保存的图片，遂决定彻底查看并解决下。
+Android中保存图片的方法可能有如下两种：
+
+第一种是自己写方法，如下代码：
+
+123456789101112131415161718pub">
+<meta property="og:updated_time" content="2016-10-18T04:55:26.176Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【Android】保存图片到系统图库, 并立即显示在图库中">
+<meta name="twitter:description" content="搬运原链接：http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery
+
+正文最近有些用户反映保存图片之后在系统图库找不到保存的图片，遂决定彻底查看并解决下。
+Android中保存图片的方法可能有如下两种：
+
+第一种是自己写方法，如下代码：
+
+123456789101112131415161718pub">
+  
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="../../../../css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" > 
+    <link rel="stylesheet" href="../../../../css/dialog.css">
+  
+
+  
+
+</head>
+
+<body>
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" href="#" data-toggle="modal" data-target="#myModal"><img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg"></a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
+                
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-【Android】保存图片到系统图库, 并立即显示在图库中" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      【Android】保存图片到系统图库, 并立即显示在图库中
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="" class="article-date">
+	  <time datetime="2014-09-12T03:55:00.000Z" itemprop="datePublished">2014-09-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>搬运原链接：<a href="http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery" target="_blank" rel="external">http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery</a></p>
+</blockquote>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a><strong>正文</strong></h3><p>最近有些用户反映保存图片之后在系统图库找不到保存的图片，遂决定彻底查看并解决下。</p>
+<p>Android中保存图片的方法可能有如下两种：</p>
+<ul>
+<li>第一种是自己写方法，如下代码：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> File <span class="title">saveImage</span><span class="params">(Bitmap bmp)</span> </span>&#123;</div><div class="line">    File appDir = <span class="keyword">new</span> File(Environment.getExternalStorageDirectory(), <span class="string">"Boohee"</span>);</div><div class="line">    <span class="keyword">if</span> (!appDir.exists()) &#123;</div><div class="line">        appDir.mkdir();</div><div class="line">    &#125;</div><div class="line">    String fileName = System.currentTimeMillis() + <span class="string">".jpg"</span>;</div><div class="line">    File file = <span class="keyword">new</span> File(appDir, fileName);</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(file);</div><div class="line">        bmp.compress(CompressFormat.JPEG, <span class="number">100</span>, fos);</div><div class="line">        fos.flush();</div><div class="line">        fos.close();</div><div class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>以上代码便是将Bitmap保存图片到指定的路径/sdcard/Boohee/下，文件名以当前系统时间命名,但是这种方法保存的图片没有加入到系统图库中</p>
+<ul>
+<li>第二种是调用系统提供的插入图库的方法：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, <span class="string">"title"</span>, <span class="string">"description"</span>);</div></pre></td></tr></table></figure>
+<p>调用以上系统自带的方法会把bitmap对象保存到系统图库中，但是这种方法无法指定保存的路径和名称，上述方法的title、description参数只是插入数据库中的字段，真实的图片名称系统会自动分配。</p>
+<p>看似上述第二种方法就是我们要用到的方法，但是可惜的调用上述第二种插入图库的方法图片并没有立刻显示在图库中，而我们需要立刻更新系统图库以便让用户可以立刻查看到这张图片。</p>
+<h3 id="更新系统图库的方法"><a href="#更新系统图库的方法" class="headerlink" title="更新系统图库的方法"></a><strong>更新系统图库的方法</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sendBroadcast(<span class="keyword">new</span> Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse(<span class="string">"file://"</span>+ Environment.getExternalStorageDirectory())));</div></pre></td></tr></table></figure>
+<p>上面那条广播是扫描整个sd卡的广播，如果你sd卡里面东西很多会扫描很久，在扫描当中我们是不能访问sd卡，所以这样子用户体现很不好，所以下面我们还有如下的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sendBroadcast(<span class="keyword">new</span> Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(<span class="keyword">new</span> File(<span class="string">"/sdcard/Boohee/image.jpg"</span>))););</div></pre></td></tr></table></figure>
+<p>或者还有如下方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> MediaScannerConnection msc = <span class="keyword">new</span> MediaScannerConnection(mContext, <span class="keyword">new</span> MediaScannerConnectionClient() &#123;     </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMediaScannerConnected</span><span class="params">()</span> </span>&#123;     </div><div class="line">        msc.scanFile(<span class="string">"/sdcard/Boohee/image.jpg"</span>, <span class="string">"image/jpeg"</span>);     </div><div class="line">    &#125;     </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScanCompleted</span><span class="params">(String path, Uri uri)</span> </span>&#123;     </div><div class="line">        Log.v(TAG, <span class="string">"scan completed"</span>);     </div><div class="line">        msc.disconnect();     </div><div class="line">    &#125;     </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>上面代码的图片路径不管是通过自己写方法还是系统插入图库的方法都可以很容易的获取到。</p>
+<h3 id="终极完美解决方案"><a href="#终极完美解决方案" class="headerlink" title="终极完美解决方案"></a><strong>终极完美解决方案</strong></h3><p>那么到这里可能有人又会问了，如果我想把图片保存到指定的文件夹，同时又需要图片出现在图库里呢？答案是可以的，sdk还提供了这样一个方法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MediaStore.Images.Media.insertImage(getContentResolver(), <span class="string">"image path"</span>, <span class="string">"title"</span>, <span class="string">"description"</span>);</div></pre></td></tr></table></figure>
+<p>上述方法的第二个参数是image path，这样的话就有思路了，首先自己写方法把图片指定到指定的文件夹，然后调用上述方法把刚保存的图片路径传入进去，最后通知图库更新。</p>
+<p>所以写了一个方法，完整的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public static void saveImageToGallery(Context context, Bitmap bmp) &#123;</div><div class="line">    // 首先保存图片</div><div class="line">    File appDir = new File(Environment.getExternalStorageDirectory(), &quot;Boohee&quot;);</div><div class="line">    if (!appDir.exists()) &#123;</div><div class="line">        appDir.mkdir();</div><div class="line">    &#125;</div><div class="line">    String fileName = System.currentTimeMillis() + &quot;.jpg&quot;;</div><div class="line">    File file = new File(appDir, fileName);</div><div class="line">    try &#123;</div><div class="line">        FileOutputStream fos = new FileOutputStream(file);</div><div class="line">        bmp.compress(CompressFormat.JPEG, 100, fos);</div><div class="line">        fos.flush();</div><div class="line">        fos.close();</div><div class="line">    &#125; catch (FileNotFoundException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125; catch (IOException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">	&#125;</div><div class="line">    </div><div class="line">    // 其次把文件插入到系统图库</div><div class="line">    try &#123;</div><div class="line">        MediaStore.Images.Media.insertImage(context.getContentResolver(),</div><div class="line">				file.getAbsolutePath(), fileName, null);</div><div class="line">    &#125; catch (FileNotFoundException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    // 最后通知图库更新</div><div class="line">    context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse(&quot;file://&quot; + path)));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/" data-title="【Android】保存图片到系统图库, 并立即显示在图库中" data-url="http://github.com/2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../../../../2015/09/15/【Android】如何启动调用其他app中的Activity/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【Android】如何启动调用其他app中的Activity
+        
+      </div>
+    </a>
+  
+  
+    <a href="../../../05/15/如何删除多行首字母，Sublime Text多行编辑运用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">如何删除多行首字母，Sublime Text多行编辑运用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#正文"><span class="toc-number">1.</span> <span class="toc-text">正文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新系统图库的方法"><span class="toc-number">2.</span> <span class="toc-text">更新系统图库的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#终极完美解决方案"><span class="toc-number">3.</span> <span class="toc-text">终极完美解决方案</span></a></li></ol>
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="../../../../about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
+
+
+  <script src="../../../../js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ubuntu上Eclipse识别不了Android手机的解决方法 | iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="转载链接：    http://www.cnblogs.com/AndroidManifest/archive/2011/12/09/2281635.html
+
+google官方开发向导里对Android手机已经设置了允许安装非market程序，并且处于usb调试模式，但是仍然在usb连接电脑后无法被识别的问题作了解释。官方网址：http://developer.android.com/guid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu上Eclipse识别不了Android手机的解决方法">
+<meta property="og:url" content="http://github.com/2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="转载链接：    http://www.cnblogs.com/AndroidManifest/archive/2011/12/09/2281635.html
+
+google官方开发向导里对Android手机已经设置了允许安装非market程序，并且处于usb调试模式，但是仍然在usb连接电脑后无法被识别的问题作了解释。官方网址：http://developer.android.com/guid">
+<meta property="og:updated_time" content="2016-10-18T04:57:41.236Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu上Eclipse识别不了Android手机的解决方法">
+<meta name="twitter:description" content="转载链接：    http://www.cnblogs.com/AndroidManifest/archive/2011/12/09/2281635.html
+
+google官方开发向导里对Android手机已经设置了允许安装非market程序，并且处于usb调试模式，但是仍然在usb连接电脑后无法被识别的问题作了解释。官方网址：http://developer.android.com/guid">
+  
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="../../../../css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" > 
+    <link rel="stylesheet" href="../../../../css/dialog.css">
+  
+
+  
+
+</head>
+
+<body>
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" href="#" data-toggle="modal" data-target="#myModal"><img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg"></a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
+                
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Ubuntu上Eclipse识别不了Android手机的解决方法" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Ubuntu上Eclipse识别不了Android手机的解决方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="" class="article-date">
+	  <time datetime="2013-10-20T08:46:00.000Z" itemprop="datePublished">2013-10-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>转载链接：    <a href="http://www.cnblogs.com/AndroidManifest/archive/2011/12/09/2281635.html" target="_blank" rel="external">http://www.cnblogs.com/AndroidManifest/archive/2011/12/09/2281635.html</a></p>
+</blockquote>
+<p>google官方开发向导里对Android手机已经设置了允许安装非market程序，并且处于usb调试模式，但是仍然在usb连接电脑后无法被识别的问题作了解释。官方网址：<a href="http://developer.android.com/guide/developing/device.html" target="_blank" rel="external">http://developer.android.com/guide/developing/device.html</a></p>
+<h4 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a><strong>操作步骤：</strong></h4><p>如果是windows平台下，需要安装一个为adb准备的usb驱动。如果是Ubuntu Linux需要添加一个rules文件，里面包含了每一个想要调试的设备的usb配置信息。以HTC手机为例实现步骤如下：</p>
+<p>1、在终端输入 :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>2、在打开的文件里加入   <strong><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0bb4&quot;, MODE=&quot;0666&quot;</code></strong></p>
+<p>3、保存退出后在终端执行 :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod a+r /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
+<p>重新将手机连接到电脑后HTC手机就可以被正常识别了。注意：如果按步骤操作仍不能识别的，检查 <strong><code>ATTR{idVendor}</code></strong> 值里的字母是否是<strong>小写</strong>。</p>
+<p>如果是别的厂家的手机，需要在步骤2更改<strong><code>ATTR{idVendor}</code></strong>的值。如果要添加多个厂家的手机，重复步骤2。其他usb供应商的ID如下：</p>
+<table>
+<thead>
+<tr>
+<th>Company</th>
+<th style="text-align:left">USB Vendor ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acer</td>
+<td style="text-align:left">0502</td>
+</tr>
+<tr>
+<td>ASUS</td>
+<td style="text-align:left">0B05</td>
+</tr>
+<tr>
+<td>Dell</td>
+<td style="text-align:left">413C</td>
+</tr>
+<tr>
+<td>Foxconn</td>
+<td style="text-align:left">0489</td>
+</tr>
+<tr>
+<td>Garmin-Asus</td>
+<td style="text-align:left">091E</td>
+</tr>
+<tr>
+<td>Google</td>
+<td style="text-align:left">18D1</td>
+</tr>
+<tr>
+<td>HTC</td>
+<td style="text-align:left">0BB4</td>
+</tr>
+<tr>
+<td>Huawei</td>
+<td style="text-align:left">12D1</td>
+</tr>
+<tr>
+<td>K-Touch</td>
+<td style="text-align:left">24E3</td>
+</tr>
+<tr>
+<td>KT Tech</td>
+<td style="text-align:left">2116</td>
+</tr>
+<tr>
+<td>Kyocera</td>
+<td style="text-align:left">0482</td>
+</tr>
+<tr>
+<td>Lenevo</td>
+<td style="text-align:left">17EF</td>
+</tr>
+<tr>
+<td>LG</td>
+<td style="text-align:left">1004</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td style="text-align:left">22B8</td>
+</tr>
+<tr>
+<td>NEC</td>
+<td style="text-align:left">0409</td>
+</tr>
+<tr>
+<td>Nook</td>
+<td style="text-align:left">2080</td>
+</tr>
+<tr>
+<td>Nvidia</td>
+<td style="text-align:left">0955</td>
+</tr>
+<tr>
+<td>OTGV</td>
+<td style="text-align:left">2257</td>
+</tr>
+<tr>
+<td>Pantech</td>
+<td style="text-align:left">10A9</td>
+</tr>
+<tr>
+<td>Pegatron</td>
+<td style="text-align:left">1D4D</td>
+</tr>
+<tr>
+<td>Philips</td>
+<td style="text-align:left">0471</td>
+</tr>
+<tr>
+<td>PMC-Sierra</td>
+<td style="text-align:left">04DA</td>
+</tr>
+<tr>
+<td>Qualcomm</td>
+<td style="text-align:left">05C6</td>
+</tr>
+<tr>
+<td>SK Telesys</td>
+<td style="text-align:left">1F53</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td style="text-align:left">04E8</td>
+</tr>
+<tr>
+<td>Sharp</td>
+<td style="text-align:left">04DD</td>
+</tr>
+<tr>
+<td>Sony Ericsson</td>
+<td style="text-align:left">0FCE</td>
+</tr>
+<tr>
+<td>Toshiba</td>
+<td style="text-align:left">0930</td>
+</tr>
+<tr>
+<td>ZTE</td>
+<td style="text-align:left">19D2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong>：如果按步骤操作仍不能识别的，检查 <code>ATTR{idVendor}</code> 值里的字母是否是<strong><code>小写</code></strong>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/" data-title="Ubuntu上Eclipse识别不了Android手机的解决方法" data-url="http://github.com/2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../../../../2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          如何删除多行首字母，Sublime Text多行编辑运用
+        
+      </div>
+    </a>
+  
+  
+    <a href="../../../08/01/【Java】操作excel表，包括创建、读取、以及修改/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【Java】操作excel表，包括创建、读取、以及修改</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#操作步骤："><span class="toc-number">1.</span> <span class="toc-text">操作步骤：</span></a></li></ol>
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="../../../../about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
+
+
+  <script src="../../../../js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+</body>
+</html>

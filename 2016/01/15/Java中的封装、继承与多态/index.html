@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java中的封装、继承与多态 | iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这次我们来了解一下面向对象的三大基石封装，继承、多态，然后大致对比一下继承和多态的区别。
+
+一、封装：　　封装是实现面向对象程序设计的第一步，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。 
+ 封装的意义：　　封装的意义在于保护或者防止代码（数据）被我们无意中破坏。在面向对象程序设计中数据被看作是一个中心的元素并且和使用它的函数结合的很密切，从而">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中的封装、继承与多态">
+<meta property="og:url" content="http://github.com/2016/01/15/Java中的封装、继承与多态/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="这次我们来了解一下面向对象的三大基石封装，继承、多态，然后大致对比一下继承和多态的区别。
+
+一、封装：　　封装是实现面向对象程序设计的第一步，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。 
+ 封装的意义：　　封装的意义在于保护或者防止代码（数据）被我们无意中破坏。在面向对象程序设计中数据被看作是一个中心的元素并且和使用它的函数结合的很密切，从而">
+<meta property="og:updated_time" content="2016-10-18T04:57:38.022Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java中的封装、继承与多态">
+<meta name="twitter:description" content="这次我们来了解一下面向对象的三大基石封装，继承、多态，然后大致对比一下继承和多态的区别。
+
+一、封装：　　封装是实现面向对象程序设计的第一步，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。 
+ 封装的意义：　　封装的意义在于保护或者防止代码（数据）被我们无意中破坏。在面向对象程序设计中数据被看作是一个中心的元素并且和使用它的函数结合的很密切，从而">
+  
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="../../../../css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" > 
+    <link rel="stylesheet" href="../../../../css/dialog.css">
+  
+
+  
+
+</head>
+
+<body>
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" href="#" data-toggle="modal" data-target="#myModal"><img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg"></a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
+                
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Java中的封装、继承与多态" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Java中的封装、继承与多态
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="" class="article-date">
+	  <time datetime="2016-01-15T07:43:20.000Z" itemprop="datePublished">2016-01-15</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../../../categories/Java/">Java</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这次我们来了解一下面向对象的三大基石<strong>封装，继承、多态</strong>，然后大致对比一下继承和多态的区别。</p>
+</blockquote>
+<h2 id="一、封装："><a href="#一、封装：" class="headerlink" title="一、封装："></a><strong>一、封装：</strong></h2><p>　　封装是实现面向对象程序设计的第一步，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。 </p>
+<p> 封装的意义：<br>　　封装的意义在于保护或者防止代码（数据）被我们无意中破坏。在面向对象程序设计中数据被看作是一个中心的元素并且和使用它的函数结合的很密切，从而保护它不被其它的函数意外的修改。封装提供了一个有效的途径来保护数据不被意外的破坏。相比我们将数据（用域来实现）在程序中定义为公用的（public）我们将它们(fields)定义为私有的（privat）在很多方面会更好。</p>
+<a id="more"></a>
+<p>　　<br>　　Java有四种访问权限，其中三种有访问权限修饰符，分别为private，public和protected，还有一种不带任何修饰符：</p>
+<ol>
+<li><strong>private:</strong> Java语言中对访问权限限制的最窄的修饰符，一般称之为“私有的”。被其修饰的类、属性以及方法只能被该类的对象访问，其子类不能访问，更不能允许跨包访问。</li>
+<li><strong>default：</strong>即不加任何访问修饰符，通常称为“默认访问模式“。该模式下，只允许在同一个包中进行访问。</li>
+<li><strong>protect:</strong> 介于public 和 private 之间的一种访问修饰符，一般称之为“保护形”。被其修饰的类、属性以及方法只能被类本身的方法及子类访问，即使子类在不同的包中也可以访问。</li>
+<li><strong>public：</strong> Java语言中访问限制最宽的修饰符，一般称之为“公共的”。被其修饰的类、属性以及方法不仅可以跨类访问，而且允许跨包（package）访问。</li>
+</ol>
+<p>下面用表格的形式来展示四种访问权限之间的异同点，这样会更加形象。注意其中protected和default的区别，表格如下所示：</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">权限修饰符</th>
+<th style="text-align:center">同一个类</th>
+<th style="text-align:center">同一个包</th>
+<th style="text-align:center">不同包的子类</th>
+<th style="text-align:center">不同包的非子类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Private</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Default</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Protected</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Public</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<hr>
+<h2 id="二、继承"><a href="#二、继承" class="headerlink" title="二、继承"></a><strong>二、继承</strong></h2><p>　　通过继承可以实现代码的复用，使子类可以拥有父类的一些属性和方法。继承应该符合下列规则：</p>
+<ol>
+<li><strong>继承是可传递的</strong>。如果C从B中派生，B又从A中派生，那么C不仅继承了B中声明的成员，同样也继承了A中的成员。Object类作为所有类的基类。</li>
+<li><strong>派生类应当是对基类的扩展</strong>。派生类可以添加新的成员，但不能除去已经继承的成员的定义。<br>构造函数和析构函数不能被继承。除此之外的其它成员，不论对它们定义了怎样的访问方式，都能被继承。基类中成员的访问方式只能决定派生类能否访问它们。</li>
+<li><strong>派生类如果定义了与继承而来的成员同名的新成员</strong>，就可以覆盖已继承的成员。但这并不因为这派生类删除了这些成员，只是不能再访问这些成员。</li>
+<li>类可以定义为abstract抽象类，它的派生类就能够重载这些成员，从而实现类可以展示出多态性。</li>
+</ol>
+<hr>
+<h2 id="三、多态"><a href="#三、多态" class="headerlink" title="三、多态"></a><strong>三、多态</strong></h2><p>　　多态就是指父类的某个方法被子类重写时，可以各自产生自己的功能行为。同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果。就是父类引用可以持有子类对象。这时候只能调用父类中的方法，而子类中特有方法是无法访问的，因为这个时候（编译时）你把他看作父类对象的原因，但是到了运行的时候，编译器就会发现这个父类引用中原来是一个子类的对像，所以如果父类和子类中有相同的方法时，调用的会是子类中的方法，而不是父类的。<br>　　<br>可以这么说：<strong><em>编译时看父类，运行时看子类</em></strong>。运行时的多态性就是指直到系统运行时，才根据实际情况决定实现何种操作。C#中，运行时的多态性通过虚成员实现。</p>
+<blockquote>
+<p>父类A a = new 父类的子类B();<br>a.方法();<br>//这就是多态</p>
+</blockquote>
+<p>　<br>　　实现多态的方式：</p>
+<ul>
+<li>接口多态性。</li>
+<li>继承多态性。</li>
+<li>通过抽象类实现的多态性。</li>
+</ul>
+<hr>
+<h2 id="四、继承与多态的区别"><a href="#四、继承与多态的区别" class="headerlink" title="四、继承与多态的区别"></a><strong>四、继承与多态的区别</strong></h2><p>　　网上看到一个有趣的说法是：继承是子类使用父类的方法，而多态则是父类使用子类的方法。</p>
+<p>　　继承，子类继承父类中所以的属性和方法，但是对于private的属相和方法，由于这个是父类的隐私，所以子类虽然是继承了，但是没有可以访问这些属性和方法的引用，所以相当于没有继承到。很多时候，可以理解为，没有继承。</p>
+<p>　　多态：就是父类引用可以持有子类对象。这时候只能调用父类中的方法，而子类中特有方法是无法访问的，因为这个时候（编译时）你把他看作父类对象的原因，但是到了运行的时候，编译器就会发现这个父类引用中原来是一个子类的对像，所以如果父类和子类中有相同的方法时，调用的会是子类中的方法，而不是父类的。可以这么说：编译时看父类，运行时看子类。</p>
+<hr>
+<p>【参考资料】：<br>1、<a href="http://www.cnblogs.com/xwdreamer/archive/2012/04/06/2434483.html" target="_blank" rel="external">java类的访问权限</a><br>2、<a href="http://www.cnblogs.com/mountain-mist/articles/1214996.html" target="_blank" rel="external">继承、封装、多态</a><br>3、<a href="http://zhidao.baidu.com/link?url=vq9iXiuvs-_u4FQP4QEd0JA3sUDLO7Azec3I0FRyyVb4UUcssjpHeBb3i8MsCHujCVhMiJSI8FFmoE8Mpsibxa" target="_blank" rel="external">java中继承和多态区别.</a><br>4、<a href="http://www.cnblogs.com/yhason/archive/2012/06/07/2540743.html" target="_blank" rel="external">重载，继承，重写和多态的区别</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2016/01/15/Java中的封装、继承与多态/" data-title="Java中的封装、继承与多态" data-url="http://github.com/2016/01/15/Java中的封装、继承与多态/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../../19/【Android】如何查看Activity Task栈的情况/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【Android】如何查看Activity Task栈的情况
+        
+      </div>
+    </a>
+  
+  
+    <a href="../Java访问权限修饰符的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java访问权限修饰符的区别</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、封装："><span class="toc-number">1.</span> <span class="toc-text">一、封装：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、继承"><span class="toc-number">2.</span> <span class="toc-text">二、继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、多态"><span class="toc-number">3.</span> <span class="toc-text">三、多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、继承与多态的区别"><span class="toc-number">4.</span> <span class="toc-text">四、继承与多态的区别</span></a></li></ol>
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="../../../../about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
+
+
+  <script src="../../../../js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+</body>
+</html>

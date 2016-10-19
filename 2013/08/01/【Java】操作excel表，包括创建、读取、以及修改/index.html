@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>【Java】操作excel表，包括创建、读取、以及修改 | iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="作者的网站上对它的特征有如下描述： 
+
+支持Excel 95-2000的所有版本 
+生成Excel 2000标准格式 
+支持字体、数字、日期操作 
+能够修饰单元格属性 
+支持图像和图表 
+
+应该说以上功能已经能够大致满足我们的需要。最关键的是这套API是纯Java的，并不依赖Windows系统，即使运行在Linux下，它同样能够正确的处理Excel文件。另外需要说明的是，这套API对图形和图表的支">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Java】操作excel表，包括创建、读取、以及修改">
+<meta property="og:url" content="http://github.com/2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="作者的网站上对它的特征有如下描述： 
+
+支持Excel 95-2000的所有版本 
+生成Excel 2000标准格式 
+支持字体、数字、日期操作 
+能够修饰单元格属性 
+支持图像和图表 
+
+应该说以上功能已经能够大致满足我们的需要。最关键的是这套API是纯Java的，并不依赖Windows系统，即使运行在Linux下，它同样能够正确的处理Excel文件。另外需要说明的是，这套API对图形和图表的支">
+<meta property="og:updated_time" content="2016-10-18T04:56:35.699Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【Java】操作excel表，包括创建、读取、以及修改">
+<meta name="twitter:description" content="作者的网站上对它的特征有如下描述： 
+
+支持Excel 95-2000的所有版本 
+生成Excel 2000标准格式 
+支持字体、数字、日期操作 
+能够修饰单元格属性 
+支持图像和图表 
+
+应该说以上功能已经能够大致满足我们的需要。最关键的是这套API是纯Java的，并不依赖Windows系统，即使运行在Linux下，它同样能够正确的处理Excel文件。另外需要说明的是，这套API对图形和图表的支">
+  
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="../../../../css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" > 
+    <link rel="stylesheet" href="../../../../css/dialog.css">
+  
+
+  
+
+</head>
+
+<body>
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" href="#" data-toggle="modal" data-target="#myModal"><img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg"></a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
+                
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-【Java】操作excel表，包括创建、读取、以及修改" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      【Java】操作excel表，包括创建、读取、以及修改
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="" class="article-date">
+	  <time datetime="2013-08-01T04:31:20.000Z" itemprop="datePublished">2013-08-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../../../categories/Java/">Java</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作者的网站上对它的特征有如下描述： </p>
+<ul>
+<li>支持Excel 95-2000的所有版本 </li>
+<li>生成Excel 2000标准格式 </li>
+<li>支持字体、数字、日期操作 </li>
+<li>能够修饰单元格属性 </li>
+<li>支持图像和图表 </li>
+</ul>
+<p>应该说以上功能已经能够大致满足我们的需要。最关键的是这套API是纯Java的，并不依赖Windows系统，即使运行在Linux下，它同样能够正确的处理Excel文件。另外需要说明的是，这套API对图形和图表的支持很有限，而且仅仅识别PNG格式。 </p>
+<h3 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a><strong>搭建环境</strong></h3><p>下载jxl.jar（可以点击<a href="http://download.csdn.net/detail/bonlog/5774137" target="_blank" rel="external"><strong>这里进行下载</strong></a>），放入classpath，安装就完成了。 </p>
+<a id="more"></a>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a><strong>基本操作</strong></h3><h4 id="一、创建文件"><a href="#一、创建文件" class="headerlink" title="一、创建文件"></a><strong>一、创建文件</strong></h4><p>拟生成一个名为“测试数据.xls”的Excel文件，其中第一个工作表被命名为“第一页”。<br>代码（CreateXLS.java）： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//生成Excel的类 </span></div><div class="line"><span class="keyword">import</span> java.io. * ;</div><div class="line"><span class="keyword">import</span> jxl. * ;</div><div class="line"><span class="keyword">import</span> jxl.write. * ;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CreateXLS</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">//打开文件 </span></div><div class="line">            WritableWorkbook book = Workbook.createWorkbook(<span class="keyword">new</span> File(“测试.xls”));</div><div class="line">            </div><div class="line">            <span class="comment">//生成名为“第一页”的工作表，参数0表示这是第一页 </span></div><div class="line">            WritableSheet sheet = book.createSheet(“第一页”, <span class="number">0</span>);</div><div class="line">            </div><div class="line">            <span class="comment">//在Label对象的构造子中指名单元格位置是第一列第一行(0,0) </span></div><div class="line">            <span class="comment">//以及单元格内容为test </span></div><div class="line">            Label label = <span class="keyword">new</span> Label(<span class="number">0</span>, <span class="number">0</span>, ”test”);</div><div class="line">            </div><div class="line">            <span class="comment">//将定义好的单元格添加到工作表中 </span></div><div class="line">            sheet.addCell(label);</div><div class="line">            </div><div class="line">            <span class="comment">/*生成一个保存数字的单元格, 必须使用Number的完整包路径，否则有语法歧义 </span></div><div class="line">			单元格位置是第二列，第一行，值为789.123*/</div><div class="line">            jxl.write.Number number = <span class="keyword">new</span> jxl.write.Number(<span class="number">1</span>, <span class="number">0</span>, <span class="number">789.123</span>);</div><div class="line">            sheet.addCell(number);</div><div class="line">            </div><div class="line">            <span class="comment">//写入数据并关闭文件 </span></div><div class="line">            book.write();</div><div class="line">            book.close();</div><div class="line">        &#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">            System.out.println(e);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译执行后，会在当前位置产生一个Excel文件。 </p>
+<h4 id="二、读取文件"><a href="#二、读取文件" class="headerlink" title="二、读取文件"></a><strong>二、读取文件</strong></h4><p>以刚才我们创建的Excel文件为例，做一个简单的读取操作，程序代码如下： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//读取Excel的类 </span></div><div class="line"><span class="keyword">import</span> java.io. * ;</div><div class="line"><span class="keyword">import</span> jxl. * ;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReadXLS</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Workbook book = Workbook.getWorkbook(<span class="keyword">new</span> File(“测试.xls”));</div><div class="line">            <span class="comment">//获得第一个工作表对象 </span></div><div class="line">            Sheet sheet = book.getSheet(<span class="number">0</span>);</div><div class="line">            <span class="comment">//得到第一列第一行的单元格 </span></div><div class="line">            Cell cell1 = sheet.getCell(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">            String result = cell1.getContents();</div><div class="line">            System.out.println(result);</div><div class="line">            book.close();</div><div class="line">        &#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">            System.out.println(e);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="三、修改文件"><a href="#三、修改文件" class="headerlink" title="三、修改文件"></a><strong>三、修改文件</strong></h4><p>利用jExcelAPI可以修改已有的Excel文件，修改Excel文件的时候，除了打开文件的方式不同之外，其他操作和创建Excel是一样的。下面的例子是在我们已经生成的Excel文件中添加一个工作表： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//修改Excel的类，添加一个工作表 </span></div><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">import</span> jxl.*;</div><div class="line"><span class="keyword">import</span> jxl.write.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UpdateXLS</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">//Excel获得文件 </span></div><div class="line">            Workbook wb = Workbook.getWorkbook(<span class="keyword">new</span> File(“测试.xls”));</div><div class="line">            <span class="comment">//打开一个文件的副本，并且指定数据写回到原文件 </span></div><div class="line">            WritableWorkbook book = Workbook.createWorkbook(<span class="keyword">new</span> File(“测试.xls”), wb);</div><div class="line">            <span class="comment">//添加一个工作表 </span></div><div class="line">            WritableSheet sheet = book.createSheet(“第二页”, <span class="number">1</span>);</div><div class="line">            sheet.addCell(<span class="keyword">new</span> Label(<span class="number">0</span>, <span class="number">0</span>, ”第二页的测试数据”));</div><div class="line">            book.write();</div><div class="line">            book.close();</div><div class="line">        &#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">            System.out.println(e);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="高级操作"><a href="#高级操作" class="headerlink" title="高级操作"></a><strong>高级操作</strong></h3><h4 id="一、-数据格式化"><a href="#一、-数据格式化" class="headerlink" title="一、 数据格式化"></a><strong>一、 数据格式化</strong></h4><p>在Excel中不涉及复杂的数据类型，能够比较好的处理字串、数字和日期已经能够满足一般的应用。 </p>
+<p>1、 字串格式化<br>字符串的格式化涉及到的是字体、粗细、字号等元素，这些功能主要由WritableFont和WritableCellFormat类来负责。假设我们在生成一个含有字串的单元格时，使用如下语句，为方便叙述，我们为每一行命令加了编号： </p>
+<p>WritableFont font1=<br>new WritableFont(WritableFont.TIMES,16,WritableFont.BOLD); 或//设置字体格式为excel支持的格式 WritableFont font3=new WritableFont(WritableFont.createFont(“楷体 _GB2312”),12,WritableFont.NO_BOLD );① WritableCellFormat format1=new WritableCellFormat(font1); ② Label label=new Label(0,0,”data 4 test”,format1) ③ 其中①指定了字串格式：字体为TIMES，字号16，加粗显示。WritableFont有非常丰富的构造子，供不同情况下使用，jExcelAPI的 java-doc中有详细列表，这里不再列出。 ②处代码使用了WritableCellFormat类，这个类非常重要，通过它可以指定单元格的各种属性，后面的单元格格式化中会有更多描述。 ③处使用了Label类的构造子，指定了字串被赋予那种格式。 在WritableCellFormat类中，还有一个很重要的方法是指定数据的对齐方式，比如针对我们上面的实例，可以指定：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//把水平对齐方式指定为居中 </span></div><div class="line">format1.setAlignment(jxl.format.Alignment.CENTRE); </div><div class="line"></div><div class="line"><span class="comment">//把垂直对齐方式指定为居中 </span></div><div class="line">format1.setVerticalAlignment(jxl.format.VerticalAlignment.CENTRE);</div><div class="line"></div><div class="line"><span class="comment">//设置自动换行</span></div><div class="line">format1.setWrap(<span class="keyword">true</span>);</div></pre></td></tr></table></figure>
+<h4 id="二、单元格操作"><a href="#二、单元格操作" class="headerlink" title="二、单元格操作"></a><strong>二、单元格操作</strong></h4><p>Excel中很重要的一部分是对单元格的操作，比如行高、列宽、单元格合并等，所幸jExcelAPI提供了这些支持。这些操作相对比较简单，下面只介绍一下相关的API。 </p>
+<p>1、 合并单元格 </p>
+<p><code>WritableSheet.mergeCells(int m,int n,int p,int q);</code>作用是从(m,n)到(p,q)的单元格全部合并，比如： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">WritableSheet sheet=book.createSheet(“第一页”,<span class="number">0</span>); </div><div class="line"><span class="comment">//合并第一列第一行到第六列第一行的所有单元格 </span></div><div class="line">sheet.mergeCells(<span class="number">0</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">0</span>);</div></pre></td></tr></table></figure>
+<p>合并既可以是横向的，也可以是纵向的。合并后的单元格不能再次进行合并，否则会触发异常。 </p>
+<p>2、 行高和列宽 </p>
+<p><code>WritableSheet.setRowView(int i,int height);</code>作用是指定第i+1行的高度，比如： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//将第一行的高度设为200 </span></div><div class="line">sheet.setRowView(<span class="number">0</span>,<span class="number">200</span>);</div></pre></td></tr></table></figure>
+<p><code>WritableSheet.setColumnView(int i,int width);</code>作用是指定第i+1列的宽度，比如： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//将第一列的宽度设为30 </span></div><div class="line">sheet.setColumnView(<span class="number">0</span>,<span class="number">30</span>);</div></pre></td></tr></table></figure>
+<h4 id="三、操作图片"><a href="#三、操作图片" class="headerlink" title="三、操作图片"></a><strong>三、操作图片</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">    WritableWorkbook wwb = Workbook.createWorkbook(<span class="keyword">new</span> File(<span class="string">"c:/1.xls"</span>));</div><div class="line">    WritableSheet ws = wwb.createSheet(<span class="string">"Test Sheet 1"</span>, <span class="number">0</span>);</div><div class="line">    File file = <span class="keyword">new</span> File(<span class="string">"C:\\jbproject\\PVS\\WebRoot\\weekhit\\1109496996281.png"</span>);</div><div class="line">    WritableImage image = <span class="keyword">new</span> WritableImage(<span class="number">1</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">18</span>, file);</div><div class="line">    ws.addImage(image);</div><div class="line">    wwb.write();</div><div class="line">    wwb.close();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>很简单和插入单元格的方式一样，不过就是参数多了些，WritableImage这个类继承了Draw，上面只是他构造方法的一种，最后一个参数不用了说 了，前面四个参数的类型都是double，依次是 x, y, width, height,注意，这里的宽和高可不是图片的宽和高，而是图片所要占的单位格的个数，因为继承的Draw所以他的类型必须是double，具体里面怎么 实现的我还没细看：）因为着急赶活，先完成功能，其他的以后有时间慢慢研究。以后会继续写出在使用中的心得给大家。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p><strong>1、读</strong></p>
+<p>读的时候是这样的一个思路,先用一个输入流(InputStream)得到Excel文件,然后用jxl中的Workbook得到工作薄,用Sheet从工作薄中得到工作表,用Cell得到工作表中得某个单元格.<br>InputStream-&gt;Workbook-&gt;Sheet-&gt;Cell,就得到了excel文件中的单元格</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">String path = <span class="string">"c:\\excel.xls"</span>; <span class="comment">//Excel文件URL</span></div><div class="line">InputStream is = <span class="keyword">new</span> FileInputStream(path); <span class="comment">//写入到FileInputStream</span></div><div class="line">jxl.Workbook wb = Workbook.getWorkbook(is); <span class="comment">//得到工作薄 </span></div><div class="line">jxl.Sheet st = wb.getSheet(<span class="number">0</span>); <span class="comment">//得到工作薄中的第一个工作表</span></div><div class="line">Cell cell = st.getCell(<span class="number">0</span>, <span class="number">0</span>); <span class="comment">//得到工作表的第一个单元格,即A1</span></div><div class="line">String content = cell.getContents(); <span class="comment">//getContents()将Cell中的字符转为字符串</span></div><div class="line">wb.close(); <span class="comment">//关闭工作薄</span></div><div class="line">is.close(); <span class="comment">//关闭输入流</span></div></pre></td></tr></table></figure>
+<p>我们可以通过<code>Sheet</code>的<code>getCell(x,y)</code>方法得到任意一个单元格,x,y和excel中的坐标对应.<br>例如A1对应(0,0),A2对应(0,1),D3对应(3,2).Excel中坐标从A,1开始,jxl中全部是从0开始.<br>还可以通过<code>Sheet</code>的<code>getRows()</code>,<code>getColumns()</code>方法得到行数列数,并用于循环控制,输出一个sheet中的所有内容.</p>
+<p><strong>2、写</strong></p>
+<p>往Excel中写入内容主要是用jxl.write包中的类.<br>思路是这样的:<br>OutputStream&lt;-WritableWorkbook&lt;-WritableSheet&lt;-Label<br>这里面Label代表的是写入Sheet的Cell位置及内容.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">OutputStream os = <span class="keyword">new</span> FileOutputStream(<span class="string">"c:\\test.xls"</span>); </div><div class="line">WritableWorkbook wwb = Workbook.createWorkbook(os); </div><div class="line">WritableSheet ws = wwb.createSheet(<span class="string">"sheet1"</span>, <span class="number">0</span>); 	<span class="comment">//创建可写工作表</span></div><div class="line">Label labelCF = <span class="keyword">new</span> Label(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"hello"</span>);	 <span class="comment">//创建写入位置和内容</span></div><div class="line">ws.addCell(labelCF); 	<span class="comment">//将Label写入sheet中</span></div><div class="line"></div><div class="line"><span class="comment">//Label的构造函数Label(int x, int y,String aString)xy意同读的时候的xy,aString是写入的内容.</span></div><div class="line">WritableFont wf = <span class="keyword">new</span> WritableFont(WritableFont.TIMES, <span class="number">12</span>, WritableFont.BOLD, <span class="keyword">false</span>); 	<span class="comment">//设置写入字体</span></div><div class="line">WritableCellFormat wcfF = <span class="keyword">new</span> WritableCellFormat(wf);	 <span class="comment">//设置CellFormat</span></div><div class="line">Label labelCF = <span class="keyword">new</span> Label(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"hello"</span>); 	<span class="comment">//创建写入位置,内容和格式</span></div><div class="line"><span class="comment">//Label的另一构造函数Label(int c, int r, String cont, CellFormat st)可以对写入内容进行格式化,设置字体及其它的属性.</span></div><div class="line">	</div><div class="line">wwb.write();</div><div class="line">wwb.close();</div><div class="line">os.close;</div></pre></td></tr></table></figure>
+<p>OK,只要把读和写结合起来,就可以在N个Excel中读取数据写入你希望的Excel新表中,还是比较方便的.</p>
+<p>下面是程序代码:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">sql = <span class="string">"select * from tablename"</span>;</div><div class="line">rs = stmt.executeQuery(sql);</div><div class="line"></div><div class="line"><span class="comment">//新建Excel文件</span></div><div class="line">String filePath = request.getRealPath(<span class="string">"aaa.xls"</span>);</div><div class="line">File myFilePath = <span class="keyword">new</span> File(filePath);</div><div class="line"><span class="keyword">if</span> (!myFilePath.exists()) myFilePath.createNewFile();</div><div class="line">FileWriter resultFile = <span class="keyword">new</span> FileWriter(myFilePath);</div><div class="line">PrintWriter myFile = <span class="keyword">new</span> PrintWriter(resultFile);</div><div class="line">resultFile.close();</div><div class="line"></div><div class="line"><span class="comment">//用JXL向新建的文件中添加内容</span></div><div class="line">OutputStream outf = <span class="keyword">new</span> FileOutputStream(filePath);</div><div class="line">jxl.write.WritableWorkbook wwb = Workbook.createWorkbook(outf);</div><div class="line">jxl.write.WritableSheet ws = wwb.createSheet(<span class="string">"sheettest"</span>, <span class="number">0</span>);</div><div class="line"></div><div class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> j = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; rs.getMetaData().getColumnCount(); k++) &#123;</div><div class="line">    ws.addCell(<span class="keyword">new</span> Label(k, <span class="number">0</span>, rs.getMetaData().getColumnName(k + <span class="number">1</span>)));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">while</span> (rs.next()) &#123;</div><div class="line">    out.println(rs.getMetaData().getColumnCount());</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; rs.getMetaData().getColumnCount(); k++) &#123;</div><div class="line">        ws.addCell(<span class="keyword">new</span> Label(k, j + i + <span class="number">1</span>, rs.getString(k + <span class="number">1</span>)));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    i++;</div><div class="line">&#125;</div><div class="line">wwb.write();</div><div class="line">wwb.close();</div><div class="line">&#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">    e.printStackTrace();</div><div class="line">&#125; <span class="keyword">finally</span> &#123;</div><div class="line"></div><div class="line">    rs.close();</div><div class="line">    conn.close();</div><div class="line">&#125;</div><div class="line"></div><div class="line">response.sendRedirect(<span class="string">"aaa.xls"</span>);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/" data-title="【Java】操作excel表，包括创建、读取、以及修改" data-url="http://github.com/2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../../../10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ubuntu上Eclipse识别不了Android手机的解决方法
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建环境"><span class="toc-number">1.</span> <span class="toc-text">搭建环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">2.</span> <span class="toc-text">基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、创建文件"><span class="toc-number">2.1.</span> <span class="toc-text">一、创建文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、读取文件"><span class="toc-number">2.2.</span> <span class="toc-text">二、读取文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、修改文件"><span class="toc-number">2.3.</span> <span class="toc-text">三、修改文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级操作"><span class="toc-number">3.</span> <span class="toc-text">高级操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、-数据格式化"><span class="toc-number">3.1.</span> <span class="toc-text">一、 数据格式化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、单元格操作"><span class="toc-number">3.2.</span> <span class="toc-text">二、单元格操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、操作图片"><span class="toc-number">3.3.</span> <span class="toc-text">三、操作图片</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="../../../../about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
+
+
+  <script src="../../../../js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+</body>
+</html>

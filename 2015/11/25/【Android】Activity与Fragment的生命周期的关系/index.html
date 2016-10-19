@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>【Android】Activity与Fragment的生命周期的关系 | iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、问题描述：
+
+假设有两个Activity（1和2）,每个Activity拥有一个Fragment，并分别有一个Button，点击Button1可以start Activity2，然后点击Button2可以finish掉自己（即Activity2）,然后返回到Activity1。根据这个简单模型描述一下Activity和Fragment的生命周期之间的依赖关系？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Android】Activity与Fragment的生命周期的关系">
+<meta property="og:url" content="http://github.com/2015/11/25/【Android】Activity与Fragment的生命周期的关系/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="一、问题描述：
+
+假设有两个Activity（1和2）,每个Activity拥有一个Fragment，并分别有一个Button，点击Button1可以start Activity2，然后点击Button2可以finish掉自己（即Activity2）,然后返回到Activity1。根据这个简单模型描述一下Activity和Fragment的生命周期之间的依赖关系？">
+<meta property="og:image" content="http://img.blog.csdn.net/20151125142250638">
+<meta property="og:image" content="http://img.blog.csdn.net/20151125114550996">
+<meta property="og:image" content="http://img.blog.csdn.net/20160122171224773">
+<meta property="og:image" content="http://img.blog.csdn.net/20160122171401607">
+<meta property="og:updated_time" content="2016-10-18T04:54:53.001Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【Android】Activity与Fragment的生命周期的关系">
+<meta name="twitter:description" content="一、问题描述：
+
+假设有两个Activity（1和2）,每个Activity拥有一个Fragment，并分别有一个Button，点击Button1可以start Activity2，然后点击Button2可以finish掉自己（即Activity2）,然后返回到Activity1。根据这个简单模型描述一下Activity和Fragment的生命周期之间的依赖关系？">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20151125142250638">
+  
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="../../../../css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" > 
+    <link rel="stylesheet" href="../../../../css/dialog.css">
+  
+
+  
+
+</head>
+
+<body>
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" href="#" data-toggle="modal" data-target="#myModal"><img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg"></a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
+                
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-【Android】Activity与Fragment的生命周期的关系" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      【Android】Activity与Fragment的生命周期的关系
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="" class="article-date">
+	  <time datetime="2015-11-25T06:31:55.000Z" itemprop="datePublished">2015-11-25</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>一、问题描述：</strong></p>
+<blockquote>
+<p>假设有两个Activity（1和2）,每个Activity拥有一个Fragment，并分别有一个Button，点击Button1可以start Activity2，然后点击Button2可以finish掉自己（即Activity2）,然后返回到Activity1。根据这个简单模型描述一下Activity和Fragment的生命周期之间的依赖关系？</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20151125142250638" alt=""></p>
+<hr>
+<a id="more"></a>
+<p><strong>二、生命周期知识</strong></p>
+<p>Activity和Fragment的生命周期图谱可以参考我的另外一篇博客：<a href="http://blog.csdn.net/u010983881/article/details/50034805" target="_blank" rel="external"><strong>【Android】Fragment的生命周期详解</strong></a>，他们的关系大致如下图：</p>
+<p><img src="http://img.blog.csdn.net/20151125114550996" alt=""></p>
+<hr>
+<p><strong>三、代码验证</strong></p>
+<p>  MainActivity和SecondActivity的布局是这样的，里面各添加了一个Fragment：</p>
+<p>   <img src="http://img.blog.csdn.net/20160122171224773" alt=""> <img src="http://img.blog.csdn.net/20160122171401607" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">  * MainActivity布局xml文件</div><div class="line">  */</div><div class="line"></div><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:orientation=&quot;vertical&quot; android:layout_width=&quot;fill_parent&quot;</div><div class="line">    android:layout_height=&quot;fill_parent&quot;&gt;</div><div class="line"></div><div class="line">    &lt;Button</div><div class="line">        android:id=&quot;@+id/button&quot;</div><div class="line">        android:text=&quot;开启第二个Activity&quot;</div><div class="line">        android:layout_gravity=&quot;center&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;&gt;&lt;/Button&gt;</div><div class="line"></div><div class="line">    &lt;LinearLayout</div><div class="line">        android:id=&quot;@+id/linearlayout&quot;</div><div class="line">        android:layout_width=&quot;match_parent&quot;</div><div class="line">        android:layout_height=&quot;match_parent&quot;</div><div class="line">        android:orientation=&quot;vertical&quot;</div><div class="line">        android:background=&quot;#339999&quot;&gt;</div><div class="line">    &lt;/LinearLayout&gt;</div><div class="line"></div><div class="line">&lt;/LinearLayout&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">  * MainActivity.java代码，SecondActivity的代码与之类似，这里就不贴那么多了</div><div class="line">  */</div><div class="line">public class MainActivity extends Activity &#123;</div><div class="line">    private static final String LOG_TAG = &quot;MainActivity&quot;;</div><div class="line">    private Button mButton;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        Log.w(LOG_TAG, &quot;==============onCreate()&quot;);</div><div class="line"></div><div class="line">        FragmentManager fragmentManager = getFragmentManager();</div><div class="line">        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();</div><div class="line"></div><div class="line">        FirstFragment firstFragment = new FirstFragment();</div><div class="line">        fragmentTransaction.add(R.id.linearlayout, firstFragment);</div><div class="line">        fragmentTransaction.commit();</div><div class="line"></div><div class="line">        mButton = (Button) findViewById(R.id.button);</div><div class="line">        mButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">                Log.w(LOG_TAG, &quot;------------------mButton onClick-------------------&quot;);</div><div class="line">                startActivity(new Intent(MainActivity.this, SecondActivity.class));</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onStart() &#123;</div><div class="line">        super.onStart();</div><div class="line">        Log.w(LOG_TAG, &quot;==============onStart()&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onRestart() &#123;</div><div class="line">        super.onRestart();</div><div class="line">        Log.w(LOG_TAG, &quot;==============onRestart()&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onResume() &#123;</div><div class="line">        super.onResume();</div><div class="line">        Log.w(LOG_TAG, &quot;==============onResume()&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onPause() &#123;</div><div class="line">        super.onPause();</div><div class="line">        Log.w(LOG_TAG, &quot;==============onPause()&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onStop() &#123;</div><div class="line">        super.onStop();</div><div class="line">        Log.w(LOG_TAG, &quot;==============onStop()&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onDestroy() &#123;</div><div class="line">        super.onDestroy();</div><div class="line">        Log.w(LOG_TAG, &quot;==============onDestroy()&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">  * FirstFragment.java代码， SecondFragment和它差不多一样</div><div class="line">  */</div><div class="line">public class FirstFragment extends Fragment &#123;</div><div class="line">    private static final String LOG_TAG = &quot;FirstFragment&quot;;</div><div class="line">    private static final String ARG_PARAM1 = &quot;param1&quot;;</div><div class="line">    private static final String ARG_PARAM2 = &quot;param2&quot;;</div><div class="line"></div><div class="line">    private String mParam1;</div><div class="line">    private String mParam2;</div><div class="line"></div><div class="line">    public FirstFragment() &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onAttach(Activity activity) &#123;</div><div class="line">        super.onAttach(activity);</div><div class="line">        Log.w(LOG_TAG, &quot;onAttach...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        Log.w(LOG_TAG, &quot;onCreate...&quot;);</div><div class="line">        if (getArguments() != null) &#123;</div><div class="line">            mParam1 = getArguments().getString(ARG_PARAM1);</div><div class="line">            mParam2 = getArguments().getString(ARG_PARAM2);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public View onCreateView(LayoutInflater inflater, ViewGroup container,</div><div class="line">                             Bundle savedInstanceState) &#123;</div><div class="line">        Log.w(LOG_TAG, &quot;onCreateView...&quot;);</div><div class="line">        return inflater.inflate(R.layout.fragment_first, container, false);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onActivityCreated(Bundle savedInstanceState) &#123;</div><div class="line">        super.onActivityCreated(savedInstanceState);</div><div class="line">        Log.w(LOG_TAG, &quot;onActivityCreated...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onStart() &#123;</div><div class="line">        super.onStart();</div><div class="line">        Log.w(LOG_TAG, &quot;onStart...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onResume() &#123;</div><div class="line">        super.onResume();</div><div class="line">        Log.w(LOG_TAG, &quot;onResume...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onPause() &#123;</div><div class="line">        super.onPause();</div><div class="line">        Log.w(LOG_TAG, &quot;onPause...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onStop() &#123;</div><div class="line">        super.onStop();</div><div class="line">        Log.w(LOG_TAG, &quot;onStop...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onDestroyView() &#123;</div><div class="line">        super.onDestroyView();</div><div class="line">        Log.w(LOG_TAG, &quot;onDestroyView...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onDestroy() &#123;</div><div class="line">        super.onDestroy();</div><div class="line">        Log.w(LOG_TAG, &quot;onDestroy...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onDetach() &#123;</div><div class="line">        super.onDetach();</div><div class="line">        Log.w(LOG_TAG, &quot;onDetach...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>四、运行结果</strong></p>
+<p>1、第一次打开以后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onCreate()</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onAttach...</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onCreate...</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onCreateView...</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onActivityCreated...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onStart()</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onStart...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onResume()</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onResume...</div></pre></td></tr></table></figure>
+<p>2、点击MainActivity中的按钮“打开第二个Activity”以后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ----------------mButton onClick-----------------</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onPause...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onPause()</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onAttach...</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onCreate...</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onCreateView...</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onActivityCreated...</div><div class="line">com.example.kuguan.anlearning W/SecondActivity﹕ ==============onStart()</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onStart...</div><div class="line">com.example.kuguan.anlearning W/SecondActivity﹕ ==============onResume()</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onResume...</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onStop...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onStop()</div></pre></td></tr></table></figure>
+<p>3、点击SecondActivity的按钮“finish”之后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">com.example.kuguan.anlearning W/SecondActivity﹕ -----------------mButton onClick------------------</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onPause...</div><div class="line">com.example.kuguan.anlearning W/SecondActivity﹕ ==============onPause()</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onRestart()</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onStart()</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onStart...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onResume()</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onResume...</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onStop...</div><div class="line">com.example.kuguan.anlearning W/SecondActivity﹕ ==============onStop()</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onDestroyView...</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onDestroy...</div><div class="line">com.example.kuguan.anlearning W/SecondFragment﹕ onDetach...</div><div class="line">com.example.kuguan.anlearning W/SecondActivity﹕ ==============onDestroy()</div></pre></td></tr></table></figure>
+<p>4、点击back键使MainActivity退到后台：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onPause...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onPause()</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onStop...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onStop()</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onDestroyView...</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onDestroy...</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onDetach...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onDestroy()</div></pre></td></tr></table></figure>
+<p>5、在MianActivity显示的时候，按HOME键：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onPause...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onPause()</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onStop...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onStop()</div></pre></td></tr></table></figure>
+<p>6、然后再点击Icon打开：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onRestart()</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onStart()</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onStart...</div><div class="line">com.example.kuguan.anlearning W/MainActivity﹕ ==============onResume()</div><div class="line">com.example.kuguan.anlearning W/FirstFragment﹕ onResume...</div></pre></td></tr></table></figure>
+<p>【参考资料】：<br>1、<a href="http://www.cnblogs.com/mengdd/archive/2013/01/11/2856374.html" target="_blank" rel="external">Fragment和Activity</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2015/11/25/【Android】Activity与Fragment的生命周期的关系/" data-title="【Android】Activity与Fragment的生命周期的关系" data-url="http://github.com/2015/11/25/【Android】Activity与Fragment的生命周期的关系/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../../../12/09/【Java】不用循环语句如何输入打印数组元素/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【Java】不用循环语句如何输入打印数组元素
+        
+      </div>
+    </a>
+  
+  
+    <a href="../【Android】Fragment的生命周期详解/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【Android】Fragment的生命周期详解</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="../../../../about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
+
+
+  <script src="../../../../js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+</body>
+</html>

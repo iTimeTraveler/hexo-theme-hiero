@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>【Go】为什么 Go 语言把类型声明放在后面？ | iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。
+
+也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：Go’s Declaration Syntax），简略翻译如下（水平有限翻译的不对的地方见谅）：
+引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Go】为什么 Go 语言把类型声明放在后面？">
+<meta property="og:url" content="http://github.com/2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。
+
+也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：Go’s Declaration Syntax），简略翻译如下（水平有限翻译的不对的地方见谅）：
+引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会和">
+<meta property="og:image" content="http://img.blog.csdn.net/20160829141600402">
+<meta property="og:updated_time" content="2016-10-18T04:56:04.881Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【Go】为什么 Go 语言把类型声明放在后面？">
+<meta name="twitter:description" content="关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。
+
+也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：Go’s Declaration Syntax），简略翻译如下（水平有限翻译的不对的地方见谅）：
+引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会和">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160829141600402">
+  
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="../../../../css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" > 
+    <link rel="stylesheet" href="../../../../css/dialog.css">
+  
+
+  
+
+</head>
+
+<body>
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" href="#" data-toggle="modal" data-target="#myModal"><img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg"></a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
+                
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-【Go】为什么 Go 语言把类型声明放在后面？" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      【Go】为什么 Go 语言把类型声明放在后面？
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="" class="article-date">
+	  <time datetime="2016-08-18T08:36:00.000Z" itemprop="datePublished">2016-08-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../../../categories/Go语言/">Go语言</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。</p>
+</blockquote>
+<p>也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：<a href="http://blog.golang.org/gos-declaration-syntax" target="_blank" rel="external"><strong>Go’s Declaration Syntax</strong></a>），简略翻译如下（水平有限翻译的不对的地方见谅）：</p>
+<h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h4><p>Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会和传统的C家族语言不同。在这篇博文里，我们会进行一个比较，并做出解答。</p>
+<h4 id="C-的语法"><a href="#C-的语法" class="headerlink" title="C 的语法"></a><strong>C 的语法</strong></h4><p>首先，先看看 C 的语法。C 采用了一种聪明而不同寻常的声明语法。声明变量时，只需写出一个带有目标变量名的表达式，然后在表达式里指明该表达式本身的类型即可。比如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> x;</div></pre></td></tr></table></figure>
+<p>上面的代码声明了 <code>x</code> 变量，并且其类型为 <code>int</code>——即，表达式 <code>x</code> 为 <code>int</code> 类型。一般而言，为了指明新变量的类型，我们得写出一个表达式，其中含有我们要声明的变量，这个表达式运算的结果值属于某种基本类型，我们把这种基本类型写到表达式的左边。所以，下述声明：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *p;</div><div class="line"><span class="keyword">int</span> a[<span class="number">3</span>];</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>指明了 <code>p</code> 是一个<code>int</code>类型的指针，因为 <code>*p</code>的类型为<code>int</code>。而 <code>a</code> 是一个 <code>int 数组</code>，因为 <code>a[3]</code>的类型为 <code>int</code>（别管这里出现的索引值，它只是用于指明数组的长度）。</p>
+<p>我们接下来看看函数声明的情况。C 的函数声明中关于参数的类型是写在括号外的，像下面这样：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(argc, argv)</span></span></div><div class="line">    <span class="keyword">int</span> argc;</div><div class="line">    <span class="keyword">char</span> *argv[];</div><div class="line">&#123; <span class="comment">/* ... */</span> &#125;</div></pre></td></tr></table></figure>
+<p>如前所述，我们可以看到 <code>main</code> 之所以是函数，是因为表达式 <code>main(argc, argv)</code> 返回 <code>int</code>。在现代记法中我们是这么写的：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123; <span class="comment">/* ... */</span> &#125;</div></pre></td></tr></table></figure>
+<p>尽管看起来有些不同，但是基本的结构是一样的。</p>
+<p>总的来看，当类型比较简单时，C的语法显得很聪明。但是遗憾的是一旦类型开始复杂，C的这套语法很快就能让人迷糊了。著名的例子如函数指针，我们得按下面这样来写：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> (*fp)(<span class="keyword">int</span> a, <span class="keyword">int</span> b);</div></pre></td></tr></table></figure>
+<p>在这儿，<code>fp</code> 之所以是一个指针是因为如果你写出 <code>(*fp)(a, b)</code> 这样的表达式将会调用一个函数，其返回 <code>int</code> 类型的值。如果当 <code>fp</code> 的某个参数本身又是一个函数，情况会怎样呢？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> (*fp)(<span class="keyword">int</span> (*ff)(<span class="keyword">int</span> x, <span class="keyword">int</span> y), <span class="keyword">int</span> b)</div></pre></td></tr></table></figure>
+<p>这读起来可就点难了。</p>
+<p>当然了，我们声明函数时是可以不写明参数的名称的，因此 <code>main</code> 函数可以声明为：</p>
+<blockquote>
+<p>int main(int, char *[])</p>
+</blockquote>
+<p>回想一下，之前 argv 是下面这样的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> *argv[]</div></pre></td></tr></table></figure>
+<p>你有没有发现你是从声明的「中间」去掉变量名而后构造出其变量类型的？尽管这不是很明显，但你声明某个 <code>char *[]</code>类型的变量的时候，竟然需要把名字插入到变量类型的中间。<br>我们再来看看，如果我们不命名 <code>fp</code> 的参数会怎样：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> (*fp)(<span class="keyword">int</span> (*)(<span class="keyword">int</span>, <span class="keyword">int</span>), <span class="keyword">int</span>)</div></pre></td></tr></table></figure>
+<p>这东西难懂的地方可不仅仅是要记得参数名原本是放这中间的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> (*)(<span class="keyword">int</span>, <span class="keyword">int</span>)</div></pre></td></tr></table></figure>
+<p>它更让人混淆的地方还在于甚至可能都搞不清这竟然是个函数指针声明。我们接着看看，如果返回值也是个函数指针类型又会怎么样</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> (*(*fp)(<span class="keyword">int</span> (*)(<span class="keyword">int</span>, <span class="keyword">int</span>), <span class="keyword">int</span>))(<span class="keyword">int</span>, <span class="keyword">int</span>)</div></pre></td></tr></table></figure>
+<p>这已经很难看出是关于 <code>fp</code> 的声明了。</p>
+<p>你自己还可以构建出比这更复杂的例子，但这已经足以解释 C 的声明语法引入的某些复杂性了。<br>还有一点需要指出，由于类型语法和声明语法是一样的，要解析中间带有类型的表达式可能会有些难度。这也就是为什么，C 在做类型转换的时候总是要把类型用括号括起来的原因，像这样</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(<span class="keyword">int</span>)M_PI</div></pre></td></tr></table></figure>
+<h4 id="Go-的语法"><a href="#Go-的语法" class="headerlink" title="Go 的语法"></a><strong>Go 的语法</strong></h4><p>非C家族的语言通常在声明时使用一种不同的类型语法。一般是名字先出现，然后常常跟着一个冒号。按照这样来写，我们上面所举的例子就会变成下面这样：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x: <span class="keyword">int</span></div><div class="line">p: pointer to <span class="keyword">int</span></div><div class="line">a: array[<span class="number">3</span>] of <span class="keyword">int</span></div></pre></td></tr></table></figure>
+<p>这样的声明即便有些冗长，当至少是清晰的——你只需从左向右读就行。Go 语言所采用的方案就是以此为基础的，但为了追求简洁性，Go 语言丢掉了冒号并去掉了部分关键词，成了下面这样：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x <span class="keyword">int</span></div><div class="line">p *<span class="keyword">int</span></div><div class="line">a [<span class="number">3</span>]<span class="keyword">int</span></div></pre></td></tr></table></figure>
+<p>在 <code>[3]int</code> 和表达式中 <code>a</code>的用法没有直接的对应关系（我们在下一节会回过头来探讨指针的问题）。至此，你获得了代码清晰性方面的提升，但付出的代价是语法上需要区别对待。</p>
+<p>下面我们来考虑函数的问题。虽然在 Go 语言里，<code>main</code> 函数实际上没有参数，但是我们先誊抄一下之前的 <code>main</code> 函数的声明：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">(argc <span class="keyword">int</span>, argv *[]<span class="keyword">byte</span>)</span> <span class="title">int</span></span></div></pre></td></tr></table></figure>
+<p>粗略一看和 C 没什么不同，不过自左向右读的话还不错。<br><code>main</code> 函数接受一个 <code>int</code> 和一个指针并返回一个<code>int</code>。<br>如果此时把参数名去掉，它还是很清楚——因为参数名总在类型的前面，所以不会引起混淆。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span>, *[]<span class="keyword">byte</span>)</span> <span class="title">int</span></span></div></pre></td></tr></table></figure>
+<p>这种自左向右风格的声明的一个价值在于，当类型变得更复杂时，它依然相对简单。下面是一个函数变量的声明（相当于 C 语言里的函数指针）</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">func</span>(<span class="keyword">int</span>,<span class="keyword">int</span>)</span> <span class="title">int</span>, <span class="title">int</span>) <span class="title">int</span></span></div></pre></td></tr></table></figure>
+<p>或者当它返回一个函数时：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">func</span>(<span class="keyword">int</span>,<span class="keyword">int</span>)</span> <span class="title">int</span>, <span class="title">int</span>) <span class="title">func</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span> <span class="title">int</span></span></div></pre></td></tr></table></figure>
+<p>上面的声明读起来还是很清晰，自左向右，而且究竟哪一个变量名是当前被声明的也容易看懂——因为变量名永远在首位。<br>类型语法和表达式语法带来的差别使得在 Go 语言里调用闭包也变得更简单：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sum := <span class="function"><span class="keyword">func</span><span class="params">(a, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123; <span class="keyword">return</span> a+b &#125; (<span class="number">3</span>, <span class="number">4</span>)</div></pre></td></tr></table></figure>
+<h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a><strong>指针</strong></h4><p>指针有些例外。注意在数组 (array )和切片 (slice) 中，Go 的类型语法把方括号放在了类型的左边，但是在表达式语法中却又把方括号放到了右边：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a []<span class="keyword">int</span></div><div class="line">x = a[<span class="number">1</span>]</div></pre></td></tr></table></figure>
+<p>类似的，Go 的指针沿用了 C 的 <code>*</code> 记法，但是我们写的时候也是声明时 <em> 在变量名右边，但在表达式中却又得把 </em> 放到左左边：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p *<span class="keyword">int</span></div><div class="line">x = *p</div></pre></td></tr></table></figure>
+<p>不能写成下面这样</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p *<span class="keyword">int</span></div><div class="line">x = p*</div></pre></td></tr></table></figure>
+<p>因为后缀的 <code>*</code> 可能会和乘法运算混淆，也许我们可以改用 Pascal 的 <code>^</code> 标记，像这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var p ^int</div><div class="line">x = p^</div></pre></td></tr></table></figure>
+<p>我们也许还真的应该把 <code>*</code> 像上面这样改成 <code>^</code> （当然这么一改 xor 运算的符号也得改），因为在类型和表达式中的 <code>*</code> 前缀确实把好些事儿都搞得有点复杂，举个例子来说，虽然我们可以像下面这样写</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[]<span class="keyword">int</span>(<span class="string">"hi"</span>)</div></pre></td></tr></table></figure>
+<p>但在转换时，如果类型是以 <code>*</code> 开头的，就得加上括号：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(*<span class="keyword">int</span>)(<span class="literal">nil</span>)</div></pre></td></tr></table></figure>
+<p>如果有一天我们愿意放弃用 <code>*</code>作为指针语法的话，那么上面的括号就可以省略了。</p>
+<p>可见，Go 的指针语法是和 C 相似的。但这种相似也意味着我们无法彻底避免在文法中有时为了避免类型和表达式的歧义需要补充括号的情况。</p>
+<p>总而言之，尽管存在不足，但我们相信 Go 的类型语法要比 C 的容易懂。特别是当类型比较复杂时。</p>
+<hr>
+<p>我擦，这边文章被知识库收录而且<a href="http://geek.csdn.net/news/detail/97799" target="_blank" rel="external"><strong>上了首页</strong></a>，吓死宝宝了。赶紧改个Bug压压惊=_=<br><img src="http://img.blog.csdn.net/20160829141600402" alt="让我赶紧改个Bug压压惊"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/" data-title="【Go】为什么 Go 语言把类型声明放在后面？" data-url="http://github.com/2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Go语言/">Go语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../../26/【Android】如何加速 AndroidStudio 的编译效率/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【Android】如何加速 AndroidStudio 的编译效率
+        
+      </div>
+    </a>
+  
+  
+    <a href="../../14/【Machine Learning】机器学习：简明入门指南/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【Machine Learning】机器学习：简明入门指南</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#引言"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-的语法"><span class="toc-number">2.</span> <span class="toc-text">C 的语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Go-的语法"><span class="toc-number">3.</span> <span class="toc-text">Go 的语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指针"><span class="toc-number">4.</span> <span class="toc-text">指针</span></a></li></ol>
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="../../../../about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
+
+
+  <script src="../../../../js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+</body>
+</html>

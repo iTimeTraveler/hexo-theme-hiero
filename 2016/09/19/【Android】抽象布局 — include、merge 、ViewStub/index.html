@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>【Android】抽象布局 — include、merge 、ViewStub | iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在布局优化中，Androi的官方提到了这三种布局&amp;lt;include/&amp;gt;、&amp;lt;merge /&amp;gt;、&amp;lt;ViewStub /&amp;gt;，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。
+一、布局重用&amp;lt;include/&amp;gt;&amp;lt;include /&amp;gt;标签能够重用布局文件，简单的使用如下：
+123456789101112131">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Android】抽象布局 — include、merge 、ViewStub">
+<meta property="og:url" content="http://github.com/2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="在布局优化中，Androi的官方提到了这三种布局&amp;lt;include/&amp;gt;、&amp;lt;merge /&amp;gt;、&amp;lt;ViewStub /&amp;gt;，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。
+一、布局重用&amp;lt;include/&amp;gt;&amp;lt;include /&amp;gt;标签能够重用布局文件，简单的使用如下：
+123456789101112131">
+<meta property="og:image" content="http://img.blog.csdn.net/20160919112652311">
+<meta property="og:image" content="http://img.blog.csdn.net/20160919112911484">
+<meta property="og:updated_time" content="2016-10-18T04:55:28.728Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【Android】抽象布局 — include、merge 、ViewStub">
+<meta name="twitter:description" content="在布局优化中，Androi的官方提到了这三种布局&amp;lt;include/&amp;gt;、&amp;lt;merge /&amp;gt;、&amp;lt;ViewStub /&amp;gt;，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。
+一、布局重用&amp;lt;include/&amp;gt;&amp;lt;include /&amp;gt;标签能够重用布局文件，简单的使用如下：
+123456789101112131">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160919112652311">
+  
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="../../../../css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" > 
+    <link rel="stylesheet" href="../../../../css/dialog.css">
+  
+
+  
+
+</head>
+
+<body>
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" href="#" data-toggle="modal" data-target="#myModal"><img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg"></a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
+                
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-【Android】抽象布局 — include、merge 、ViewStub" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      【Android】抽象布局 — include、merge 、ViewStub
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="" class="article-date">
+	  <time datetime="2016-09-19T03:47:00.000Z" itemprop="datePublished">2016-09-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在布局优化中，Androi的官方提到了这三种布局<code>&lt;include/&gt;</code>、<code>&lt;merge /&gt;</code>、<code>&lt;ViewStub /&gt;</code>，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。</p>
+<h3 id="一、布局重用-lt-include-gt"><a href="#一、布局重用-lt-include-gt" class="headerlink" title="一、布局重用&lt;include/&gt;"></a><strong>一、布局重用&lt;include/&gt;</strong></h3><p>&lt;include /&gt;标签能够重用布局文件，简单的使用如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>   </div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@color/app_bg"</span>  </div><div class="line">    <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span>&gt;  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">layout</span>=<span class="string">"@layout/titlebar"</span>/&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span> <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </span></div><div class="line">              <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">              <span class="attr">android:text</span>=<span class="string">"@string/hello"</span>  </div><div class="line">              <span class="attr">android:padding</span>=<span class="string">"10dp"</span> /&gt;  </div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li><p>1) &lt;include /&gt;标签必须使用单独的layout属性。</p>
+</li>
+<li><p>2) 可以使用其他属性。&lt;include /&gt;标签若指定了ID属性，而你的layout也定义了ID，则你的layout的ID会被覆盖。</p>
+</li>
+<li><p>3) 在include标签中所有的android:layout_*都是有效的，前提是必须要写layout_width和layout_height两个属性。</p>
+</li>
+<li><p>4) 布局中可以包含两个相同的include标签，引用时可以使用<a href="http://www.coboltforge.com/2012/05/tech-stuff-layout/" target="_blank" rel="external"><strong>如下方法解决</strong></a></p>
+</li>
+</ul>
+<p>比如这个布局文件：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">ScrollView</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line"><span class="attr">android:layout_height</span>=<span class="string">"fill_parent"</span></div><div class="line"><span class="attr">android:scrollbars</span>=<span class="string">"vertical"</span> &gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">LinearLayout</span></span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:focusable</span>=<span class="string">"true"</span></div><div class="line">  <span class="attr">android:focusableInTouchMode</span>=<span class="string">"true"</span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">  <span class="attr">android:padding</span>=<span class="string">"10dip"</span> &gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">include</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/discovered_servers"</span></div><div class="line">    <span class="attr">layout</span>=<span class="string">"@layout/discovered_servers_element"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">include</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/bookmarks"</span></div><div class="line">    <span class="attr">layout</span>=<span class="string">"@layout/bookmarks_element"</span> /&gt;</div><div class="line"></div><div class="line">	//注意以下这个include和上面的include</div><div class="line">	<span class="tag">&lt;<span class="name">include</span> <span class="attr">android:id</span>=<span class="string">"@+id/bookmarks_favourite"</span></span></div><div class="line">    <span class="attr">layout</span>=<span class="string">"@layout/bookmarks_element"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">include</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/new_conn"</span></div><div class="line">    <span class="attr">layout</span>=<span class="string">"@layout/new_conn_element"</span> /&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">ScrollView</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这里我们include了两次<code>res/layout/bookmarks_element.xml</code>，这个子布局内容如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- res/layout/bookmarks_element.xml 布局 --&gt;</span></div><div class="line"></div><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">merge</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span> &gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:paddingBottom</span>=<span class="string">"10dip"</span></div><div class="line">  <span class="attr">android:paddingTop</span>=<span class="string">"10dip"</span></div><div class="line">  <span class="attr">android:text</span>=<span class="string">"@string/bookmarks"</span></div><div class="line">  <span class="attr">android:textAppearance</span>=<span class="string">"?android:attr/textAppearanceLarge"</span> /&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">LinearLayout</span></span></div><div class="line"> <span class="attr">android:id</span>=<span class="string">"@+id/bookmarks_list"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">  <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">  <span class="attr">android:padding</span>=<span class="string">"10dip"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">merge</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>如果向下面这样调用是<strong>错的</strong>，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LinearLayout fav_bookmarks = findViewById(R.id.bookmarks_list); 	<span class="comment">// WRONG!!!!</span></div></pre></td></tr></table></figure>
+<p>正确的方法是这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">View bookmarks_container_2 = findViewById(R.id.bookmarks_favourite); </div><div class="line"></div><div class="line">bookmarks_container_2.findViewById(R.id.bookmarks_list);</div></pre></td></tr></table></figure>
+<h3 id="二、减少视图层级-lt-merge-gt"><a href="#二、减少视图层级-lt-merge-gt" class="headerlink" title="二、减少视图层级&lt;merge/&gt;"></a><strong>二、减少视图层级&lt;merge/&gt;</strong></h3><p>&lt;merge /&gt;标签用于减少View树的层次来优化Android的布局。先来用个例子演示一下：</p>
+<p>首先主需要一个配置文件activity_main.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">  <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> &gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:text</span>=<span class="string">"merge标签使用"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>再来一个最简单的Activity，文件名MainActivity.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.example.merge;</div><div class="line"></div><div class="line"><span class="keyword">import</span> android.app.Activity;</div><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</div><div class="line"></div><div class="line">     <span class="meta">@Override</span></div><div class="line">     <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">          <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">          setContentView(R.layout.activity_main);</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>按着上面的代码创建工程，运行后使用“DDMS -&gt; Dump View Hierarchy for UI Automator”工具，截图如下:</p>
+<ul>
+<li>merge 使用前：<br><img src="http://img.blog.csdn.net/20160919112652311" alt="merge 使用前"></li>
+</ul>
+<p>最下面两层<code>RelativeLayout</code>与<code>TextView</code>就是 <strong>activity_main.xml</strong> 布局中的内容，上面的<code>FrameLayout</code>是Activity setContentView添加的顶层视图。下面使用merge标签可以查看下区别。</p>
+<p>布局文件 activity_main.xml 修改内容如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">merge</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">  <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> &gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">    <span class="attr">android:text</span>=<span class="string">"merge标签使用"</span> /&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">merge</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>使用“DDMS -&gt; Dump View Hierarchy for UI Automator”工具，截图如下:</p>
+<ul>
+<li>merge 使用后<br><img src="http://img.blog.csdn.net/20160919112911484" alt="merge使用后"></li>
+</ul>
+<p>可以看到，<code>FrameLayout</code>下面直接就是<code>TextView</code>，与之前的相比<strong>少了一层 RelativeLayout </strong>而实现的效果相同。</p>
+<ul>
+<li><p>那么，什么情况考虑使用<code>&lt;merge /&gt;</code>标签？</p>
+<ul>
+<li><p>一种是向上面的例子一样，子视图不需要指定任何针对父视图的布局属性，例子中TextView仅仅需要直接添加到父视图上用于显示就行。</p>
+</li>
+<li><p>另外一种是假如需要在LinearLayout里面嵌入一个布局（或者视图），而恰恰这个布局（或者视图）的根节点也是LinearLayout，这样就多了一层没有用的嵌套，无疑这样只会拖慢程序速度。而这个时候如果我们使用merge根标签就可以避免那样的问题，官方文档 <a href="http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html" target="_blank" rel="external">Android Layout Tricks #3: Optimize by merging</a>  中的例子演示的就是这种情况。</p>
+</li>
+</ul>
+</li>
+<li><p><code>&lt;merge /&gt;</code>标签有什么限制没？</p>
+<ul>
+<li>&lt;merge /&gt;只能作为XML布局的根标签使用。</li>
+<li>当 Inflate 以&lt;merge /&gt;开头的布局文件时，必须指定一个父ViewGroup，并且必须设定attachToRoot为<strong><code>true</code></strong>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="三、需要时使用-lt-ViewStub-gt"><a href="#三、需要时使用-lt-ViewStub-gt" class="headerlink" title="三、需要时使用&lt;ViewStub /&gt;"></a><strong>三、需要时使用&lt;ViewStub /&gt;</strong></h3><p>限于篇幅，这里只大概总结一下<code>ViewStub</code>的使用方法，详细介绍和使用写到后面的文章中。</p>
+<p>&lt;ViewStub /&gt;标签最大的优点是当你需要时才会加载，使用他并不会影响UI初始化时的性能。各种不常用的布局想进度条、显示错误消息等可以使用&lt;ViewStub /&gt;标签，以减少内存使用量，加快渲染速度。&lt;ViewStub /&gt;是一个不可见的，大小为0的View。&lt;ViewStub /&gt;标签使用如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ViewStub</span>  </span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/stub_import"</span>  </div><div class="line">    <span class="attr">android:inflatedId</span>=<span class="string">"@+id/panel_import"</span>  </div><div class="line">    <span class="attr">android:layout</span>=<span class="string">"@layout/progress_overlay"</span>  </div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">    <span class="attr">android:layout_gravity</span>=<span class="string">"bottom"</span> /&gt;</div></pre></td></tr></table></figure>
+<p>当你想加载布局时，可以使用下面其中一种方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">((ViewStub) findViewById(R.id.stub_import)).setVisibility(View.VISIBLE);</div></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">View importPanel = ((ViewStub) findViewById(R.id.stub_import)).inflate();</div></pre></td></tr></table></figure>
+<p>当调用inflate()函数的时候，ViewStub被引用的资源替代，并且返回引用的view。 这样程序可以直接得到引用的view而不用再次调用函数findViewById()来查找了。</p>
+<p><strong>注：ViewStub 目前有个缺陷就是还不支持 <code>&lt;merge /&gt;</code> 标签。</strong></p>
+<p>更多<code>&lt;ViewStub /&gt;</code>标签介绍可以参考官网教程《<a href="http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-with.html" target="_blank" rel="external">Android Layout Tricks #3: Optimize with stubs</a>》</p>
+<p>【参考资料】：</p>
+<p>1、<a href="http://blog.csdn.net/xyz_lmn/article/details/14524567" target="_blank" rel="external">Android抽象布局 — include、merge 、ViewStub</a><br>2、<a href="http://www.coboltforge.com/2012/05/tech-stuff-layout/" target="_blank" rel="external">Tech Stuff: Android &lt;include/&gt; layout pitfalls</a><br>3、<a href="http://www.tuicool.com/articles/jyyUV33" target="_blank" rel="external">Android 性能优化 四 布局优化merge标签的使用</a><br>4、<a href="http://www.cnblogs.com/travelfromandroid/articles/2133206.html" target="_blank" rel="external">Android之merge布局</a><br>5、 <a href="http://blog.csdn.net/hitlion2008/article/details/6737537/" target="_blank" rel="external">Android实战技巧：ViewStub的应用</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/" data-title="【Android】抽象布局 — include、merge 、ViewStub" data-url="http://github.com/2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../../28/Chrome自带的开发者工具进阶技巧/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Chrome自带的开发者工具进阶技巧
+        
+      </div>
+    </a>
+  
+  
+    <a href="../../08/【Java】设计模式：深入理解单例模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【Java】设计模式：深入理解单例模式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、布局重用-lt-include-gt"><span class="toc-number">1.</span> <span class="toc-text">一、布局重用<include/></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、减少视图层级-lt-merge-gt"><span class="toc-number">2.</span> <span class="toc-text">二、减少视图层级<merge/></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、需要时使用-lt-ViewStub-gt"><span class="toc-number">3.</span> <span class="toc-text">三、需要时使用<ViewStub /></span></a></li></ol>
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="../../../../about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
+
+
+  <script src="../../../../js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+</body>
+</html>

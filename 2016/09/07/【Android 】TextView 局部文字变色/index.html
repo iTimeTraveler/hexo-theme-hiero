@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>【Android 】TextView 局部文字变色 | iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="TextView 对于富文本效果的实现支持不支持呢？比如“局部文字颜色的变动”，“局部字体的变动”
+
+一、需求效果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Android 】TextView 局部文字变色">
+<meta property="og:url" content="http://github.com/2016/09/07/【Android 】TextView 局部文字变色/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="TextView 对于富文本效果的实现支持不支持呢？比如“局部文字颜色的变动”，“局部字体的变动”
+
+一、需求效果">
+<meta property="og:image" content="http://img.blog.csdn.net/20161009150647271">
+<meta property="og:image" content="http://img.blog.csdn.net/20160907145042302">
+<meta property="og:updated_time" content="2016-10-18T04:54:41.575Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【Android 】TextView 局部文字变色">
+<meta name="twitter:description" content="TextView 对于富文本效果的实现支持不支持呢？比如“局部文字颜色的变动”，“局部字体的变动”
+
+一、需求效果">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20161009150647271">
+  
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="../../../../css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" > 
+    <link rel="stylesheet" href="../../../../css/dialog.css">
+  
+
+  
+
+</head>
+
+<body>
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" href="#" data-toggle="modal" data-target="#myModal"><img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg"></a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="../../../../index.html">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="../../../../about">About</a> </li>
+                
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-【Android 】TextView 局部文字变色" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      【Android 】TextView 局部文字变色
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="" class="article-date">
+	  <time datetime="2016-09-07T07:02:45.000Z" itemprop="datePublished">2016-09-07</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>TextView 对于富文本效果的实现支持不支持呢？比如“局部文字颜色的变动”，“局部字体的变动”</p>
+</blockquote>
+<h3 id="一、需求效果"><a href="#一、需求效果" class="headerlink" title="一、需求效果"></a><strong>一、需求效果</strong></h3><p><img src="http://img.blog.csdn.net/20161009150647271" alt="比如这个"></p>
+<a id="more"></a>
+<h3 id="二、解决方案"><a href="#二、解决方案" class="headerlink" title="二、解决方案"></a><strong>二、解决方案</strong></h3><p>针对这类问题，Android提供了 <a href="https://developer.android.com/reference/android/text/SpannableStringBuilder.html" target="_blank" rel="external"><strong><code>SpannableStringBuilder</code></strong></a>，方便我们自定义富文本的实现。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">textView = (TextView) findViewById(R.id.textview);</div><div class="line">SpannableStringBuilder builder = <span class="keyword">new</span> SpannableStringBuilder(textView.getText().toString());</div><div class="line"></div><div class="line"><span class="comment">//ForegroundColorSpan 为文字前景色，BackgroundColorSpan为文字背景色</span></div><div class="line">ForegroundColorSpan redSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.RED);</div><div class="line">ForegroundColorSpan whiteSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.WHITE);</div><div class="line">ForegroundColorSpan blueSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.BLUE);</div><div class="line">ForegroundColorSpan greenSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.GREEN);</div><div class="line">ForegroundColorSpan yellowSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.YELLOW);</div><div class="line"> </div><div class="line"> </div><div class="line">builder.setSpan(redSpan, <span class="number">0</span>, <span class="number">1</span>, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line">builder.setSpan(whiteSpan, <span class="number">1</span>, <span class="number">2</span>, Spannable.SPAN_INCLUSIVE_INCLUSIVE);</div><div class="line">builder.setSpan(blueSpan, <span class="number">2</span>, <span class="number">3</span>, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line">builder.setSpan(greenSpan, <span class="number">3</span>, <span class="number">4</span>, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line">builder.setSpan(yellowSpan, <span class="number">4</span>,<span class="number">5</span>, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line"></div><div class="line">textView.setText(builder);</div></pre></td></tr></table></figure>
+<p>除了上述代码中使用的 <code>ForegroundColorSpan</code> 和 <code>BackgroundColorSpan</code>之外，还有以下这些Span可以使用：</p>
+<ul>
+<li><p><strong>AbsoluteSizeSpan(int size)</strong> —— 设置字体大小，参数是绝对数值，相当于Word中的字体大小</p>
+</li>
+<li><p><strong>RelativeSizeSpan(float proportion)</strong> —— 设置字体大小，参数是相对于默认字体大小的倍数，比如默认字体大小是x, 那么设置后的字体大小就是x*proportion，这个用起来比较灵活，proportion&gt;1就是放大(zoom in), proportion&lt;1就是缩小(zoom out)</p>
+</li>
+<li><p><strong>ScaleXSpan(float proportion)</strong> —— 缩放字体，与上面的类似，默认为1,设置后就是原来的乘以proportion，大于1时放大(zoon in)，小于时缩小(zoom out)</p>
+</li>
+<li><p><strong>BackgroundColorSpan(int color)</strong> —— 背景着色，参数是颜色数值，可以直接使用android.graphics.Color里面定义的常量，或是用Color.rgb(int, int, int)</p>
+</li>
+<li><p><strong>ForegroundColorSpan(int color)</strong> —— 前景着色，也就是字的着色，参数与背景着色一致</p>
+</li>
+<li><p><strong>TypefaceSpan(String family)</strong> —— 字体，参数是字体的名字比如“sans”, “sans-serif”等</p>
+</li>
+<li><p><strong>StyleSpan(Typeface style)</strong> —— 字体风格，比如粗体，斜体，参数是android.graphics.Typeface里面定义的常量，如Typeface.BOLD，Typeface.ITALIC等等。StrikethroughSpan—-如果设置了此风格，会有一条线从中间穿过所有的字，就像被划掉一样</p>
+</li>
+</ul>
+<h3 id="三、动手试试"><a href="#三、动手试试" class="headerlink" title="三、动手试试"></a><strong>三、动手试试</strong></h3><p>比如实现下图中TextView的样式</p>
+<p><img src="http://img.blog.csdn.net/20160907145042302" alt=""></p>
+<p>然后代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">TextView tv = (TextView)view.findViewById(R.id.toast_text);</div><div class="line"></div><div class="line">String str1 = <span class="string">"提交成功！\n积分"</span>;</div><div class="line">String str2 = <span class="string">"+"</span> + score1;</div><div class="line">String str3 = <span class="string">"！审核通过后再"</span>;</div><div class="line">String str4 = <span class="string">"+"</span> + score2;</div><div class="line"></div><div class="line">SpannableStringBuilder builder = <span class="keyword">new</span> SpannableStringBuilder(str1 + str2 + str3 + str4 + <span class="string">"！"</span>);</div><div class="line">builder.setSpan(<span class="keyword">new</span> ForegroundColorSpan(Color.parseColor(<span class="string">"#ffffa200"</span>)),</div><div class="line">		str1.length(), (str1 + str2).length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);</div><div class="line">builder.setSpan(<span class="keyword">new</span> ForegroundColorSpan(Color.parseColor(<span class="string">"#ffffa200"</span>)),</div><div class="line">		(str1 + str2 + str3).length(), (str1 + str2 + str3 + str4).length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);</div><div class="line"></div><div class="line">tv.setText(builder);</div></pre></td></tr></table></figure>
+<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a><strong>参考资料：</strong></h4><p>1、<a href="http://blog.csdn.net/centralperk/article/details/8674599" target="_blank" rel="external">Android-修改TextView中部分文字的颜色</a><br>2、<a href="http://www.cnblogs.com/kingsam/p/5643598.html" target="_blank" rel="external">Android TextView 设置部分文字背景色和文字颜色</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2016/09/07/【Android 】TextView 局部文字变色/" data-title="【Android 】TextView 局部文字变色" data-url="http://github.com/2016/09/07/【Android 】TextView 局部文字变色/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../【Go语言】基本类型排序和 slice 排序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【Go语言】基本类型排序和 slice 排序
+        
+      </div>
+    </a>
+  
+  
+    <a href="../../../08/30/【Android】获取View的截图/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【Android】获取View的截图</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、需求效果"><span class="toc-number">1.</span> <span class="toc-text">一、需求效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、解决方案"><span class="toc-number">2.</span> <span class="toc-text">二、解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、动手试试"><span class="toc-number">3.</span> <span class="toc-text">三、动手试试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料："><span class="toc-number">3.1.</span> <span class="toc-text">参考资料：</span></a></li></ol></li></ol>
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../../../../tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="../../../../about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+<script src="../../../../js/bootstrap.js"></script>
+
+
+  <script src="../../../../js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+</body>
+</html>

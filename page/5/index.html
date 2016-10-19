@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iTimeTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Someone knock at the door.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iTimeTraveler">
+<meta property="og:url" content="http://github.com/page/5/index.html">
+<meta property="og:site_name" content="iTimeTraveler">
+<meta property="og:description" content="Someone knock at the door.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iTimeTraveler">
+<meta name="twitter:description" content="Someone knock at the door.">
+  
+    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" > 
+
+  
+    <link rel="stylesheet" href="/css/home.css" > 
+  
+
+  
+
+</head>
+
+<body>
+  
+    <header id="header">
+  <!-- 
+    <div id="banner"></div>
+    <div id="header-outer" class="outer">
+      <div id="header-title" class="inner">
+        <h1 id="logo-wrap">
+          <a href="../../index.html" id="logo">iTimeTraveler</a>
+        </h1>
+        
+      </div>
+      <div id="header-inner" class="inner">
+        <nav id="main-nav">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          
+            <a class="main-nav-link" href="../../index.html">Home</a>
+          
+            <a class="main-nav-link" href="../../archives">Archives</a>
+          
+            <a class="main-nav-link" href="../../tags">Tags</a>
+          
+            <a class="main-nav-link" href="../../about">About</a>
+          
+        </nav>
+        <nav id="sub-nav">
+          
+            <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          
+          <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://github.com"></form>
+        </div>
+      </div>
+    </div>
+  -->
+
+
+
+  
+    <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(/css/images/home-bg.jpg); background-size: auto 100%;">
+  
+
+    <canvas width="100%" height="100%"></canvas>
+    <script>
+      var c = document.getElementsByTagName('canvas')[0],
+          x = c.getContext('2d'),
+          w = window.innerWidth,
+          h = window.innerHeight,
+          pr = window.devicePixelRatio || 1,
+          f = 90,
+          q,
+          m = Math,
+          r = 0,
+          u = m.PI*2,
+          v = m.cos,
+          z = m.random
+      c.width = w*pr
+      c.height = h*pr
+      x.scale(pr, pr)
+      x.globalAlpha = 0.6
+
+      
+    </script>
+    
+
+    
+      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,1);"> 
+    
+
+        
+          <div class="homelogoback"  style="border: 1px solid #404040;" >
+            <h1><a href="#content" id="logo">iTimeTraveler</a></h1>
+            <h3>Someone knock at the door.</h3>
+            <h3>Mr.Seven</h3>
+            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
+          </div>
+        
+    
+    </div>
+  </div>
+
+  <!-- 自适应主页背景大图 -->
+  
+    <script>
+        var img = new Image();
+        var intrologodiv = document.getElementById("intrologo");
+        img.src = intrologodiv.style.backgroundImage.replace('url(','').replace(')','').replace(/\"/gi, "");
+        img.onload=function(){
+          if (img.width / img.height <= document.body.clientWidth / document.body.clientHeight) {
+            intrologodiv.style.backgroundSize = "100% auto";
+          } else {
+            intrologodiv.style.backgroundSize = "auto 100%";
+          }
+        };
+    </script>
+ 
+
+ 
+    <script>
+        var homelogodiv = document.getElementById("homelogo");
+        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
+          homelogodiv.style.width = document.body.clientWidth + "px";
+          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
+        } else {
+          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
+          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
+        }
+    </script>
+  
+
+  <div class="intro-navigate">
+      <p class="navigater-list">
+        
+          <a id="beautifont" class="main-nav-link" href="../../index.html">Home</a>
+        
+          <a id="beautifont" class="main-nav-link" href="../../archives">Archives</a>
+        
+          <a id="beautifont" class="main-nav-link" href="../../tags">Tags</a>
+        
+          <a id="beautifont" class="main-nav-link" href="../../about">About</a>
+        
+      </p>
+  </div>
+
+</header>
+  
+  <div id="container">
+    <div id="wrap">
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;">
+  
+    <article id="post-【Android】onActivityResult()和onResume()的调用顺序问题"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2015/09/18/【Android】onActivityResult()和onResume()的调用顺序问题/">【Android】onActivityResult()和onResume()的调用顺序问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2015/09/18/【Android】onActivityResult()和onResume()的调用顺序问题/" class="article-date">
+	  <time datetime="2015-09-18T09:16:55.000Z" itemprop="datePublished">2015-09-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>在Android生命周期中，如果使用到startActivityForResult()，则在新Activity被finish掉之后，onActivityResult()和onResume()到底是哪一个先调用的呢？</p>
+</blockquote>
+<p>我们来看官方源码：</p>
+<pre><code class="java"><span class="comment">/**
+     * Called when an activity you launched exits, giving you the requestCode
+     * you started it with, the resultCode it returned, and any additional
+     * data from it.  The &lt;var&gt;resultCode&lt;/var&gt; will be
+     * {<span class="doctag">@link</span> #RESULT_CANCELED} if the activity explicitly returned that,
+     * didn't return any result, or crashed during its operation.
+     *
+     * &lt;p&gt;You will receive this call immediately before onResume() when your
+     * activity is re-starting.
+     *
+     * &lt;p&gt;This method is never invoked if your activity sets
+     * {<span class="doctag">@link</span> android.R.styleable#AndroidManifestActivity_noHistory noHistory} to
+     * &lt;code&gt;true&lt;/code&gt;.
+     *
+     * <span class="doctag">@param</span> requestCode The integer request code originally supplied to
+     *                    startActivityForResult(), allowing you to identify who this
+     *                    result came from.
+     * <span class="doctag">@param</span> resultCode The integer result code returned by the child activity
+     *                   through its setResult().
+     * <span class="doctag">@param</span> data An Intent, which can return result data to the caller
+     *               (various data can be attached to Intent "extras").
+     *
+     * <span class="doctag">@see</span> #startActivityForResult
+     * <span class="doctag">@see</span> #createPendingResult
+     * <span class="doctag">@see</span> #setResult(int)
+     */</span>
+    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>{
+    }
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="../../2015/09/18/【Android】onActivityResult()和onResume()的调用顺序问题/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-【Android】如何启动调用其他app中的Activity"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2015/09/15/【Android】如何启动调用其他app中的Activity/">【Android】如何启动调用其他app中的Activity</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2015/09/15/【Android】如何启动调用其他app中的Activity/" class="article-date">
+	  <time datetime="2015-09-15T03:06:00.000Z" itemprop="datePublished">2015-09-15</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近项目正在将原系统拆分为小型App，所以需要在原Project中启动另一个新的App中的Activity。这样的话启动要用到ComponentName ，它就是用来打开其他应用程序中的Activity或服务的。</p>
+<p>用法其实很简单，像下面这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一个参数是Activity所在的package包名，第二个参数是完整的Class类名（包括包路径）</span></div><div class="line">ComponentName componetName = <span class="keyword">new</span> ComponentName(<span class="string">"com.cybo3d.cybox.miya"</span>, 			  </div><div class="line">								<span class="string">"com.cybo3d.cybox.miya.MainActivity"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line">intent.setComponent(componetName);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="../../2015/09/15/【Android】如何启动调用其他app中的Activity/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-【Android】保存图片到系统图库, 并立即显示在图库中"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/">【Android】保存图片到系统图库, 并立即显示在图库中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/" class="article-date">
+	  <time datetime="2014-09-12T03:55:00.000Z" itemprop="datePublished">2014-09-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>搬运原链接：<a href="http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery">http://stormzhang.github.io/android/2014/07/24/android-save-image-to-gallery</a></p>
+</blockquote>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a><strong>正文</strong></h3><p>最近有些用户反映保存图片之后在系统图库找不到保存的图片，遂决定彻底查看并解决下。</p>
+<p>Android中保存图片的方法可能有如下两种：</p>
+<ul>
+<li>第一种是自己写方法，如下代码：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> File <span class="title">saveImage</span><span class="params">(Bitmap bmp)</span> </span>&#123;</div><div class="line">    File appDir = <span class="keyword">new</span> File(Environment.getExternalStorageDirectory(), <span class="string">"Boohee"</span>);</div><div class="line">    <span class="keyword">if</span> (!appDir.exists()) &#123;</div><div class="line">        appDir.mkdir();</div><div class="line">    &#125;</div><div class="line">    String fileName = System.currentTimeMillis() + <span class="string">".jpg"</span>;</div><div class="line">    File file = <span class="keyword">new</span> File(appDir, fileName);</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(file);</div><div class="line">        bmp.compress(CompressFormat.JPEG, <span class="number">100</span>, fos);</div><div class="line">        fos.flush();</div><div class="line">        fos.close();</div><div class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="../../2014/09/12/【Android】保存图片到系统图库, 并立即显示在图库中/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-如何删除多行首字母，Sublime Text多行编辑运用"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/">如何删除多行首字母，Sublime Text多行编辑运用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/" class="article-date">
+	  <time datetime="2014-05-15T03:55:00.000Z" itemprop="datePublished">2014-05-15</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、问题描述："><a href="#一、问题描述：" class="headerlink" title="一、问题描述："></a><strong>一、问题描述：</strong></h4><p>问答区有个问题是这样问的：<a href="http://ask.csdn.net/questions/29687"><strong>如何在eclipse中删除多行首字母？</strong></a></p>
+<p>题主的问题是代码中每行都有序号，这些序号一行一行地删太麻烦，如何进行批量删除？我们在进行代码重用的时候时常会出现行号同时被复制的情况，比如下面的这点代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="number">155</span>.     <span class="meta">@Override</span>  </div><div class="line"><span class="number">156</span>.     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKeyDown</span><span class="params">(<span class="keyword">int</span> keyCode, KeyEvent event)</span>   </div><div class="line">157.     </span>&#123;   </div><div class="line"><span class="number">158</span>.         Log.d(<span class="string">"onKeyDown:"</span>, <span class="string">" keyCode="</span> + keyCode + <span class="string">" KeyEvent="</span> + event);   </div><div class="line"><span class="number">159</span>.         <span class="keyword">switch</span> (keyCode)   </div><div class="line"><span class="number">160</span>.         &#123;   </div><div class="line"><span class="number">161</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_UP:   </div><div class="line"><span class="number">162</span>.   </div><div class="line"><span class="number">163</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">164</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_DOWN:   </div><div class="line"><span class="number">165</span>.   </div><div class="line"><span class="number">166</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">167</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_LEFT:   </div><div class="line"><span class="number">168</span>.                 <span class="comment">//右左按键可以控制第一进度的增减   </span></div><div class="line"><span class="number">169</span>.                 pb.setProgress( pb.getProgress()-<span class="number">5</span> );   </div><div class="line"><span class="number">170</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">171</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_RIGHT:   </div><div class="line"><span class="number">172</span>.                 pb.setProgress( pb.getProgress()+<span class="number">5</span> );   </div><div class="line"><span class="number">173</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">174</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_DPAD_CENTER:   </div><div class="line"><span class="number">175</span>.   </div><div class="line"><span class="number">176</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">177</span>.             <span class="keyword">case</span> KeyEvent.KEYCODE_0:   </div><div class="line"><span class="number">178</span>.             <span class="keyword">break</span>;   </div><div class="line"><span class="number">179</span>.         &#125;   </div><div class="line"><span class="number">180</span>.         <span class="keyword">return</span> <span class="keyword">super</span>.onKeyDown(keyCode, event);   </div><div class="line"><span class="number">181</span>.     &#125;   </div><div class="line"><span class="number">182</span>. &#125;</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="../../2014/05/15/如何删除多行首字母，Sublime Text多行编辑运用/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Ubuntu上Eclipse识别不了Android手机的解决方法"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/">Ubuntu上Eclipse识别不了Android手机的解决方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/" class="article-date">
+	  <time datetime="2013-10-20T08:46:00.000Z" itemprop="datePublished">2013-10-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Android/">Android</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>转载链接：    <a href="http://www.cnblogs.com/AndroidManifest/archive/2011/12/09/2281635.html">http://www.cnblogs.com/AndroidManifest/archive/2011/12/09/2281635.html</a></p>
+</blockquote>
+<p>google官方开发向导里对Android手机已经设置了允许安装非market程序，并且处于usb调试模式，但是仍然在usb连接电脑后无法被识别的问题作了解释。官方网址：<a href="http://developer.android.com/guide/developing/device.html">http://developer.android.com/guide/developing/device.html</a></p>
+<h4 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a><strong>操作步骤：</strong></h4><p>如果是windows平台下，需要安装一个为adb准备的usb驱动。如果是Ubuntu Linux需要添加一个rules文件，里面包含了每一个想要调试的设备的usb配置信息。以HTC手机为例实现步骤如下：</p>
+<p>1、在终端输入 :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/udev/rules.d/51-android.rules</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="../../2013/10/20/Ubuntu上Eclipse识别不了Android手机的解决方法/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-【Java】操作excel表，包括创建、读取、以及修改"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/">【Java】操作excel表，包括创建、读取、以及修改</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/" class="article-date">
+	  <time datetime="2013-08-01T04:31:20.000Z" itemprop="datePublished">2013-08-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Java/">Java</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作者的网站上对它的特征有如下描述： </p>
+<ul>
+<li>支持Excel 95-2000的所有版本 </li>
+<li>生成Excel 2000标准格式 </li>
+<li>支持字体、数字、日期操作 </li>
+<li>能够修饰单元格属性 </li>
+<li>支持图像和图表 </li>
+</ul>
+<p>应该说以上功能已经能够大致满足我们的需要。最关键的是这套API是纯Java的，并不依赖Windows系统，即使运行在Linux下，它同样能够正确的处理Excel文件。另外需要说明的是，这套API对图形和图表的支持很有限，而且仅仅识别PNG格式。 </p>
+<h3 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a><strong>搭建环境</strong></h3><p>下载jxl.jar（可以点击<a href="http://download.csdn.net/detail/bonlog/5774137"><strong>这里进行下载</strong></a>），放入classpath，安装就完成了。 </p>
+        
+          <p class="article-more-link">
+            <a href="../../2013/08/01/【Java】操作excel表，包括创建、读取、以及修改/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="../4/">&laquo; Prev</a><a class="page-number" href="../../index.html">1</a><span class="space">&hellip;</span><a class="page-number" href="../3/">3</a><a class="page-number" href="../4/">4</a><span class="page-number current">5</span>
+  </nav>
+
+</section>
+        
+      </div>
+      
+        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      <div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2016 Mr.Seven All Rights Reserved.</p>
+	      <p id="copyRightCn">Mr.Seven 保留所有权利</p>
+	</div>
+  </div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../../tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="../../about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="../../fancybox/jquery.fancybox.css">
+  <script src="../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../js/script.js"></script>
+<script src="../../js/bootstrap.js"></script>
+
+
+  <script src="../../js/home.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            iTimeTraveler
+          </div>
+          <div class="panel-body">
+            Copyright © 2016 Mr.Seven All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+</body>
+</html>
