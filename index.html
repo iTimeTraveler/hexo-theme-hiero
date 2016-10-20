@@ -15,8 +15,6 @@
 <meta name="twitter:title" content="iTimeTraveler">
 <meta name="twitter:description" content="Someone knock at the door.">
   
-    <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
-  
   <link rel="icon" href="/css/images/mylogo.jpg">
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
@@ -62,14 +60,14 @@
           
             <a class="main-nav-link" href="archives">Archives</a>
           
+            <a class="main-nav-link" href="categories">Categories</a>
+          
             <a class="main-nav-link" href="tags">Tags</a>
           
             <a class="main-nav-link" href="about">About</a>
           
         </nav>
         <nav id="sub-nav">
-          
-            <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
           
           <a id="nav-search-btn" class="nav-icon" title="Search"></a>
         </nav>
@@ -83,7 +81,7 @@
 
 
   
-    <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background: linear-gradient(120deg, #155799, #159957);background-image: url(/css/images/home-bg.jpg); background-size: auto 100%;">
+    <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(/css/images/home-bg.jpg); background-size: auto 100%;">
   
 
     <canvas width="100%" height="100%"></canvas>
@@ -117,7 +115,7 @@
           <div class="homelogoback"  style="border: 1px solid #404040;" >
             <h1><a href="#content" id="logo">iTimeTraveler</a></h1>
             <h3>Someone knock at the door.</h3>
-            <h3>Mr.Seven</h3>
+            <h5>Mr.Seven</h5>
             <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
           </div>
         
@@ -160,6 +158,8 @@
           <a id="beautifont" class="main-nav-link" href="index.html">Home</a>
         
           <a id="beautifont" class="main-nav-link" href="archives">Archives</a>
+        
+          <a id="beautifont" class="main-nav-link" href="categories">Categories</a>
         
           <a id="beautifont" class="main-nav-link" href="tags">Tags</a>
         
@@ -213,6 +213,10 @@
 <p>这里实际是从网络下载配置的版本，会自动检测，如果不是的就会下载。</p>
 <p>然后修改 project的build.gradle</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">    <span class="keyword">classpath</span> <span class="string">'com.android.tools.build:gradle:1.3.0'</span></div><div class="line"></div><div class="line">    <span class="comment">// <span class="doctag">NOTE:</span> Do not place your application dependencies here; they belong</span></div><div class="line">    <span class="comment">// in the individual module build.gradle files</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <!-- 
+原文链接： 重新认识AndroidStudio和Gradle，这些都是我们应该知道的  — by 井方哥
+
+前言主要从AndroidStudio的环境安装升级，Gradle，Eclipse转AS,多渠道配置，Maven私服，Action,Option，快捷键等几个方面出发，讲一些操作技巧以及我对AndroidStudio使用的一些理解与经验。本文较全面的讲述了我们在开发中必须要了解的，比较......  -->
         
           <p class="article-more-link">
             <a href="2016/10/18/深入了解Android Studio和Gradle/#more">Read More</a>
@@ -263,6 +267,17 @@
 <p>An attractive theme for <a href="https://hexo.io/">Hexo</a>. I call it “Hiker”, short for “HikerNews”.</p>
 <p><a href="https://itimetraveler.github.io/"><strong>Live Preview</strong></a> | <a href="https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/README.cn.md"><strong>Hiker 中文版使用文档</strong></a></p>
 <p><img src="https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/source/preview/preview-pc.png?raw=true" alt="Desktop Preview"><br><img src="https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/source/preview/preview-mobile.png?raw=true" alt="Mobile Preview"></p>
+        <!-- Hiker        
+An attractive theme for Hexo. I call it “Hiker”, short for “HikerNews”.
+Live Preview | Hiker 中文版使用文档
+
+
+
+Hiker requires Hexo 2.4 and above.
+
+Installation
+Get it from GitHub
+1$ git clon......  -->
         
           <p class="article-more-link">
             <a href="2016/10/17/Hiker中文使用教程/#more">Read More</a>
@@ -314,6 +329,9 @@
         <p>在布局优化中，Androi的官方提到了这三种布局<code>&lt;include/&gt;</code>、<code>&lt;merge /&gt;</code>、<code>&lt;ViewStub /&gt;</code>，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。</p>
 <h3 id="一、布局重用-lt-include-gt"><a href="#一、布局重用-lt-include-gt" class="headerlink" title="一、布局重用&lt;include/&gt;"></a><strong>一、布局重用&lt;include/&gt;</strong></h3><p>&lt;include /&gt;标签能够重用布局文件，简单的使用如下：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>   </div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@color/app_bg"</span>  </div><div class="line">    <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span>&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">layout</span>=<span class="string">"@layout/titlebar"</span>/&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span> <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">              <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">              <span class="attr">android:text</span>=<span class="string">"@string/hello"</span>  </div><div class="line">              <span class="attr">android:padding</span>=<span class="string">"10dp"</span> /&gt;</span>  </div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+        <!-- 在布局优化中，Androi的官方提到了这三种布局&lt;include/&gt;、&lt;merge /&gt;、&lt;ViewStub /&gt;，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。
+一、布局重用&lt;include/&gt;&lt;include /&gt;标签能够重用布局文件，简单的使用如下：
+123456789101112......  -->
         
           <p class="article-more-link">
             <a href="2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/#more">Read More</a>
@@ -375,6 +393,10 @@
 <li>共享资源，全局使用</li>
 <li>节省创建时间，提高性能</li>
 </ul>
+        <!-- 
+什么是设计模式？简单的理解就是前人留下来的一些经验总结而已，然后把这些经验起了个名字叫Design Pattern，翻译过来就是设计模式，通过使用设计模式可以让我们的代码复用性更高，可维护性更高，让你的代码写的更优雅。设计模式理论上有23种，今天就先来分享下最常用的单例模式。
+
+引言对于单例模式，有工作经验的人基本上都使用过。面试的时候提到设计模式基本上都会提到单例模式，但是很多人对单例模......  -->
         
           <p class="article-more-link">
             <a href="2016/09/08/【Java】设计模式：深入理解单例模式/#more">Read More</a>
@@ -435,6 +457,10 @@
 </ul>
 <p>乍一看条件 3 是多余的， c 和 c++ 都不提供 swap 。 c 的 qsort 的用法： <code>qsort(data, n, sizeof(int), cmp_int);</code>  data 是起始地址， n 是元素个数， sizeof(int) 是每个元素的大小， cmp_int 是一个比较两个 int 的函数。</p>
 <p>c++ 的 sort 的用法： <code>sort(data, data+n, cmp_int);</code> data 是第一个元素的位置， data+n 是最后一个元素的下一个位置， cmp_int 是比较函数。</p>
+        <!-- 
+Go 是通过 sort 包提供排序和搜索，因为 Go 暂时不支持泛型（将来也不好说支不支持），所以，Go 的 sort 和 search 使用起来跟类型是有关的，或是需要像 c 一样写比较函数等，稍微显得也不是很方便。
+
+引言  Go 的排序思路和 C 和 C++ 有些差别。 C 默认是对数组进行排序， C++ 是对一个序列进行排序， Go 则更宽泛一些，待排序的可以是任何对象， 虽然很多......  -->
         
           <p class="article-more-link">
             <a href="2016/09/07/【Go语言】基本类型排序和 slice 排序/#more">Read More</a>
@@ -487,6 +513,8 @@
 <p>所以 这点就让人很痛苦， 然而问题总还是要被解决的，作者曾经亲眼看到过使用android studio仅仅用了2.5秒就编译完毕(在代码更改很少的情况下)。 现在把如何优化gradle编译速度的方法记录在此，希望可以 帮助到广大的同行们。</p>
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h3><p>首先，保证项目使用的Gradle是最新的，我这里用的是2.10版本。因为Gradle 2.4之后在编译效率上面有了一个非常大的提高，看下图官方的速度对比。</p>
 <p><img src="http://img.blog.csdn.net/20160826151929475" alt="这是官方的速度对比，下一代编译速度更快"></p>
+        <!-- 引言如果你之前用eclipse开发过Android app的话，转到android studio的第一反应也许就是：”编译速度有点慢“，表现的最明显的一点就是，每次android studio使用gradle编译，即便是更改的代码量很少，也会按照预先设置的task的顺序，依次走完编译的各项流程。这时候如果电脑CPU配置不高的时候，就会超级卡界面，更别说改代码了。
+所以 这点就让人很痛苦， 然......  -->
         
           <p class="article-more-link">
             <a href="2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/#more">Read More</a>
@@ -544,6 +572,11 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> x;</div></pre></td></tr></table></figure>
 <p>上面的代码声明了 <code>x</code> 变量，并且其类型为 <code>int</code>——即，表达式 <code>x</code> 为 <code>int</code> 类型。一般而言，为了指明新变量的类型，我们得写出一个表达式，其中含有我们要声明的变量，这个表达式运算的结果值属于某种基本类型，我们把这种基本类型写到表达式的左边。所以，下述声明：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *p;</div><div class="line"><span class="keyword">int</span> a[<span class="number">3</span>];</div></pre></td></tr></table></figure>
+        <!-- 
+关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。
+
+也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：Go’s Declaration Syntax），简略翻译如下（水平有限翻译的不对的地方见谅）：
+引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax......  -->
         
           <p class="article-more-link">
             <a href="2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/#more">Read More</a>
@@ -598,6 +631,11 @@
 <p>在听到人们谈论机器学习的时候，你是不是对它的涵义只有几个模糊的认识呢？你是不是已经厌倦了在和同事交谈时只能一直点头？让我们改变一下吧！</p>
 <p>本指南的读者对象是所有对机器学习有求知欲但却不知道如何开头的朋友。我猜很多人已经读过了<a href="https://en.wikipedia.org/wiki/Machine_learning">“机器学习” ——维基百科词条</a>，倍感挫折，以为没人能给出一个高层次的解释。本文就是你们想要的东西。</p>
 <p>本文目标在于平易近人，这意味着文中有大量的概括。但是谁在乎这些呢？只要能让读者对于ML更感兴趣，任务也就完成了。</p>
+        <!-- 
+本文是一篇转载自伯乐在线的译文，英文原文是这里：Machine Learning is Fun! — by Adam Geitgey
+
+在听到人们谈论机器学习的时候，你是不是对它的涵义只有几个模糊的认识呢？你是不是已经厌倦了在和同事交谈时只能一直点头？让我们改变一下吧！
+本指南的读者对象是所有对机器学习有求知欲但却不知道如何开头的朋友。我猜很多人已经读过了“机器学习” ——维基百科词条，倍......  -->
         
           <p class="article-more-link">
             <a href="2016/08/14/【Machine Learning】机器学习：简明入门指南/#more">Read More</a>
@@ -648,6 +686,22 @@
       
         <h2 id="Top-Deep-Learning-Projects"><a href="#Top-Deep-Learning-Projects" class="headerlink" title="Top Deep Learning Projects"></a>Top Deep Learning Projects</h2><p>A list of popular github projects related to deep learning (ranked by stars).</p>
 <p>Last Update: 2016.08.09</p>
+        <!-- Top Deep Learning ProjectsA list of popular github projects related to deep learning (ranked by stars).
+Last Update: 2016.08.09
+ 
+
+
+
+Project Name
+Stars
+Description
+
+
+
+
+TensorFlow
+29622
+Computation ......  -->
         
           <p class="article-more-link">
             <a href="2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/#more">Read More</a>
@@ -703,6 +757,12 @@
 <p><img src="http://img.blog.csdn.net/20160808175543250" alt="三个样式相同的按钮"></p>
 <p>为第一个灰色按钮自定义背景如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">shape</span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"@color/gray"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">corners</span></div><div class="line">        <span class="attr">android:radius</span>=<span class="string">"60dip"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">stroke</span></div><div class="line">        <span class="attr">android:width</span>=<span class="string">"0dp"</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">solid</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>然后，如果再为每个颜色的按钮都写一个shape背景也太麻烦，重用性太差。</p>
+        <!-- 
+在实现布局的时候，有些按钮形状相同，只是颜色有差异，如果使用自定义shape实现了其中一种按钮，有没有可能不需要再为其他每个颜色都写一个shape文件呢？
+
+一、问题比如以下这三个按钮：
+
+为第一个灰色按钮自定义背景如下：1234567891011121314&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;shape    xmlns:and......  -->
         
           <p class="article-more-link">
             <a href="2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/#more">Read More</a>
@@ -755,6 +815,8 @@
     <a href="index.html" class="mobile-nav-link">Home</a>
   
     <a href="archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="categories" class="mobile-nav-link">Categories</a>
   
     <a href="tags" class="mobile-nav-link">Tags</a>
   
