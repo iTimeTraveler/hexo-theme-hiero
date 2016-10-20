@@ -463,7 +463,8 @@ body {
 }
 .article-meta {
   text-align: center;
-  margin-bottom: 1em;
+  font-size: 0.9em;
+  margin: 1.5em 0 0 0;
 }
 .article-meta:before,
 .article-meta:after {
@@ -507,11 +508,14 @@ body {
 }
 .article-header {
   text-align: center;
-  margin-bottom: 3em;
 }
 .article-header h1 {
   font-weight: bold;
   font-family: "futura-pt", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei, WenQuanYi Micro Hei, "Microsoft YaHei", sans-serif;
+}
+.article-header .thumb {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .article-title {
   text-decoration: none;
@@ -603,7 +607,7 @@ a.article-title:hover {
   padding: 0.1px 20px;
   font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-s;
   font-size: 1.1em;
-  margin: 1.6em 0px;
+  margin: 1.4em 0px;
   border-left: 5px solid #fb6d19;
   background: rgba(208,211,248,0.15);
 }
@@ -984,6 +988,16 @@ li
 .archives-wrap {
   margin: 50px 0;
 }
+.archives-wrap blockquote {
+  padding: 1em;
+  margin: 5em 0 0 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fb6d19;
+  text-align: center;
+  border-left: 0px solid #fb6d19;
+  background: rgba(208,211,248,0.15);
+}
 .archives {
   margin-left: 2em;
 }
@@ -998,11 +1012,19 @@ li
 .archive-year-wrap {
   margin-bottom: 1em;
 }
+.archive-year-wrap h1 {
+  font-size: 1.3em;
+}
 .archive-year {
   color: #fb6d19;
 }
 .archive-year:hover {
   color: #fb6d19;
+}
+.archive-year:before {
+  font-family: "FontAwesome";
+  content: "\f273";
+  margin-right: 0.2em;
 }
 .archives {
   -webkit-column-gap: 10px;
@@ -1041,6 +1063,8 @@ li
   -ms-transition: color 0.2s;
   transition: color 0.2s;
   line-height: 1.6em;
+  border-left: 1px solid #fb6d19;
+  padding-left: 15px;
 }
 .archive-article-title:hover {
   color: #fb6d19;
@@ -1051,11 +1075,13 @@ li
 .archive-article-date {
   min-width: 50px;
   float: left;
-  color: #7f8c8d;
+  color: #c7c7c7;
   text-decoration: none;
   line-height: 1.6em;
   margin-right: 15px;
   display: block;
+  font-size: 1.1em;
+  font-family: "futura-pt", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei, WenQuanYi Micro Hei, "Microsoft YaHei", sans-serif;
 }
 .archive-article-date:hover {
   color: #fb6d19;
