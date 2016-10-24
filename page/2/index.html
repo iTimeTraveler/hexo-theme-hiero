@@ -182,67 +182,6 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-【Android】使用shape的同时，动态替换shape的颜色属性"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="../../2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/">【Android】使用shape的同时，动态替换shape的颜色属性</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="../../2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/" class="article-date">
-	  <time datetime="2016-08-08T10:10:00.000Z" itemprop="datePublished">2016-08-08</time>
-	</a>
-
-      
-    <a class="article-category-link" href="../../categories/Android/">Android</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>在实现布局的时候，有些按钮形状相同，只是颜色有差异，如果使用自定义shape实现了其中一种按钮，有没有可能不需要再为其他每个颜色都写一个shape文件呢？</p>
-</blockquote>
-<h4 id="一、问题"><a href="#一、问题" class="headerlink" title="一、问题"></a><strong>一、问题</strong></h4><p>比如以下这三个按钮：</p>
-<p><img src="http://img.blog.csdn.net/20160808175543250" alt="三个样式相同的按钮"></p>
-<p>为第一个灰色按钮自定义背景如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">shape</span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"@color/gray"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">corners</span></div><div class="line">        <span class="attr">android:radius</span>=<span class="string">"60dip"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">stroke</span></div><div class="line">        <span class="attr">android:width</span>=<span class="string">"0dp"</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">solid</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>然后，如果再为每个颜色的按钮都写一个shape背景也太麻烦，重用性太差。</p>
-        <!-- 
-在实现布局的时候，有些按钮形状相同，只是颜色有差异，如果使用自定义shape实现了其中一种按钮，有没有可能不需要再为其他每个颜色都写一个shape文件呢？
-
-一、问题比如以下这三个按钮：
-
-为第一个灰色按钮自定义背景如下：1234567891011121314&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;shape    xmlns:and......  -->
-        
-          <p class="article-more-link">
-            <a href="../../2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-<!-- Table of Contents -->
-
-  
     <article id="post-BAT人才体系的职位层级、薪酬、晋升标准大全"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -512,6 +451,63 @@ PPI = Pixels pe......  -->
 <!-- Table of Contents -->
 
   
+    <article id="post-【Java】按位存储：使用int存储boolean数组"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/">【Java】按位存储：使用int存储boolean数组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/" class="article-date">
+	  <time datetime="2016-06-02T03:55:00.000Z" itemprop="datePublished">2016-06-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Java/">Java</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>有一种场景，比如App设置页中会有一组开关选项，这个时候保存这些开关的状态，如果每个按钮都对应一个boolean值的话，太大材小用显得鸡肋，频繁读取SharedPreferences 存取效率自然快不过一次读取。</p>
+</blockquote>
+<p>首先，敲定每个boolean值存储的位置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> mBroadcastCustomValue = <span class="number">0</span>;   <span class="comment">//用来存储的int值</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_BASE = <span class="number">1</span>;				<span class="comment">//基础类播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_TRAFFIC = <span class="number">1</span> &lt;&lt; <span class="number">1</span>;		<span class="comment">//实时路况</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_CAMERA = <span class="number">1</span> &lt;&lt; <span class="number">2</span>;		<span class="comment">//摄像头限速播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_SAFE = <span class="number">1</span> &lt;&lt; <span class="number">3</span>;		<span class="comment">//安全提醒类</span></div></pre></td></tr></table></figure></p>
+<h2 id="一、添加Add"><a href="#一、添加Add" class="headerlink" title="一、添加Add"></a><strong>一、添加Add</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue |= level;    <span class="comment">//add</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">addLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
+        <!-- 
+有一种场景，比如App设置页中会有一组开关选项，这个时候保存这些开关的状态，如果每个按钮都对应一个boolean值的话，太大材小用显得鸡肋，频繁读取SharedPreferences 存取效率自然快不过一次读取。
+
+首先，敲定每个boolean值存储的位置12345private int mBroadcastCustomValue = 0;   //用来存储的int值public stat......  -->
+        
+          <p class="article-more-link">
+            <a href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
     <article id="post-【Android】技术调研：用代码模拟屏幕点击、触摸事件"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -560,63 +556,6 @@ PPI = Pixels pe......  -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-【Java】按位存储：使用int存储boolean数组"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/">【Java】按位存储：使用int存储boolean数组</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/" class="article-date">
-	  <time datetime="2016-06-02T03:55:00.000Z" itemprop="datePublished">2016-06-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="../../categories/Java/">Java</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>有一种场景，比如App设置页中会有一组开关选项，这个时候保存这些开关的状态，如果每个按钮都对应一个boolean值的话，太大材小用显得鸡肋，频繁读取SharedPreferences 存取效率自然快不过一次读取。</p>
-</blockquote>
-<p>首先，敲定每个boolean值存储的位置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> mBroadcastCustomValue = <span class="number">0</span>;   <span class="comment">//用来存储的int值</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_BASE = <span class="number">1</span>;				<span class="comment">//基础类播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_TRAFFIC = <span class="number">1</span> &lt;&lt; <span class="number">1</span>;		<span class="comment">//实时路况</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_CAMERA = <span class="number">1</span> &lt;&lt; <span class="number">2</span>;		<span class="comment">//摄像头限速播报</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BROADCAST_TYPE_CUSTOM_SAFE = <span class="number">1</span> &lt;&lt; <span class="number">3</span>;		<span class="comment">//安全提醒类</span></div></pre></td></tr></table></figure></p>
-<h2 id="一、添加Add"><a href="#一、添加Add" class="headerlink" title="一、添加Add"></a><strong>一、添加Add</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">(<span class="keyword">int</span> level)</span></span>&#123;</div><div class="line">	mBroadcastCustomValue |= level;    <span class="comment">//add</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方式如下</span></div><div class="line">addLevel(BROADCAST_TYPE_CUSTOM_BASE);</div></pre></td></tr></table></figure>
-        <!-- 
-有一种场景，比如App设置页中会有一组开关选项，这个时候保存这些开关的状态，如果每个按钮都对应一个boolean值的话，太大材小用显得鸡肋，频繁读取SharedPreferences 存取效率自然快不过一次读取。
-
-首先，敲定每个boolean值存储的位置12345private int mBroadcastCustomValue = 0;   //用来存储的int值public stat......  -->
-        
-          <p class="article-more-link">
-            <a href="../../2016/06/02/【Java】按位存储：使用int存储boolean数组/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Java/">Java</a></li></ul>
 
     </footer>
   </div>
@@ -799,6 +738,64 @@ PPI = Pixels pe......  -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Java中的封装、继承与多态"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="../../2016/01/15/Java中的封装、继承与多态/">Java中的封装、继承与多态</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="../../2016/01/15/Java中的封装、继承与多态/" class="article-date">
+	  <time datetime="2016-01-15T07:43:20.000Z" itemprop="datePublished">2016-01-15</time>
+	</a>
+
+      
+    <a class="article-category-link" href="../../categories/Java/">Java</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这次我们来了解一下面向对象的三大基石<strong>封装，继承、多态</strong>，然后大致对比一下继承和多态的区别。</p>
+</blockquote>
+<h2 id="一、封装："><a href="#一、封装：" class="headerlink" title="一、封装："></a><strong>一、封装：</strong></h2><p>　　封装是实现面向对象程序设计的第一步，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。 </p>
+<p> 封装的意义：<br>　　封装的意义在于保护或者防止代码（数据）被我们无意中破坏。在面向对象程序设计中数据被看作是一个中心的元素并且和使用它的函数结合的很密切，从而保护它不被其它的函数意外的修改。封装提供了一个有效的途径来保护数据不被意外的破坏。相比我们将数据（用域来实现）在程序中定义为公用的（public）我们将它们(fields)定义为私有的（privat）在很多方面会更好。</p>
+        <!-- 
+这次我们来了解一下面向对象的三大基石封装，继承、多态，然后大致对比一下继承和多态的区别。
+
+一、封装：　　封装是实现面向对象程序设计的第一步，封装就是将数据或函数等集合在一个个的单元中（我们称之为类）。被封装的对象通常被称为抽象数据类型。 
+ 封装的意义：　　封装的意义在于保护或者防止代码（数据）被我们无意中破坏。在面向对象程序设计中数据被看作是一个中心的元素并且和使用它的函数结合的很密切......  -->
+        
+          <p class="article-more-link">
+            <a href="../../2016/01/15/Java中的封装、继承与多态/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Java/">Java</a></li></ul>
 
     </footer>
   </div>
