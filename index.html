@@ -186,6 +186,57 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="2016/12/11/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/">Being Outside in Fresh Air &amp; How Your Body Loves It</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="2016/12/11/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/" class="article-date">
+	  <time datetime="2016-12-11T13:55:38.000Z" itemprop="datePublished">2016-12-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="categories/LifeStyle/">LifeStyle</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/hexo-theme-hiker/gallery/shoes.jpg" alt=""></p>
+<p>Amor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        <!-- 
+Amor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip e......  -->
+        
+          <p class="article-more-link">
+            <a href="2016/12/11/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
     <article id="post-Hiker主题预览"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -239,366 +290,6 @@
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-深入了解Android Studio和Gradle"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="2016/10/18/深入了解Android Studio和Gradle/">深入了解Android Studio和Gradle</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="2016/10/18/深入了解Android Studio和Gradle/" class="article-date">
-	  <time datetime="2016-10-18T09:08:00.000Z" itemprop="datePublished">2016-10-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="categories/Android/">Android</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>原文链接： <a href="https://zhuanlan.zhihu.com/p/22990436"><strong>重新认识AndroidStudio和Gradle，这些都是我们应该知道的</strong></a>  — by <a href="https://www.zhihu.com/people/zeng-jing-fang">井方哥</a></p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p>主要从AndroidStudio的环境安装升级，Gradle，Eclipse转AS,多渠道配置，Maven私服，Action,Option，快捷键等几个方面出发，讲一些操作技巧以及我对AndroidStudio使用的一些理解与经验。本文较全面的讲述了我们在开发中必须要了解的，比较多而全，可能不能马上记住，目的在于大家看我之后能有一个认识，在需要使用的时候知道有这么个东西。希望对你的开发工作有所帮助，不足之处，请批评指正。</p>
-<h2 id="一、Install-amp-Settings-amp-Update"><a href="#一、Install-amp-Settings-amp-Update" class="headerlink" title="一、Install&amp;Settings&amp;Update"></a><strong>一、Install&amp;Settings&amp;Update</strong></h2><h3 id="1、Gradle"><a href="#1、Gradle" class="headerlink" title="1、Gradle"></a>1、Gradle</h3><p>Gradle官方会不断更新，我们可以使用本地安装的方式，并配置path，我们就可以使用Terminal直接输入gradle命令执行构建任务。当然如果我们想快速更新，可以修改配置文件。 首先，修改<code>project\gradle\warpper\gradle-wapper.properties</code> 文件，其中distributionUrl的值：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">distributionUrl=https\:<span class="comment">//services.gradle.org/distributions/gradle-2.4-all.zip</span></div></pre></td></tr></table></figure>
-<p>这里实际是从网络下载配置的版本，会自动检测，如果不是的就会下载。</p>
-<p>然后修改 project的build.gradle</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">    <span class="keyword">classpath</span> <span class="string">'com.android.tools.build:gradle:1.3.0'</span></div><div class="line"></div><div class="line">    <span class="comment">// <span class="doctag">NOTE:</span> Do not place your application dependencies here; they belong</span></div><div class="line">    <span class="comment">// in the individual module build.gradle files</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        <!-- 
-原文链接： 重新认识AndroidStudio和Gradle，这些都是我们应该知道的  — by 井方哥
-
-前言主要从AndroidStudio的环境安装升级，Gradle，Eclipse转AS,多渠道配置，Maven私服，Action,Option，快捷键等几个方面出发，讲一些操作技巧以及我对AndroidStudio使用的一些理解与经验。本文较全面的讲述了我们在开发中必须要了解的，比较......  -->
-        
-          <p class="article-more-link">
-            <a href="2016/10/18/深入了解Android Studio和Gradle/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-【Android】抽象布局 — include、merge 、ViewStub"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/">【Android】抽象布局 — include、merge 、ViewStub</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/" class="article-date">
-	  <time datetime="2016-09-19T03:47:00.000Z" itemprop="datePublished">2016-09-19</time>
-	</a>
-
-      
-    <a class="article-category-link" href="categories/Android/">Android</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在布局优化中，Androi的官方提到了这三种布局<code>&lt;include/&gt;</code>、<code>&lt;merge /&gt;</code>、<code>&lt;ViewStub /&gt;</code>，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。</p>
-<h3 id="一、布局重用-lt-include-gt"><a href="#一、布局重用-lt-include-gt" class="headerlink" title="一、布局重用&lt;include/&gt;"></a><strong>一、布局重用&lt;include/&gt;</strong></h3><p>&lt;include /&gt;标签能够重用布局文件，简单的使用如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>   </div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">”match_parent”</span>  </div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@color/app_bg"</span>  </div><div class="line">    <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span>&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">layout</span>=<span class="string">"@layout/titlebar"</span>/&gt;</span>  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span> <span class="attr">android:layout_width</span>=<span class="string">”match_parent”</span>  </div><div class="line">              <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>  </div><div class="line">              <span class="attr">android:text</span>=<span class="string">"@string/hello"</span>  </div><div class="line">              <span class="attr">android:padding</span>=<span class="string">"10dp"</span> /&gt;</span>  </div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
-        <!-- 在布局优化中，Androi的官方提到了这三种布局&lt;include/&gt;、&lt;merge /&gt;、&lt;ViewStub /&gt;，并介绍了这三种布局各有的优势，下面也是简单说一下他们的优势，以及怎么使用，记下来权当做笔记。
-一、布局重用&lt;include/&gt;&lt;include /&gt;标签能够重用布局文件，简单的使用如下：
-123456789101112......  -->
-        
-          <p class="article-more-link">
-            <a href="2016/09/19/【Android】抽象布局 — include、merge 、ViewStub/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-【Java】设计模式：深入理解单例模式"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="2016/09/08/【Java】设计模式：深入理解单例模式/">【Java】设计模式：深入理解单例模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="2016/09/08/【Java】设计模式：深入理解单例模式/" class="article-date">
-	  <time datetime="2016-09-08T06:18:20.000Z" itemprop="datePublished">2016-09-08</time>
-	</a>
-
-      
-    <a class="article-category-link" href="categories/Design-Pattern/">Design Pattern</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>什么是设计模式？简单的理解就是前人留下来的一些经验总结而已，然后把这些经验起了个名字叫Design Pattern，翻译过来就是设计模式，通过使用设计模式可以让我们的代码复用性更高，可维护性更高，让你的代码写的更优雅。设计模式理论上有23种，今天就先来分享下最常用的单例模式。</p>
-</blockquote>
-<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h3><p>对于单例模式，有工作经验的人基本上都使用过。面试的时候提到设计模式基本上都会提到单例模式，但是很多人对单例模式也是一知半解，当然也包括我哈哈哈=_=。所以我们有必要深入理解一下所谓的「单例模式」。</p>
-<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a><strong>单例模式</strong></h3><p>定义：<strong><code>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</code></strong></p>
-<p>单例模式结构图： </p>
-<p><img src="http://img.blog.csdn.net/20160908131425758" alt=""></p>
-<p>使用单例的优点：</p>
-<ul>
-<li>单例类只有一个实例</li>
-<li>共享资源，全局使用</li>
-<li>节省创建时间，提高性能</li>
-</ul>
-        <!-- 
-什么是设计模式？简单的理解就是前人留下来的一些经验总结而已，然后把这些经验起了个名字叫Design Pattern，翻译过来就是设计模式，通过使用设计模式可以让我们的代码复用性更高，可维护性更高，让你的代码写的更优雅。设计模式理论上有23种，今天就先来分享下最常用的单例模式。
-
-引言对于单例模式，有工作经验的人基本上都使用过。面试的时候提到设计模式基本上都会提到单例模式，但是很多人对单例模......  -->
-        
-          <p class="article-more-link">
-            <a href="2016/09/08/【Java】设计模式：深入理解单例模式/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Java/">Java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-【Go语言】基本类型排序和 slice 排序"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="2016/09/07/【Go语言】基本类型排序和 slice 排序/">【Go语言】基本类型排序和 slice 排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="2016/09/07/【Go语言】基本类型排序和 slice 排序/" class="article-date">
-	  <time datetime="2016-09-07T08:36:00.000Z" itemprop="datePublished">2016-09-07</time>
-	</a>
-
-      
-    <a class="article-category-link" href="categories/Go语言/">Go语言</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Go 是通过 sort 包提供排序和搜索，因为 Go 暂时不支持泛型（将来也不好说支不支持），所以，Go 的 sort 和 search 使用起来跟类型是有关的，或是需要像 c 一样写比较函数等，稍微显得也不是很方便。</p>
-</blockquote>
-<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h3><p>  Go 的排序思路和 C 和 C++ 有些差别。 C 默认是对数组进行排序， C++ 是对一个序列进行排序， Go 则更宽泛一些，待排序的可以是<strong><code>任何对象</code></strong>， 虽然很多情况下是一个 <code>slice</code> (分片， 类似于数组)，或是包含 slice 的一个对象。</p>
-<p>排序(接口)的三个要素：</p>
-<ul>
-<li>待排序元素个数 n ；</li>
-<li>第 i 和第 j 个元素的比较函数 cmp ；</li>
-<li>第 i 和 第 j 个元素的交换 swap ；</li>
-</ul>
-<p>乍一看条件 3 是多余的， c 和 c++ 都不提供 swap 。 c 的 qsort 的用法： <code>qsort(data, n, sizeof(int), cmp_int);</code>  data 是起始地址， n 是元素个数， sizeof(int) 是每个元素的大小， cmp_int 是一个比较两个 int 的函数。</p>
-<p>c++ 的 sort 的用法： <code>sort(data, data+n, cmp_int);</code> data 是第一个元素的位置， data+n 是最后一个元素的下一个位置， cmp_int 是比较函数。</p>
-        <!-- 
-Go 是通过 sort 包提供排序和搜索，因为 Go 暂时不支持泛型（将来也不好说支不支持），所以，Go 的 sort 和 search 使用起来跟类型是有关的，或是需要像 c 一样写比较函数等，稍微显得也不是很方便。
-
-引言  Go 的排序思路和 C 和 C++ 有些差别。 C 默认是对数组进行排序， C++ 是对一个序列进行排序， Go 则更宽泛一些，待排序的可以是任何对象， 虽然很多......  -->
-        
-          <p class="article-more-link">
-            <a href="2016/09/07/【Go语言】基本类型排序和 slice 排序/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Go语言/">Go语言</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-【Android】如何加速 AndroidStudio 的编译效率"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/">【Android】如何加速 AndroidStudio 的编译效率</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/" class="article-date">
-	  <time datetime="2016-08-26T07:20:00.000Z" itemprop="datePublished">2016-08-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="categories/Android/">Android</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h3><p>如果你之前用eclipse开发过Android app的话，转到android studio的第一反应也许就是：”<strong>编译速度有点慢</strong>“，表现的最明显的一点就是，每次android studio使用gradle编译，即便是更改的代码量很少，也会按照预先设置的task的顺序，依次走完编译的各项流程。这时候如果电脑CPU配置不高的时候，就会超级卡界面，更别说改代码了。</p>
-<p>所以 这点就让人很痛苦， 然而问题总还是要被解决的，作者曾经亲眼看到过使用android studio仅仅用了2.5秒就编译完毕(在代码更改很少的情况下)。 现在把如何优化gradle编译速度的方法记录在此，希望可以 帮助到广大的同行们。</p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h3><p>首先，保证项目使用的Gradle是最新的，我这里用的是2.10版本。因为Gradle 2.4之后在编译效率上面有了一个非常大的提高，看下图官方的速度对比。</p>
-<p><img src="http://img.blog.csdn.net/20160826151929475" alt="这是官方的速度对比，下一代编译速度更快"></p>
-        <!-- 引言如果你之前用eclipse开发过Android app的话，转到android studio的第一反应也许就是：”编译速度有点慢“，表现的最明显的一点就是，每次android studio使用gradle编译，即便是更改的代码量很少，也会按照预先设置的task的顺序，依次走完编译的各项流程。这时候如果电脑CPU配置不高的时候，就会超级卡界面，更别说改代码了。
-所以 这点就让人很痛苦， 然......  -->
-        
-          <p class="article-more-link">
-            <a href="2016/08/26/【Android】如何加速 AndroidStudio 的编译效率/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-【Go】为什么 Go 语言把类型声明放在后面？"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/">【Go】为什么 Go 语言把类型声明放在后面？</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/" class="article-date">
-	  <time datetime="2016-08-18T08:36:00.000Z" itemprop="datePublished">2016-08-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="categories/Go语言/">Go语言</a>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。</p>
-</blockquote>
-<p>也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：<a href="http://blog.golang.org/gos-declaration-syntax"><strong>Go’s Declaration Syntax</strong></a>），简略翻译如下（水平有限翻译的不对的地方见谅）：</p>
-<h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h4><p>Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax）会和传统的C家族语言不同。在这篇博文里，我们会进行一个比较，并做出解答。</p>
-<h4 id="C-的语法"><a href="#C-的语法" class="headerlink" title="C 的语法"></a><strong>C 的语法</strong></h4><p>首先，先看看 C 的语法。C 采用了一种聪明而不同寻常的声明语法。声明变量时，只需写出一个带有目标变量名的表达式，然后在表达式里指明该表达式本身的类型即可。比如：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> x;</div></pre></td></tr></table></figure>
-<p>上面的代码声明了 <code>x</code> 变量，并且其类型为 <code>int</code>——即，表达式 <code>x</code> 为 <code>int</code> 类型。一般而言，为了指明新变量的类型，我们得写出一个表达式，其中含有我们要声明的变量，这个表达式运算的结果值属于某种基本类型，我们把这种基本类型写到表达式的左边。所以，下述声明：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *p;</div><div class="line"><span class="keyword">int</span> a[<span class="number">3</span>];</div></pre></td></tr></table></figure>
-        <!-- 
-关于类型，官网上有一段仔细地介绍了一下函数指针的部分，现在的设计比起 C 的语法，清晰很多。
-
-也就是说，类型放在后面是为了更加清晰易懂。Rob Pike 曾经在 Go 官方博客解释过这个问题（查看原文：Go’s Declaration Syntax），简略翻译如下（水平有限翻译的不对的地方见谅）：
-引言Go语言新人常常会很疑惑为什么这门语言的声明语法（declaration syntax......  -->
-        
-          <p class="article-more-link">
-            <a href="2016/08/18/【Go】为什么 Go 语言把类型声明放在后面？/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Go语言/">Go语言</a></li></ul>
 
     </footer>
   </div>
@@ -669,7 +360,7 @@ Go 是通过 sort 包提供排序和搜索，因为 Go 暂时不支持泛型（�
 <!-- Table of Contents -->
 
   
-    <article id="post-【Machine Learning】Github上关注最多的53个深度学习项目"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Gallery-Example"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -677,7 +368,7 @@ Go 是通过 sort 包提供排序和搜索，因为 Go 暂时不支持泛型（�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/">【Machine Learning】Github上关注最多的53个深度学习项目</a>
+      <a class="article-title" href="2016/01/26/Gallery-Example/">Gallery Example</a>
     </h1>
   
 
@@ -685,37 +376,19 @@ Go 是通过 sort 包提供排序和搜索，因为 Go 暂时不支持泛型（�
     
     <div class="article-meta">
       
-	<a href="2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/" class="article-date">
-	  <time datetime="2016-08-12T07:22:00.000Z" itemprop="datePublished">2016-08-12</time>
+	<a href="2016/01/26/Gallery-Example/" class="article-date">
+	  <time datetime="2016-01-26T13:55:37.000Z" itemprop="datePublished">2016-01-26</time>
 	</a>
 
       
-    <a class="article-category-link" href="categories/Machine-Learning/">Machine Learning</a>
-
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Top-Deep-Learning-Projects"><a href="#Top-Deep-Learning-Projects" class="headerlink" title="Top Deep Learning Projects"></a>Top Deep Learning Projects</h2><p>A list of popular github projects related to deep learning (ranked by stars).</p>
-<p>Last Update: 2016.08.09</p>
-        <!-- Top Deep Learning ProjectsA list of popular github projects related to deep learning (ranked by stars).
-Last Update: 2016.08.09
- 
-
-
-
-Project Name
-Stars
-Description
-
-
-
-
-TensorFlow
-29622
-Computation ......  -->
+        <p>To add a photo gallery placeholder to your post, just add the following lines to your front-matter:<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">photos:</span></div><div class="line"><span class="attr">- https:</span>//www.hdwallpapers.net/previews/starry-night-over-corsica<span class="bullet">-986.</span>jpg</div><div class="line"><span class="attr">- https:</span>//www.hdwallpapers.net/previews/water-plant-close-up<span class="bullet">-979.</span>jpg</div><div class="line"><span class="bullet">-</span> ...</div></pre></td></tr></table></figure></p>
+        <!-- To add a photo gallery placeholder to your post, just add the following lines to your front-matter:1234photos:- https://www.hdwallpapers.net/previews/starry-night-over-corsica-986.jpg- https://www.......  -->
         
           <p class="article-more-link">
-            <a href="2016/08/12/【Machine Learning】Github上关注最多的53个深度学习项目/#more">Read More</a>
+            <a href="2016/01/26/Gallery-Example/#more">Read More</a>
           </p>
         
       
@@ -723,8 +396,6 @@ Computation ......  -->
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Machine-Learning/">Machine Learning</a></li></ul>
-
     </footer>
   </div>
   
@@ -735,7 +406,7 @@ Computation ......  -->
 <!-- Table of Contents -->
 
   
-    <article id="post-【Android】使用shape的同时，动态替换shape的颜色属性"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Take-a-Deep-Breath-and-Just-Be"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -743,7 +414,7 @@ Computation ......  -->
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/">【Android】使用shape的同时，动态替换shape的颜色属性</a>
+      <a class="article-title" href="2015/12/11/Take-a-Deep-Breath-and-Just-Be/">Take a Deep Breath and Just Be</a>
     </h1>
   
 
@@ -751,32 +422,229 @@ Computation ......  -->
     
     <div class="article-meta">
       
-	<a href="2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/" class="article-date">
-	  <time datetime="2016-08-08T10:10:00.000Z" itemprop="datePublished">2016-08-08</time>
+	<a href="2015/12/11/Take-a-Deep-Breath-and-Just-Be/" class="article-date">
+	  <time datetime="2015-12-11T13:55:37.000Z" itemprop="datePublished">2015-12-11</time>
 	</a>
 
       
-    <a class="article-category-link" href="categories/Android/">Android</a>
+    <a class="article-category-link" href="categories/LifeStyle/">LifeStyle</a>
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>在实现布局的时候，有些按钮形状相同，只是颜色有差异，如果使用自定义shape实现了其中一种按钮，有没有可能不需要再为其他每个颜色都写一个shape文件呢？</p>
-</blockquote>
-<h4 id="一、问题"><a href="#一、问题" class="headerlink" title="一、问题"></a><strong>一、问题</strong></h4><p>比如以下这三个按钮：</p>
-<p><img src="http://img.blog.csdn.net/20160808175543250" alt="三个样式相同的按钮"></p>
-<p>为第一个灰色按钮自定义背景如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">shape</span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span></div><div class="line">    <span class="attr">android:color</span>=<span class="string">"@color/gray"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">corners</span></div><div class="line">        <span class="attr">android:radius</span>=<span class="string">"60dip"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">stroke</span></div><div class="line">        <span class="attr">android:width</span>=<span class="string">"0dp"</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">solid</span></div><div class="line">        <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>然后，如果再为每个颜色的按钮都写一个shape背景也太麻烦，重用性太差。</p>
-        <!-- 
-在实现布局的时候，有些按钮形状相同，只是颜色有差异，如果使用自定义shape实现了其中一种按钮，有没有可能不需要再为其他每个颜色都写一个shape文件呢？
+        <p><img src="/hexo-theme-hiker/gallery/salt-lake.jpg" alt=""><br>This is hiker, a free responsive, high resolution and pretty flexible theme for you to use to write about things you love. Make sure to check all the examples out! To download this theme or to check the full feature list, just go here. Feel free to leave a comment there if you digg it!</p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+<p>“Dolores eos qui ratione voluptatem sequi nesciunt. Lorem ipsum dolor.”Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+<p>It’s like a language. You learn the alphabet, which are the scales. You learn sentences, which are the chords. And then you talk extemporaneously with the horn. It’s a wonderful thing to speak extemporaneously, which is something I’ve never gotten the hang of. But musically I love to talk just off the top of my head. And that’s what jazz music is all about.</p>
+<p>Stan Getz</p>
+<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
 
-一、问题比如以下这三个按钮：
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
 
-为第一个灰色按钮自定义背景如下：1234567891011121314&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;shape    xmlns:and......  -->
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Independent-Artists-Make-Their-Own-Way-Without-Big-Record-Labels"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="2015/02/03/Independent-Artists-Make-Their-Own-Way-Without-Big-Record-Labels/">Independent Artists Make Their Own Way Without Big Record Labels</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="2015/02/03/Independent-Artists-Make-Their-Own-Way-Without-Big-Record-Labels/" class="article-date">
+	  <time datetime="2015-02-03T09:29:25.000Z" itemprop="datePublished">2015-02-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="categories/Music/">Music</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/hexo-theme-hiker/gallery/guitarist.jpg" alt=""><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+<p>“Dolores eos qui ratione voluptatem sequi nesciunt. Lorem ipsum dolor.”Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+<p>It’s like a language. You learn the alphabet, which are the scales. You learn sentences, which are the chords. And then you talk extemporaneously with the horn. It’s a wonderful thing to speak extemporaneously, which is something I’ve never gotten the hang of. But musically I love to talk just off the top of my head. And that’s what jazz music is all about.</p>
+<p>Stan Getz</p>
+<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Starting-to-Actually-Listen-to-The-Lyrics-in-Music"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="2015/02/03/Starting-to-Actually-Listen-to-The-Lyrics-in-Music/">Starting to Actually Listen to The Lyrics in Music</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="2015/02/03/Starting-to-Actually-Listen-to-The-Lyrics-in-Music/" class="article-date">
+	  <time datetime="2015-02-03T09:27:36.000Z" itemprop="datePublished">2015-02-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="categories/Music/">Music</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/hexo-theme-hiker/gallery/music2.jpg" alt=""><br>This is a self-hosted audio test with some music. Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+<p>“Dolores eos qui ratione voluptatem sequi nesciunt. Lorem ipsum dolor.”Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+<p>It’s like a language. You learn the alphabet, which are the scales. You learn sentences, which are the chords. And then you talk extemporaneously with the horn. It’s a wonderful thing to speak extemporaneously, which is something I’ve never gotten the hang of. But musically I love to talk just off the top of my head. And that’s what jazz music is all about.</p>
+<p>Stan Getz</p>
+<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Life-Happens-Learn-How-to-Flow-With-It"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="2015/02/02/Life-Happens-Learn-How-to-Flow-With-It/">Life Happens. Learn How to Flow With It</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="2015/02/02/Life-Happens-Learn-How-to-Flow-With-It/" class="article-date">
+	  <time datetime="2015-02-02T14:36:23.000Z" itemprop="datePublished">2015-02-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="categories/LifeStyle/">LifeStyle</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/hexo-theme-hiker/gallery/niagara.jpg" alt=""><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+<p>[pullquote align=”right”]”Dolores eos qui ratione voluptatem sequi nesciunt. Lorem ipsum dolor.”[/pullquote]Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+<p>It’s like a language. You learn the alphabet, which are the scales. You learn sentences, which are the chords. And then you talk extemporaneously with the horn. It’s a wonderful thing to speak extemporaneously, which is something I’ve never gotten the hang of. But musically I love to talk just off the top of my head. And that’s what jazz music is all about.</p>
+<p>Stan Getz</p>
+<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Chinese-Test"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="2015/01/26/Chinese-Test/">中文测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="2015/01/26/Chinese-Test/" class="article-date">
+	  <time datetime="2015-01-26T13:55:37.000Z" itemprop="datePublished">2015-01-26</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="桃花源记"><a href="#桃花源记" class="headerlink" title="桃花源记"></a>桃花源记</h2><h3 id="朝代：魏晋"><a href="#朝代：魏晋" class="headerlink" title="朝代：魏晋"></a>朝代：魏晋</h3><h3 id="作者：陶渊明"><a href="#作者：陶渊明" class="headerlink" title="作者：陶渊明"></a>作者：陶渊明</h3><h3 id="原文："><a href="#原文：" class="headerlink" title="原文："></a>原文：</h3><p>　　晋太元中，武陵人捕鱼为业。缘溪行，忘路之远近。忽逢桃花林，夹岸数百步，中无杂树，芳草鲜美，落英缤纷，渔人甚异之。复前行，欲穷其林。</p>
+<p>　　林尽水源，便得一山，山有小口，仿佛若有光。便舍船，从口入。初极狭，才通人。复行数十步，豁然开朗。土地平旷，屋舍俨然，有良田美池桑竹之属。阡陌交通，鸡犬相闻。其中往来种作，男女衣着，悉如外人。黄发垂髫，并怡然自乐。</p>
+        <!-- 桃花源记朝代：魏晋作者：陶渊明原文：　　晋太元中，武陵人捕鱼为业。缘溪行，忘路之远近。忽逢桃花林，夹岸数百步，中无杂树，芳草鲜美，落英缤纷，渔人甚异之。复前行，欲穷其林。
+　　林尽水源，便得一山，山有小口，仿佛若有光。便舍船，从口入。初极狭，才通人。复行数十步，豁然开朗。土地平旷，屋舍俨然，有良田美池桑竹之属。阡陌交通，鸡犬相闻。其中往来种作，男女衣着，悉如外人。黄发垂髫，并怡然自乐。
+
+　......  -->
         
           <p class="article-more-link">
-            <a href="2016/08/08/【Android】使用shape的同时，动态替换shape的颜色属性/#more">Read More</a>
+            <a href="2015/01/26/Chinese-Test/#more">Read More</a>
           </p>
         
       
@@ -784,7 +652,57 @@ Computation ......  -->
     <footer class="article-footer">
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Android/">Android</a></li></ul>
+    </footer>
+  </div>
+  
+</article>
+
+
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-Decreasing-the-Use-of-Smartphones"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="2015/01/25/Decreasing-the-Use-of-Smartphones/">Decreasing the Use of Smartphones</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="2015/01/25/Decreasing-the-Use-of-Smartphones/" class="article-date">
+	  <time datetime="2015-01-25T15:03:36.000Z" itemprop="datePublished">2015-01-25</time>
+	</a>
+
+      
+    <a class="article-category-link" href="categories/LifeStyle/">LifeStyle</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/hexo-theme-hiker/gallery/smartphone.jpg" alt=""><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+<p>“Dolores eos qui ratione voluptatem sequi nesciunt. Lorem ipsum dolor.” Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+<p>It’s like a language. You learn the alphabet, which are the scales. You learn sentences, which are the chords. And then you talk extemporaneously with the horn. It’s a wonderful thing to speak extemporaneously, which is something I’ve never gotten the hang of. But musically I love to talk just off the top of my head. And that’s what jazz music is all about.</p>
+<p>Stan Getz</p>
+<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Research/">Research</a></li></ul>
 
     </footer>
   </div>
@@ -800,7 +718,7 @@ Computation ......  -->
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><a class="page-number" href="page/4/">4</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
   </nav>
 
 </section>
