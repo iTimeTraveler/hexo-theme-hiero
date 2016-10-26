@@ -30,7 +30,7 @@ An attractive, exquisite theme for Hexo. named “Hiker”, short for “HikerNe
 <meta property="og:image" content="https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/source/preview/theme-color.png?raw=true">
 <meta property="og:image" content="https://itimetraveler.github.io/hexo-theme-hiker/2016/10/24/Hiker%E4%B8%BB%E9%A2%98%E9%A2%84%E8%A7%88/night-mode.gif">
 <meta property="og:image" content="https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/source/preview/browser-support.png?raw=true">
-<meta property="og:updated_time" content="2016-10-24T10:03:50.810Z">
+<meta property="og:updated_time" content="2016-10-26T09:16:31.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iTimeTraveler">
 <meta name="twitter:description" content="Hiker        
@@ -53,6 +53,8 @@ An attractive, exquisite theme for Hexo. named “Hiker”, short for “HikerNe
     @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
     @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
   <link rel="stylesheet" href="../css/style.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.css" >
@@ -103,6 +105,43 @@ An attractive, exquisite theme for Hexo. named “Hiker”, short for “HikerNe
                 
                   <li> <a class="main-nav-link" href="">关于</a> </li>
                 
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '../content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="../js/insight.js"></script>
+
+</div></li>
             </div>
           </div>
                 
@@ -188,6 +227,12 @@ An attractive, exquisite theme for Hexo. named “Hiker”, short for “HikerNe
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Article theme color</span></div><div class="line"><span class="comment"># Available value:</span></div><div class="line"><span class="comment">#    random | orange | blue | red | green | black</span></div><div class="line"><span class="attr">theme_color:</span> random</div></pre></td></tr></table></figure>
 <h3 id="Night-mode"><a href="#Night-mode" class="headerlink" title="Night mode"></a>Night mode</h3><p>Just for article reading. In article page, you can click the <strong>logo image of header</strong> to switch to Night mode.</p>
 <p><img src="https://itimetraveler.github.io/hexo-theme-hiker/2016/10/24/Hiker%E4%B8%BB%E9%A2%98%E9%A2%84%E8%A7%88/night-mode.gif" alt=""></p>
+<h3 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h3><p>Hiker use <code>Insight Search</code> to help you search anything inside your site without any third-party plugin.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Search</span></div><div class="line"><span class="attr">search:</span></div><div class="line"><span class="attr">    insight:</span> <span class="literal">true</span> <span class="comment"># you need to install `hexo-generator-json-content` before using Insight Search</span></div><div class="line"><span class="attr">    swiftype:</span> <span class="comment"># enter swiftype install key here</span></div><div class="line"><span class="attr">    baidu:</span> <span class="literal">false</span> <span class="comment"># you need to disable other search engines to use Baidu search, options: true, false</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>Attention: You need to install <code>hexo-generator-json-content</code> before using Insight Search.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -S hexo-generator-json-content</div></pre></td></tr></table></figure>
 <h3 id="Fancybox"><a href="#Fancybox" class="headerlink" title="Fancybox"></a>Fancybox</h3><p>Hiker uses <a href="http://fancyapps.com/fancybox/" target="_blank" rel="external">Fancybox</a> to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">![img caption](img url)</div><div class="line"></div><div class="line">&#123;% fancybox img_url [img_thumbnail] [img_caption] %&#125;</div></pre></td></tr></table></figure>
 <h3 id="Sidebar"><a href="#Sidebar" class="headerlink" title="Sidebar"></a>Sidebar</h3><p>You can put your sidebar in left side, right side or bottom of your site by editing <code>sidebar</code> setting.<br>Hiker provides 5 built-in widgets:</p>
@@ -286,8 +331,6 @@ An attractive, exquisite theme for Hexo. named “Hiker”, short for “HikerNe
 </nav> -->
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
 <!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
@@ -318,7 +361,6 @@ An attractive, exquisite theme for Hexo. named “Hiker”, short for “HikerNe
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-
 
 
   <link rel="stylesheet" href="../fancybox/jquery.fancybox.css">
