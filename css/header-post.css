@@ -12,10 +12,9 @@
 
 #allheader {
 	background: linear-gradient(120deg, #155799, #159957);
-	background: #fff;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #444;
+    color: #fff;
 }
 .navbar-toggle {
 	margin-top: 28px;
