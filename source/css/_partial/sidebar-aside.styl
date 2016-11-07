@@ -1,0 +1,31 @@
+#sidebar
+  padding-left: 30px
+  @media mq-normal
+    column(sidebar-column)
+  @media mq-mobile
+    display: none
+
+.widget-wrap
+  margin: block-margin 0
+
+.widget-title
+  @extend $block-caption
+  letter-spacing: 0px
+  color: #222
+
+.widget
+  color: color-sidebar-text
+  background: transparent
+  border-width: 1px 0 0 0
+  border-style: solid;
+  border-color: color-widget-border
+  a
+    color: #555
+    text-decoration: none
+    &:hover
+      color: color-link-hover
+      text-decoration: none
+  ul, ol, dl
+    ul, ol, dl
+      margin-left: 15px
+      list-style: disc

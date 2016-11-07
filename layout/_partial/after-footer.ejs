@@ -1,0 +1,36 @@
+<% if (config.disqus_shortname){ %>
+<script>
+  var disqus_shortname = '<%= config.disqus_shortname %>';
+  <% if (page.permalink){ %>
+  var disqus_url = '<%= page.permalink %>';
+  <% } %>
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<% } %>
+
+<%- partial('post/mathjax.ejs') %>
+
+<% if (theme.fancybox){ %>
+  <%- css('fancybox/jquery.fancybox') %>
+  <%- js('fancybox/jquery.fancybox.pack') %>
+<% } %>
+
+<%- js('js/script') %>
+<%- js('js/bootstrap') %>
+
+<% if (is_home() || !theme.home_background_image.enable){ %>
+  <%- js('js/home') %>
+<% } %>
+
+<% if (is_post()){ %>
+  <%- js('js/dialog') %>
+<% } %>
+
+<%- partial('google-analytics') %>
+<%- partial('gauges-analytics') %>
