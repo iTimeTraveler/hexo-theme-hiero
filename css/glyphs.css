@@ -44,7 +44,7 @@
  
 	/* Animation center compensation - margins should be symmetric */
 	/* remove if not needed */
-	margin-left: .2em;
+	margin-left: 0em;
  
 	/* you can be more comfortable with increased icons size */
 	/* font-size: 120%; */
@@ -54,7 +54,6 @@
 	}
  
 .ico-youtube:before { content: '\e810'; } /* '' */
-.ico-tags:before { content: '\e800'; } /* '' */
 .ico-chat:before { content: '\e813'; } /* '' */
 .ico-left-open:before { content: '\e812'; } /* '' */
 .ico-right-open:before { content: '\e811'; } /* '' */
@@ -72,5 +71,3 @@
 .ico-instagram:before { content: '\e80c'; } /* '' */
 .ico-skype:before { content: '\e80d'; } /* '' */
 .ico-soundcloud:before { content: '\e80f'; } /* '' */
-.ico-folder:before { content: '\e801'; } /* '' */
-.ico-github:before { content: '\f09b'; } /* '' */

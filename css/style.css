@@ -687,7 +687,7 @@ a.article-title:hover {
   font-family: "FontAwesome";
   content: "\f02c";
   color: #333;
-  margin-left: 20px;
+  margin-left: 20px !important;
 }
 .article-tag-list-item {
   display: inline-block;
@@ -1602,7 +1602,7 @@ pre .xml .cdata {
   color: #fff;
 }
 #sidebar {
-  padding-left: 30px;
+  padding-left: 12px;
 }
 @media screen and (min-width: 768px) {
   #sidebar {

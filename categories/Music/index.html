@@ -300,20 +300,83 @@
 </section>
           <aside id="sidebar">
   
+    <div class="widget-wrap">
+	<form role="search" method="get" class="search-form" action="http://demo.athemes.com/hiero/">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+		</label>
+		<input type="submit" class="search-submit" value="Search">
+	</form>
+
+	<div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/hexo-theme-hiero/',
+        CONTENT_URL: '../../content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="../../js/insight.js"></script>
+
+</div>
+</div>
+  
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Connect With Us</h3>
     <div class="widget widget_athemes_social_icons">
 
     	<ul class="clearfix widget-social-icons">   
     	
-   			<li><a href="https://github.com/iTimeTraveler"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
+   			<li><a href="https://github.com/iTimeTraveler" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
 
    		
-   			<li><a href="http://weibo.com/xueyubowen"><i class="fa fa-weibo" aria-hidden="true"></i></a></li> 
+   			<li><a href="http://weibo.com/xueyubowen" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li> 
 
    		
-   			<li><a href="http://blog.csdn.net/u010983881"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
+   			<li><a href="http://blog.csdn.net/u010983881" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
+
+   		
+   			<li><a href="null" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> 
+
+   		
+   			<li><a href="null" title="Google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> 
+
+   		
+   			<li><a href="null" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> 
+
+   		
+   			<li><a href="null" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li> 
+
+   		
+   			<li><a href="null" title="Flickr"><i class="fa fa-flickr" aria-hidden="true"></i></a></li> 
 
    		
    		</ul>
