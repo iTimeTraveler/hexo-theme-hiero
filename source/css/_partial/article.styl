@@ -112,11 +112,21 @@
     padding: 10px 0
   blockquote
     padding: 0.1px 20px;
-    font-family: font-normal
     font-size: 1.1em
     margin: 1.4em 0px
-    border-left: 5px solid color-theme
-    background: rgba(208,211,248,0.15)
+    border-left: 0
+    background: #f3f5f9
+    &:before
+      float: left
+      font-family: "FontAwesome"
+      content: "\f10d"
+      margin-left: -0.5em
+    &:after
+      float: right
+      font-family: "FontAwesome"
+      content: "\f10e"
+      margin-right: -0.8em
+      margin-top: -1.5em
     p
       font-size: font-size
     footer
@@ -181,6 +191,7 @@
   text-align: center
 
 .article-more-link a
+  color: color-red
   display: inline-block
   font-size: 0.9em
   line-height: 1em
@@ -217,7 +228,7 @@
   font-family: "FontAwesome";
   content: "\f02c"
   color: #333
-  margin-left: 20px
+  margin-left: 20px !important;
 
 .article-tag-list-item
   display: inline-block
@@ -419,9 +430,9 @@ $article-gallery-ctrl
 /*toc*/
 .toc-article
   position: absolute
-  border-left: rgba(88,88,88,0.1) 3px solid
-  margin: 50px 0
+  border-left: rgba(88,88,88,0.1) 1px solid
   padding 1em 1em 0 1em
+  margin-left: 1em
 
 .toc-title
   font-size 120%

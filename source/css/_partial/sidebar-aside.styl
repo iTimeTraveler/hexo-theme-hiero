@@ -1,12 +1,12 @@
 #sidebar
-  padding-left: 30px
+  padding-left: 12px
   @media mq-normal
     column(sidebar-column)
   @media mq-mobile
     display: none
 
 .widget-wrap
-  margin: block-margin 0
+  margin: 30px 0
 
 .widget-title
   @extend $block-caption
@@ -29,3 +29,22 @@
     ul, ol, dl
       margin-left: 15px
       list-style: disc
+
+.widget_athemes_tabs .widget
+  border-width: 0
+  ul
+    background: #f6f6f6;
+    border: 1px solid #e6e6e6;
+    li
+      margin: 0;
+      padding: 10px;
+      a
+        margin: 0;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        line-height: 1.2;
+        color: #222;
+        font-weight: 700;
+        font-family: font-yanone
+        &:hover
+          color: color-red

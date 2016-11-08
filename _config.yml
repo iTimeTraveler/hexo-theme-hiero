@@ -18,24 +18,7 @@ keywords: ""
 
 # Put your favicon.ico or avatar.jpg into `hexo-site/themes/hiker/source/` directory.
 avatar: 
-  enable: true
-  border: true
-  width: 124
-  height: 124
-  top: 0
   url: css/images/mylogo.jpg
-
-
-# Homepage
-# eg. home_background_image: css/images/home-bg.jpg
-home_background_image:
-  enable: true
-  url: css/images/home-bg.jpg
-
-home_logo_image:
-  enable: false
-  border: false
-  url: css/images/homelogo.jpg
 
 
 # AboutPage background
@@ -53,11 +36,40 @@ fancybox: true
 # Sidebar
 sidebar: right
 widgets:
+- search
+- social
+- recent_posts
 - category
 - tag
 - tagcloud
 - archive
-- recent_posts
+
+# Social Links
+# Key is the link label showing to end users.
+# Value is the target link (E.g. GitHub: https://github.com/iissnan)
+social:
+  Github: https://github.com/iTimeTraveler
+  Weibo: http://weibo.com/xueyubowen
+  Twitter: http://blog.csdn.net/u010983881
+  Facebook: 
+  Google-plus: 
+  Instagram: 
+  Pinterest: 
+  Flickr: 
+
+
+# Social Links Icons
+# Icon Mapping:
+#   Map a menu item to a specific FontAwesome icon name.
+#   Key is the name of the item and value is the name of FontAwsome icon. Key is case-senstive.
+#   When an globe mask icon presenting up means that the item has no mapping icon.
+social_icons:
+  # Icon Mappings.
+  # KeyMapsToSocalItemKey: NameOfTheIconFromFontAwesome
+  Github: github
+  Twitter: twitter
+  Weibo: weibo
+  CSDN: 
 
 
 # Search

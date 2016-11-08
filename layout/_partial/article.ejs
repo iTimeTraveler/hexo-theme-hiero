@@ -31,11 +31,11 @@
       <% } %>
     </div>
     <footer class="entry-meta entry-footer">
+      <%- partial('post/category') %>
+      <%- partial('post/tag') %>
       <% if (!index && post.comments && (theme.duoshuo_shortname || theme.disqus_shortname)){ %>
         <%- partial('comment') %>
       <% } %>
-      <%- partial('post/category') %>
-      <%- partial('post/tag') %>
     </footer>
   </div>
   <% if (!index){ %>
