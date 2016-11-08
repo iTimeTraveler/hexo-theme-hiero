@@ -128,16 +128,12 @@ body {
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizelegibility;
 }
-::selection {
-  background: #39aa56;
-  color: #fff;
-}
 .article-entry h2,
 .article-entry h3,
 .article-entry h4,
 .article-entry h5,
 .article-entry h6 {
-  color: #39aa56;
+  color: #16171b;
 }
 #rocket {
   position: fixed;
@@ -436,7 +432,7 @@ body {
   font-weight: normal;
 }
 .article-date:hover {
-  color: #39aa56;
+  color: #ff2828;
 }
 .article-category {
   text-align: center;
@@ -458,7 +454,7 @@ body {
   color: #333;
 }
 .article-category-link:hover {
-  color: #39aa56;
+  color: #ff2828;
 }
 .article-header h1 {
   margin: 0 50px 3px 0;
@@ -480,7 +476,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #39aa56;
+  color: #ff2828;
   text-decoration: none;
 }
 .article-entry {
@@ -522,7 +518,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  color: #39aa56;
+  color: #ff2828;
   text-decoration: none;
 }
 .article-entry ul,
@@ -557,11 +553,23 @@ a.article-title:hover {
 }
 .article-entry blockquote {
   padding: 0.1px 20px;
-  font-family: Arial, Helvetica, sans-serif, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei;
   font-size: 1.1em;
   margin: 1.4em 0px;
-  border-left: 5px solid #39aa56;
-  background: rgba(208,211,248,0.15);
+  border-left: 0;
+  background: #f3f5f9;
+}
+.article-entry blockquote:before {
+  float: left;
+  font-family: "FontAwesome";
+  content: "\f10d";
+  margin-left: -0.5em;
+}
+.article-entry blockquote:after {
+  float: right;
+  font-family: "FontAwesome";
+  content: "\f10e";
+  margin-right: -0.8em;
+  margin-top: -1.5em;
 }
 .article-entry blockquote p {
   font-size: 14px;
@@ -638,6 +646,7 @@ a.article-title:hover {
   text-align: center;
 }
 .article-more-link a {
+  color: #ff2828;
   display: inline-block;
   font-size: 0.9em;
   line-height: 1em;
@@ -911,9 +920,9 @@ a.article-title:hover {
 }
 .toc-article {
   position: absolute;
-  border-left: rgba(88,88,88,0.1) 3px solid;
-  margin: 50px 0;
+  border-left: rgba(88,88,88,0.1) 1px solid;
   padding: 1em 1em 0 1em;
+  margin-left: 1em;
 }
 .toc-title {
   font-size: 120%;
@@ -955,7 +964,7 @@ li
   color: color-link;
 }
 .toc-link:hover {
-  color: #39aa56;
+  color: #ff2828;
 }
 .toc-child {
   margin-left: 1em;
@@ -988,42 +997,33 @@ li
   font-size: 1.3em;
 }
 .archive-year {
-  color: #33363b;
-}
-.archive-year:hover {
-  color: #39aa56;
+  color: #16171b;
 }
 .archive-year:before {
   font-family: "FontAwesome";
   content: "\f273";
   margin-right: 0.2em;
 }
-.archives-tags-wrap {
-  margin: 50px 0;
-}
 .archives-tags-wrap blockquote {
   padding: 1em;
-  margin: 4em 0 0 0;
+  margin: 1em 0 0 0;
   font-size: 1.2em;
   font-weight: bold;
-  color: #33363b;
+  color: #16171b;
   text-align: center;
-  border-left: 0px solid #39aa56;
+  border-left: 0px solid #ff2828;
   background: rgba(208,211,248,0.15);
 }
 .archives-tags-wrap blockquote a {
-  color: #33363b;
+  color: #16171b;
   margin: 0.2em;
 }
 .archives-tags-wrap blockquote a:hover {
-  color: #39aa56;
+  color: #ff2828;
 }
 .archive-tag {
   text-transform: none;
-  color: #39aa56;
-}
-.archive-tag:hover {
-  color: #39aa56;
+  color: #16171b;
 }
 .archive-tag:before {
   font-family: "FontAwesome";
@@ -1031,24 +1031,21 @@ li
   margin-right: 0.2em;
 }
 .archives-category-wrap {
-  margin: 50px 0;
+  margin: 1em 0;
 }
 .archives-category-wrap blockquote {
   padding: 1em;
   font-size: 1.1em;
   font-weight: bold;
   line-height: 1.7em;
-  color: #39aa56;
+  color: #ff2828;
   text-align: left;
-  border-left: 0px solid #39aa56;
+  border-left: 0px solid #ff2828;
   background: rgba(208,211,248,0.15);
 }
 .archives-category-wrap blockquote a {
-  color: #33363b;
+  color: #16171b;
   margin: 0.2em;
-}
-.archives-category-wrap blockquote a:hover {
-  color: #39aa56;
 }
 .archives-category-wrap blockquote a:before {
   font-family: "FontAwesome";
@@ -1057,7 +1054,7 @@ li
 }
 .archive-category {
   text-transform: none;
-  color: #39aa56;
+  color: #16171b;
 }
 .archive-category:before {
   font-family: "FontAwesome";
@@ -1101,11 +1098,11 @@ li
   -ms-transition: color 0.2s;
   transition: color 0.2s;
   line-height: 1.6em;
-  border-left: 1px solid #33363b;
+  border-left: 1px solid #16171b;
   padding-left: 15px;
 }
 .archive-article-title:hover {
-  color: #39aa56;
+  color: #ff2828;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -1122,7 +1119,7 @@ li
   font-family: "futura-pt", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei, WenQuanYi Micro Hei, "Microsoft YaHei", sans-serif;
 }
 .archive-article-date:hover {
-  color: #39aa56;
+  color: #ff2828;
 }
 #page-nav {
   margin: 50px auto;
@@ -1150,10 +1147,11 @@ li
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #39aa56;
+  background: #ff2828;
   color: #fff;
 }
 #page-nav .prev {
+  background: #16171b;
   float: left;
 }
 #page-nav .prev:before {
@@ -1162,6 +1160,7 @@ li
   margin-right: 0.5em;
 }
 #page-nav .next {
+  background: #16171b;
   float: right;
 }
 #page-nav .next:after {
@@ -1518,7 +1517,7 @@ pre .xml .cdata {
   display: inline-block;
 }
 .ins-close:hover {
-  color: #39aa56;
+  color: #16171b;
 }
 .ins-search-container {
   left: 50%;
@@ -1530,6 +1529,7 @@ pre .xml .cdata {
   box-sizing: border-box;
   width: 540px;
   margin-left: -270px;
+  border-top: 2px solid #ff2828;
 }
 @media screen and (max-width: 559px), screen and (max-height: 479px) {
   .ins-search-container {
@@ -1593,7 +1593,7 @@ pre .xml .cdata {
 .ins-section .ins-search-item:hover,
 .ins-section .ins-search-item.active {
   color: #fff;
-  background: #39aa56;
+  background: #16171b;
 }
 .ins-section .ins-search-item:hover .ins-slug,
 .ins-section .ins-search-item.active .ins-slug,
@@ -1636,7 +1636,7 @@ pre .xml .cdata {
   text-decoration: none;
 }
 .widget a:hover {
-  color: #39aa56;
+  color: #ff2828;
   text-decoration: none;
 }
 .widget ul ul,
