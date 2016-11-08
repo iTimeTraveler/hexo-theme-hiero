@@ -21,7 +21,7 @@
   
     <link rel="alternate" href="/atom.xml" title="iTimeTraveler" type="application/atom+xml">
   
-  <link rel="icon" href="/hexo-theme-hiero/css/images/mylogo.jpg">
+  <link rel="icon" href="/css/images/mylogo.jpg">
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
@@ -40,9 +40,9 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="/hexo-theme-hiero/css/bootstrap.css" >
-  <link rel="stylesheet" href="/hexo-theme-hiero/css/hiero.css" >
-  <link rel="stylesheet" href="/hexo-theme-hiero/css/glyphs.css" >
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
 
 </head>
 
@@ -73,7 +73,7 @@
                 
                   <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="../../archives">Archives</a> </li>
                 
-                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="../../categories">Categories</a> </li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="../../categories">Kategorien</a> </li>
                 
                   <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="..">Tags</a> </li>
                 
@@ -145,7 +145,7 @@
                 
                   <li> <a class="main-nav-link" href="../../archives">Archives</a> </li>
                 
-                  <li> <a class="main-nav-link" href="../../categories">Categories</a> </li>
+                  <li> <a class="main-nav-link" href="../../categories">Kategorien</a> </li>
                 
                   <li> <a class="main-nav-link" href="..">Tags</a> </li>
                 
@@ -154,14 +154,17 @@
                   <li><div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="" />
-        <button type="submit" class="search-form-submit"></button>
+        <label style="width: 75%;">
+            <span class="screen-reader-text">Search for:</span>
+            <input type="search" class="search-field" style="height: 42px;" placeholder=" Suche…" value="" name="s" title="Search for:">
+        </label>
+        <input type="submit" class="search-form-submit" value="Suche">
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -179,7 +182,7 @@
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
-        ROOT_URL: '/hexo-theme-hiero/',
+        ROOT_URL: '/',
         CONTENT_URL: '../../content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
@@ -224,11 +227,10 @@
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
-      
-	Posted on <a href="../../2016/10/24/Hiker主题预览/" class="archive-article-date">
-	  <time datetime="2016-10-24T03:07:20.000Z" itemprop="datePublished">October 24, 2016</time>
-	</a>
 
+      <a href="../../2016/10/24/Hiker主题预览/" class="archive-article-date">
+		  <time datetime="2016-10-24T03:07:20.000Z" itemprop="datePublished">Oct 24, 2016</time>
+	  </a>
       
   
     <h1 class="thumb" itemprop="name">
@@ -248,26 +250,21 @@
 </section>
           <aside id="sidebar">
   
-    <div class="widget-wrap">
-	<form role="search" method="get" class="search-form" action="http://demo.athemes.com/hiero/">
-		<label>
-			<span class="screen-reader-text">Search for:</span>
-			<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
-		</label>
-		<input type="submit" class="search-submit" value="Search">
-	</form>
-
+    <div class="widget-wrap" style="margin: 20px 0;">
 	<div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="" />
-        <button type="submit" class="search-form-submit"></button>
+        <label style="width: 75%;">
+            <span class="screen-reader-text">Search for:</span>
+            <input type="search" class="search-field" style="height: 42px;" placeholder=" Suche…" value="" name="s" title="Search for:">
+        </label>
+        <input type="submit" class="search-form-submit" value="Suche">
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -285,7 +282,7 @@
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
-        ROOT_URL: '/hexo-theme-hiero/',
+        ROOT_URL: '/',
         CONTENT_URL: '../../content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
@@ -298,7 +295,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Connect With Us</h3>
+    <h3 class="widget-title">connect</h3>
     <div class="widget widget_athemes_social_icons">
 
     	<ul class="clearfix widget-social-icons">   
@@ -346,29 +343,86 @@
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+  <div class="widget_athemes_tabs">
+    <ul id="widget-tab" class="clearfix widget-tab-nav">
+      <li class="active"><a>letzter Beitrag</a></li>
+    </ul>
     <div class="widget">
       <ul>
         
-          <li>
-            <a href="../../2016/12/11/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/">Being Outside in Fresh Air &amp; How Your Body Loves It</a>
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="../../2016/12/11/Being-Outside-in-Fresh-Air-and-How-Your-Body-Loves-It/">Being Outside in Fresh Air &amp; How Your Body Loves It</a></h6>
+              <span>December 11, 2016</span>
+            </div>
+
           </li>
         
-          <li>
-            <a href="../../2016/10/26/Stephen-Hawking/">Stephen Hawking launches Centre for the Future of Intelligence</a>
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="../../2016/10/26/Stephen-Hawking/">Stephen Hawking launches Centre for the Future of Intelligence</a></h6>
+              <span>October 26, 2016</span>
+            </div>
+
           </li>
         
-          <li>
-            <a href="../../2016/10/24/Hiker主题预览/">Hiker主题预览</a>
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="../../2016/10/24/Hiker主题预览/">Hiker主题预览</a></h6>
+              <span>October 24, 2016</span>
+            </div>
+
           </li>
         
-          <li>
-            <a href="../../2016/08/14/【Machine Learning】机器学习：简明入门指南/">【Machine Learning】机器学习：简明入门指南</a>
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="../../2016/08/14/【Machine Learning】机器学习：简明入门指南/">【Machine Learning】机器学习：简明入门指南</a></h6>
+              <span>August 14, 2016</span>
+            </div>
+
           </li>
         
-          <li>
-            <a href="../../2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/">BAT人才体系的职位层级、薪酬、晋升标准</a>
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="../../2016/08/02/BAT人才体系的职位层级、薪酬、晋升标准大全/">BAT人才体系的职位层级、薪酬、晋升标准</a></h6>
+              <span>August 2, 2016</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-thumbnail">
+                <a href="../../2016/01/26/Gallery-Example/" title=""><img width="50" height="50" src="https://www.hdwallpapers.net/previews/starry-night-over-corsica-986.jpg" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
+              </div>
+              <div class="widget-entry-summary">
+            
+
+              <h6 style="margin: 0;"><a href="../../2016/01/26/Gallery-Example/">Gallery Example</a></h6>
+              <span>January 26, 2016</span>
+            </div>
+
           </li>
         
       </ul>
@@ -378,7 +432,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/AI/">AI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/BAT/">BAT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/LifeStyle/">LifeStyle</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/Music/">Music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/Technology/">Technology</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../categories/Technology/Github/">Github</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../categories/lifeStyle/">lifeStyle</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../categories/lifeStyle/markup/">markup</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
@@ -407,7 +461,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
 
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/12/">December 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/10/">October 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/08/">August 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/02/">February 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2014/12/">December 2014</a><span class="archive-list-count">2</span></li></ul>
@@ -427,7 +481,7 @@
 	      &copy; 2016 iTimeTraveler All Rights Reserved.
       </div>
       <div class="site-credit">
-        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+        theme_by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
       </div>
   </div>
 </footer>
@@ -504,6 +558,6 @@
   </div>
 
   <a id="rocket" href="#top" class=""></a>
-  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
 </body>
 </html>
