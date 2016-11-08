@@ -1,16 +1,12 @@
-# Hiker
+# Hiero
 
 [![Build Status](https://travis-ci.org/iTimeTraveler/hexo-theme-hiker.svg?branch=master)](https://travis-ci.org/iTimeTraveler/hexo-theme-hiker)		[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/LICENSE)
 
 
 An attractive, exquisite theme for [Hexo]. named "Hiker", short for "HikerNews".  
 
-[**☞ Live Preview**](https://itimetraveler.github.io/hexo-theme-hiker/)  |  [**✎ Hiker 中文版使用文档**](https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/README.cn.md)
+[**☞ Live Preview**](https://itimetraveler.github.io/hexo-theme-hiero/)  |  [**✎ Hiker 中文版使用文档**](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/README.cn.md)
 
-
-![Desktop Preview](https://itimetraveler.github.io/hexo-theme-hiker/2016/10/24/Hiker%E4%B8%BB%E9%A2%98%E9%A2%84%E8%A7%88/homepage-index.png)
-![Post Preview](https://itimetraveler.github.io/hexo-theme-hiker/2016/10/24/Hiker%E4%B8%BB%E9%A2%98%E9%A2%84%E8%A7%88/article-chrome.png)
-![Mobile Preview](https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/source/preview/preview-mobile.png?raw=true)
 
 <!--more-->
 
@@ -19,21 +15,21 @@ An attractive, exquisite theme for [Hexo]. named "Hiker", short for "HikerNews".
  1. Get it from GitHub
 
  ```shell
- $ git clone https://github.com/iTimeTraveler/hexo-theme-hiker.git themes/hiker
+ $ git clone https://github.com/iTimeTraveler/hexo-theme-hiero.git themes/hiero
  ```
  2. Enable
 
- Modify `theme` setting in `_config.yml` to `hiker`.
+ Modify `theme` setting in `_config.yml` to `hiero`.
  ```
  # Extensions
  ## Plugins: http://hexo.io/plugins/
  ## Themes: http://hexo.io/themes/
- theme: hiker
+ theme: hiero
  ```
  3. Update
 
  ```shell
- $ cd themes/Hiker
+ $ cd themes/hiero
  $ git pull
  ```
 
