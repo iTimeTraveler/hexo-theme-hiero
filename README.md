@@ -5,7 +5,7 @@
 
 Another attractive theme for [Hexo].
 
-[**☞ Live Preview**](https://itimetraveler.github.io/hexo-theme-hiero/)  |  [**✎ Hiker 中文版使用文档**](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/README.cn.md)
+[**☞ Live Preview**](https://itimetraveler.github.io/hexo-theme-hiero/)  |  [**✎ Hiero 中文使用文档**](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/README.cn.md)
 
 
 <!--more-->
