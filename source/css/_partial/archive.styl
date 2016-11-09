@@ -8,7 +8,7 @@
 .archive-year-wrap
   margin-bottom: 1em
   h1
-    font-size: 1.3em
+    font-size: 1.5em
 
 .archive-year
   @extend $block-caption
@@ -59,6 +59,8 @@
     a
       color: color-black
       margin: .2em
+      &:hover
+        color: color-theme
       &:before
         font-family: "FontAwesome"
         content: "\f0da"
@@ -89,6 +91,7 @@
   margin-bottom: 0px
 
 .archive-article-title
+  font-size: 1.2em
   text-decoration: none
   color: color-default
   transition: color 0.2s
@@ -133,6 +136,7 @@
       background: color-theme
       color: #fff
   .prev
+    color: #fff
     background: color-black
     float: left
     &:before
@@ -140,6 +144,7 @@
       content: "\f053"
       margin-right: .5em
   .next
+    color: #fff
     background: color-black
     float: right
     &:after
