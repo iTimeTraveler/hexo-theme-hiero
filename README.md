@@ -7,7 +7,7 @@ Hiero is an awesome magazine theme for your [Hexo] site.
 
 [**☞ Live Preview**](https://itimetraveler.github.io/hexo-theme-hiero/)  |  [**✎ Hiero 中文使用文档**](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/README.cn.md)
 
-![](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hiero/master/source/preview/Hiero.png)
+![](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hiero/master/source/preview/Hiero-homepage.png)
 
 <!--more-->
 
