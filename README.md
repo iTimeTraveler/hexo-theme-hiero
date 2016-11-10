@@ -129,6 +129,12 @@ Looking forward to your pull request.
 
 > Special thanks to ATHEMES, who designed the original theme [Hiero for Wordpress](http://athemes.com/theme/hiero/).
 
+
+## License
+
+Hiero is under the BMITSD license. See the [LICENSE](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/LICENSE) file for details.
+
+
 [Hexo]: https://hexo.io/
 [Fancybox]: http://fancyapps.com/fancybox/
 [Font Awesome]: http://fontawesome.io/
