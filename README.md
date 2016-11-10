@@ -127,7 +127,7 @@ All kinds of contributions (enhancements, new features, documentation & code imp
 Looking forward to your pull request.
 
 
-> Special thanks to ATHEMES, who designed the original theme [Hiero](http://athemes.com/theme/hiero/) for wordpress.
+> Special thanks to ATHEMES, who designed the original theme [Hiero for Wordpress](http://athemes.com/theme/hiero/).
 
 [Hexo]: https://hexo.io/
 [Fancybox]: http://fancyapps.com/fancybox/
