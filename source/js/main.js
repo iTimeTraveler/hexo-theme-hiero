@@ -35,3 +35,18 @@ if (toc != null) {
 		 }
 	}
 }
+
+
+$('#main-navigation').on('click', function(){
+    if ($('#main-navigation').hasClass('main-navigation-open')){
+      $('#main-navigation').removeClass('main-navigation-open');
+    } else {
+      $('#main-navigation').addClass('main-navigation-open');
+    }
+  });
+
+$('#content').on('click', function(){
+    if ($('#main-navigation').hasClass('main-navigation-open')){
+      $('#main-navigation').removeClass('main-navigation-open');
+    }
+  });

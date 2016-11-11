@@ -62,6 +62,7 @@ a {
 	   -moz-transition: all 0.14s ease 0s; 
 		 -o-transition: all 0.14s ease 0s; 
 	}
+
 a:hover,
 a:focus,
 a:active {
@@ -405,7 +406,7 @@ object {
 .nav-open,
 .nav-close {
 	display: none;
-	color: #333;
+	color: #eb2121;
 	font-size: 1.2em;
 	font-weight: 400;
 	font-family: "Yanone Kaffeesatz", "方正姚体", Arial, Helvetica, sans-serif;
@@ -440,9 +441,13 @@ object {
 		max-width: 16em;
 		overflow: hidden;
 		background: #333;
+		z-index: 1;
 		}
 	#main-navigation:target > .sf-menu > ul {
 		max-height: 400px;
+		}
+	.main-navigation-open > .sf-menu > ul {
+		max-height: 400px !important;
 		}
 	#main-navigation > .sf-menu > ul > li {
 		float: none;
