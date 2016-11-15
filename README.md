@@ -132,7 +132,7 @@ Looking forward to your pull request.
 
 ## License
 
-Hiero is under the BMITSD license. See the [LICENSE](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/LICENSE) file for details.
+Hiero is under the MIT license. See the [LICENSE](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/LICENSE) file for details.
 
 
 [Hexo]: https://hexo.io/
