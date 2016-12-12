@@ -50,7 +50,7 @@ Hiero 使用[Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) 作
 
 ![code `default` theme Preview](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hiero/master/source/preview/code-default-preview.png)
 
-默认如上图，其他五种主题如下.
+默认高亮配色如上图，另外的五种配色如下.
 
 ![code themes](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/source/preview/code-theme.jpg?raw=true)
 
@@ -71,13 +71,13 @@ highlight_theme: default
 主题_config.yml文件中的 `sidebar` 字段可以设置为 `left`或`right`，用来控制侧边栏显示在页面左侧还是右侧。
 Hipaper 有以下7个侧边栏组件:
 
-- search
-- social
-- recent_posts
-- category
-- tag
-- tagcloud
-- archive
+- search （搜索框）
+- social （社交网站链接）
+- recent_posts （最新文章）
+- category （分类）
+- tag （标签）
+- tagcloud （标签云）
+- archive （归档栏）
 
 以上组件在主题中均已默认启用. 您可以在 `widget` 字段中设置显示哪些以及顺序。
 
