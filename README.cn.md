@@ -5,7 +5,7 @@
 
 Hiero is an awesome magazine theme for your [Hexo] site.
 
-[**☞ Live Preview**](https://itimetraveler.github.io/hexo-theme-hiero/) | [**查看中文使用文档**](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/README.cn.md)
+[**☞ 点击预览**](https://itimetraveler.github.io/hexo-theme-hiero/)
 
 
 ![](https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/master/gallery/hiero-demo-screen.png)
@@ -17,14 +17,14 @@ Hiero is an awesome magazine theme for your [Hexo] site.
 
 <!--more-->
 
-## Installation
+## 安装步骤
 
- 1. Get it from GitHub
+ 1. 从Github上获取代码
 
  ```shell
  $ git clone https://github.com/iTimeTraveler/hexo-theme-hiero.git themes/hiero
  ```
- 2. Enable
+ 2. 启用主题
 
  Modify `theme` setting in `_config.yml` to `hiero`.
  ```
@@ -33,7 +33,7 @@ Hiero is an awesome magazine theme for your [Hexo] site.
  ## Themes: http://hexo.io/themes/
  theme: hiero
  ```
- 3. Update
+ 3. 更新主题
 
  ```shell
  $ cd themes/hiero
@@ -41,20 +41,20 @@ Hiero is an awesome magazine theme for your [Hexo] site.
  ```
 
 
-## Features
+## 特性
 
 
-### Code Highlight
+### 代码高亮
 
-Hiero use [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) for your code block. We have six options in total: `default`, `normal`, `night`, `night blue`, `night bright`, `night eighties`
+Hiero 使用[Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) 作为代码主题. 共有以下六种选项: `default`, `normal`, `night`, `night blue`, `night bright`, `night eighties`
 
 ![code `default` theme Preview](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hiero/master/source/preview/code-default-preview.png)
 
-Above preview picture is default theme. the image below show other five Highlight themes.
+默认如上图，其他五种主题如下.
 
 ![code themes](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/source/preview/code-theme.jpg?raw=true)
 
-Modify `highlight_theme` in hiero/_config.yml.
+您可以在本主题的 hiero/_config.yml 文件中更改 `highlight_theme` 字段来选择.
 
 ```yml
 # Code Highlight theme
@@ -66,10 +66,10 @@ highlight_theme: default
 
 
 
-### Sidebar
+### 侧边栏
 
-You can put your sidebar in left side, right side or bottom of your site by editing `sidebar` setting.
-Hiero provides 7 built-in widgets:
+主题_config.yml文件中的 `sidebar` 字段可以设置为 `left`或`right`，用来控制侧边栏显示在页面左侧还是右侧。
+Hipaper 有以下7个侧边栏组件:
 
 - search
 - social
@@ -79,12 +79,12 @@ Hiero provides 7 built-in widgets:
 - tagcloud
 - archive
 
-All of them are enabled by default. You can edit them in `widget` setting.
+以上组件在主题中均已默认启用. 您可以在 `widget` 字段中设置显示哪些以及顺序。
 
 
-### Search
+### 站内搜索
 
-Hiero use `Insight Search` to help you search anything inside your site without any third-party plugin.
+Hiero  使用 `Insight Search` 来帮助大家使用站内搜索.
 
 ```yml
 # Search
@@ -94,7 +94,7 @@ search:
     baidu: false # you need to disable other search engines to use Baidu search, options: true, false
 ```
 
-> Attention: You need to install `hexo-generator-json-content` before using Insight Search.
+> ！！注意: 使用搜索工具之前您必须使用 `hexo-generator-json-content` 来安装，在Hexo根目录下执行命令如下：
 
 ```bash
 $ npm install -S hexo-generator-json-content
@@ -103,7 +103,7 @@ $ npm install -S hexo-generator-json-content
 
 ### Fancybox
 
-Hiero uses [Fancybox] to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.
+Hiero 使用 [Fancybox] 来提供文章图片预览.
 
 ```
 ![img caption](img url)
@@ -111,9 +111,9 @@ Hiero uses [Fancybox] to showcase your photos. You can use Markdown syntax or fa
 {% fancybox img_url [img_thumbnail] [img_caption] %}
 ```
 
-### Comment support
+### 评论功能
 
-Hiero has native support for DuoShuo & Disqus comment systems. Modify the following snippets to Hiero `hiero/_config.yml`:
+Hiero 已完全支持原生的多说、 Disqus评论功能. 您可以在 `hiero/_config.yml` 文件中更改以下字段:
 
 ```yml
 # comment ShortName, you can choose only ONE to display.
@@ -121,19 +121,17 @@ duoshuo_shortname: iTimeTraveler
 disqus_shortname: 
 ```
 
-## Browser support
+## 支持的浏览器
 
 ![](https://github.com/iTimeTraveler/hexo-theme-hiero/blob/master/source/preview/browser-support.png?raw=true)
 
 
-## Contributing
+## 贡献
 
-All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
-
-Looking forward to your pull request.
+欢迎大家提issue或者pull request，开源项目也离不开大家的批评指正。
 
 
-> Special thanks to ATHEMES, who designed the original theme [Hiero for Wordpress](http://athemes.com/theme/hiero/).
+> 特别感谢Wordpress作者 ATHEMES, 本主题源于他们的 [Hiero for Wordpress](http://athemes.com/theme/hiero/).
 
 
 ## License
