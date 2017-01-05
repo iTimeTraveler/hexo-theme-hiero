@@ -48,7 +48,7 @@ Hiero is an awesome magazine theme for your [Hexo] site.
 
 You can set a image as your logo instead of original text title. Like this:
 
-![](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hiero/master/source/preview/logo-preview.png)
+![](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hiero/master/source/preview/logo-preview.jpg)
 
 just enable `avatar` field in hiero/_config.yml.
 
@@ -56,7 +56,7 @@ just enable `avatar` field in hiero/_config.yml.
 # Put your avatar.jpg into `hexo-site/themes/hiero/source/` directory.
 # url is target link (E.g. `url: https://hexo.io/logo.svg` or `url: css/images/mylogo.jpg`)
 avatar: 
-  enable: enable
+  enable: true
   width: 124
   height: 124
   bottom: 10
