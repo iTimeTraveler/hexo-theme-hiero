@@ -44,6 +44,26 @@ Hiero is an awesome magazine theme for your [Hexo] site.
 ## Features
 
 
+### Logo: Image or Text
+
+You can set a image as your logo instead of original text title. Like this:
+
+![](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hiero/master/source/preview/logo-preview.png)
+
+just enable `avatar` field in hiero/_config.yml.
+
+```yml
+# Put your avatar.jpg into `hexo-site/themes/hiero/source/` directory.
+# url is target link (E.g. `url: https://hexo.io/logo.svg` or `url: css/images/mylogo.jpg`)
+avatar: 
+  enable: enable
+  width: 124
+  height: 124
+  bottom: 10
+  url: https://hexo.io/logo.svg
+```
+
+
 ### Code Highlight
 
 Hiero use [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) for your code block. We have six options in total: `default`, `normal`, `night`, `night blue`, `night bright`, `night eighties`
