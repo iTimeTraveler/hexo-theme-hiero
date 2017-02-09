@@ -1,15 +1,15 @@
 <div class="archives-wrap" style="margin: 0px;">
-	<div class="archives-category-wrap">
-		<blockquote>
-		<% if(site.categories.length) { %>
-		  <%- list_categories(site.categories) %>
-		<% } %>
-		</blockquote>
-	</div>
-	
-	<!-- 分类列表 -->
+    <div class="archives-category-wrap">
+        <blockquote>
+        <% if(site.categories.length) { %>
+          <%- list_categories(site.categories) %>
+        <% } %>
+        </blockquote>
+    </div>
+    
+    <!-- 分类列表 -->
 
-    <% site.categories.sort('name').map(function(category){  %>
+    <% hierarchicalCategoryList().map(function(category) { %>
     <div class="archives-wrap">
         <div class="archive-year-wrap" id="<%= category.name %>">
             <h1 class="archive-category"><%= category.name %></h1>
