@@ -3,7 +3,14 @@
 var hasCurrent = false;
 $('#main-nav > li').each(function () {
 	var url = window.location.href;
-	if(url.toUpperCase().indexOf($(this).text().trim().toUpperCase()) != -1){
+	var lastIndex = url.length;//要截取的字符串最后一位的位置+1
+	var lastSlashIndex = url.lastIndexOf("/");
+	if (lastSlashIndex == lastIndex -1) {
+		lastSlashIndex = url.lastIndexOf("/",lastSlashIndex -1)//如果url的最后一个字符串是/,则修正最后一个斜杠的位置
+		lastIndex--;//如果url最后一位是/，则不截取该位
+	}
+	url = url.substring(lastSlashIndex,lastIndex);
+	if(themeMenus[url] == $(this).text().trim()){
 		$(this).addClass('current-menu-item current_page_item');
 		hasCurrent = true;
 	} else {
