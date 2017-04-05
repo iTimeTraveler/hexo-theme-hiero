@@ -25,8 +25,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	margin: 1.25em 0 .5em;
 	color: #222;
-	font-weight: 700;
-	font-family: "Yanone Kaffeesatz", "华文中宋", Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-family: "Yanone Kaffeesatz", "微软雅黑", Arial, Helvetica, sans-serif;
 	line-height: 1.2em;
 	}
 h1 {
@@ -262,7 +262,7 @@ object {
 .site-title {
 	margin: 0;
 	font-size: 4.25em;
-	font-family: "Yanone Kaffeesatz", "华文中宋", Arial, Helvetica, sans-serif;
+	font-family: "Yanone Kaffeesatz", "微软雅黑", Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	line-height: 1;
 	}
@@ -272,7 +272,7 @@ object {
 	}
 .site-description {
 	color: #999;
-	font-family: "Yanone Kaffeesatz", "方正姚体", Arial, Helvetica, sans-serif;
+	font-family: "Yanone Kaffeesatz", "微软雅黑", Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	}
