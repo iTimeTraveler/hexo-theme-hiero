@@ -5,8 +5,11 @@
 
     	<ul class="clearfix widget-social-icons">   
     	<% Object.keys(theme.social).forEach(function(key) { %>
-   			<li><a href="<%= theme.social[key] %>" title="<%=key.trim()%>"><i class="fa fa-<%= key.toLowerCase() %>" aria-hidden="true"></i></a></li> 
-
+          <% if (key == 'email'){ %>
+            <li><a href="mailto:<%= theme.social[key] %>?subject=请联系我&body=我能帮你什么" title="<%=key.trim()%>"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> 
+          <% } else {%>
+     			  <li><a href="<%= theme.social[key] %>" title="<%=key.trim()%>"><i class="fa fa-<%= key.toLowerCase() %>" aria-hidden="true"></i></a></li> 
+          <% }%>
    		<% }) %>
    		</ul>
 
