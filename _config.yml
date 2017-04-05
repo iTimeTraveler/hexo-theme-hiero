@@ -65,6 +65,7 @@ social:
   Instagram: 
   Pinterest: 
   Flickr: 
+  email:
 
 
 # Search
@@ -78,7 +79,6 @@ search:
 duoshuo_shortname:
 disqus_shortname: 
 livere_shortname: MTAyMC8yODAyOS80NjA2
-
 uyan_uid:
 wumii: 
 
@@ -112,6 +112,7 @@ google_analytics:
 gauges_analytics:
 baidu_analytics:
 tencent_analytics:
+busuanzi_analytics: true
 twitter:
 google_plus:
 fb_admins:
