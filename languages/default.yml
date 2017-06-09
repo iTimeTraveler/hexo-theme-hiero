@@ -25,6 +25,8 @@ post_total_count: There are %d posts in total till now.
 read_more: Continue Reading →
 contents: Contents
 none: None
+donation:
+    button_text: 'Donate'
 insight:
     hint: 'Type something...'
     posts: 'Posts'
