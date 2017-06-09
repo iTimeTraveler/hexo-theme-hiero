@@ -131,6 +131,24 @@ Hiero uses [Fancybox] to showcase your photos. You can use Markdown syntax or fa
 {% fancybox img_url [img_thumbnail] [img_caption] %}
 ```
 
+
+
+### Donate Button
+
+![](https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/source/preview/donation-btn.png)
+
+Support **WechatPay and AliPay QR Code** for donation, Modify the following snippets to Hiero `hiero/_config.yml`:
+
+
+```yml
+# donation button
+donate:
+    enable: true
+    message: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!'
+    wechatImage: https://your_WECHAT_PAY_ImageUrl
+    alipayImage: https://your_ALIPAY_ImageUrl
+```
+
 ### Comment support
 
 Hiero has native support for DuoShuo & Disqus comment systems. Modify the following snippets to Hiero `hiero/_config.yml`:

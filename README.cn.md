@@ -131,6 +131,22 @@ Hiero 使用 [Fancybox] 来提供文章图片预览.
 {% fancybox img_url [img_thumbnail] [img_caption] %}
 ```
 
+### 打赏捐赠按钮
+
+![](https://github.com/iTimeTraveler/hexo-theme-hiker/blob/master/source/preview/donation-btn.png)
+
+每篇文章最后显示打赏按钮，目前仅支持微信支付和支付宝两种打赏方式。您可以在文件 `hiero/_config.yml` 中配置您的微信、支付宝付款二维码图片的URL:
+
+
+```yml
+# donation button
+donate:
+    enable: true
+    message: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!'
+    wechatImage: https://your_WECHAT_PAY_ImageUrl
+    alipayImage: https://your_ALIPAY_ImageUrl
+```
+
 ### 评论功能
 
 Hiero 已完全支持网易云跟帖、多说、 Disqus评论功能. 您可以在 `hiero/_config.yml` 文件中更改以下字段:
