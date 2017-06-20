@@ -67,7 +67,7 @@
 			  var dsq = document.createElement('script');
 			  dsq.type = 'text/javascript';
 			  dsq.async = true;
-			  dsq.src = "http://v2.uyan.cc/code/uyan.js?uid=<%- theme.uyan_uid %>";
+			  dsq.src = "<%- config.root %>js/uyan.js?uid=<%- theme.uyan_uid %>";
 			  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 			}());
 		</script>
