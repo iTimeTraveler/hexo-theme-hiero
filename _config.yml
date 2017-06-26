@@ -38,6 +38,11 @@ about_big_image: [css/images/pose.jpg, https://source.unsplash.com/collection/95
 random_thumb: false
 
 
+# Post Article's Content
+post_catalog:
+  enable: true
+
+
 # Content
 fancybox: true
 
