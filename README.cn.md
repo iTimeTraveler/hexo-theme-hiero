@@ -15,6 +15,8 @@ Hiero is an awesome magazine theme for your [Hexo] site.
 ![](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hiero/master/source/preview/Hiero_home.png)
 
 
+以上Demo站点的源文件在这里，大家有需要的可以参考：https://github.com/iTimeTraveler/hexo-theme-hiero/tree/site-source
+
 <!--more-->
 
 ## 安装步骤
