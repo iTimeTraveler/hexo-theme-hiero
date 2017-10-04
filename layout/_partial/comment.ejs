@@ -104,4 +104,22 @@
 		</div>
 		<!-- City版安装代码已完成 -->
 	</div>
+<% } eles if (theme.gitment.owner && theme.gitment.repo && theme.gitment.client_id && theme.gitment.client_secret) {%>
+	<div id="comments"></div>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+	var gitment = new Gitment({
+		id: '<%- post.permalink %>',
+		owner: '<%- theme.gitment.owner %>',
+		repo: '<%- theme.gitment.repo %>',
+		oauth: {
+			client_id: '<%- theme.gitment.client_id %>',
+			client_secret: '<%- theme.gitment.client_secret %>',
+		},
+	})
+	gitment.render('comments')
+	</script>
+
+
 <% } %>
