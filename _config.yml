@@ -88,10 +88,10 @@ livere_shortname: ~
 uyan_uid: 
 wumii:
 gitment:
-    owner:                   #Your GitHub ID
-    repo:                    #The repo to store comments
-    client_id:               #Your client ID
-    client_secret:           #Your client secret
+  owner:                   #Your GitHub ID
+  repo:                    #The repo to store comments
+  client_id:               #Your client ID
+  client_secret:           #Your client secret
 
 # Code Highlight theme
 # Available value:

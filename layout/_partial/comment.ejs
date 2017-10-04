@@ -104,7 +104,8 @@
 		</div>
 		<!-- City版安装代码已完成 -->
 	</div>
-<% } eles if (theme.gitment.owner && theme.gitment.repo && theme.gitment.client_id && theme.gitment.client_secret) {%>
+<% } else if (theme.gitment.client_secret) {%>
+  <!-- Gitment START! Deploy by Z4HD -->
 	<div id="comments"></div>
 	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -120,6 +121,5 @@
 	})
 	gitment.render('comments')
 	</script>
-
-
+	<!-- Gitment END! -->
 <% } %>
