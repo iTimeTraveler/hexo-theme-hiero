@@ -10,9 +10,4 @@
     background: black;
     border-color: black;
 }
-.gitment-selected:hover{
-    color: inherit !important;
-    background: inherit !important;
-    border-color: #CFD8DC !important;
-}
 .gitment-editor-submit{background-color: #ff321e !important}
