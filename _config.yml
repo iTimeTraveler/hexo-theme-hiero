@@ -86,7 +86,12 @@ duoshuo_shortname:
 disqus_shortname: 
 livere_shortname: MTAyMC8yOTQ4MS82MDQ5
 uyan_uid: 
-wumii: 
+wumii:
+gitment:
+  owner:                   #Your GitHub ID
+  repo:                    #The repo to store comments
+  client_id:               #Your client ID
+  client_secret:           #Your client secret
 
 # Code Highlight theme
 # Available value:
