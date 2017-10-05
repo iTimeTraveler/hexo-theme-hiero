@@ -82,3 +82,12 @@ padding: 0 3px;
 
 #ds-thread #ds-reset .ds-post-button {background: #16171b;}
 #ds-thread #ds-reset .ds-post-button:hover {background: #ff2828;}
+
+/*Gitment TAB 颜色调整*/
+.gitment-editor-tab{
+    transition: color 1s;
+    -moz-transition: color 1s;	/* Firefox 4 */
+    -webkit-transition: color 1s;	/* Safari 和 Chrome */
+    -o-transition: color 1s;
+}
+.gitment-editor-tab:hover{color: white}

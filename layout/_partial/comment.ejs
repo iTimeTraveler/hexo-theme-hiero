@@ -33,7 +33,7 @@
 	<!-- 多说公共JS代码 end -->
 	
 	</div>
-	<%- css('css/comment.css') %>
+	<%- css('css/comment-ds.css') %>
 <% } else if (theme.disqus_shortname) {%>
 	<section id="comments" class="comment">
 	  <div id="disqus_thread">
@@ -121,5 +121,7 @@
 	})
 	gitment.render('comments')
 	</script>
+	<!-- Gitment 自定义样式表 -->
+	<%- css('css/comment-gitment.css') %>
 	<!-- Gitment END! -->
 <% } %>
