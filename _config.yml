@@ -150,5 +150,5 @@ donate:
 
 # Automatic page load progress bar by PACE.js
 progressBar:
-  enable: true                                 #switch
-  themeCSS: https://z4hd.cf/pace/MacOSX.css    #PATH to PACE theme CSS, support relative / absolute path
+  enable: true #switch
+  themeCSS: https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css    #PATH to PACE theme CSS, support relative / absolute path
