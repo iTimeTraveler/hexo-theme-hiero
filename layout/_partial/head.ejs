@@ -2,6 +2,20 @@
 <html>
 <head>
   <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  <% if(theme.progressBar.enable && theme.progressBar.themeCSS){ %>
+    <%- js('js/pace.min.js') %>
+    <%- css(theme.progressBar.themeCSS) %>
+  <% } %>
+  <% if(theme.progressBar.enable && !theme.progressBar.themeCSS){ %>
+    <script>
+      alert('[PACE.js]错误：加载进度条的themeCSS设置可能不正确，请检查主题的_config.yml');
+    </script>
+  <% } %>
+
+  <!-- PACE Progress Bar START -->
+
   <%
   var title = page.title;
 
