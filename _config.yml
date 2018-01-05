@@ -86,7 +86,12 @@ duoshuo_shortname:
 disqus_shortname: 
 livere_shortname: MTAyMC8yOTQ4MS82MDQ5
 uyan_uid: 
-wumii: 
+wumii:
+gitment:
+  owner:                   #Your GitHub ID
+  repo:                    #The repo to store comments
+  client_id:               #Your client ID
+  client_secret:           #Your client secret
 
 # Code Highlight theme
 # Available value:
@@ -142,3 +147,8 @@ donate:
     message: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!'
     wechatImage: https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png
     alipayImage: https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg
+
+# Automatic page load progress bar by PACE.js
+progressBar:
+  enable: true #switch
+  themeCSS: https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css    #PATH to PACE theme CSS, support relative / absolute path

@@ -33,7 +33,7 @@
 	<!-- 多说公共JS代码 end -->
 	
 	</div>
-	<%- css('css/comment.css') %>
+	<%- css('css/comment-ds.css') %>
 <% } else if (theme.disqus_shortname) {%>
 	<section id="comments" class="comment">
 	  <div id="disqus_thread">
@@ -104,4 +104,24 @@
 		</div>
 		<!-- City版安装代码已完成 -->
 	</div>
+<% } else if (theme.gitment.client_secret) {%>
+  <!-- Gitment START! Deploy by Z4HD -->
+	<div id="comments"></div>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+	var gitment = new Gitment({
+		id: '<%- post.permalink %>',
+		owner: '<%- theme.gitment.owner %>',
+		repo: '<%- theme.gitment.repo %>',
+		oauth: {
+			client_id: '<%- theme.gitment.client_id %>',
+			client_secret: '<%- theme.gitment.client_secret %>',
+		},
+	})
+	gitment.render('comments')
+	</script>
+	<!-- Gitment 自定义样式表 -->
+	<%- css('css/comment-gitment.css') %>
+	<!-- Gitment END! -->
 <% } %>
