@@ -1,0 +1,10 @@
+*.coffee
+.DS_Store
+.git*
+raw/
+src/
+test/
+
+/node_modules
+/node_modules/*
+/node_modules/*.*
