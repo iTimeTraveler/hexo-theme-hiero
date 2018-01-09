@@ -83,5 +83,12 @@
 
   <!-- Custom CSS -->
   <%- css('css/my.css') %>
-
+  <!-- Google Adsense -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "<%- theme.ad.google_adsense_ad_client_id %>",
+          enable_page_level_ads: true
+      });
+  </script>
 </head>
