@@ -152,3 +152,7 @@ donate:
 progressBar:
   enable: true #switch
   themeCSS: https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css    #PATH to PACE theme CSS, support relative / absolute path
+
+# Ad
+ad:
+  google_adsense_ad_client_id: ca-pub-0123456789ABCDEF
