@@ -1,9 +1,10 @@
 title: Stephen Hawking launches Centre for the Future of Intelligence
-date: 2016-10-26 01:55:37
+date: 2016-11-18 10:55:37
 comments: true
 categories:
 - AI
-thumbnail: /hexo-theme-hiker/gallery/salt-lake.jpg
+photos: 
+  - gallery/confederate_newspaper.png
 ---
 
 {% blockquote Stephen Hawking http://www.cam.ac.uk/research/news/the-best-or-worst-thing-to-happen-to-humanity-stephen-hawking-launches-centre-for-the-future-of www.cam.ac.uk %}

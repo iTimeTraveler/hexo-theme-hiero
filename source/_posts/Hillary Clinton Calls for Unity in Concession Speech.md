@@ -1,6 +1,6 @@
 ---
 title: Hillary Clinton Calls for Unity in Concession Speech
-date: 2016-11-10 09:55:37
+date: 2016-11-18 09:55:37
 comments: true
 categories:
 	- LifeStyle
@@ -138,4 +138,4 @@ Obama added, "We are now all rooting for his success in uniting and leading the 
 
 ## Source
 
- - [General Election Results](https://hillaryspeeches.com/2016/11/09/hillary-clinton-calls-for-unity-in-concession-speech/)
+- [General Election Results](https://hillaryspeeches.com/2016/11/09/hillary-clinton-calls-for-unity-in-concession-speech/)

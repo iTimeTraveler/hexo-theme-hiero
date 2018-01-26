@@ -1,7 +1,6 @@
-
 ---
 title: Being Outside in Fresh Air & How Your Body Loves It
-date: 2016-11-11 21:55:38
+date: 2016-11-20 21:55:38
 comments: true
 categories:
 	- lifeStyle
@@ -9,6 +8,8 @@ categories:
 tags:
 	- sticky
 	- template
+photos:
+	- gallery/01.jpg
 ---
 
 ![](/hexo-theme-hiker/gallery/shoes.jpg)
