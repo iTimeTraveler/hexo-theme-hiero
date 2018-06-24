@@ -1,4 +1,4 @@
-<article id="<%= post.layout %>-<%= post.slug %>" <% if (!index && is_post() && theme.post_catalog.enable){ %>style="width: 66%; float:left;"<% } %> class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost" >
+<article id="<%= post.layout %>-<%= post.slug %>" <% if (!index && is_post() && ( theme.post_catalog.enable || theme.post_sidebar.enable )){ %>style="width: 66%; float:left;"<% } %> class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     <%- partial('post/gallery') %>
     <% if (post.link || post.title){ %>
@@ -70,4 +70,8 @@
     <% } %>
     </div>
   </aside>
+<% } else { %>
+    <% if (!index && is_post() && theme.post_sidebar.enable){ %>
+      <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+    <% } %>
 <% } %>
