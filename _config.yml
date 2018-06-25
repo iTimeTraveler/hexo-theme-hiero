@@ -42,6 +42,9 @@ random_thumb: false
 post_catalog:
   enable: true
 
+# Sidebar like in homepage, is necessary to disable [post_catalog]
+post_sidebar:
+  enable: false
 
 # Content
 fancybox: true
