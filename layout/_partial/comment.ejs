@@ -124,4 +124,24 @@
 	<!-- Gitment 自定义样式表 -->
 	<%- css('css/comment-gitment.css') %>
 	<!-- Gitment END! -->
+<% } else if (theme.valine.app_id && theme.valine.app_key) {%>
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+    <script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+	<div id="vcomments"></div>
+	<script>
+		var notify = <%= theme.valine.notify %> == true ? true : false;
+		var verify = <%= theme.valine.verify %> == true ? true : false;
+		var visitor = <%= theme.valine.visitor %> == true ? true : false;
+        new Valine({
+            el: '#vcomments',
+			notify: notify,
+			verify: verify,
+            appId: '<%= theme.valine.appid %>',
+            appKey: '<%= theme.valine.appkey %>',
+			placeholder: '<%= theme.valine.placeholder %>',
+			avatar: '<%= theme.valine.avatar %>',
+			pageSize: <%= theme.valine.pageSize %>,
+			visitor: visitor
+        });
+    </script>
 <% } %>

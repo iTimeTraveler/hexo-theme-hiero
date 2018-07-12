@@ -95,6 +95,15 @@ gitment:
   repo:                    #The repo to store comments
   client_id:               #Your client ID
   client_secret:           #Your client secret
+valine:
+  appid: #Leancloud应用app_id，必填
+  appkey: #Leancloud应用app_key，必填
+  notify: false
+  verify: false
+  placeholder: ヾﾉ≧∀≦)o快来评论一下吧!
+  avatar: 
+  pageSize: 10
+  visitor: true
 
 # Code Highlight theme
 # Available value:
