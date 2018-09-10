@@ -5,7 +5,7 @@
 
   <!-- PACE Progress Bar START -->
   <% if(theme.progressBar.enable && theme.progressBar.themeCSS){ %>
-    <%- js('js/pace.min.js') %>
+    <%- js('https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js') %>
     <%- css(theme.progressBar.themeCSS) %>
   <% } %>
   <% if(theme.progressBar.enable && !theme.progressBar.themeCSS){ %>
@@ -61,7 +61,7 @@
   <% } %>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <style type="text/css">
     @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
     @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
@@ -71,10 +71,10 @@
   <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
   <%- css('css/style') %>
 
-  <%- js('js/jquery-3.1.1.min.js') %>
+  <%- js('https://code.jquery.com/jquery-3.1.1.min.js') %>
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="<%- config.root %>css/bootstrap.css" >
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" >
   <link rel="stylesheet" href="<%- config.root %>css/hiero.css" >
   <link rel="stylesheet" href="<%- config.root %>css/glyphs.css" >
   <% if (theme.donate.enable){ %>
@@ -84,6 +84,7 @@
   <!-- Custom CSS -->
   <%- css('css/my.css') %>
   <!-- Google Adsense -->
+  <% if (theme.ad){ %>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -91,4 +92,5 @@
           enable_page_level_ads: true
       });
   </script>
+  <% } %>
 </head>
