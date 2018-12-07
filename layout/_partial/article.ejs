@@ -61,7 +61,7 @@
 <!-- Table of Contents -->
 <% if (!index && is_post() && theme.post_catalog.enable){ %>
   <aside id="sidebar">
-    <div id="toc" class="toc-article">
+    <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
     <strong class="toc-title"><%= __('contents') %></strong>
     <% if (toc(post.content) != ""){ %>
       <%- toc(post.content, { "class": "nav" }) %>
