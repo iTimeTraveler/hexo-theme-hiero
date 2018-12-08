@@ -5,7 +5,7 @@
 
   <!-- PACE Progress Bar START -->
   <% if(theme.progressBar.enable && theme.progressBar.themeCSS){ %>
-    <%- js('https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js') %>
+    <%- js('/js/pace.min.js') %>
     <%- css(theme.progressBar.themeCSS) %>
   <% } %>
   <% if(theme.progressBar.enable && !theme.progressBar.themeCSS){ %>
@@ -74,7 +74,7 @@
   <%- js('https://code.jquery.com/jquery-3.1.1.min.js') %>
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/thethomason/bootstrap.min.css" >
+  <link rel="stylesheet" href="/css/bootstrap.min.css" >
   <link rel="stylesheet" href="<%- config.root %>css/hiero.css" >
   <link rel="stylesheet" href="<%- config.root %>css/glyphs.css" >
   <% if (theme.donate.enable){ %>
@@ -85,7 +85,7 @@
   <%- css('css/my.css') %>
   <!-- Google Adsense -->
   <% if (theme.ad){ %>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async src="/js/adsbygoogle.js"></script>
   <script>
       (adsbygoogle = window.adsbygoogle || []).push({
           google_ad_client: "<%- theme.ad.google_adsense_ad_client_id %>",
